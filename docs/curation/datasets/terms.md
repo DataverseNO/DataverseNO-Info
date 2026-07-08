@@ -1,24 +1,42 @@
 # Terms
 
-Review the license and terms of use applied to the dataset.
+Review the license and access terms applied to the dataset.
 
-## Recommended license
+## License policy
 
-DataverseNO recommends **CC BY 4.0** (Creative Commons Attribution) for research data. This allows reuse with attribution.
+DataverseNO only accepts licenses that provide access to deposited data in some form. Fully closed datasets are not permitted.
 
-## Accepted licenses
+## Standard licenses
 
-| License | Use case |
+Select from the dropdown in DataverseNO. Common choices:
+
+| License | Notes |
 |---|---|
-| CC BY 4.0 | Standard choice for research data |
-| CC BY-SA 4.0 | Share-alike required |
-| CC0 1.0 | No restrictions — maximum reuse |
-| CC BY-NC 4.0 | Non-commercial use only (use sparingly) |
+| **CC0 1.0** | No restrictions — maximum reuse. Recommended for most research data. |
+| **CC BY 4.0** | Attribution required. Standard choice when CC0 is not appropriate. |
+| **CC BY-SA 4.0** | Attribution + share-alike required. |
+| **CC BY-NC 4.0** | Non-commercial use only. Use sparingly — limits reuse significantly. |
+
+When a dataset is derived from multiple sources with different licenses, the most restrictive license governs.
+
+## Custom terms
+
+Custom terms of use require approval through [support@dataverse.no](mailto:support@dataverse.no). Do not accept non-standard terms without checking.
 
 ## Software and code
 
-If the dataset includes software or code, recommend a software license such as MIT, Apache 2.0, or GPL rather than a CC license. CC licenses are not designed for software.
+CC licenses are not designed for software. If the dataset includes code, recommend a software license instead:
 
-## Checking the terms
+- MIT — permissive, minimal restrictions
+- Apache 2.0 — permissive, includes patent clause
+- GPL 3.0 — copyleft, derivative works must be open
 
-Verify the depositor has not applied an overly restrictive license without good reason. If in doubt, discuss with the depositor.
+## Embargo
+
+Files may carry an embargo of up to two years. During an embargo:
+
+- File content is restricted
+- Metadata and README remain public
+- The DOI resolves to the landing page
+
+Embargoes must not be used simply because a manuscript is under review. If the justification is unclear, discuss with the depositor.
