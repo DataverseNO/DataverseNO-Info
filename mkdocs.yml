@@ -1,7 +1,7 @@
 site_name: DataverseNO
 site_url: https://info.dataverse.no
 site_description: Documentation and information about the DataverseNO research data repository
-repo_url: https://github.com/UiT-DataverseNO/Info-Dataverse
+repo_url: https://github.com/lversen/Info-Dataverse
 repo_name: Info-Dataverse
 
 theme:
@@ -17,10 +17,14 @@ theme:
     - search.suggest
     - toc.follow
     - content.tooltips
+  font: false
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search:
