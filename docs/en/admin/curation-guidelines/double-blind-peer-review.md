@@ -1,33 +1,24 @@
 ---
-title: Double-Blind Peer Review
-description: How DataverseNO curators handle datasets submitted for double-blind peer review.
-tags:
-  - curation
-  - peer review
-  - anonymisation
+title: Double-blind peer review
 ---
 
-# Double-Blind Peer Review
+# Double-blind peer review
 
-Some journals require double-blind peer review, meaning that both the author and reviewer identities are kept anonymous. DataverseNO supports this process by allowing curators to create an anonymised version of a dataset draft.
+If a dataset draft is to be included in a double-blind peer review, i.e. both author and reviewers are anonymous, then the researcher cannot share the dataset as with an editor, because the name of the depositor appears in the version control (see Version tab). In such cases, the curator creates an anonymized version of the dataset draft according to the guidance below.
 
-## What is anonymisation in DataverseNO?
+1. The curator curates the dataset as usual, but without publishing it.
+2. Once the dataset is ready for sharing, the curator must create a new, identical, but anonymized dataset in a collection which is dedicated to datasets that are part of double-blind review.
+3. To get access to this collection, send an email to support@dataverse.no and ask for the username and password for the DataverseNO Review Curator.
+4. Log into dataverse.no as Review Curator. You have to be logged out as "normal" curator, or open a new window in your web browser in incognito mode. Select the log-in alternative Other Options – Username/Email, and log in.
+5. Navigate to this collection: https://dataverse.no/dataverse/review (Note! The collection is/must not be published.)
+6. Create the anonymized dataset (see more information below), don't publish it, but create a Preview URL (see Reading access to unpublished dataset). When finished, log out as Review Curator.
 
-When a depositor requests double-blind review support, the curator can:
+**How to anonymize the dataset:**
 
-1. Create a private URL that gives reviewers access to the dataset draft without revealing author information
-2. Temporarily remove or mask identifying metadata (author names, affiliations, acknowledgements)
-3. Provide the anonymised link to the depositor to share with the journal
+- Make sure that all information about the author is removed by either removing identifying information or adding "Anon." into the metadata fields that need to be anonymized: Author(Name), Contact (Name etc.), Producer (Name etc.) and possible other fields containing author-identifying information. In the default metadata template in the Review collection, "Anon." is already added to these fields.
+- Also make sure that the author name and other identifying information is replaced with "Anon." in the ReadMe file.
+- In addition, identifying file metadata must be removed from all files. See this guidance on how to remove this kind of information from Microsoft Office documents. For advice on how to remove personal information from other types of files, see the help pages of the software or information on the web. For any questions, contact DataverseNO.
 
-## Curator steps
+It is this new, anonymized dataset that the researcher can share with the editor, usually via a Preview URL (see Reading access to unpublished dataset).
 
-1. Receive a request from the depositor for double-blind review support
-2. Review the dataset draft and identify any identifying information
-3. Create an anonymised draft version as needed
-4. Provide the depositor with a private URL for reviewers
-5. After the review process is complete, restore the full metadata and proceed with standard curation
-
-!!! info "After acceptance"
-    Once the manuscript is accepted, the depositor should inform the curator so that the full author information can be restored and the dataset can be published with the correct citation.
-
-For questions about handling double-blind peer review, contact [support@dataverse.no](mailto:support@dataverse.no).
+But note! Once the article is accepted, it will be the original dataset created by the author which will be published, and the curator will then delete the anonymized version of the dataset. Therefore, it is crucial that the author right from the beginning uses an anonymized reference (incl. DOI) to the original dataset in the publication (manuscript).

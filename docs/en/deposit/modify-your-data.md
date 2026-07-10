@@ -1,39 +1,9 @@
 ---
-title: Modify Your Data
-description: How to update or create new versions of a published dataset in DataverseNO.
-tags:
-  - deposit
-  - versioning
-  - update
+title: Modify your data
 ---
 
-# Modify Your Data
+# Modify your data (versioning)
 
-After your dataset has been published, you may need to correct errors, add files, or update metadata. DataverseNO supports versioning, so each update creates a new version while preserving the original.
+If needed, you can modify metadata and/or data files after publication. This will create a new version of the dataset, which needs to be approved by a curator from your institutional collection, so remember to submit new versions for review. Note that previous versions are not deleted but archived open access.
 
-## When to update a dataset
-
-- Correcting errors in files or metadata
-- Adding supplementary files
-- Updating documentation after publication
-
-## Creating a new version
-
-1. Log in to [DataverseNO](https://dataverse.no/) and navigate to your published dataset
-2. Click **Edit Dataset** and make your changes
-3. Submit the updated dataset for curation review
-4. The curator will review and publish the new version
-
-## Version numbering
-
-DataverseNO uses major and minor version numbers:
-
-- **Minor version** (e.g., 1.0 → 1.1): For small corrections or additions that do not affect the primary content
-- **Major version** (e.g., 1.0 → 2.0): For significant changes to files or methodology
-
-## DOI and citations
-
-The DOI for your dataset remains stable across versions and always resolves to the latest published version. Each version also has its own version-specific URL if you need to refer to a particular version.
-
-!!! info "Contact your curator"
-    If you are unsure whether your changes require a new version or how to categorise them, contact your [local support service](https://site.uit.no/dataverseno/contact/).
+Please note also that once a dataset is published, it is NOT possible to delete it. However, in certain cases, the dataset can be deaccessed, which means that the data files no longer are openly available. But information about the dataset (author, title, description etc.) will still be visible. For deaccessing, please contact the support services of your home institution.
