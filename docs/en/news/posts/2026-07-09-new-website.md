@@ -1,7 +1,7 @@
 ---
 date: 2026-07-09
 authors:
-  - name: DataverseNO
+  - dataverseno
 tags:
   - website
   - DataverseNO
