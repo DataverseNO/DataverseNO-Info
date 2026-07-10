@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 .env
 /context
+AZURE_SETUP.md

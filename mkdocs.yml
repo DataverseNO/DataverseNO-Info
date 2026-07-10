@@ -1,12 +1,14 @@
 site_name: DataverseNO
-site_url: https://info.dataverse.no
+site_url: https://DataverseNO.github.io/DataverseNO-Info
 site_description: Documentation and information about the DataverseNO research data repository
-repo_url: https://github.com/lversen/Info-Dataverse
-repo_name: Info-Dataverse
+repo_url: https://github.com/DataverseNO/DataverseNO-Info
+repo_name: DataverseNO/DataverseNO-Info
+edit_uri: edit/main/docs/
+
+docs_dir: docs
 
 theme:
   name: material
-  language: en
   features:
     - navigation.tabs
     - navigation.sections
@@ -17,6 +19,7 @@ theme:
     - search.suggest
     - toc.follow
     - content.tooltips
+    - content.action.edit
   font: false
   palette:
     - scheme: default
@@ -25,48 +28,95 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/dataverseno.css
 
 markdown_extensions:
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
 
 plugins:
   - search:
       lang:
         - en
+        - 'no'
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: nn
+          name: Norsk (Nynorsk)
+          build: true
+          nav_translations:
+            Home: Heim
+            About: Om DataverseNO
+            What is DataverseNO?: Kva er DataverseNO?
+            Who can use DataverseNO?: Kven kan bruke DataverseNO?
+            Why use DataverseNO?: Kvifor bruke DataverseNO?
+            Policy Framework: Rammedokument
+            Deposit Guidelines: Retningsliner for deponering
+            Quick Guide: Hurtigguide
+            Prepare Your Data: Klargjere data
+            Deposit Your Data: Deponere data
+            Refer to Your Data: Vise til data
+            Modify Your Data: Endre data
+            Admin: Admin
+            Curation Guidelines: Retningsliner for kuratering
+            Curation Labels: Kurateringsetikettar
+            Double-Blind Peer Review: Dobbeltblind fagfellevurdering
+            Other Curation Tasks: Andre kurateringsoppgåver
+            Collection Management: Samlingsforvaltning
+            Repository Management: Depotforvaltning
+            News: Nyheiter
+            Contact: Kontakt
+  - blog:
+      blog_dir: en/news
+      post_url_format: "{slug}"
   - git-revision-date-localized:
       enable_creation_date: false
       type: date
+  - minify:
+      minify_html: true
 
 nav:
-  - Home: index.md
-  - About DataverseNO:
-    - about/index.md
-    - What is DataverseNO?: about/what-is-dataverseno.md
-    - Who can use DataverseNO?: about/who-can-use.md
-    - Why use DataverseNO?: about/why-use.md
-  - Deposit guidelines:
-    - deposit/index.md
-    - Prepare your data: deposit/prepare.md
-    - Deposit and publish: deposit/deposit-and-publish.md
-    - Refer to your data: deposit/refer.md
-    - Versioning: deposit/versioning.md
-  - Curation guidelines:
-    - curation/index.md
-    - Curation of datasets:
-      - Metadata: curation/datasets/metadata.md
-      - Files: curation/datasets/files.md
-      - Terms: curation/datasets/terms.md
-      - Return to author: curation/datasets/return-to-author.md
-      - Publish dataset: curation/datasets/publish.md
-    - Other curation tasks: curation/other-tasks.md
-  - Collection management: collection-management.md
-  - Repository management: repository-management.md
-  - Support: support.md
-  - News:
-    - news/index.md
-    - New website launched: news/first-post.md
-  - Contact: contact.md
+  - Home: en/index.md
+  - About:
+    - en/about/index.md
+    - What is DataverseNO?: en/about/what-is-dataverseno.md
+    - Who can use DataverseNO?: en/about/who-can-use-dataverseno.md
+    - Why use DataverseNO?: en/about/why-use-dataverseno.md
+    - Policy Framework: en/about/policy-framework.md
+  - Deposit Guidelines:
+    - en/deposit/index.md
+    - Quick Guide: en/deposit/quick-guide.md
+    - Prepare Your Data: en/deposit/prepare-your-data.md
+    - Deposit Your Data: en/deposit/deposit-your-data.md
+    - Refer to Your Data: en/deposit/refer-to-your-data.md
+    - Modify Your Data: en/deposit/modify-your-data.md
+  - Admin:
+    - en/admin/index.md
+    - Curation Guidelines:
+      - en/admin/curation-guidelines/index.md
+      - Curation Labels: en/admin/curation-guidelines/curation-labels.md
+      - Double-Blind Peer Review: en/admin/curation-guidelines/double-blind-peer-review.md
+      - Metadata: en/admin/curation-guidelines/metadata.md
+      - Files: en/admin/curation-guidelines/files.md
+      - Terms: en/admin/curation-guidelines/terms.md
+      - Return to Author: en/admin/curation-guidelines/return-to-author.md
+      - Publish Dataset: en/admin/curation-guidelines/publish.md
+      - Other Curation Tasks: en/admin/curation-guidelines/other-tasks.md
+    - Collection Management: en/admin/collection-management.md
+    - Repository Management: en/admin/repository-management.md
+  - News: en/news/index.md
+  - Contact: en/contact/index.md
