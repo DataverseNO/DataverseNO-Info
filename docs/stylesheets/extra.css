@@ -1,0 +1,105 @@
+/*
+ * DataverseNO info site — brand overrides for Material for MkDocs
+ * Graphic profile v1.0 — primary: #B34700
+ */
+
+/* ── Brand colour tokens ────────────────────────────────────────────────── */
+:root {
+  --dvno-orange:       #B34700;
+  --dvno-orange-dark:  #8B3500;
+  --dvno-orange-light: #D05500;
+  --dvno-blue:         #B1CEE0;
+  --dvno-grey:         #D9D9D9;
+}
+
+/*
+ * Material for MkDocs sets data-md-color-primary="custom" and
+ * data-md-color-scheme="default" on the <body> element.
+ * These selectors override the built-in palette rules.
+ */
+body[data-md-color-primary="custom"],
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color:              #B34700;
+  --md-primary-fg-color--light:       #D05500;
+  --md-primary-fg-color--dark:        #8B3500;
+  --md-primary-bg-color:              #ffffff;
+  --md-primary-bg-color--light:       rgba(255,255,255,0.7);
+  --md-accent-fg-color:               #B34700;
+  --md-accent-fg-color--transparent:  rgba(179, 71, 0, 0.1);
+  --md-typeset-a-color:               #B34700;
+}
+
+body[data-md-color-scheme="default"],
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:              #B34700;
+  --md-primary-fg-color--light:       #D05500;
+  --md-primary-fg-color--dark:        #8B3500;
+  --md-accent-fg-color:               #B34700;
+  --md-typeset-a-color:               #B34700;
+}
+
+/* ── Typography — match DataverseNO graphic profile ─────────────────────── */
+:root {
+  --md-text-font: Arial, Helvetica, sans-serif;
+  --md-code-font: "Courier New", Courier, monospace;
+}
+
+/* ── Body font ──────────────────────────────────────────────────────────── */
+body, .md-typeset {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Links ──────────────────────────────────────────────────────────────── */
+.md-typeset a {
+  color: var(--dvno-orange);
+  text-decoration-color: rgba(179, 71, 0, 0.4);
+}
+
+.md-typeset a:hover {
+  color: var(--dvno-orange-dark);
+  text-decoration-color: var(--dvno-orange-dark);
+}
+
+/* ── Cards — match DataverseNO rounded orange-border style ─────────────── */
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  border: 2px solid var(--dvno-orange) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover,
+.md-typeset .grid > .card:hover {
+  box-shadow: 0 4px 12px rgba(179, 71, 0, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+/* ── Admonition accent colours ──────────────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border-left-color: var(--dvno-orange);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: rgba(179, 71, 0, 0.08);
+}
+
+/* ── Navigation tabs active indicator ──────────────────────────────────── */
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* ── Search highlight ───────────────────────────────────────────────────── */
+.md-search-result mark {
+  color: var(--dvno-orange-dark);
+  background-color: rgba(179, 71, 0, 0.12);
+}
+
+/* ── Table of contents active link ─────────────────────────────────────── */
+.md-nav__link--active {
+  color: var(--dvno-orange) !important;
+}
