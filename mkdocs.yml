@@ -47,7 +47,6 @@ plugins:
   - search:
       lang:
         - en
-        - 'no'
   - i18n:
       docs_structure: folder
       languages:
