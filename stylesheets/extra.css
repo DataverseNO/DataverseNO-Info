@@ -3,30 +3,19 @@
  * Graphic profile v1.0 — primary: #B34700
  */
 
-/* ── Brand colour tokens ────────────────────────────────────────────────── */
 :root {
   --dvno-orange:       #B34700;
   --dvno-orange-dark:  #8B3500;
   --dvno-orange-light: #D05500;
-}
 
-/*
- * Material for MkDocs reads primary/accent colours from
- * [data-md-color-primary] attribute selectors — NOT from :root.
- * This is the correct hook for the "primary: custom" palette entry.
- */
-[data-md-color-primary="custom"] {
+  /* Material colour tokens */
   --md-primary-fg-color:              #B34700;
   --md-primary-fg-color--light:       #D05500;
   --md-primary-fg-color--dark:        #8B3500;
-  --md-primary-bg-color:              #ffffff;
-  --md-primary-bg-color--light:       rgba(255,255,255,0.7);
   --md-accent-fg-color:               #B34700;
   --md-accent-fg-color--transparent:  rgba(179, 71, 0, 0.1);
-}
 
-/* Typography — match DataverseNO graphic profile */
-:root {
+  /* Typography — match DataverseNO graphic profile */
   --md-text-font: Arial, Helvetica, sans-serif;
   --md-code-font: "Courier New", Courier, monospace;
 }
@@ -34,13 +23,6 @@
 /* ── Body font ──────────────────────────────────────────────────────────── */
 body, .md-typeset {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ── Header & nav background (belt-and-braces hardcode) ─────────────────── */
-.md-header,
-.md-tabs {
-  background-color: #B34700 !important;
-  color: #ffffff !important;
 }
 
 /* ── Links ──────────────────────────────────────────────────────────────── */
