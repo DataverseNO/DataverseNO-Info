@@ -103,4 +103,4 @@ Full MkDocs Material documentation: https://squidfunk.github.io/mkdocs-material/
 
 ## Getting help
 
-For questions about the website or this repository, contact [support@dataverse.no](mailto:support@dataverse.no).
+For questions about the website or this repository, contact [siv017@uit.no](mailto:siv017@uit.no).
