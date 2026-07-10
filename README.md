@@ -82,6 +82,17 @@ The website is published at:
 After committing a change, it usually takes **1–3 minutes** for the website to update.
 If it seems unchanged after 5 minutes, check the **Actions** tab at the top of this repository to see if the build has finished or if there was an error.
 
+### Manually triggering a deployment
+
+If you need to redeploy the website without making a content change (for example, if a deployment failed):
+
+1. Go to the **Actions** tab at the top of this repository
+2. Click **Deploy to GitHub Pages** in the left sidebar
+3. Click the **Run workflow** button on the right
+4. Leave the branch as `main` and click **Run workflow**
+
+The site will rebuild and deploy within a few minutes.
+
 ---
 
 ## Markdown quick reference
