@@ -27,7 +27,7 @@ Contact [support@dataverse.no](mailto:support@dataverse.no) to coordinate this p
 
 ## OAI-PMH harvesting
 
-OAI-PMH harvesting sets are maintained for all institutional collections and for the full DataverseNO repository. Set addresses are listed on the [About DataverseNO](about/index.md) page.
+OAI-PMH harvesting sets are maintained for all institutional collections and for the full DataverseNO repository. Set addresses are listed on the [About DataverseNO](../../about/index.md) page.
 
 When a new institutional collection is created, update the OAI-PMH set list accordingly.
 
@@ -41,7 +41,7 @@ Deposits exceeding 200 GB require prior coordination with the UiT infrastructure
 
 ## Long-term preservation
 
-Tasks in connection with long-term preservation follow the [Preservation Policy](about/index.md). Accessibility statements must be updated annually.
+Tasks in connection with long-term preservation follow the [Preservation Policy](../../about/index.md). Accessibility statements must be updated annually.
 
 ## Support
 

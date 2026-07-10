@@ -51,7 +51,7 @@ The curator may return the dataset to you with feedback — this is a normal par
 
 ## Step 4: Refer to your data
 
-Once published, cite your dataset using the DOI. See [Refer to your data](refer.md).
+Once published, cite your dataset using the DOI. See [Refer to your data](refer-to-your-data.md).
 
 ## Step 5: Modify your data (versioning)
 

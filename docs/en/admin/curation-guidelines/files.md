@@ -37,7 +37,7 @@ A README stating only "data from the project" is not sufficient — return the d
 
 Preferred formats are open, non-proprietary, and use Unicode UTF-8 encoding. If the depositor has submitted only proprietary formats (e.g. `.xlsx`, `.sav`, `.dta`), request that open equivalents are added (`.csv`, `.tsv`).
 
-See [Prepare your data — Preferred file formats](../../deposit/prepare.md#preferred-file-formats) for the full format table.
+See [Prepare your data — Preferred file formats](../../deposit/prepare-your-data.md#preferred-file-formats) for the full format table.
 
 ## Container files
 

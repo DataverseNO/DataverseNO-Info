@@ -48,7 +48,7 @@ Contact [support@dataverse.no](mailto:support@dataverse.no) to create subcollect
 
 ## Metadata harvesting
 
-OAI-PMH harvesting sets exist for all institutional collections. Harvesting addresses are listed on the [About DataverseNO](about/index.md) page.
+OAI-PMH harvesting sets exist for all institutional collections. Harvesting addresses are listed on the [About DataverseNO](../../about/index.md) page.
 
 ## Support
 
