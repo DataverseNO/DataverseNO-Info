@@ -18,11 +18,11 @@ When a change is saved (committed) to the `main` branch, GitHub automatically re
 
 ```
 docs/
-  en/          English pages
-  nn/          Norwegian Nynorsk pages (mirrors en/ exactly)
-prompts/       AI prompt templates for common tasks
-stylesheets/   Visual styling (colours, fonts) — do not edit unless needed
-context/       Background documents and design specifications
+  en/              English pages
+  nn/              Norwegian Nynorsk pages (mirrors en/ exactly)
+  stylesheets/     Visual styling (colours, fonts) — do not edit unless needed
+prompts/           AI prompt templates for common tasks
+context/           Background documents and design specifications
 ```
 
 > Each page in `docs/en/` has a matching page in `docs/nn/` at the same path.
