@@ -1,44 +1,39 @@
 ---
-title: Refer to Your Data
-description: How to cite your published dataset in DataverseNO in papers and reports.
-tags:
-  - deposit
-  - citation
-  - DOI
+title: Refer to your data
 ---
 
-# Refer to Your Data
+# Refer to your data
 
-Once your dataset is published, DataverseNO provides a citation in the blue box on your dataset's landing page. Copy this citation and adjust the format to match your publication channel's style guide.
+After depositing your data in DataverseNO, make sure you refer correctly to your dataset.
 
-For general guidance on data citation, see the [Force11 Data Citation Primer](https://doi.org/10.25490/a97f-egyk).
+## a) Where to find the dataset reference
 
-## Citing a published dataset
+Once your data have been deposited and published, they can be referred to by using the reference in the blue box provided by the archive.
 
-Use the citation on your dataset landing page. Standard format:
+Depending on the guidelines applying for the publications channel you are using, you may have to adjust the reference style.
 
-> Author(s) (Year). *Title of dataset*. DataverseNO. https://doi.org/10.xxxx/xxxxx. V1.
+A brief introduction into the whys and hows of research data citation is available here.
 
-Include the DOI in your article's **Data Availability Statement**, for example:
+## b) Refer to an unpublished dataset
 
-> The data underlying this study are openly available in DataverseNO at https://doi.org/10.xxxx/xxxxx
+In DataverseNO, you may grant editors or research partners access to your dataset before it is published (see Step 3: Get your data published). When referring to such an unpublished dataset, you need to make sure the information in the dataset reference (an in other parts of the metadata) satisfies the anonymity requirements of the publisher (primarily for double-blind reviewing).
 
-## Citing an unpublished dataset
+Here is an example of a non-anonymous reference to an unpublished dataset:
 
-DataverseNO allows editors and reviewers access to datasets before publication via a private URL. When citing an unpublished dataset, note the draft status:
+Ji, Yinglin, 2018, "Cognitive representation of spontaneous motion in a second language", https://doi.org/10.18710/N8KO4O, DataverseNO, DRAFT VERSION.
 
-**Non-anonymous:**
-> Ji, Yinglin, 2018, "Cognitive representation of spontaneous motion in a second language", DataverseNO, https://doi.org/10.xxx/xxxxx, DRAFT VERSION.
+Here is an example of an anonymized reference to an unpublished dataset:
 
-**Anonymised (double-blind review):**
-> NN, 2018, "Cognitive representation of spontaneous motion in a second language", DataverseNO, https://doi.org/10.xxx/xxxxx, DRAFT VERSION.
+NN, 2018, "Cognitive representation of spontaneous motion in a second language", https://doi.org/10.18710/N8KO4O, DataverseNO, DRAFT VERSION.
 
-## Updating the citation after acceptance
+## c) Dataset references and versioning
 
-When your manuscript is accepted for publication, update the dataset citation in three places:
+Once your article or book manuscript has been accepted for publishing, you may also publish your dataset. At this stage, that is before the final version of your article or book manuscript is published, you need to carry out the following changes in the dataset citation you have used in the manuscript:
 
-1. Replace `DRAFT VERSION` with `V1`
-2. De-anonymise the author name if you used "NN"
-3. Update the publication year if it has changed
+- Replace "DRAFT VERSION" with "V1"
+- (If applicable) de-anonymize the author(s)' name(s)
+- Change the publication year of the dataset in case there has been a turn of the year since you added the reference to the DRAFT version of the dataset.
 
-Contact your institution's DataverseNO support for help with citation formatting.
+For more information about research data citation, please see the support services of your home institution.
+
+Proceed to section 4: Modify your data

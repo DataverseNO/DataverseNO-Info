@@ -1,30 +1,16 @@
+---
+title: Return dataset to author
+---
+
 # Return dataset to author
 
-Return a dataset when it requires changes before it can be published.
+If a submitted dataset has not been appropriately structured and documented, the curator returns the dataset to the author: Click the Publish Dataset button, and select Return to Author.
 
-## When to return
+Note! In addition, the curator sends an email to the author specifying the necessary changes to be made before the dataset can be published. We recommend you to use the Curation Report Template (see the Kuratorrapportar channel in the DataverseNO-brukarforum Team). The author should also be referred to (the relevant sections in) the Deposit Guide (https://site.uit.no/dataverseno/deposit/) on the DataverseNO info page (https://info.dataverse.no). It is possible to provide links to specific sections in the Deposit Guide. To get the right link address, hover your mouse on the link icon at the beginning of the section in question, right-click it, and select "Copy Link Location".
 
-- Required metadata fields are missing or inaccurate
-- The README is absent or does not meet the minimum standard
-- Files are missing, corrupted, or only in proprietary formats with no open equivalent
-- Sensitive or personal data is present
-- The license is inappropriate or missing
-- File names contain spaces, special characters, or missing extensions
+You should also ask the author to click Submit for review once again after having made the necessary changes. The email to the author may be sent in two ways:
 
-## How to return
+- When you are in the dataset in question, click the button with letter symbol, and write your message in the window that is popping up.
+- When you are in the dataset in question, click Edit > Metadata, and copy the email address in the field Contact > Email and send the message in your email program (e.g. Outlook).
 
-1. In DataverseNO, click **Return to Author**
-2. Write a message explaining exactly what needs to change
-3. The depositor receives a notification and can revise and resubmit
-
-## Writing good feedback
-
-Be specific and constructive. The depositor may not be familiar with curation standards — explain *why* a change is needed, not just *what* to change.
-
-**Too vague:**
-> "The metadata needs improvement."
-
-**Better:**
-> "Please add a description that explains what the data files contain, how the data was collected, and what the column names in `measurements.csv` represent. The current description is copied from your article abstract and describes the study rather than the dataset."
-
-One message covering all issues is better than returning the dataset multiple times for separate problems.
+Note! If the curator identifies fundamental nonconformity with the DataverseNO policies and guidelines, and the depositor does not agree to make necessary changes the dataset must not be published. If the curator is in doubt whether the dataset complies with the DataverseNO policies and guidelines the issue should be discussed with the DataverseNO administrator team at UiT The Arctic University of Norway. Contact the team at support@dataverse.no. Ultimately, the Board of DataverseNO is to decide on such matters.

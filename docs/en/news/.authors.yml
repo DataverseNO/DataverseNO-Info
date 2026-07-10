@@ -1,4 +1,6 @@
-dataverseno:
-  name: DataverseNO
-  description: The DataverseNO team
-  url: https://dataverse.no
+authors:
+  dataverseno:
+    name: DataverseNO
+    avatar: https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y
+    description: The DataverseNO team
+    url: https://dataverse.no

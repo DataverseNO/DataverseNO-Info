@@ -1,36 +1,25 @@
-# Publish dataset
+---
+title: Publish a dataset
+---
 
-Publish the dataset once it meets all requirements. The DOI is activated at this point.
+# Publish a dataset
 
-## Pre-publication checklist
+When everything is OK with the dataset, the curator publishes it: Click the Publish Dataset button, and select Publish.
 
-- [ ] All required metadata fields complete and accurate (see [Metadata](metadata.md))
-- [ ] README present and informative (see [Files](files.md))
-- [ ] Files in preferred formats, or open equivalents provided
-- [ ] No sensitive or personal data
-- [ ] Appropriate license applied (see [Terms](terms.md))
-- [ ] Related publication linked, or status noted ("Submitted for review")
-- [ ] File count does not exceed 300
-- [ ] File names contain no spaces, commas, or special characters
+The author receives an automatic confirmation by email stating that the dataset has been published.
 
-## Version type
+**Promotion in social media**
 
-When publishing, DataverseNO asks for a version type:
+Some archives are promoted by posting information about new datasets in social media. In TROLLing, the UiT Library post messages on Twitter and on the TROLLing Facebook group telling that a new dataset has been published. They also send a email to the author with the following message:
 
-| Version type | When to use |
-|---|---|
-| **Major release** | First publication, or when data files have been added/removed/changed |
-| **Minor release** | Metadata-only changes to an already-published dataset |
+> I have now published your dataset. Thanks for sharing your data! You can find an announcement of the upload on our Facebook and Twitter page, and we encourage you to like this in order to get updates about the archive: https://www.facebook.com/TromsoRepositoryofLanguageandLinguistics/.
 
-## Publishing
+## New version of a published dataset
 
-1. Confirm all checklist items above
-2. Click **Publish Dataset** in DataverseNO
-3. Select the version type
-4. Confirm
+When an author makes changes in a published dataset, a new draft is created. This draft must be submitted for review in order for the new version to be published. The curator(s) will then be noticed that a new dataset is waiting for curation. Note! As of today, it is not apparent from this message whether the submitted dataset is an entirely new dataset or a new version of a previously published dataset. Often, a long time may have passed since the previous version was published, and you may not recall that a previous version of this dataset already has been published. It is therefore advisable to start the curation process by checking whether the dataset has more than one version. To see this, click the Versions tab.
 
-The depositor receives an automatic notification. The dataset is now publicly accessible at its DOI, indexed by search engines, and citable in publications.
+By clicking View Details, you get an overview of all changes that have been made between the different versions. As a next step, you should then have a closer look at the changes made in the metadata and/or files. To do this, follow the guidance in previous sections above. When you publish the dataset after having curated it, you are asked to specify the new version number.
 
-## New versions of published datasets
+As a general rule, the option Minor Release should be selected when only the metadata have been changed. In case there have been changes in the data files, the option Major Release should be selected.
 
-When a depositor submits a revised version, follow the same checklist. Check the **Versions** tab to review what changed between the draft and the previous published version.
+From time to time, the curator(s) should check whether there are unpublished datasets (drafts) that have not been submitted for review. If a dataset has the status Unpublished for more than three months, the curator(s) should contact the author and remind him/her that they have to click Submit for review in order for the (new version of the) dataset to be published.
