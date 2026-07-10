@@ -6,11 +6,11 @@ This repository contains the source for the [DataverseNO information website](ht
 
 ```
 docs/
-  en/          English content (primary)
-  nn/          Norwegian Nynorsk content
-assets/        Shared images, icons, logos
-stylesheets/   CSS customisation
-prompts/       AI prompt templates for content workflows
+  en/              English content (primary)
+  nn/              Norwegian Nynorsk content
+  stylesheets/     CSS customisation
+prompts/           AI prompt templates for content workflows
+context/           Background documents and design specifications
 ```
 
 ## Adding or editing content
