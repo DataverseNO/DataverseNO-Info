@@ -12,6 +12,7 @@
   --md-primary-fg-color:              #B34700;
   --md-primary-fg-color--light:       #D05500;
   --md-primary-fg-color--dark:        #8B3500;
+  --md-primary-bg-color:              #ffffff;
   --md-accent-fg-color:               #B34700;
   --md-accent-fg-color--transparent:  rgba(179, 71, 0, 0.1);
 
@@ -23,6 +24,13 @@
 /* ── Body font ──────────────────────────────────────────────────────────── */
 body, .md-typeset {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ── Header & nav background ────────────────────────────────────────────── */
+.md-header,
+.md-tabs {
+  background-color: var(--dvno-orange) !important;
+  color: #ffffff;
 }
 
 /* ── Links ──────────────────────────────────────────────────────────────── */
