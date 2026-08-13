@@ -28,7 +28,7 @@ def _resolve_value(ref: str, lang: str) -> str:
     entry = get_data()["values"][ref]
     unit = entry.get("unit", {})
     unit_text = unit.get(lang, "") if isinstance(unit, dict) else (unit or "")
-    pattern = entry.get("render_pattern", {}).get(lang) if isinstance(entry.get("render_pattern"), dict) else None
+    pattern = entry.get("render", {}).get(lang) if isinstance(entry.get("render"), dict) else None
     if pattern:
         return pattern.format(value=entry["value"], unit=unit_text)
     return f'{entry["value"]} {unit_text}'.strip()
@@ -43,9 +43,13 @@ def _resolve_partner(ref: str, lang: str) -> str:
     # ref like "repository_management/support.email" or "<partner-id>/support.url"
     root, *path = ref.split("/")
     data = get_data()["partners"]
-    node = data["repository_management"] if root == "repository_management" else next(
-        p for p in data["partners"] if p["id"] == root
-    )
+    if root == "repository_management":
+        node = data["repository_management"]
+    else:
+        try:
+            node = next(p for p in data["partners"] if p["id"] == root)
+        except StopIteration:
+            raise KeyError(root)  # Raise KeyError for consistent error handling
     for key in path:
         # Split dot-separated paths like "support.email"
         for subkey in key.split("."):
@@ -63,14 +67,20 @@ _RESOLVERS = {
 }
 
 
-def resolve_reuse_markers(markdown: str, lang: str) -> str:
+def resolve_reuse_markers(markdown: str, lang: str, page_path: str = None) -> str:
     def _replace(match: re.Match) -> str:
         kind, ref = match.group("kind"), match.group("ref")
-        return _RESOLVERS[kind](ref, lang)
+        try:
+            return _RESOLVERS[kind](ref, lang)
+        except KeyError as e:
+            ctx = f"[REUSE: {kind}/{ref}] could not be resolved: {e}"
+            if page_path:
+                ctx = f"{page_path}: {ctx}"
+            raise KeyError(ctx) from e
 
     return _MARKER.sub(_replace, markdown)
 
 
 def on_page_markdown(markdown, page, config, files, **kwargs):
     lang = page_language(page)
-    return resolve_reuse_markers(markdown, lang)
+    return resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri)
