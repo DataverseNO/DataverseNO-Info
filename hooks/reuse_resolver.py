@@ -9,12 +9,21 @@ href, term lookup, etc.) from the underlying data.
 from __future__ import annotations
 
 import re
+from pathlib import PurePosixPath
 
 from hooks.data_store import get_data
 
 _MARKER = re.compile(
     r"\[REUSE:\s*(?P<kind>links|values|terms|partners)/(?P<ref>[^\]|]+?)\s*(?:\|\s*(?P<alias>[^\]]+?)\s*)?\]"
 )
+
+# [PAGE: <path>[#anchor] [| <label>]] — cross-page reference (spec §5.4.1).
+# <path> is tried, in order: relative to the current page's own directory
+# (covers both same-dir siblings like "prepare-your-data" and nested paths
+# like "file-formats/index" written by an author already inside deposit/),
+# then relative to the current page's language root as a direct file, then
+# as a section index (covers bare "deposit" meaning deposit/index.md).
+_PAGE_MARKER = re.compile(r"\[PAGE:\s*(?P<ref>[^|\]]+?)(?:\s*\|\s*(?P<label>[^\]]+))?\]")
 
 
 def page_language(page) -> str:
@@ -92,6 +101,40 @@ def resolve_reuse_markers(markdown: str, lang: str, page_path: str = None) -> st
     return _MARKER.sub(_replace, markdown)
 
 
+def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
+    """Resolve [PAGE: ...] markers into real <a> links using mkdocs' own
+    Files collection, so hrefs match the relative-URL convention the rest of
+    the built site already uses (theme nav, footer, etc).
+
+    `files` is the mkdocs Files collection for the current build; `current_file`
+    is the File the markers are being resolved for (used both to compute a
+    same-directory fallback for slash-less <path> and to make the href
+    relative to it).
+    """
+    current_dir = PurePosixPath(current_file.src_uri).parent.as_posix()
+
+    def _replace(match: re.Match) -> str:
+        ref = match.group("ref").strip()
+        label = (match.group("label") or ref).strip()
+        path, _, anchor = ref.partition("#")
+        path, anchor = path.strip(), anchor.strip()
+
+        candidates = [f"{current_dir}/{path}.md", f"{lang}/{path}.md", f"{lang}/{path}/index.md"]
+
+        target = next((f for f in (files.get_file_from_path(c) for c in candidates) if f), None)
+        if target is None:
+            raise KeyError(f"[PAGE: {ref}] target page not found for lang '{lang}' (tried {candidates})")
+
+        href = target.url_relative_to(current_file)
+        if anchor:
+            href += f"#{anchor}"
+        return f'<a href="{href}">{label}</a>'
+
+    return _PAGE_MARKER.sub(_replace, markdown)
+
+
 def on_page_markdown(markdown, page, config, files, **kwargs):
     lang = page_language(page)
-    return resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri)
+    markdown = resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri)
+    markdown = resolve_page_markers(markdown, lang, files, page.file)
+    return markdown

@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 
 from hooks.data_store import get_data
-from hooks.reuse_resolver import page_language, resolve_reuse_markers
+from hooks.reuse_resolver import page_language, resolve_page_markers, resolve_reuse_markers
 
 _GENERATED_BLOCK = re.compile(
     r"\[GENERATED COMPONENT\]\nID: (?P<id>[\w-]+)\n(?:[^\n]*\n)*?(?=\n##|\n\[GENERATED COMPONENT\]|\Z)",
@@ -78,16 +78,18 @@ def _partner_contact_cards(lang: str) -> str:
     return f'<div class="contact-cards" id="contact-cards">\n{cards}\n</div>'
 
 
-def _glossary_term(term_id: str, term: dict, lang: str) -> str:
+def _glossary_term(term_id: str, term: dict, lang: str, files, current_file) -> str:
     label = resolve_reuse_markers(term["label"][lang], lang)
+    label = resolve_page_markers(label, lang, files, current_file)
     definition = resolve_reuse_markers(term["definition"][lang], lang)
+    definition = resolve_page_markers(definition, lang, files, current_file)
     return f'<dt id="term-{term_id}">{label}</dt>\n<dd>{definition}</dd>'
 
 
-def _glossary_terms(lang: str) -> str:
+def _glossary_terms(lang: str, files, current_file) -> str:
     terms = get_data()["terms"]
     items = sorted(terms.items(), key=lambda kv: kv[1]["label"][lang].lower())
-    body = "\n".join(_glossary_term(term_id, term, lang) for term_id, term in items)
+    body = "\n".join(_glossary_term(term_id, term, lang, files, current_file) for term_id, term in items)
     return f'<dl class="glossary-list">\n{body}\n</dl>'
 
 
@@ -103,7 +105,7 @@ def on_page_markdown(markdown, page, config, files, **kwargs):
 
     markdown = markdown.replace(f"<!-- PEOPLE_SEARCH_AND_FILTER: {lang} -->", _people_search_and_filter(lang))
     markdown = markdown.replace(f"<!-- PEOPLE_CARDS: {lang} -->", _people_cards(lang))
-    markdown = markdown.replace(f"<!-- GLOSSARY_TERMS: {lang} -->", _glossary_terms(lang))
+    markdown = markdown.replace(f"<!-- GLOSSARY_TERMS: {lang} -->", _glossary_terms(lang, files, page.file))
 
     def _replace_component(match: re.Match) -> str:
         component_id = match.group("id")
