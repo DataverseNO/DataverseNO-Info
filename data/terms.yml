@@ -1,0 +1,1215 @@
+version: 0.5
+created: '2026-08-09'
+last_updated: '2026-08-09'
+description: Authoritative terminology and glossary data for the DataverseNO Information Website.
+principles:
+- Term identifiers are language-neutral, lowercase, hyphen-separated where required, and stable over time.
+- Labels, short definitions, full definitions, aliases, related terms, and notes are localized or language-aware
+  where relevant.
+- English and Norwegian Nynorsk pages shall reference the same term identifiers.
+- Norwegian Nynorsk labels use idiomatic Nynorsk; common nouns normally start with lower-case letters,
+  while names, acronyms, and named entities keep their established capitalization.
+- Norwegian Nynorsk uses a-infinitives consistently.
+- Norwegian Nynorsk aliases may include common Norwegian Bokmål or English equivalents to improve discoverability.
+- Aliases and related terms should be useful but limited; they should not become uncontrolled keyword
+  lists.
+- Glossary pages and inline definition reuse are generated from this file.
+terms:
+  authorship:
+    label:
+      en: Authorship
+      nn: forfattarskap
+    short_definition:
+      en: Recognition of a person’s intellectual contribution to a dataset.
+      nn: Anerkjenning av det faglege bidraget ein person har gjeve til eit datasett.
+    definition:
+      en: >
+        Authorship identifies the people who have made substantial intellectual contributions to creating,
+        collecting, producing, or preparing a dataset. In DataverseNO, authors are credited in the dataset
+        metadata and dataset citation.
+      nn: >
+        Forfattarskap viser kven som har gjeve vesentlege faglege bidrag til å skapa, samla inn, produsera
+        eller klargjera eit datasett. I DataverseNO blir forfattarar krediterte i metadataa og i referansen
+        til datasettet.
+    aliases:
+      en:
+      - author credit
+      nn:
+      - forfatterskap
+      - opphav
+      - forfattarkreditering
+      - forfatterkreditering
+    related:
+    - dataset
+    - citation
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Authorship'
+      url: https://forrt.org/glossary/english/authorship/
+      open: new-tab
+    status: active
+  citation:
+    label:
+      en: Citation
+      nn: sitering
+    short_definition:
+      en: A standardized reference to a dataset or other research output.
+      nn: Ei standardisert tilvising til eit datasett eller eit anna forskingsresultat.
+    definition:
+      en: >
+        A citation provides the information needed to identify, locate, and acknowledge a dataset or data
+        file. In DataverseNO, citations are automatically generated and can be copied directly from dataset
+        and file landing pages. Dataset citations normally include the authors, title, publication year,
+        repository, version, and DOI.
+      nn: >
+        Ei sitering gjev informasjonen som trengst for å identifisera, finna og kreditera eit datasett
+        eller ei datafil. I DataverseNO blir siteringar genererte automatisk og kan kopierast direkte
+        frå landingssidene for datasett og filer. Ei datasettsitering inneheld vanlegvis forfattarar,
+        tittel, publiseringsår, arkiv, versjon og DOI.
+    aliases:
+      en:
+      - data citation
+      - reference
+      nn:
+      - referanse
+      - tilvising
+      - henvisning
+      - kjeldetilvising
+      - kildehenvisning
+      - kjeldereferanse
+      - kildereferanse
+    related:
+    - dataset
+    - authorship
+    - digital-object-identifier
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Citation'
+      url: https://terms.codata.org/rdmt/data-citation
+      open: new-tab
+    status: active
+  collection:
+    label:
+      en: Collection
+      nn: samling
+    short_definition:
+      en: A group of datasets managed together within a repository.
+      nn: Ei gruppe datasett som blir forvalta samla i eit arkiv.
+    definition:
+      en: >
+        A collection is an area within a repository used to organize and manage related datasets. In DataverseNO,
+        most collections represent partner institutions. Some collections represent projects, research
+        groups, research infrastructures, or other organizational units.
+      nn: >
+        Ei samling er eit område i eit arkiv som blir brukt til å organisera og forvalta relaterte datasett.
+        I DataverseNO representerer dei fleste samlingane partnarinstitusjonar. Nokre samlingar representerer
+        prosjekt, forskingsgrupper, forskingsinfrastrukturar eller andre organisatoriske einingar.
+    aliases:
+      en:
+      - institutional collection
+      - subcollection
+      nn:
+      - institusjonssamling
+      - delsamling
+      - subsamling
+    related:
+    - repository
+    - dataset
+    - institutional-collection
+    further_reading: []
+    status: active
+  coretrustseal:
+    label:
+      en: CoreTrustSeal
+      nn: CoreTrustSeal
+    short_definition:
+      en: An international certification for trustworthy digital repositories (TDRs).
+      nn: Ei internasjonal sertifiseringsordning for pålitelege digitale arkiv.
+    definition:
+      en: >
+        CoreTrustSeal is a certification that demonstrates that a repository meets recognized requirements
+        for the trustworthy management, preservation, and provision of digital resources. DataverseNO
+        obtained CoreTrustSeal certification for the first time in 2020 and is currently renewing its
+        certification.
+      nn: >
+        CoreTrustSeal er ei sertifisering som viser at eit arkiv oppfyller anerkjende krav til påliteleg
+        forvaltning, bevaring og formidling av digitale ressursar. DataverseNO fekk CoreTrustSeal-sertifisering
+        for første gong i 2020 og arbeider no med å fornya sertifiseringa.
+    aliases:
+      en:
+      - CTS
+      nn: []
+    related:
+    - trustworthy-digital-repository
+    - repository
+    - preservation
+    further_reading: []
+    status: active
+  curation:
+    label:
+      en: Curation
+      nn: kuratering
+    short_definition:
+      en: Review and improvement of a dataset before publication in DataverseNO.
+      nn: Gjennomgang og forbetring av eit datasett før publisering i DataverseNO.
+    definition:
+      en: >
+        In DataverseNO, curation is the process of reviewing a dataset and providing guidance on metadata,
+        documentation, file formats, licensing, and other aspects that support data sharing and reuse.
+        Datasets are curated before publication to help align them with DataverseNO policies, deposit
+        guidelines, and recognized good practices for research data management, in particular the FAIR
+        Principles.
+      nn: >
+        I DataverseNO er kuratering prosessen der eit datasett blir gjennomgått, og der deponenten får
+        rettleiing om metadata, dokumentasjon, filformat, lisensiering og andre forhold som fremjar deling
+        og gjenbruk av data. Datasett blir kuraterte før publisering for å sørgja for at dei blir i tråd
+        med DataverseNO sine policyar, deponeringsrettleiingar og anerkjend god praksis for forskingsdatahandtering,
+        særleg FAIR-prinsippa.
+    aliases:
+      en:
+      - data curation
+      - data review
+      - review
+      nn:
+      - kvalitetssikring
+      - datakuratering
+      - kuratering av data
+      - gjennomgang
+    related:
+    - dataset
+    - curator
+    - metadata
+    - fair
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Curation'
+      url: https://terms.codata.org/rdmt/curation
+      open: new-tab
+    status: active
+  curation-label:
+    label:
+      en: Curation Label
+      nn: kurateringstagg
+    short_definition:
+      en: A label indicating the current status of a dataset during curation in DataverseNO.
+      nn: Ein merkelapp som viser statusen til eit datasett under kuratering i DataverseNO.
+    definition:
+      en: >
+        A curation label is used by DataverseNO curators to track and communicate the progress of a dataset
+        through the curation workflow.
+      nn: >
+        Ein kurateringstagg blir brukt av DataverseNO-kuratorar til å spora og kommunisera framdrifta
+        til eit datasett gjennom kurateringsarbeidsflyten.
+    aliases:
+      en:
+      - curation status
+      nn:
+      - kurateringsstatus
+    related:
+    - curation
+    - curator
+    - dataset
+    further_reading: []
+    status: active
+  curator:
+    label:
+      en: Curator
+      nn: kurator
+    short_definition:
+      en: A person who reviews datasets before publication in DataverseNO.
+      nn: Ein person som går gjennom datasett før publisering i DataverseNO.
+    definition:
+      en: >
+        A curator is a member of research support staff who reviews datasets and provides guidance to
+        depositors. Curators help ensure that datasets comply with DataverseNO policies, deposit guidelines,
+        and recognized good practices for research data management. Information about the curators at
+        DataverseNO partner institutions is available on the [PAGE: about/people | People page].
+      nn: >
+        Ein kurator er ein tilsett i forskingsstøtta som går gjennom datasett og gjev rettleiing til deponentar.
+        Kuratorar hjelper til med å sikra at datasett følgjer DataverseNO sine policyar, deponeringsrettleiingar
+        og anerkjend god praksis for forskingsdatahandtering. Informasjon om kuratorane på DataverseNO
+        sine partnarinstitusjonar finst på [PAGE: about/people | Folk-sida].
+    aliases:
+      en:
+      - data curator
+      nn:
+      - datakurator
+    related:
+    - curation
+    - depositor
+    - dataset
+    further_reading: []
+    status: active
+  data-requiring-protection:
+    label:
+      en: Data requiring protection
+      nn: data med beskyttelsesbehov
+    short_definition:
+      en: Research data that cannot be shared openly in its raw or current form because of legal, ethical, institutional, or security-related constraints.
+      nn: Forskingsdata som ikkje kan delast ope i rå eller noverande form på grunn av juridiske, etiske, institusjonelle eller tryggleiksomsyn.
+    definition:
+      en: >
+        Data requiring protection are research data that cannot be shared openly
+        in their raw or current form. This may be because of legal, ethical,
+        institutional, or security-related constraints.
+
+        In DataverseNO, this includes:
+
+        - **Personal and health data:** Data that can be linked to identifiable
+          persons or medical records.
+        - **Indigenous data:** Data that are subject to cultural oversight,
+          traditional ownership, or specific governance protocols.
+        - **Intellectual property:** Copyrighted material or commercially
+          sensitive data.
+        - **Environmental risks:** Sensitive biodiversity data, such as locations
+          of endangered species.
+        - **Safety risks:** Data involving geopolitical or security-related
+          concerns.
+        - **Rights restrictions:** Data for which the researcher does not have
+          the necessary rights and permissions.
+
+        Such data must be handled before they can be shared openly. This may
+        include preparatory steps such as anonymization. If the data cannot be
+        prepared for open sharing, they should be directed to a suitable
+        alternative repository instead of being deposited directly in DataverseNO.
+      nn: >
+        Data med beskyttelsesbehov er forskingsdata som ikkje kan delast ope
+        i rå eller noverande form. Dette kan vera på grunn av juridiske,
+        etiske, institusjonelle eller tryggleiksomsyn.
+
+        I DataverseNO omfattar dette:
+
+        - **Person- og helsedata:** Data som kan knytast til identifiserbare
+          personar eller medisinske journalar.
+        - **Urfolksdata:** Data som er underlagde kulturell kontroll,
+          tradisjonelt eigarskap eller særskilde styringsprotokollar.
+        - **Immaterielle rettar:** Opphavsrettsleg verna materiale eller
+          kommersielt sensitive data.
+        - **Miljørisiko:** Sensitive artsmangfaldsdata, til dømes lokalitetar
+          for truga artar.
+        - **Tryggleiksrisiko:** Data som gjeld geopolitiske eller
+          tryggleiksrelaterte forhold.
+        - **Rettigheitsavgrensingar:** Data der forskaren ikkje har nødvendige
+          rettar og løyve.
+
+        Slike data må handterast før dei kan delast ope. Dette kan til dømes
+        innebera anonymisering. Dersom dataa ikkje kan klargjerast for open
+        deling, bør dei visast vidare til eit eigna alternativt arkiv i staden
+        for å arkiverast i DataverseNO.
+    aliases:
+      en:
+        - protected data
+        - sensitive data
+      nn:
+        - data med beskyttelsesbehov
+        - beskyttelsesverdige data
+        - sensitive data
+    related:
+      - research-data
+      - terms-of-use
+      - license
+    further_reading:
+      - title: DataverseNO Data Privacy Guide
+        url: null
+        open: new-tab
+        status: pending-url
+    status: active
+  dataset:
+    label:
+      en: Dataset
+      nn: datasett
+    short_definition:
+      en: A collection of files and metadata treated as a single unit.
+      nn: Ei samling filer og metadata som blir handsama som ei eining.
+    definition:
+      en: >
+        A dataset consists of one or more files together with metadata and documentation describing them.
+        In DataverseNO, datasets are the primary units that are archived, curated, published, cited, and
+        preserved.
+      nn: >
+        Eit datasett består av éi eller fleire datafiler i tillegg til metadata og dokumentasjon som beskriv
+        dataa. I DataverseNO er datasett dei viktigaste einingane som blir arkiverte, kuraterte, publiserte,
+        siterte og bevarte.
+    aliases:
+      en:
+      - data set
+      nn: []
+    related:
+    - research-data
+    - metadata
+    - readme-file
+    - citation
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Dataset'
+      url: https://terms.codata.org/rdmt/dataset
+      open: new-tab
+    status: active
+  dataverseno-deposit-agreement:
+    label:
+      en: DataverseNO Deposit Agreement
+      nn: DataverseNO Deposit Agreement
+    short_definition:
+      en: An agreement defining the conditions for depositing data in DataverseNO.
+      nn: Ein avtale som definerer vilkåra for å deponera data i DataverseNO.
+    definition:
+      en: >
+        The DataverseNO Deposit Agreement defines the rights and responsibilities of depositors and DataverseNO
+        when datasets are submitted to the repository. The agreement forms part of the [REUSE: terms/dataverseno-policy-framework]
+        and applies to all datasets deposited in DataverseNO.
+      nn: >
+        DataverseNO Deposit Agreement definerer rettane og pliktene til deponentar og DataverseNO når
+        datasett blir sende inn til arkivet. Avtalen er ein del av [REUSE: terms/dataverseno-policy-framework]
+        og gjeld for alle datasett som blir deponerte i DataverseNO.
+    aliases:
+      en:
+      - deposit agreement
+      nn:
+      - DataverseNO-deponeringsavtale
+      - deponeringsavtale
+      - DataverseNO-arkiveringsavtale
+      - arkiveringsavtale
+    related:
+    - deposit
+    - depositor
+    - dataverseno-policy-framework
+    further_reading:
+    - link_id: dataverseno-deposit-agreement
+    status: active
+  dataverseno-deposit-guidelines:
+    label:
+      en: DataverseNO Deposit Guidelines
+      nn: DataverseNO-arkiveringsguide
+    short_definition:
+      en: Requirements and recommendations for preparing and depositing datasets in DataverseNO.
+      nn: Krav og tilrådingar for å klargjera og deponera datasett i DataverseNO.
+    definition:
+      en: >
+        The DataverseNO Deposit Guidelines describe how datasets should be organized, documented, described,
+        licensed, uploaded, and submitted for review and publication in DataverseNO. The guidelines help
+        depositors align their datasets with DataverseNO requirements and recognized good practices for
+        research data management. The guidelines are available on the [PAGE: deposit | Deposit Guidelines
+        page].
+      nn: >
+        DataverseNO-deponeringsrettleiinga skildrar korleis datasett bør organiserast, dokumenterast,
+        skildrast, lisensierast, lastast opp og sendast inn til gjennomgang og publisering i DataverseNO.
+        Rettleiinga hjelper deponentar med å tilpassa datasetta til DataverseNO sine krav og anerkjend
+        god praksis for forskingsdatahandtering. Rettleiinga er tilgjengeleg i [PAGE: deposit | arkiveringsguiden].
+    aliases:
+      en:
+      - deposit guidelines
+      nn:
+      - deponeringsrettleiing
+      - deponeringsveiledning
+      - arkiveringsrettleiing
+      - arkiveringsveiledning
+    related:
+    - deposit
+    - dataset
+    - metadata
+    - readme-file
+    further_reading: []
+    status: active
+  dataverseno-organizational-agreement:
+    label:
+      en: DataverseNO Organizational Agreement
+      nn: DataverseNO-forvaltningsavtale
+    short_definition:
+      en: The governing agreement that defines how DataverseNO is organized and managed.
+      nn: Avtale som definerer korleis DataverseNO er organisert og forvalta.
+    definition:
+      en: >
+        The DataverseNO Organizational Agreement describes the governance, roles, responsibilities, competencies,
+        and funding arrangements of the DataverseNO consortium and its partner institutions.
+      nn: >
+        DataverseNO-forvaltningsavtalen beskriv styring, roller, ansvar, kompetanse og finansiering i
+        DataverseNO-konsortiet og hos partnarinstitusjonane.
+    aliases:
+      en:
+      - organizational agreement
+      nn: []
+    related:
+    - dataverseno-policy-framework
+    - repository
+    further_reading:
+    - link_id: dataverseno-organizational-agreement
+    status: active
+  dataverseno-policy-framework:
+    label:
+      en: DataverseNO Policy Framework
+      nn: DataverseNO Policy Framework
+    short_definition:
+      en: The collection of policies governing the operation and use of DataverseNO.
+      nn: Samlinga av policyar som styrer drift og bruk av DataverseNO.
+    definition:
+      en: >
+        The DataverseNO Policy Framework consists of the policies, plans, and related documents that define
+        how the repository is governed, managed, preserved, and used. An overview of the framework and
+        its constituent documents is available on the [PAGE: about/policy-framework | DataverseNO Policy
+        Framework page].
+      nn: >
+        DataverseNO Policy Framework består av policyar, planar og relaterte dokument som definerer korleis
+        arkivet blir styrt, forvalta, bevart og brukt. Ei oversikt over rammeverket og dokumenta som inngår,
+        finst på [PAGE: about/policy-framework | sida for DataverseNO Policy Framework].
+    aliases:
+      en:
+      - policy framework
+      nn:
+      - policyrammeverk
+    related:
+    - dataverseno-organizational-agreement
+    - dataverseno-deposit-agreement
+    - preservation
+    further_reading: []
+    status: active
+  deposit:
+    label:
+      en: Deposit
+      nn: deponering
+    short_definition:
+      en: The process of submitting a dataset to a repository.
+      nn: Det å senda inn eit datasett til eit arkiv.
+    definition:
+      en: >
+        A deposit is the submission of a dataset, including files, metadata, and documentation, to a repository
+        for review, publication, and preservation.
+      nn: >
+        Å deponera betyr å registrera og lasta opp eit datasett, med filer, metadata og dokumentasjon,
+        til eit arkiv for gjennomgang, publisering og bevaring.
+    aliases:
+      en:
+      - data deposit
+      nn:
+      - arkivering
+      - opplasting
+      - registrering
+    related:
+    - depositor
+    - dataset
+    - dataverseno-deposit-guidelines
+    further_reading: []
+    status: active
+  depositor:
+    label:
+      en: Depositor
+      nn: deponent
+    short_definition:
+      en: A person who submits a dataset to a repository.
+      nn: Ein person som sender inn eit datasett til eit arkiv.
+    definition:
+      en: >
+        A depositor is a person who creates or manages a dataset submission and submits it for review
+        and publication in DataverseNO.
+      nn: Ein deponent er ein person som opprettar og forvaltar eit datasett for arkivering i DataverseNO.
+    aliases:
+      en:
+      - data depositor
+      nn: []
+    related:
+    - deposit
+    - dataset
+    - dataverseno-deposit-agreement
+    further_reading: []
+    status: active
+  designated-community:
+    label:
+      en: Designated Community
+      nn: målgruppe
+    short_definition:
+      en: The group of users for whom preserved information should remain understandable.
+      nn: Brukargruppa som arkiverte data skal vera forståelege for.
+    definition:
+      en: >
+        A Designated Community is the group of users that a repository expects to access and reuse preserved
+        data. DataverseNO aims to ensure that published datasets remain understandable to their intended
+        research communities.
+      nn: >
+        Ei målgruppe er dei aktørane som eit arkiv ventar skal kunna få tilgang til og bruka arkiverte
+        data. DataverseNO har som mål å sikra at publiserte datasett held fram med å vera forståelege
+        for dei aktuelle forskingsmiljøa.
+    aliases:
+      en:
+      - user community
+      nn:
+      - brukargruppe
+      - brukergruppe
+      - brukarmiljø
+      - brukermiljø
+    related:
+    - preservation
+    - trustworthy-digital-repository
+    - repository
+    further_reading: []
+    status: active
+  digital-object-identifier:
+    label:
+      en: Digital Object Identifier (DOI)
+      nn: Digital Object Identifier (DOI)
+    short_definition:
+      en: A persistent identifier used to identify and reference a dataset, file, or other digital resource.
+      nn: Ein varig identifikator som blir brukt til å identifisera og referera til eit datasett, ei fil
+        eller ein annan digital ressurs.
+    definition:
+      en: >
+        A Digital Object Identifier (DOI) is a globally unique and persistent identifier that provides
+        a stable reference to a digital resource. In DataverseNO, datasets and individual files within
+        datasets are assigned DOIs that support citation, discovery, and long-term access.
+      nn: >
+        Ein Digital Object Identifier (DOI) er ein globalt unik og varig identifikator som mogleggjer
+        stabil tilvising til ein digital ressurs. I DataverseNO får datasett og enkeltfiler i datasett
+        DOI-ar som støttar sitering, gjenfinning og langsiktig tilgang.
+    aliases:
+      en:
+      - DOI
+      nn:
+      - DOI
+      - digital objektsidentifikator
+      - persistent identifikator
+    related:
+    - persistent-identifier
+    - citation
+    - dataset
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Digital Object Identifier (DOI)'
+      url: https://terms.codata.org/rdmt/digital-object-identifier
+      open: new-tab
+    status: active
+  double-blind-peer-review:
+    label:
+      en: Double-Blind Peer Review
+      nn: dobbelblind fagfellevurdering
+    short_definition:
+      en: A review process in which neither authors nor reviewers know each other’s identities.
+      nn: Ein vurderingsprosess der korkje forfattarar eller fagfellar kjenner identiteten til kvarandre.
+    definition:
+      en: >
+        Double-blind peer review is a review process intended to reduce bias by keeping both authors and
+        reviewers anonymous during manuscript evaluation.
+      nn: >
+        Dobbelblind fagfellevurdering er ein vurderingsprosess som skal sikra objektiv, upartisk og rettferdig
+        evaluering ved å halda både forfattarar og fagfellar anonyme under vurderinga av eit manuskript.
+    aliases:
+      en:
+      - anonymous peer review
+      nn:
+      - anonym fagfellevurdering
+    related:
+    - preview-url
+    - dataset
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Double-Blind Peer Review'
+      url: https://forrt.org/glossary/english/double_blind_peer_review/
+      open: new-tab
+    status: active
+  embargo:
+    label:
+      en: Embargo
+      nn: embargo
+    short_definition:
+      en: A temporary restriction on access to data files.
+      nn: Ei mellombels tilgangsavgrensing for datafiler.
+    definition:
+      en: >
+        An embargo is a temporary restriction on access to one or more files in a dataset. In DataverseNO,
+        embargoes may be applied only to unpublished data files and normally for no longer than [REUSE:
+        values/embargo-period-limit]. During the embargo period, the embargoed files are inaccessible,
+        while the dataset metadata and README file remain publicly available. Embargoes expire automatically
+        on a specified date, after which the files become openly accessible. Once a dataset has been published, the embargo period cannot normally be extended or modified by the depositor. Embargoes are intended for temporary restrictions on access to files and should not be used to delay the publication
+        of datasets associated with manuscripts under review.
+      nn: >
+        Ein embargo er ei mellombels tilgangsavgrensing for éi eller fleire filer i eit datasett. I DataverseNO kan embargo berre leggjast på upubliserte datafiler og normalt ikkje i meir enn [REUSE: values/embargo-period-limit]. I embargoperioden er filene utilgjengelege, medan metadataa og README-fila til datasettet er ope tilgjengelege. Embargoar går automatisk ut på ein oppgjeven dato, og etter dette blir filene ope tilgjengelege. Når eit datasett er publisert, kan embargoperioden normalt ikkje forlengjast eller endrast av deponenten. Embargoar er meinte for mellombelse tilgangsavgrensingar til filer og bør ikkje brukast til å utsetja publisering av datasett som høyrer til manuskript under vurdering.
+    aliases:
+      en:
+      - embargo period
+      nn:
+      - embargoperiode
+    related:
+    - dataset
+    - terms-of-use
+    - preview-url
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Embargo'
+      url: https://forrt.org/glossary/english/embargo_period/
+      open: new-tab
+    status: active
+  fair:
+    label:
+      en: FAIR
+      nn: FAIR
+    short_definition:
+      en: A set of principles that help make research data Findable, Accessible, Interoperable, and Reusable.
+      nn: Eit sett prinsipp som skal gjera forskingsdata finnbare, tilgjengelege, interoperable og gjenbrukbare.
+    definition:
+      en: >
+        FAIR is a set of guiding principles for research data management and stewardship. FAIR aims to
+        ensure that research data and metadata can be found, accessed, integrated with other data and
+        systems, and reused by both humans and machines.
+      nn: >
+        FAIR er eit sett med rettleiande prinsipp for forskingsdatahandtering og dataforvaltning. Målet
+        med FAIR er å sikra at forskingsdata og metadata kan finnast, aksesserast, koplast saman med andre
+        data og system og brukast på nytt av både menneske og maskiner.
+    aliases:
+      en:
+      - FAIR Principles
+      nn:
+      - FAIR-prinsippa
+      - FAIR-prinsippene
+      - FAIR-prinsipp
+    related:
+    - metadata
+    - curation
+    - research-data
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): FAIR'
+      url: https://forrt.org/glossary/english/fair_principles/
+      open: new-tab
+    status: active
+  file-format:
+    label:
+      en: File Format
+      nn: filformat
+    short_definition:
+      en: A standardized way of storing digital information in a file.
+      nn: Ein standardisert måte å lagra digital informasjon i ei fil på.
+    definition:
+      en: >
+        A file format defines how information is encoded and stored in a digital file. Some file formats
+        are better suited for long-term preservation and reuse than others.
+      nn: >
+        Eit filformat definerer korleis informasjon blir koda og lagra i ei digital fil. Nokre filformat
+        eignar seg betre for langtidsbevaring og gjenbruk enn andre.
+    aliases:
+      en:
+      - file type
+      nn:
+      - filtype
+    related:
+    - preservation
+    - dataset
+    further_reading: []
+    status: active
+  harvesting:
+    label:
+      en: Harvesting
+      nn: hausting
+    short_definition:
+      en: Automatic collection of metadata from repositories.
+      nn: Automatisk innsamling av metadata frå arkiv.
+    definition:
+      en: >
+        Harvesting is the process whereby one system collects metadata from another system. It helps make
+        datasets discoverable through external search and discovery services.
+      nn: >
+        Hausting er prosessen der eitt system samlar inn metadata frå eit anna system. Dette bidreg til
+        å gjera datasett synlege i eksterne søkje- og gjenfinningstenester.
+    aliases:
+      en:
+      - metadata harvesting
+      nn:
+      - metadatahausting
+      - høsting
+    related:
+    - metadata
+    - open-archives-initiative-protocol-for-metadata-harvesting
+    further_reading: []
+    status: active
+  institutional-collection:
+    label:
+      en: Institutional Collection
+      nn: institusjonssamling
+    short_definition:
+      en: A collection representing a participating institution in the DataverseNO collaboration.
+      nn: Ei samling som representerer ein partnarinstitusjon i DataverseNO-samarbeidet.
+    definition:
+      en: >
+        An Institutional Collection is a collection within DataverseNO that is managed and curated by
+        a partner institution and contains datasets associated with that institution.
+      nn: >
+        Ei institusjonssamling er ei samling i DataverseNO som blir forvalta og kuratert av ein partnarinstitusjon,
+        og som inneheld datasett knytte til denne institusjonen.
+    aliases:
+      en:
+      - partner institution collection
+      nn:
+      - institusjonell samling
+    related:
+    - collection
+    - repository
+    - curation
+    further_reading: []
+    status: active
+  license:
+    label:
+      en: License
+      nn: lisens
+    short_definition:
+      en: A statement defining how a dataset may be (re-)used.
+      nn: Ei erklæring som definerer korleis eit datasett kan (gjen)brukast.
+    definition:
+      en: >
+        A license specifies the permissions and conditions that apply to the reuse of a dataset. In DataverseNO, every dataset must be assigned a license or equivalent terms of use when it is deposited. Licensing information is included in the dataset metadata and helps users understand how the data may be accessed, used, and shared. DataverseNO recommends open licenses that facilitate data reuse, particularly Creative Commons CC0, while allowing depositors to specify alternative terms of use where appropriate.
+      nn: >
+        Ein lisens fastset kva løyve og vilkår som gjeld for gjenbruk av eit datasett. I DataverseNO må
+        alle datasett få ein lisens eller tilsvarande bruksvilkår når dei blir deponerte. Lisensinformasjon
+        inngår i metadataa til datasettet og hjelper brukarar med å forstå korleis datasettet kan aksesserast,
+        gjenbrukast og delast (vidare). DataverseNO tilrår opne lisensar som legg til rette for gjenbruk
+        av data, særleg Creative Commons CC0, samstundes som deponentar kan oppgje andre bruksvilkår når
+        det er relevant.
+    aliases:
+      en:
+      - terms of use
+      nn:
+      - bruksvilkår
+      - bruksbetingelser
+      - løyve
+    related:
+    - terms-of-use
+    - dataset
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Open Licenses'
+      url: https://forrt.org/glossary/english/open_licenses/
+      open: new-tab
+    status: active
+  metadata:
+    label:
+      en: Metadata
+      nn: metadata
+    short_definition:
+      en: Information describing a dataset.
+      nn: Informasjon som beskriv eit datasett.
+    definition:
+      en: >
+        Metadata is structured information that describes a dataset, such as its title, authors, keywords,
+        dates, methods, and license. Metadata helps users find, understand, cite, and reuse data.
+      nn: >
+        Metadata er strukturert informasjon som beskriv eit datasett, til dømes tittel, forfattarar, nøkkelord, datoar, metodar og lisens. Metadata hjelper brukarar med å finna, forstå, sitera og bruka data på nytt.
+    aliases:
+      en:
+      - dataset metadata
+      nn: []
+    related:
+    - dataset
+    - fair
+    - harvesting
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Metadata'
+      url: https://forrt.org/glossary/english/metadata/
+      open: new-tab
+    status: active
+  open-access:
+    label:
+      en: Open Access
+      nn: open tilgang
+    short_definition:
+      en: Free and unrestricted access to digital resources.
+      nn: Fri og uavgrensa tilgang til digitale ressursar.
+    definition:
+      en: >
+        Open Access means that digital resources are made available online without price barriers or access
+        restrictions.
+      nn: >
+        Open tilgang betyr at digitale ressursar blir gjorde tilgjengelege på nett utan betalingsmurar
+        eller tilgangsavgrensingar.
+    aliases:
+      en:
+      - OA
+      nn:
+      - åpen tilgang
+      - Open Access
+      - OA
+    related:
+    - open-science
+    - terms-of-use
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Open Access'
+      url: https://forrt.org/glossary/english/open_access/
+      open: new-tab
+    status: active
+  open-archives-initiative-protocol-for-metadata-harvesting:
+    label:
+      en: Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH)
+      nn: Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH)
+    short_definition:
+      en: A standard protocol for sharing metadata between systems.
+      nn: Ein standardprotokoll for å dela metadata mellom system.
+    definition:
+      en: >
+        Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) is a protocol that allows
+        metadata to be harvested automatically from repositories and reused in external discovery services.
+      nn: >
+        Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) er ein protokoll som gjer
+        det mogleg å hausta metadata automatisk frå arkiv og bruka dei på nytt i eksterne søkje- og gjenfinningstenester.
+    aliases:
+      en:
+      - OAI-PMH
+      nn:
+      - OAI-PMH
+      - metadatahausting
+    related:
+    - harvesting
+    - metadata
+    - repository
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Open Archives Initiative Protocol for Metadata
+        Harvesting (OAI-PMH)'
+      url: https://terms.codata.org/rdmt/open-archives-initiative-protocol-for-metadata-harvesting
+      open: new-tab
+    status: active
+  open-researcher-and-contributor-id:
+  open-researcher-and-contributor-id:
+    label:
+      en: Open Researcher and Contributor ID (ORCID)
+      nn: Open Researcher and Contributor ID (ORCID)
+    short_definition:
+      en: A persistent identifier for researchers.
+      nn: Ein varig identifikator for forskarar.
+    definition:
+      en: >
+        Open Researcher and Contributor ID (ORCID) is a globally unique identifier that distinguishes
+        researchers and helps connect them to their publications, datasets, and other research outputs.
+      nn: >
+        Open Researcher and Contributor ID (ORCID) er ein globalt unik identifikator som skil forskarar
+        frå kvarandre og hjelper til med å knyta dei til publikasjonar, datasett og andre forskingsresultat.
+    aliases:
+      en:
+      - ORCID
+      nn:
+      - ORCID
+    related:
+    - persistent-identifier
+    - authorship
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Open Researcher and Contributor ID (ORCID)'
+      url: https://terms.codata.org/rdmt/orcid
+      open: new-tab
+    status: active
+  open-science:
+    label:
+      en: Open Science
+      nn: open vitskap
+    short_definition:
+      en: An approach to research that promotes openness, transparency, accountability, and reuse throughout
+        the research process.
+      nn: Ein måte å driva forsking på som fremjar openheit, transparens, ansvarlegheit og gjenbruk gjennom
+        heile forskingsprosessen.
+    definition:
+      en: >
+        Open Science is an approach to conducting and communicating research that seeks to make research
+        processes and outputs as open, transparent, accountable, and reusable as possible. It encourages
+        practices such as sharing research data, publications, methods, software, and other research outputs,
+        thereby supporting verification, collaboration, and the reuse of research results.
+      nn: >
+        Open vitskap er ein måte å gjennomføra og formidla forsking på som søkjer å gjera forskingsprosessar
+        og forskingsresultat så opne, transparente, ansvarlege og gjenbrukbare som mogleg. Dette fremjar
+        praksisar som deling av forskingsdata, publikasjonar, metodar, programvare og andre forskingsresultat,
+        og stør dermed opp om etterprøving, samarbeid og gjenbruk av forskingsresultat.
+    aliases:
+      en:
+      - open research
+      nn:
+      - open forsking
+      - open science
+      - åpen forskning
+    related:
+    - research-data
+    - open-access
+    - fair
+    further_reading:
+    - title: 'Framework for Open and Reproducible Research Training (FORRT): Open Science'
+      url: https://forrt.org/glossary/english/open_science/
+      open: new-tab
+    status: active
+  persistent-identifier:
+    label:
+      en: Persistent Identifier (PID)
+      nn: persistent identifikator (PID)
+    short_definition:
+      en: A long-lasting identifier for a resource, person, organization, or other entity.
+      nn: Ein varig identifikator for ein ressurs, person, organisasjon eller anna eining.
+    definition:
+      en: >
+        A Persistent Identifier (PID) is a stable identifier designed to remain valid over time and provide
+        a reliable reference to a specific entity. PIDs can be assigned to digital resources such as datasets
+        and publications, as well as to researchers, organizations, and other entities. Examples include
+        [REUSE: terms/digital-object-identifier | DOI] identifiers for datasets, [REUSE: terms/open-researcher-and-contributor-id | ORCID] identifiers for researchers, and [REUSE: terms/research-organization-registry | ROR ] identifiers for research organizations.
+      nn: >
+        Ein persistent identifikator (PID) er ein varig identifikator som er laga for å vera gyldig over
+        tid og gje ei påliteleg tilvising til ei bestemt eining. PID-ar kan tildelast digitale ressursar
+        som datasett og publikasjonar, men òg forskarar, organisasjonar og andre einingar. Døme er [REUSE:
+        terms/digital-object-identifier | DOI-identifikatorar] for datasett, [REUSE: terms/open-researcher-and-contributor-id | ORCID-identifikatorar] for forskarar og [REUSE: terms/research-organization-registry | ROR-identifikatorar] for forskingsorganisasjonar.
+    aliases:
+      en:
+      - PID
+      nn:
+      - PID
+      - varig identifikator
+      - varig ID
+    related:
+    - digital-object-identifier
+    - open-researcher-and-contributor-id
+    - research-organization-registry
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Persistent Identifier (PID)'
+      url: https://terms.codata.org/rdmt/persistent-identifier
+      open: new-tab
+    status: active
+  preservation:
+    label:
+      en: Preservation
+      nn: langtidsbevaring
+    short_definition:
+      en: Activities that help ensure the long-term accessibility and usability of digital information.
+      nn: Tiltak som bidreg til langsiktig tilgang til og bruk av digital informasjon.
+    definition:
+      en: >
+        Preservation consists of organizational and technical measures intended to keep datasets accessible,
+        understandable, and usable over time.
+      nn: >
+        Langtidsbevaring omfattar organisatoriske og tekniske tiltak som skal halda datasett tilgjengelege,
+        forståelege og brukbare over tid.
+    aliases:
+      en:
+      - digital preservation
+      nn: []
+    related:
+    - dataset
+    - repository
+    - trustworthy-digital-repository
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Preservation'
+      url: https://terms.codata.org/rdmt/preservation
+      open: new-tab
+    status: active
+  preview-url:
+    label:
+      en: Preview URL
+      nn: Preview URL
+    short_definition:
+      en: A private link that provides read-only access to an unpublished dataset.
+      nn: Ei privat lenkje som gjev lesetilgang til eit upublisert datasett.
+    definition:
+      en: >
+        A Preview URL is a private link that provides access to an unpublished dataset without making
+        the dataset publicly accessible. Users accessing a dataset via a Preview URL can view and download
+        the dataset and its files, but cannot edit the dataset. In DataverseNO, Preview URLs are typically
+        created by curators upon request and may be used, for example, to provide access to editors and
+        reviewers during peer review of a publication manuscript related to the dataset.
+      nn: >
+        Ein Preview URL er ei privat lenkje som gir tilgang til eit upublisert datasett utan å gjera datasettet ope tilgjengeleg. Brukarar som får tilgang via ein Preview URL, kan sjå og lasta ned datasettet og filene, men kan ikkje redigera datasettet. I DataverseNO blir preview-URL-ar vanlegvis oppretta av kuratorar på førespurnad og kan til dømes brukast til å gje redaktørar og fagfellar tilgang under fagfellevurdering av eit manuskript som er knytt til datasettet.
+    aliases:
+      en:
+      - private URL
+      nn:
+      - førehandsvisingslenkje
+      - forhandsvisningslenke
+    related:
+    - dataset
+    - double-blind-peer-review
+    - curation
+    further_reading: []
+    status: active
+  readme-file:
+    label:
+      en: README File
+      nn: README-fil
+    short_definition:
+      en: A document that explains a dataset and its contents.
+      nn: Eit dokument som forklarar eit datasett og innhaldet i det.
+    definition:
+      en: >
+        A README file is a document that provides the information needed to understand, interpret, and
+        reuse a dataset. In DataverseNO, a README file is a mandatory component of all datasets and must
+        be based on an approved README template or contain equivalent information. Typical contents include
+        information about the dataset, methods, files, terms of reuse, and contact details.
+      nn: >
+        Ei README-fil er eit dokument som gjev informasjonen som trengst for å forstå, tolka og bruka
+        eit datasett på nytt. I DataverseNO er README-fil obligatorisk for alle datasett og må byggja
+        på ein godkjend README-mal eller innehalda tilsvarande informasjon. Typisk innhald er informasjon
+        om datasettet, metodar, filer, bruksvilkår og kontaktopplysningar.
+    aliases:
+      en:
+      - README
+      - README template
+      nn:
+      - README
+    related:
+    - dataset
+    - metadata
+    - dataverseno-deposit-guidelines
+    further_reading:
+    - link_id: dataverseno-readme-template-general
+    - link_id: dataverseno-readme-template-software-code
+    status: active
+  repository:
+    label:
+      en: Repository
+      nn: arkiv
+    short_definition:
+      en: A service used to manage, preserve, and provide access to digital resources.
+      nn: Ei teneste som blir brukt til å forvalta, bevara og gje tilgang til digitale ressursar.
+    definition:
+      en: >
+        A repository is a service that stores, manages, preserves, and provides access to digital resources
+        such as datasets. In addition to providing storage, repositories support activities such as discovery, citation, curation, sharing, preservation, and reuse. DataverseNO is a repository for research data.
+      nn: >
+        Eit arkiv er ei teneste som lagrar, forvaltar, bevarer og gjev tilgang til digitale ressursar
+        som til dømes datasett. I tillegg til lagring støttar arkiv gjenfinning, sitering, kuratering,
+        deling, bevaring og gjenbruk. DataverseNO er eit arkiv for forskingsdata.
+    aliases:
+      en:
+      - data repository
+      nn:
+      - repository
+      - dataarkiv
+      - forskingsdataarkiv
+      - forskningsdataarkiv
+    related:
+    - dataset
+    - collection
+    - preservation
+    - trustworthy-digital-repository
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Repository'
+      url: https://terms.codata.org/rdmt/repository
+      open: new-tab
+    status: active
+  research-data:
+    label:
+      en: Research Data
+      nn: forskingsdata
+    short_definition:
+      en: Data created, collected, observed, measured, or generated during research.
+      nn: Data som blir skapte, samla inn, observerte, målte eller genererte i forsking.
+    definition:
+      en: >
+        Research data are data that are created, collected, observed, measured, or generated during research
+        and that are used as evidence in the research process or needed to validate research findings.
+        Research data may take many forms, including measurements, observations, survey responses, interview
+        transcripts, images, audio recordings, software-generated data, models, and code.
+      nn: >
+        Forskingsdata er data som blir skapte, samla inn, observerte, målte eller genererte i forsking,
+        og som blir brukte som dokumentasjon i forskingsprosessen eller trengst for å validera forskingsfunn.
+        Forskingsdata kan ha mange former, til dømes målingar, observasjonar, svar frå spørjeundersøkingar,
+        intervjutranskripsjonar, bilete, lydopptak, programvaregenererte data, modellar og kode.
+    aliases:
+      en:
+      - research datasets
+      nn:
+      - forskningsdata
+    related:
+    - dataset
+    - metadata
+    - fair
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Research Data'
+      url: https://terms.codata.org/rdmt/research-data
+      open: new-tab
+    status: active
+  research-organization-registry:
+    label:
+      en: Research Organization Registry (ROR)
+      nn: Research Organization Registry (ROR)
+    short_definition:
+      en: A global identifier system for research organizations.
+      nn: Eit globalt register for informasjon om forskingsorganisasjonar.
+    definition:
+      en: >
+        The Research Organization Registry (ROR) provides unique identifiers for research organizations
+        and helps connect datasets, publications, researchers, and institutions.
+      nn: >
+        Research Organization Registry (ROR) tildeler unike identifikatorar til forskingsorganisasjonar
+        og hjelper til med å knyta datasett, publikasjonar, forskarar og institusjonar saman.
+    aliases:
+      en:
+      - ROR
+      nn:
+      - ROR
+    related:
+    - persistent-identifier
+    - open-researcher-and-contributor-id
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Research Organization Registry (ROR)'
+      url: https://terms.codata.org/rdmt/research-organisation-registry
+      open: new-tab
+    status: active
+  terms-of-use:
+    label:
+      en: Terms of Use
+      nn: bruksvilkår
+    short_definition:
+      en: Conditions that govern how a dataset may be accessed and reused.
+      nn: Vilkår som regulerer korleis eit datasett kan aksesserast og brukast på nytt.
+    definition:
+      en: >
+        Terms of Use specify the permissions, restrictions, responsibilities, and conditions that apply
+        when using a dataset. Terms of Use may take different forms, including standardized [REUSE: terms/license | licenses] and customized reuse conditions defined by the depositor. In DataverseNO, every dataset must have Terms of Use, whenever possible in the form of a standardized open license to facilitate the discovery, sharing, and reuse of research data.
+      nn: >
+        Bruksvilkår fastset kva løyve, avgrensingar, ansvar og vilkår som gjeld ved bruk av eit datasett.
+        Bruksvilkår kan ha ulike former, mellom anna standardiserte [REUSE: terms/license | lisensar]
+        og tilpassa gjenbruksvilkår definerte av deponenten. I DataverseNO må alle datasett ha bruksvilkår,
+        så langt som mogleg i form av ein standardisert open lisens for å gjera det lettare å finna, dela
+        og bruka forskingsdata på nytt.
+    aliases:
+      en:
+      - use conditions
+      nn:
+      - bruksbetingelser
+      - vilkår for bruk
+      - terms of use
+    related:
+    - license
+    - dataset
+    - data-requiring-protection
+    further_reading: []
+    status: active
+  trustworthy-digital-repository:
+    label:
+      en: Trustworthy Digital Repository (TDR)
+      nn: påliteleg digitalt arkiv (TDR)
+    short_definition:
+      en: A repository that demonstrates reliable stewardship of digital resources.
+      nn: Eit arkiv som har dokumentert at det forvaltar sine digitale ressursar på ein påliteleg måte.
+    definition:
+      en: >
+        A Trustworthy Digital Repository (TDR) is a repository that follows recognized standards and practices for the long-term management, preservation, and provision of access to digital resources.
+      nn: >
+        Eit påliteleg digitalt arkiv (TDR) er eit arkiv som følgjer anerkjende standardar og praksisar
+        for langsiktig forvaltning, bevaring og tilgang til digitale ressursar.
+    aliases:
+      en:
+      - TDR
+      nn:
+      - TDR
+      - Trustworthy Digital Repository
+    related:
+    - coretrustseal
+    - repository
+    - preservation
+    further_reading: []
+    status: active
+  version-control:
+    label:
+      en: Version Control
+      nn: versjonskontroll
+    short_definition:
+      en: Management of changes made to a dataset over time.
+      nn: Forvaltning av endringar i eit datasett over tid.
+    definition:
+      en: >
+        Version Control is the practice of recording and managing changes to a dataset and its metadata.
+        In DataverseNO, changes made after publication result in a new dataset version while previous
+        versions remain accessible.
+      nn: >
+        Versjonskontroll er praksisen med å registrera og forvalta endringar i eit datasett og metadataa
+        til datasettet. I DataverseNO fører endringar etter publisering til ein ny versjon av datasettet,
+        medan tidlegare versjonar framleis er tilgjengelege.
+    aliases:
+      en:
+      - versioning
+      nn:
+      - versjonering
+    related:
+    - dataset
+    - metadata
+    - preservation
+    further_reading:
+    - title: 'CODATA Research Data Management Terminology: Version Control'
+      url: https://terms.codata.org/rdmt/version-control
+      open: new-tab
+    status: active

@@ -1,0 +1,71 @@
+version: 0.1
+
+# Reusable values for the DataverseNO Information Website.
+#
+# Principles:
+# - IDs are stable and language-neutral.
+# - Values are maintained once.
+# - Localized rendering is handled through language-specific labels or message patterns.
+# - Page content should reference the ID, not duplicate the value manually.
+#
+# Rendering rule:
+#   When rendering a reusable value for a given language, placeholders in
+#   render.<language> are resolved using fields from the same entry.
+#   The placeholder {value} resolves to value.
+#   The placeholder {unit} resolves to unit.<language>.
+
+
+values:
+  dataset-size-limit:
+    value: 5
+    unit: TB
+    render:
+      en: "{value} {unit}"
+      nn: "{value} {unit}"
+    description:
+      en: Recommended dataset size limit.
+      nn: Tilrådd samla filstorleiksgrense for datasett.
+
+  embargo-period:
+    value: 2
+    unit:
+      en: years
+      nn: år
+    render:
+      en: "{value} {unit}"
+      nn: "{value} {unit}"
+    description:
+      en: Recommended maximum number of files in a dataset.
+      nn: Tilrådd øvre tal på filer i eit datasett.
+
+  file-number-limit:
+    value: 300
+    unit:
+      en: files
+      nn: filer
+    render:
+      en: "{value} {unit}"
+      nn: "{value} {unit}"
+    description:
+      en: Recommended maximum number of files in a dataset.
+      nn: Tilrådd øvre tal på filer i eit datasett.
+
+  file-size-limit:
+    value: 100
+    unit: GB
+    render:
+      en: "{value} {unit}"
+      nn: "{value} {unit}"
+    description:
+      en: Recommended file size limit.
+      nn: Tilrådd storleiksgrense for enkeltfil.
+
+  upload-size-limit:
+    value: 200
+    unit: GB
+    render:
+      en: "{value} {unit}"
+      nn: "{value} {unit}"
+    description:
+      en: Recommended size limit for individual upload.
+      nn: Tilrådd samla filstorleik for enkeltopplasting.

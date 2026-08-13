@@ -1,0 +1,441 @@
+# Partner directory for info.dataverse.no
+# Source of truth for pages containing information about DataverseNO partner institutions, in English and Norwegian Nynorsk.
+#
+# Notes:
+# - Keep one entry per DataverseNO partner institution.
+# - Each partner should have at least one contact channel: support.email or support.url.
+# - Institutional logos are language-specific and stored under:
+#     assets/logos/institutions/en/
+#     assets/logos/institutions/nn/
+# - Logo filenames currently follow the pattern <institution-id>-logo.png.
+# - Use sort_name.en and sort_name.nn as human-readable sorting names.
+# - The page generator should sort by sort_name[lang] using Norwegian-aware collation,
+#   so that Æ, Ø, Å are sorted after Z.
+# - Norwegian/Nynorsk display names should be reviewed by partner institutions where relevant.
+
+repository_management:
+  id: dataverseno
+  sort_name:
+    en: DataverseNO Repository Management
+    nn: DataverseNO-arkivforvaltninga
+  name:
+    en: DataverseNO Repository Management
+    nn: DataverseNO-arkivforvaltninga
+  logo:
+    en: assets/logos/dataverseno-logo.png
+    nn: assets/logos/dataverseno-logo.png
+  support:
+    email: support@dataverse.no
+    url: https://info.dataverse.no/contact/
+  search_aliases:
+    - DataverseNO Repository Management
+    - DataverseNO-arkivforvaltninga
+    - DataverseNO
+    - repository management
+    - arkivforvaltning
+    - arkivforvaltninga
+    - support@dataverse.no
+    - forvaltning
+    - management
+    - administrator
+    - admin
+
+partners:
+  - id: hiof
+    sort_name:
+      en: Østfold University of Applied Sciences
+      nn: Høgskolen i Østfold
+    name:
+      en: Østfold University of Applied Sciences
+      nn: Høgskolen i Østfold
+    logo:
+      en: assets/logos/institutions/en/hiof-logo.png
+      nn: assets/logos/institutions/nn/hiof-logo.png
+    support:
+      email: kristian.s.norsted@hiof.no
+      url: null
+    search_aliases:
+      - Østfold University of Applied Sciences
+      - Høgskolen i Østfold
+      - HiØ
+      - HIOF
+      - Østfold
+      - Ostfold
+      - Østfold University College
+      - Østfold University of Applied Sciences
+      - Høgskolen i Østfold
+      - Hogskolen i Ostfold
+      - Høgskulen i Østfold
+      - Høgskulen i Ostfold
+      - Høyskolen i Østfold
+      - Hoyskolen i Ostfold
+
+  - id: hvl
+    sort_name:
+      en: Western Norway University of Applied Sciences
+      nn: Høgskulen på Vestlandet
+    name:
+      en: Western Norway University of Applied Sciences
+      nn: Høgskulen på Vestlandet
+    logo:
+      en: assets/logos/institutions/en/hvl-logo.png
+      nn: assets/logos/institutions/nn/hvl-logo.png
+    support:
+      email: dataverse@hvl.no
+      url: null
+    search_aliases:
+      - Western Norway University of Applied Sciences
+      - Høgskulen på Vestlandet
+      - HVL
+      - Western Norway University of Applied Sciences
+      - Høgskulen på Vestlandet
+      - Hogskulen pa Vestlandet
+      - Høgskolen på Vestlandet
+      - Hogskolen på Vestlandet
+      - Vestlandet
+
+  - id: inn
+    sort_name:
+      en: University of Inland Norway
+      nn: Universitetet i Innlandet
+    name:
+      en: University of Inland Norway
+      nn: Universitetet i Innlandet
+    logo:
+      en: assets/logos/institutions/en/inn-logo.png
+      nn: assets/logos/institutions/nn/inn-logo.png
+    support:
+      email: mahmood.khosrowjerdi@inn.no
+      url: null
+    search_aliases:
+      - University of Inland Norway
+      - Universitetet i Innlandet
+      - INN
+      - Inland Norway University
+      - Inland Norway University of Applied Sciences
+      - University of Inland Norway
+      - Høgskolen i Innlandet
+      - Hogskolen i Innlandet
+      - Høyskolen i Innlandet
+      - Hoyskolen i Innlandet
+      - Innlandet
+
+  - id: mf
+    sort_name:
+      en: MF Norwegian School of Theology, Religion and Society
+      nn: MF vitenskapelig høyskole
+    name:
+      en: MF Norwegian School of Theology, Religion and Society
+      nn: MF vitenskapelig høyskole
+    logo:
+      en: assets/logos/institutions/en/mf-logo.png
+      nn: assets/logos/institutions/nn/mf-logo.png
+    support:
+      email: Henrik.H.Andersen@mf.no
+      url: null
+    search_aliases:
+      - MF Norwegian School of Theology, Religion and Society
+      - MF vitenskapelig høyskole
+      - MF
+      - MF Norwegian School of Theology Religion and Society
+      - MF vitenskapelig høyskole for teologi, religion og samfunn
+      - MF vitenskapelig hoyskole for teologi, religion og samfunn
+      - MF vitenskapelig høgskole for teologi, religion og samfunn
+      - MF vitenskapelig hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskole for teologi, religion og samfunn
+      - MF vitskapleg hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskule for teologi, religion og samfunn
+      - MF vitskapleg hogskule for teologi, religion og samfunn
+      - MF vitenskapelig høyskole
+      - MF vitenskapelig hoyskole
+      - MF vitenskapelig høgskole
+      - MF vitenskapelig hogskole
+      - MF vitskapleg høgskole
+      - MF vitskapleg hogskole
+      - MF vitskapleg høgskule
+      - MF vitskapleg hogskule
+      - theology
+      - teologi
+      - religion
+
+  - id: nibio
+    sort_name:
+      en: Norwegian Institute of Bioeconomy Research (NIBIO)
+      nn: Norsk institutt for bioøkonomi (NIBIO)
+    name:
+      en: Norwegian Institute of Bioeconomy Research (NIBIO)
+      nn: Norsk institutt for bioøkonomi (NIBIO)
+    logo:
+      en: assets/logos/institutions/en/nibio-logo.png
+      nn: assets/logos/institutions/nn/nibio-logo.png
+    support:
+      email: hanne.tvete@nibio.no
+      url: null
+    search_aliases:
+      - Norwegian Institute of Bioeconomy Research (NIBIO)
+      - Norsk institutt for bioøkonomi (NIBIO)
+      - NIBIO
+      - Norwegian Institute of Bioeconomy Research
+      - Norsk institutt for bioøkonomi
+      - Norsk institutt for biookonomi
+      - bioeconomy
+      - bioøkonomi
+      - biookonomi
+
+  - id: nmbu
+    sort_name:
+      en: Norwegian University of Life Sciences (NMBU)
+      nn: Noregs miljø- og biovitskaplege universitet (NMBU)
+    name:
+      en: Norwegian University of Life Sciences (NMBU)
+      nn: Noregs miljø- og biovitskaplege universitet (NMBU)
+    logo:
+      en: assets/logos/institutions/en/nmbu-logo.png
+      nn: assets/logos/institutions/nn/nmbu-logo.png
+    support:
+      email: open-data@nmbu.no
+      url: null
+    search_aliases:
+      - Norwegian University of Life Sciences (NMBU)
+      - Noregs miljø- og biovitskaplege universitet (NMBU)
+      - NMBU
+      - Norwegian University of Life Sciences
+      - Noregs miljø- og biovitskaplege universitet
+      - Norges miljø- og biovitenskapelige universitet
+      - Ås
+      - As
+
+  - id: nofima
+    sort_name:
+      en: Nofima
+      nn: Nofima
+    name:
+      en: Nofima
+      nn: Nofima
+    logo:
+      en: assets/logos/institutions/en/nofima-logo.png
+      nn: assets/logos/institutions/nn/nofima-logo.png
+    support:
+      email: Kjetil.Aune@Nofima.no
+      url: null
+    search_aliases:
+      - Nofima
+      - Norwegian food research institute
+      - Matforskningsinstituttet
+      - Norwegian Institute of Food, Fisheries and Aquaculture Research
+
+  - id: nord
+    sort_name:
+      en: Nord University
+      nn: Nord universitet
+    name:
+      en: Nord University
+      nn: Nord universitet
+    logo:
+      en: assets/logos/institutions/en/nord-logo.png
+      nn: assets/logos/institutions/nn/nord-logo.png
+    support:
+      email: research-data@nord.no
+      url: null
+    search_aliases:
+      - Nord
+      - Nord University
+      - Nord universitet
+      - Bodø
+      - Bodo
+
+  - id: ntnu
+    sort_name:
+      en: NTNU – Norwegian University of Science and Technology
+      nn: NTNU – Noregs teknisk-naturvitskaplege universitet
+    name:
+      en: NTNU – Norwegian University of Science and Technology
+      nn: NTNU – Noregs teknisk-naturvitskaplege universitet
+    logo:
+      en: assets/logos/institutions/en/ntnu-logo.png
+      nn: assets/logos/institutions/nn/ntnu-logo.png
+    support:
+      email: null
+      url: https://i.ntnu.no/researchdata
+    search_aliases:
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+
+  - id: oslomet
+    sort_name:
+      en: OsloMet – Oslo Metropolitan University
+      nn: OsloMet – storbyuniversitetet
+    name:
+      en: OsloMet – Oslo Metropolitan University
+      nn: OsloMet – storbyuniversitetet
+    logo:
+      en: assets/logos/institutions/en/oslomet-logo.png
+      nn: assets/logos/institutions/nn/oslomet-logo.png
+    support:
+      email: ub.forskningsstotte@oslomet.no
+      url: null
+    search_aliases:
+      - OsloMet – Oslo Metropolitan University
+      - OsloMet – storbyuniversitetet
+      - OsloMet
+      - Oslo Metropolitan University
+      - Storbyuniversitetet
+      - Oslo
+
+  - id: uia
+    sort_name:
+      en: University of Agder
+      nn: Universitetet i Agder
+    name:
+      en: University of Agder
+      nn: Universitetet i Agder
+    logo:
+      en: assets/logos/institutions/en/uia-logo.png
+      nn: assets/logos/institutions/nn/uia-logo.png
+    support:
+      email: igor.goncharenko@uia.no
+      url: null
+    search_aliases:
+      - UiA
+      - University of Agder
+      - Universitetet i Agder
+      - Agder
+
+  - id: uib
+    sort_name:
+      en: University of Bergen
+      nn: Universitetet i Bergen
+    name:
+      en: University of Bergen
+      nn: Universitetet i Bergen
+    logo:
+      en: assets/logos/institutions/en/uib-logo.png
+      nn: assets/logos/institutions/nn/uib-logo.png
+    support:
+      email: research-data@uib.no
+      url: https://www.uib.no/en/ub/111372/open-access-research-data
+    search_aliases:
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+
+  - id: uio
+    sort_name:
+      en: University of Oslo
+      nn: Universitetet i Oslo
+    name:
+      en: University of Oslo
+      nn: Universitetet i Oslo
+    logo:
+      en: assets/logos/institutions/en/uio-logo.png
+      nn: assets/logos/institutions/nn/uio-logo.png
+    support:
+      email: datakurator@ub.uio.no
+      url: https://www.ub.uio.no/skrive-publisere/dataarkivering/
+    search_aliases:
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+
+  - id: uis
+    sort_name:
+      en: University of Stavanger
+      nn: Universitetet i Stavanger
+    name:
+      en: University of Stavanger
+      nn: Universitetet i Stavanger
+    logo:
+      en: assets/logos/institutions/en/uis-logo.png
+      nn: assets/logos/institutions/nn/uis-logo.png
+    support:
+      email: datahandtering@uis.no
+      url: https://www.uis.no/en/library/researchdata
+    search_aliases:
+      - UiS
+      - University of Stavanger
+      - Universitetet i Stavanger
+      - Stavanger
+      - datahandtering
+
+  - id: uit
+    sort_name:
+      en: UiT The Arctic University of Norway
+      nn: UiT Noregs arktiske universitet
+    name:
+      en: UiT The Arctic University of Norway
+      nn: UiT Noregs arktiske universitet
+    logo:
+      en: assets/logos/institutions/en/uit-logo.png
+      nn: assets/logos/institutions/nn/uit-logo.png
+    support:
+      email: researchdata@uit.no
+      url: https://uit.no/researchdata
+    search_aliases:
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+
+  - id: usn
+    sort_name:
+      en: University of South-Eastern Norway
+      nn: Universitetet i Søraust-Noreg
+    name:
+      en: University of South-Eastern Norway
+      nn: Universitetet i Søraust-Noreg
+    logo:
+      en: assets/logos/institutions/en/usn-logo.png
+      nn: assets/logos/institutions/nn/usn-logo.png
+    support:
+      email: dataverseno@usn.no
+      url: null
+    search_aliases:
+      - USN
+      - University of South-Eastern Norway
+      - Universitetet i Søraust-Noreg
+      - Universitetet i Soraust-Noreg
+      - Universitetet i Sørøst-Norge
+      - Universitetet i Sorost-Norge
+      - South-Eastern Norway
+      - Søraust-Noreg
+      - Soraust-Noreg
+      - Sørøst-Norge
+      - Sorost-Norge
+
+  - id: vid
+    sort_name:
+      en: VID Specialized University
+      nn: VID vitenskapelige høgskole
+    name:
+      en: VID Specialized University
+      nn: VID vitenskapelige høgskole
+    logo:
+      en: assets/logos/institutions/en/vid-logo.png
+      nn: assets/logos/institutions/nn/vid-logo.png
+    support:
+      email: jennifer.thogersen@vid.no
+      url: null
+    search_aliases:
+      - VID
+      - VID Specialized University
+      - VID vitenskapelige høgskole
+      - VID vitenskapelige hogskole
+      - VID vitenskapelige høyskole
+      - VID vitenskapelige hoyskole
+      - VID vitskaplege høgskole
+      - VID vitskaplege hogskole
+      - VID vitskaplege høgskule
+      - VID vitskaplege hogskule
