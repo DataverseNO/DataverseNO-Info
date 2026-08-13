@@ -1,22 +1,22 @@
 site_name: DataverseNO
-site_url: https://DataverseNO.github.io/DataverseNO-Info
+site_url: https://info.dataverse.no
 site_description: Documentation and information about the DataverseNO research data repository
 repo_url: https://github.com/DataverseNO/DataverseNO-Info
 repo_name: DataverseNO/DataverseNO-Info
 edit_uri: edit/main/docs/
 
 docs_dir: docs
+hooks:
+  - hooks/data_store.py
+  - hooks/reuse_resolver.py
+  - hooks/generated_components.py
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.tabs
-    - navigation.sections
-    - navigation.breadcrumbs
     - navigation.top
-    - navigation.indexes
-    - search.highlight
-    - search.suggest
     - toc.follow
     - content.tooltips
     - content.action.edit
@@ -27,8 +27,14 @@ theme:
       accent: custom
 
 extra_css:
-  - stylesheets/extra.css
-  - stylesheets/dataverseno.css
+  - assets/stylesheets/dataverseno.css
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/people.css
+  - assets/stylesheets/contact.css
+
+extra_javascript:
+  - assets/javascripts/people-filter.js
+  - assets/javascripts/contact-filter.js
 
 markdown_extensions:
   - attr_list
@@ -57,28 +63,6 @@ plugins:
         - locale: nn
           name: Norsk (Nynorsk)
           build: true
-          nav_translations:
-            Home: Heim
-            About: Om DataverseNO
-            What is DataverseNO?: Kva er DataverseNO?
-            Who can use DataverseNO?: Kven kan bruke DataverseNO?
-            Why use DataverseNO?: Kvifor bruke DataverseNO?
-            Policy Framework: Rammedokument
-            Deposit Guidelines: Retningsliner for deponering
-            Quick Guide: Hurtigguide
-            Prepare Your Data: Klargjere data
-            Deposit Your Data: Deponere data
-            Refer to Your Data: Vise til data
-            Modify Your Data: Endre data
-            Admin: Admin
-            Curation Guidelines: Retningsliner for kuratering
-            Curation Labels: Kurateringsetikettar
-            Double-Blind Peer Review: Dobbeltblind fagfellevurdering
-            Other Curation Tasks: Andre kurateringsoppgåver
-            Collection Management: Samlingsforvaltning
-            Repository Management: Depotforvaltning
-            News: Nyheiter
-            Contact: Kontakt
   - blog:
       blog_dir: en/news
       post_url_format: "{slug}"
@@ -96,26 +80,15 @@ nav:
     - Who can use DataverseNO?: en/about/who-can-use-dataverseno.md
     - Why use DataverseNO?: en/about/why-use-dataverseno.md
     - Policy Framework: en/about/policy-framework.md
+    - People: en/about/people.md
+    - Glossary: en/glossary/index.md
   - Deposit Guidelines:
     - en/deposit/index.md
-    - Quick Guide: en/deposit/quick-guide.md
-    - Prepare Your Data: en/deposit/prepare-your-data.md
-    - Deposit Your Data: en/deposit/deposit-your-data.md
-    - Refer to Your Data: en/deposit/refer-to-your-data.md
-    - Modify Your Data: en/deposit/modify-your-data.md
-  - Admin:
-    - en/admin/index.md
-    - Curation Guidelines:
-      - en/admin/curation-guidelines/index.md
-      - Curation Labels: en/admin/curation-guidelines/curation-labels.md
-      - Double-Blind Peer Review: en/admin/curation-guidelines/double-blind-peer-review.md
-      - Metadata: en/admin/curation-guidelines/metadata.md
-      - Files: en/admin/curation-guidelines/files.md
-      - Terms: en/admin/curation-guidelines/terms.md
-      - Return to Author: en/admin/curation-guidelines/return-to-author.md
-      - Publish Dataset: en/admin/curation-guidelines/publish.md
-      - Other Curation Tasks: en/admin/curation-guidelines/other-tasks.md
-    - Collection Management: en/admin/collection-management.md
-    - Repository Management: en/admin/repository-management.md
+    - Quick guide and checklist: en/deposit/deposit-quick-guide.md
+    - "Step 1: Prepare your data": en/deposit/prepare-your-data.md
+    - "Step 2: Deposit your data": en/deposit/deposit-your-data.md
+    - "Step 3: Curation and publishing": en/deposit/publish-your-data.md
+    - "Step 4: Refer to your data": en/deposit/refer-to-your-data.md
+    - "Step 5: Modify your data": en/deposit/modify-your-data.md
   - News: en/news/index.md
   - Contact: en/contact/index.md
