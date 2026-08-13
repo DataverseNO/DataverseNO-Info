@@ -1029,6 +1029,84 @@ git commit -m "chore: final verification pass for info.dataverse.no rebuild"
 
 ---
 
+### Task 12: Resolve `[PAGE: ...]` cross-reference markers
+
+**Added mid-execution.** Task 6's review surfaced that `[PAGE: <path>[#anchor] | <label>]` cross-page reference markers (spec §5.4.1 — used throughout the migrated content for internal links, e.g. `[PAGE: deposit/index | the Deposit Guidelines]` or `[PAGE: why-use-dataverseno#curation-and-preservation | curated]`) are never resolved by any hook — only `[REUSE: ...]` is handled. A repo-wide grep found 104 occurrences across `docs/en/` and `docs/nn/` real content pages (About, Deposit Guidelines, glossary definitions), not just glossary. Left unresolved, these render as literal broken bracket-text on the live site. This must be fixed before Task 11's final verification and before Rieke can meaningfully test the site.
+
+**Files:**
+- Modify: `hooks/reuse_resolver.py` — add page-marker resolution alongside the existing REUSE resolution
+- Modify: `scripts/validate_site_build.py` — already has a `[PAGE:` detection pattern (added during Task 6's fix round); no change needed here, it's the check that proves this task worked
+- Modify: `scripts/validate_language_parity.py` (if already written by Task 9 at execution time) or otherwise leave for Task 9 to extend — this task only needs to make `[PAGE: ...]` resolve at build time, not add new source-tree validation
+
+**Interfaces:**
+- Consumes: `hooks.reuse_resolver.page_language(page)` (existing), `hooks.data_store` is NOT needed for this — `[PAGE: ...]` resolution is purely structural (build a relative URL), it doesn't consult `data/*.yml`
+- Produces: `hooks.reuse_resolver.resolve_page_markers(markdown: str, lang: str) -> str`, called from the same `on_page_markdown` that already calls `resolve_reuse_markers`
+
+**Marker syntax (confirmed from real content):**
+- `[PAGE: <page-path> | <label>]` — link to another page, e.g. `[PAGE: deposit/index | the Deposit Guidelines]`
+- `[PAGE: <page-path>#<anchor> | <label>]` — link to a section within another page, e.g. `[PAGE: why-use-dataverseno#curation-and-preservation | curated]`
+- `[PAGE: <anchor-only>]` or `[PAGE: <path> | <label>]` with no explicit label segment also appears in a few places (e.g. `[PAGE: about/why-use-dataverseno#credit-and-visibility]` with no `| label` — the bracket text itself doubles as the label) — handle the no-label case by using the anchor/path text as the visible label when no `|` is present.
+- `<page-path>` is relative to the current page's language root and does NOT include a leading `en/`/`nn/` or a `.md` extension — e.g. `deposit/index`, `prepare-your-data` (same directory as current page when no slash), `about/why-use-dataverseno`, `glossary/index`.
+- Per spec §5.4.1, the target page is always in the SAME language as the current page (shared page slugs, localized anchors) — resolve `<page-path>` against the current page's own language root (`en/` or `nn/`), never the other language.
+
+- [ ] **Step 1: Write `resolve_page_markers` in `hooks/reuse_resolver.py`**
+
+Add alongside the existing `_MARKER`/`resolve_reuse_markers` code:
+
+```python
+_PAGE_MARKER = re.compile(r"\[PAGE:\s*(?P<ref>[^\|\]]+?)(?:\s*\|\s*(?P<label>[^\]]+))?\]")
+
+
+def resolve_page_markers(markdown: str, lang: str) -> str:
+    def _replace(match: re.Match) -> str:
+        ref = match.group("ref").strip()
+        label = (match.group("label") or ref).strip()
+        path, _, anchor = ref.partition("#")
+        path = path.strip()
+        if path in ("", "index"):
+            href = f"/{lang}/"
+        else:
+            href = f"/{lang}/{path}/"
+        if anchor:
+            href += f"#{anchor.strip()}"
+        return f'<a href="{href}">{label}</a>'
+
+    return _PAGE_MARKER.sub(_replace, markdown)
+```
+
+- [ ] **Step 2: Call it from `on_page_markdown` in `hooks/reuse_resolver.py`**, right after the existing `resolve_reuse_markers` call, so both marker types resolve in the same pass:
+
+```python
+def on_page_markdown(markdown, page, config, files, **kwargs):
+    lang = page_language(page)
+    markdown = resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri)
+    markdown = resolve_page_markers(markdown, lang)
+    return markdown
+```
+
+(Keep whatever exact signature `resolve_reuse_markers` already has from Task 3's fix round — this step only adds the second call, don't change the first.)
+
+- [ ] **Step 3: Handle `[PAGE: ...]` markers embedded in `data/terms.yml` glossary definitions too**
+
+`hooks/generated_components.py`'s `_glossary_term()` (Task 6) already threads definitions through `resolve_reuse_markers`. Add the same `resolve_page_markers` call there so glossary definitions resolve both marker types, matching how `on_page_markdown` handles them for regular pages.
+
+- [ ] **Step 4: Full build verification**
+
+```bash
+python -m mkdocs build
+python scripts/validate_site_build.py
+```
+Expected: the `[PAGE:` findings that `validate_site_build.py` started reporting during Task 6's fix round should now be zero. Manually spot check a few resolved links in the built HTML (e.g. `site/en/about/index.html` should contain `<a href="/en/glossary/">Glossary</a>` where the source had `[PAGE: glossary/index | Glossary]`) — confirm hrefs are well-formed and anchors are preserved where present.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add hooks/reuse_resolver.py hooks/generated_components.py
+git commit -m "feat: resolve [PAGE: ...] cross-reference markers at build time"
+```
+
+---
+
 ## Spec Coverage Note
 
 Spec §9 (Content Components: Navigation Cards, Resource Boxes, Buttons, Admonitions, Workflows) is not a separate task — `.navigation-card`, `.resource-card`, and button/workflow classes already exist in the current `docs/stylesheets/extra.css`, carried forward unmodified by Task 1. Verify during Task 11's manual walk that these still render correctly against the new content, but no new component CSS is needed unless that check finds a gap.
