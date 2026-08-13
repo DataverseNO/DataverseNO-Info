@@ -66,8 +66,8 @@
       <nav class="dvno-footer__section" aria-label="{{ is_nn and 'Juridisk informasjon' or 'Legal' }}">
         <h2 class="dvno-footer__heading">{{ is_nn and 'Juridisk informasjon' or 'Legal' }}</h2>
         <ul>
-          <li><a href="https://uit.no/personvern">{{ is_nn and 'Personvernerklæring' or 'Privacy Policy' }}</a></li>
-          <li><a href="https://uustatus.no/nb/erklaringer?agency=UiT">{{ is_nn and 'Tilgjengelegheitserklæring' or 'Accessibility Statement' }}</a></li>
+          <li><a href="https://doi.org/10.5281/zenodo.21848816" target="_blank" rel="noopener">{{ is_nn and 'Personvern' or 'Privacy Policy' }}</a></li>
+          <li><a href="https://uustatus.no/nn/erklaringer/publisert/8374ca6b-85e3-4b4c-9d8e-56d37d9b0088" target="_blank" rel="noopener">{{ is_nn and 'Tilgjengelegheitserklæring' or 'Accessibility Statement' }}</a></li>
         </ul>
       </nav>
       <nav class="dvno-footer__section" aria-label="{{ is_nn and 'Kontakt' or 'Contact' }}">
@@ -81,9 +81,9 @@
     <div class="dvno-footer__legal md-grid">
       <p>
         {% if is_nn %}
-          &copy; DataverseNO. Forskingsdata som er deponerte i DataverseNO, er gjorde tilgjengelege under lisensen Creative Commons CC0 1.0 Universal (Public Domain Dedication) dersom ikkje anna er oppgjeve. Bruk siteringsinformasjonen p&aring; landingssida til kvart datasett n&aring;r du siterer det.
+          I den grad det er mogleg, har DataverseNO fråskrive seg alt av opphavsrett og relaterte eller nærliggjande rettar til innhaldet som er publisert på denne nettstaden (info.dataverse.no), som beskrive i Creative Commons (CC0) Public Domain Dedication (https://creativecommons.org/publicdomain/zero/1.0/). I tråd med god skikk forventar vi at det blir vist til korrekt kjelde: DataverseNO-konsortiet. n.d. info.dataverse.no. Tilgjengeleg på https://info.dataverse.no/.
         {% else %}
-          &copy; DataverseNO. Research data deposited in DataverseNO is made available under a Creative Commons CC0 1.0 Universal (Public Domain Dedication) license unless stated otherwise. Please cite datasets using the citation information provided on each dataset's landing page.
+          To the extent possible, DataverseNO has waived all copyright and related or neighbouring rights to the content published on this website (info.dataverse.no), as described in the Creative Commons (CC0) Public Domain Dedication (https://creativecommons.org/publicdomain/zero/1.0/). Following good practice, we expect proper credit to be given to: DataverseNO Consortium. n.d. info.dataverse.no. Available at https://info.dataverse.no/.
         {% endif %}
       </p>
     </div>
