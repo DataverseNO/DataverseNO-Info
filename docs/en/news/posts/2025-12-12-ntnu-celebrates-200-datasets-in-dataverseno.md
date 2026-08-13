@@ -1,6 +1,6 @@
 ---
 title: NTNU Celebrates 200 Datasets in DataverseNO
-date: '2025-12-12'
+date: 2025-12-12
 author: Philipp Conzett
 tags:
 - news

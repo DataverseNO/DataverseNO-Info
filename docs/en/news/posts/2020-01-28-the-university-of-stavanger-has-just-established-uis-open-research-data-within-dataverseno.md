@@ -1,6 +1,6 @@
 ---
 title: The University of Stavanger has just established UiS Open Research Data within DataverseNO
-date: '2020-01-28'
+date: 2020-01-28
 author: Philipp Conzett
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: DataverseNO utilgjengeleg pga. oppgradering 24.-28. mars 2023
-date: '2023-03-17'
+date: 2023-03-17
 author: Philipp Conzett
 tags:
 - news

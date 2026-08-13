@@ -1,6 +1,6 @@
 ---
 title: OsloMet – storbyuniversitetet ny partnar i DataverseNO
-date: '2024-08-20'
+date: 2024-08-20
 author: Philipp Conzett
 tags:
 - news

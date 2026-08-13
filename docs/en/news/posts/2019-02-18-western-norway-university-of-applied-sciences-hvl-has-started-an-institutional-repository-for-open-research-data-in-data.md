@@ -1,6 +1,6 @@
 ---
 title: Western Norway University of Applied Sciences (HVL) has started an institutional repository for open research data in DataverseNO
-date: '2019-02-18'
+date: 2019-02-18
 author: Stein Høydalsvik
 tags:
 - news

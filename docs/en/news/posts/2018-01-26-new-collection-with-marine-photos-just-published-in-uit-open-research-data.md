@@ -1,6 +1,6 @@
 ---
 title: New collection with marine photos just published in UiT Open Research Data
-date: '2018-01-26'
+date: 2018-01-26
 author: Leif Longva
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Tromsø Geophysical Observatory (TGO) – A new collection in UiT Open Research Data
-date: '2018-10-15'
+date: 2018-10-15
 author: Philipp Conzett
 tags:
 - news

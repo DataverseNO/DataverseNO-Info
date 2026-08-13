@@ -1,6 +1,6 @@
 ---
 title: Ledig stilling som arkivforvaltar i DataverseNO
-date: '2025-09-05'
+date: 2025-09-05
 author: Philipp Conzett
 tags:
 - news

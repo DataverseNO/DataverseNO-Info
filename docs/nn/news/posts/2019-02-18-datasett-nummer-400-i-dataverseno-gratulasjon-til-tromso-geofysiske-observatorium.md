@@ -1,6 +1,6 @@
 ---
 title: 'Datasett #400 i DataverseNO – gratulasjon til Tromsø Geofysiske Observatorium'
-date: '2019-02-18'
+date: 2019-02-18
 author: Stein Høydalsvik
 tags:
 - news

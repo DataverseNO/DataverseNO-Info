@@ -1,6 +1,6 @@
 ---
 title: FAIRsFAIRs support for DataverseNO
-date: '2019-12-20'
+date: 2019-12-20
 author: Philipp Conzett
 tags:
 - news

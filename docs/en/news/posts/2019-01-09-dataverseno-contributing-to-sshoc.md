@@ -1,6 +1,6 @@
 ---
 title: DataverseNO contributing to SSHOC
-date: '2019-01-09'
+date: 2019-01-09
 author: Philipp Conzett
 tags:
 - news

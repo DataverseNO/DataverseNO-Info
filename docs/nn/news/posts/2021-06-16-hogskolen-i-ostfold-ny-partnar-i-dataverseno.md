@@ -1,6 +1,6 @@
 ---
 title: Høgskolen i Østfold ny partnar i DataverseNO
-date: '2021-06-16'
+date: 2021-06-16
 author: Philipp Conzett
 tags:
 - news

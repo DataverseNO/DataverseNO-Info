@@ -1,6 +1,6 @@
 ---
 title: DataverseNO is CoreTrustSeal certified
-date: '2020-03-30'
+date: 2020-03-30
 author: Philipp Conzett
 tags:
 - news

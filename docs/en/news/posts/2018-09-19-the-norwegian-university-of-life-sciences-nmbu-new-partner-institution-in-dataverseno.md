@@ -1,6 +1,6 @@
 ---
 title: The Norwegian University of Life Sciences (NMBU) new partner institution in DataverseNO
-date: '2018-09-19'
+date: 2018-09-19
 author: Philipp Conzett
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: DataverseNO-5-årsjubileum
-date: '2022-11-06'
+date: 2022-11-06
 author: Philipp Conzett
 tags:
 - news

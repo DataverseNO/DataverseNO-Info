@@ -1,6 +1,6 @@
 ---
 title: UiT Leads New Nordic-Baltic Research Infrastructure Hub
-date: '2026-01-08'
+date: 2026-01-08
 author: Philipp Conzett
 tags:
 - news

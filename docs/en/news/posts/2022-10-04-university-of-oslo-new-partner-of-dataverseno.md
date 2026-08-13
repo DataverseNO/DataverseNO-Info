@@ -1,6 +1,6 @@
 ---
 title: University of Oslo new partner of DataverseNO
-date: '2022-10-04'
+date: 2022-10-04
 author: Philipp Conzett
 tags:
 - news

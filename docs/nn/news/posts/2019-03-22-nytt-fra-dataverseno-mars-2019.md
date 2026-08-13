@@ -1,6 +1,6 @@
 ---
 title: Nytt fra DataverseNO – mars 2019
-date: '2019-03-22'
+date: 2019-03-22
 author: Stein Høydalsvik
 tags:
 - news

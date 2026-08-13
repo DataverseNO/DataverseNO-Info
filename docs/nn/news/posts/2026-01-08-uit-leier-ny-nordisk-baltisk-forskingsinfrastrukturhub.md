@@ -1,6 +1,6 @@
 ---
 title: UiT leier ny nordisk-baltisk forskingsinfrastrukturhub
-date: '2026-01-08'
+date: 2026-01-08
 author: Philipp Conzett
 tags:
 - news

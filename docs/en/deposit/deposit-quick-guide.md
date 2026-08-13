@@ -66,7 +66,7 @@ Migration note: Preserve the checklist items as task-list items in Markdown. Ste
 
 [ ] ReadMe file
 
-- Describe your data in a [PAGE: prepare-your-data#describe-your-data | ReadMe file], using a template: [REUSE: links/dataverseno-readme-template-general | general] or [REUSE: links/dataverseno-readme-template-code | for code].
+- Describe your data in a [PAGE: prepare-your-data#describe-your-data | ReadMe file], using a template: [REUSE: links/dataverseno-readme-template-general | general] or [REUSE: links/dataverseno-readme-template-software-code | for code].
 
 - Save the ReadMe file in plain text format, for example .txt or .md.
 

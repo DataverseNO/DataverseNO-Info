@@ -1,6 +1,6 @@
 ---
 title: The University of Bergen has established their own repository for open research data within DataverseNO
-date: '2019-05-24'
+date: 2019-05-24
 author: Philipp Conzett
 tags:
 - news

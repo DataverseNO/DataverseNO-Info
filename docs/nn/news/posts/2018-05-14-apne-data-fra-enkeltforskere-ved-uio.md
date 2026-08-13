@@ -1,6 +1,6 @@
 ---
 title: Åpne data fra enkeltforskere ved UiO
-date: '2018-05-14'
+date: 2018-05-14
 author: Stein Høydalsvik
 tags:
 - news

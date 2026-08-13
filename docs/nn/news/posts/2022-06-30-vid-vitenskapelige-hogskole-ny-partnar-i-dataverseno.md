@@ -1,6 +1,6 @@
 ---
 title: VID vitenskapelige høgskole ny partnar i DataverseNO
-date: '2022-06-30'
+date: 2022-06-30
 author: Philipp Conzett
 tags:
 - news

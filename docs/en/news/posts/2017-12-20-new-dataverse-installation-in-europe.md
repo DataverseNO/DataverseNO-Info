@@ -1,6 +1,6 @@
 ---
 title: New Dataverse installation in Europe
-date: '2017-12-20'
+date: 2017-12-20
 author: Stein Høydalsvik
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Norwegian Institute of Bioeconomy Research (NIBIO) new partner of DataverseNO
-date: '2024-01-25'
+date: 2024-01-25
 author: Philipp Conzett
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Universitetet i Søraust-Noreg ny partnar i DataverseNO
-date: '2025-11-17'
+date: 2025-11-17
 author: Philipp Conzett
 tags:
 - news

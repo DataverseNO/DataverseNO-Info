@@ -1,6 +1,6 @@
 ---
 title: Dataset No. 100 published in DataverseNO
-date: '2017-12-08'
+date: 2017-12-08
 author: Stein Høydalsvik
 tags:
 - news

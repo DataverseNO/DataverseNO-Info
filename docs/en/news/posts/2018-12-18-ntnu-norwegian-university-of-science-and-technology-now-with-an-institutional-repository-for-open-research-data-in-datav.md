@@ -1,6 +1,6 @@
 ---
 title: NTNU – Norwegian University of Science and Technology now with an institutional repository for open research data in DataverseNO
-date: '2018-12-18'
+date: 2018-12-18
 author: Stein Høydalsvik
 tags:
 - news

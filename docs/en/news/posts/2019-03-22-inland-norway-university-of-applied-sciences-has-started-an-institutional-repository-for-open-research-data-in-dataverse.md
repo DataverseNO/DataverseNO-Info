@@ -1,6 +1,6 @@
 ---
 title: Inland Norway University of Applied Sciences has started an institutional repository for open research data in DataverseNO
-date: '2019-03-22'
+date: 2019-03-22
 author: Stein Høydalsvik
 tags:
 - news

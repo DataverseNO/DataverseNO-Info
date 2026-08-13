@@ -1,6 +1,6 @@
 ---
 title: 'Datasett #500 i DataverseNO – gratulasjon til NTNU Open Research Data'
-date: '2019-02-28'
+date: 2019-02-28
 author: Philipp Conzett
 tags:
 - news

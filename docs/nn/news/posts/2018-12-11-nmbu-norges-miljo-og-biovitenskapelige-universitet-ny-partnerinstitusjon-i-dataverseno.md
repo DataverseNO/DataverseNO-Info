@@ -1,6 +1,6 @@
 ---
 title: NMBU – Norges miljø- og biovitenskapelige universitet ny partnerinstitusjon i DataverseNO
-date: '2018-12-11'
+date: 2018-12-11
 author: Philipp Conzett
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Presentasjonar frå European Dataverse Workshop 2020
-date: '2020-03-20'
+date: 2020-03-20
 author: Philipp Conzett
 tags:
 - news

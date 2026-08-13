@@ -1,6 +1,6 @@
 ---
 title: Datasets in DataverseNO now included in the discovery service B2FIND
-date: '2018-11-05'
+date: 2018-11-05
 author: Stein Høydalsvik
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Gratulasjoner til Høgskolen i Innlandet!
-date: '2019-06-28'
+date: 2019-06-28
 author: Stein Høydalsvik
 tags:
 - news

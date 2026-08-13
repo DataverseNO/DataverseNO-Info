@@ -1,6 +1,6 @@
 ---
 title: 10 GB free storage for archiving and publishing of datasets in DataverseNO
-date: '2018-11-05'
+date: 2018-11-05
 author: Stein Høydalsvik
 tags:
 - news

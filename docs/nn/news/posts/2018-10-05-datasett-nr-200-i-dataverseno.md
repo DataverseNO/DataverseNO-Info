@@ -1,6 +1,6 @@
 ---
 title: Datasett nr. 200 i DataverseNO
-date: '2018-10-05'
+date: 2018-10-05
 author: Stein Høydalsvik
 tags:
 - news

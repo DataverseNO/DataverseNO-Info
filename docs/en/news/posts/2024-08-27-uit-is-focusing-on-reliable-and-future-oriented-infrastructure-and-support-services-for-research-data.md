@@ -1,6 +1,6 @@
 ---
 title: UiT is focusing on reliable and future-oriented infrastructure and support services for research data
-date: '2024-08-27'
+date: 2024-08-27
 author: Philipp Conzett
 tags:
 - news

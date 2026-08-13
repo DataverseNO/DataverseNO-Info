@@ -1,6 +1,6 @@
 ---
 title: Universitet i Bergen har oppretta sitt eige arkiv for opne forskingsdata i DataverseNO
-date: '2019-05-24'
+date: 2019-05-24
 author: Philipp Conzett
 tags:
 - news

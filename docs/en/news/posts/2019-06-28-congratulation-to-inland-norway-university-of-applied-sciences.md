@@ -1,6 +1,6 @@
 ---
 title: Congratulation to Inland Norway University of Applied Sciences!
-date: '2019-06-28'
+date: 2019-06-28
 author: Stein Høydalsvik
 tags:
 - news

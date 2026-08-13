@@ -1,6 +1,6 @@
 ---
 title: MF Norwegian School of Theology, Religion and Society new partner of DataverseNO
-date: '2022-02-03'
+date: 2022-02-03
 author: Philipp Conzett
 tags:
 - news

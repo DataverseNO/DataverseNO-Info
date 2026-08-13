@@ -1,6 +1,6 @@
 ---
 title: Høgskulen på Vestlandet (HVL) har oppretta sitt eige arkiv for opne forskingsdata i DataverseNO
-date: '2019-02-18'
+date: 2019-02-18
 author: Philipp Conzett
 tags:
 - news

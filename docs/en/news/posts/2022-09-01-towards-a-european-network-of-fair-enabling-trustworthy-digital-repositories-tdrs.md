@@ -1,6 +1,6 @@
 ---
 title: Towards a European network of FAIR-enabling Trustworthy Digital Repositories (TDRs)
-date: '2022-09-01'
+date: 2022-09-01
 author: Philipp Conzett
 tags:
 - news

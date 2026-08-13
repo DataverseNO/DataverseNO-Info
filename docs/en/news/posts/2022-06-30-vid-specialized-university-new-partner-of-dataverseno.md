@@ -1,6 +1,6 @@
 ---
 title: VID Specialized University new partner of DataverseNO
-date: '2022-06-30'
+date: 2022-06-30
 author: Philipp Conzett
 tags:
 - news

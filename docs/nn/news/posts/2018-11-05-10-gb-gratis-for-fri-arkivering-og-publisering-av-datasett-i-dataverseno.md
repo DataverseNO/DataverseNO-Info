@@ -1,6 +1,6 @@
 ---
 title: 10 GB gratis for fri arkivering og publisering av datasett i DataverseNO
-date: '2018-11-05'
+date: 2018-11-05
 author: Stein Høydalsvik
 tags:
 - news

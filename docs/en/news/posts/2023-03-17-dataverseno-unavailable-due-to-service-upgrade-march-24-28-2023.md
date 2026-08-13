@@ -1,6 +1,6 @@
 ---
 title: DataverseNO unavailable due to service upgrade March 24-28, 2023
-date: '2023-03-17'
+date: 2023-03-17
 author: Philipp Conzett
 tags:
 - news

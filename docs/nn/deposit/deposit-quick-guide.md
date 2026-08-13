@@ -72,7 +72,7 @@ Migration note: Preserve the checklist items as task-list items in Markdown. Ste
 
 **[ ] README-fil**
 
-- Beskriv dataa dine i ei [PAGE: prepare-your-data#beskriv-dataa-dine | README-fil], og bruk malen vår: [REUSE: links/dataverseno-readme-template-general | generell] eller [REUSE: links/dataverseno-readme-template-code | for programkode].
+- Beskriv dataa dine i ei [PAGE: prepare-your-data#beskriv-dataa-dine | README-fil], og bruk malen vår: [REUSE: links/dataverseno-readme-template-general | generell] eller [REUSE: links/dataverseno-readme-template-software-code | for programkode].
 
 - Lagra README-fila i rein tekst, til dømes .txt eller .md.
 

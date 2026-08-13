@@ -1,6 +1,6 @@
 ---
 title: OsloMet – Oslo Metropolitan University new partner of DataverseNO
-date: '2024-08-20'
+date: 2024-08-20
 author: Philipp Conzett
 tags:
 - news

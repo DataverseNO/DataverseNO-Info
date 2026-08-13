@@ -1,6 +1,6 @@
 ---
 title: NTNU – Norges teknisk-naturvitenskapelige universitet har opprettet et arkiv for åpne forskningsdata i DataverseNO
-date: '2018-12-18'
+date: 2018-12-18
 author: Stein Høydalsvik
 tags:
 - news

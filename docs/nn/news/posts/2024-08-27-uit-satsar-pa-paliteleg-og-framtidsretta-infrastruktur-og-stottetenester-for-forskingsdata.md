@@ -1,6 +1,6 @@
 ---
 title: UiT satsar på påliteleg og framtidsretta infrastruktur og støttetenester for forskingsdata
-date: '2024-08-27'
+date: 2024-08-27
 author: Philipp Conzett
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Universitetet i Agder er no med i DataverseNO!
-date: '2017-12-03'
+date: 2017-12-03
 author: Philipp Conzett
 tags:
 - news

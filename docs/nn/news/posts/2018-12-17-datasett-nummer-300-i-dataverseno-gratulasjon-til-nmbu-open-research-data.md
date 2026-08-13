@@ -1,6 +1,6 @@
 ---
 title: 'Datasett #300 i DataverseNO – gratulasjon til NMBU Open Research Data'
-date: '2018-12-17'
+date: 2018-12-17
 author: Stein Høydalsvik
 tags:
 - news

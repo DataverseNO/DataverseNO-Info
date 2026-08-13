@@ -1,6 +1,6 @@
 ---
 title: European Dataverse Workshop 2020
-date: '2019-09-25'
+date: 2019-09-25
 author: Philipp Conzett
 tags:
 - news

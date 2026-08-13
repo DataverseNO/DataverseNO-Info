@@ -1,6 +1,6 @@
 ---
 title: Arkivtjenesten DataverseNO er nå åpen for alle forskere med Feide-ID
-date: '2017-12-08'
+date: 2017-12-08
 author: Stein Høydalsvik
 tags:
 - news

@@ -1,6 +1,6 @@
 ---
 title: Dataset no. 200 published in DataverseNO
-date: '2018-10-05'
+date: 2018-10-05
 author: Philipp Conzett
 tags:
 - news

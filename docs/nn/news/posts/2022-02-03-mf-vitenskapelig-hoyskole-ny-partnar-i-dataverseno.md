@@ -1,6 +1,6 @@
 ---
 title: MF vitenskapelig høyskole ny partnar i DataverseNO
-date: '2022-02-03'
+date: 2022-02-03
 author: Philipp Conzett
 tags:
 - news

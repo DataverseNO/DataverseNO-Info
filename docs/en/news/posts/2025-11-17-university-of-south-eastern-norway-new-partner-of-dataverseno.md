@@ -1,6 +1,6 @@
 ---
 title: University of South-Eastern Norway new partner of DataverseNO
-date: '2025-11-17'
+date: 2025-11-17
 author: Philipp Conzett
 tags:
 - news

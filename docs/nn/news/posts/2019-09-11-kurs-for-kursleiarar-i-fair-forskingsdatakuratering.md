@@ -1,6 +1,6 @@
 ---
 title: Kurs for kursleiarar i FAIR forskingsdatakuratering
-date: '2019-09-11'
+date: 2019-09-11
 author: Philipp Conzett
 tags:
 - news
