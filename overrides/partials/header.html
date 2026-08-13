@@ -1,0 +1,147 @@
+{#-
+  DataverseNO custom header.
+  Based on mkdocs-material's own partials/header.html (theme.custom_dir override),
+  extended per spec §8.5-8.9 with:
+    - DataverseNO icon linking to the language-local homepage
+    - a right-aligned primary nav (Home, About, Deposit Guidelines, News, Contact, Login)
+    - keyboard-operable <button> disclosures for About / Deposit Guidelines secondary links
+    - a flag + text language switch (English / Norsk nynorsk)
+-#}
+{% set class = "md-header" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+{% set is_nn = lang.t('language') == 'nn' %}
+{% set home_url = (is_nn and '/nn/' or '/en/') %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a href="{{ home_url | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo dvno-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      <img src="{{ 'assets/icons/dataverseno-icon.svg' | url }}" alt="{{ config.site_name }}" width="32" height="32">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            {{ config.site_name }}
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {#- Primary nav: built from mkdocs.yml `nav`, in configured order (Home, About,
+        Deposit Guidelines, News, Contact). Sections with children (About, Deposit
+        Guidelines) get a disclosure button exposing their sub-pages; the primary
+        link goes to the section's index page. Login is a static external link. -#}
+    <nav class="dvno-primary-nav" aria-label="{{ is_nn and 'Hovudmeny' or 'Main navigation' }}">
+      <ul class="dvno-primary-nav__list">
+        {% for nav_item in nav %}
+          <li class="dvno-primary-nav__item">
+            {% if nav_item.children %}
+              {% set first_child = nav_item.children | first %}
+              {% set panel_id = "dvno-disclosure-panel-" ~ loop.index %}
+              <a href="{{ first_child.url | url }}" class="dvno-primary-nav__link{% if nav_item.active %} dvno-primary-nav__link--active{% endif %}">
+                {{ nav_item.title }}
+              </a>
+              <button type="button" class="dvno-disclosure-toggle" aria-expanded="false" aria-controls="{{ panel_id }}">
+                <span class="dvno-visually-hidden">
+                  {{ is_nn and ("Vis undermeny for " ~ nav_item.title) or ("Show submenu for " ~ nav_item.title) }}
+                </span>
+                <span class="dvno-disclosure-toggle__icon" aria-hidden="true">&#9662;</span>
+              </button>
+              <ul class="secondary-nav" id="{{ panel_id }}">
+                {% for child in nav_item.children %}
+                  <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a href="{{ nav_item.url | url }}" class="dvno-primary-nav__link{% if nav_item.active %} dvno-primary-nav__link--active{% endif %}">
+                {{ nav_item.title }}
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+        <li class="dvno-primary-nav__item">
+          <a href="https://dataverse.no/" class="dvno-primary-nav__link" target="_blank" rel="noopener">
+            {{ is_nn and 'Logg inn' or 'Login' }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    {#- Language switch: config.extra.alternate is populated by the mkdocs-static-i18n
+        plugin with, per page, the correct equivalent-page URL when one exists and
+        that language's homepage otherwise (see reconfigure_page_context in the
+        installed plugin) - reused here instead of hand-rolling src_uri matching. -#}
+    <div class="dvno-lang-switch">
+      {% for alt in config.extra.alternate %}
+        {% if alt.lang == 'en' %}
+          <a href="{{ alt.link | url }}" hreflang="en" lang="en" class="dvno-lang-switch__link"{% if not is_nn %} aria-current="true"{% endif %}>
+            <span class="dvno-lang-switch__flag" aria-hidden="true">&#127468;&#127463;</span>
+            <span class="dvno-lang-switch__label">English</span>
+          </a>
+        {% elif alt.lang == 'nn' %}
+          <a href="{{ alt.link | url }}" hreflang="nn" lang="nn" class="dvno-lang-switch__link"{% if is_nn %} aria-current="true"{% endif %}>
+            <span class="dvno-lang-switch__flag" aria-hidden="true">&#127475;&#127476;</span>
+            <span class="dvno-lang-switch__label">Norsk nynorsk</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      <label class="md-header__button md-icon" for="__search">
+        {% set icon = config.theme.icon.search or "material/magnify" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </label>
+      {% include "partials/search.html" %}
+    {% endif %}
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+  {% if "navigation.tabs.sticky" in features %}
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+  {% endif %}
+</header>
+
+{#- Toggle aria-expanded on the disclosure buttons. Native <button> already gets
+    Enter/Space activation for free; visibility itself is CSS-driven off
+    aria-expanded (see dataverseno.css), not :hover, so it also works via
+    keyboard/touch. -#}
+<script>
+  (function () {
+    document.querySelectorAll(".dvno-disclosure-toggle").forEach(function (toggle) {
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    });
+  })();
+</script>

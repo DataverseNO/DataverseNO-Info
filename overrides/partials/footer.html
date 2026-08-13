@@ -1,0 +1,100 @@
+{#-
+  DataverseNO custom footer.
+  Based on mkdocs-material's own partials/footer.html (theme.custom_dir override),
+  extended per spec §8.10-8.13 with four sections: About, Legal, Contact (2-4,
+  distributed horizontally on desktop/tablet, stacked on handheld) above a
+  bottom-pinned Section 1 with localized CC0 licensing/citation text in a
+  smaller font.
+-#}
+{% set is_nn = lang.t('language') == 'nn' %}
+{% macro page_url(suffix) %}{%- for p in nav.pages -%}{%- if p.file.src_uri.endswith(suffix) -%}{{ p.url | url }}{%- endif -%}{%- endfor -%}{% endmacro %}
+<footer class="md-footer">
+  {% if "navigation.footer" in features %}
+    {% if page.previous_page or page.next_page %}
+      {% if page.meta and page.meta.hide %}
+        {% set hidden = "hidden" if "footer" in page.meta.hide %}
+      {% endif %}
+      <nav class="md-footer__inner md-grid" aria-label="{{ lang.t('footer') }}" {{ hidden }}>
+        {% if page.previous_page %}
+          {% set direction = lang.t("footer.previous") %}
+          <a href="{{ page.previous_page.url | url }}" class="md-footer__link md-footer__link--prev" aria-label="{{ direction }}: {{ page.previous_page.title | e }}">
+            <div class="md-footer__button md-icon">
+              {% set icon = config.theme.icon.previous or "material/arrow-left" %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                {{ direction }}
+              </span>
+              <div class="md-ellipsis">
+                {{ page.previous_page.title }}
+              </div>
+            </div>
+          </a>
+        {% endif %}
+        {% if page.next_page %}
+          {% set direction = lang.t("footer.next") %}
+          <a href="{{ page.next_page.url | url }}" class="md-footer__link md-footer__link--next" aria-label="{{ direction }}: {{ page.next_page.title | e }}">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                {{ direction }}
+              </span>
+              <div class="md-ellipsis">
+                {{ page.next_page.title }}
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              {% set icon = config.theme.icon.next or "material/arrow-right" %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </div>
+          </a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% endif %}
+
+  <div class="dvno-footer">
+    <div class="dvno-footer__sections md-grid">
+      <nav class="dvno-footer__section" aria-label="{{ is_nn and 'Om' or 'About' }}">
+        <h2 class="dvno-footer__heading">{{ is_nn and 'Om' or 'About' }}</h2>
+        <ul>
+          <li><a href="{{ page_url('about/index.md') }}">{{ is_nn and 'Om DataverseNO' or 'About DataverseNO' }}</a></li>
+          <li><a href="{{ page_url('glossary/index.md') }}">{{ is_nn and 'Ordliste' or 'Glossary' }}</a></li>
+          <li><a href="{{ page_url('news/index.md') }}">{{ is_nn and 'Nytt' or 'News' }}</a></li>
+        </ul>
+      </nav>
+      <nav class="dvno-footer__section" aria-label="{{ is_nn and 'Juridisk informasjon' or 'Legal' }}">
+        <h2 class="dvno-footer__heading">{{ is_nn and 'Juridisk informasjon' or 'Legal' }}</h2>
+        <ul>
+          <li><a href="https://uit.no/personvern">{{ is_nn and 'Personvernerklæring' or 'Privacy Policy' }}</a></li>
+          <li><a href="https://uustatus.no/nb/erklaringer?agency=UiT">{{ is_nn and 'Tilgjengelegheitserklæring' or 'Accessibility Statement' }}</a></li>
+        </ul>
+      </nav>
+      <nav class="dvno-footer__section" aria-label="{{ is_nn and 'Kontakt' or 'Contact' }}">
+        <h2 class="dvno-footer__heading">{{ is_nn and 'Kontakt' or 'Contact' }}</h2>
+        <ul>
+          <li><a href="{{ page_url('contact/index.md') }}">{{ is_nn and 'Lokale støttetenester' or 'Local support services' }}</a></li>
+          <li><a href="{{ page_url('contact/index.md') }}#repository-management-contact-card">{{ is_nn and 'Generelle førespurnader' or 'General inquiries' }}</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="dvno-footer__legal md-grid">
+      <p>
+        {% if is_nn %}
+          &copy; DataverseNO. Forskingsdata som er deponerte i DataverseNO, er gjorde tilgjengelege under lisensen Creative Commons CC0 1.0 Universal (Public Domain Dedication) dersom ikkje anna er oppgjeve. Bruk siteringsinformasjonen p&aring; landingssida til kvart datasett n&aring;r du siterer det.
+        {% else %}
+          &copy; DataverseNO. Research data deposited in DataverseNO is made available under a Creative Commons CC0 1.0 Universal (Public Domain Dedication) license unless stated otherwise. Please cite datasets using the citation information provided on each dataset's landing page.
+        {% endif %}
+      </p>
+    </div>
+  </div>
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      {% include "partials/copyright.html" %}
+      {% if config.extra.social %}
+        {% include "partials/social.html" %}
+      {% endif %}
+    </div>
+  </div>
+</footer>
