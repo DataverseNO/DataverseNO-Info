@@ -608,12 +608,12 @@ terms:
       en: >
         An embargo is a temporary restriction on access to one or more files in a dataset. In DataverseNO,
         embargoes may be applied only to unpublished data files and normally for no longer than [REUSE:
-        values/embargo-period-limit]. During the embargo period, the embargoed files are inaccessible,
+        values/embargo-period]. During the embargo period, the embargoed files are inaccessible,
         while the dataset metadata and README file remain publicly available. Embargoes expire automatically
         on a specified date, after which the files become openly accessible. Once a dataset has been published, the embargo period cannot normally be extended or modified by the depositor. Embargoes are intended for temporary restrictions on access to files and should not be used to delay the publication
         of datasets associated with manuscripts under review.
       nn: >
-        Ein embargo er ei mellombels tilgangsavgrensing for éi eller fleire filer i eit datasett. I DataverseNO kan embargo berre leggjast på upubliserte datafiler og normalt ikkje i meir enn [REUSE: values/embargo-period-limit]. I embargoperioden er filene utilgjengelege, medan metadataa og README-fila til datasettet er ope tilgjengelege. Embargoar går automatisk ut på ein oppgjeven dato, og etter dette blir filene ope tilgjengelege. Når eit datasett er publisert, kan embargoperioden normalt ikkje forlengjast eller endrast av deponenten. Embargoar er meinte for mellombelse tilgangsavgrensingar til filer og bør ikkje brukast til å utsetja publisering av datasett som høyrer til manuskript under vurdering.
+        Ein embargo er ei mellombels tilgangsavgrensing for éi eller fleire filer i eit datasett. I DataverseNO kan embargo berre leggjast på upubliserte datafiler og normalt ikkje i meir enn [REUSE: values/embargo-period]. I embargoperioden er filene utilgjengelege, medan metadataa og README-fila til datasettet er ope tilgjengelege. Embargoar går automatisk ut på ein oppgjeven dato, og etter dette blir filene ope tilgjengelege. Når eit datasett er publisert, kan embargoperioden normalt ikkje forlengjast eller endrast av deponenten. Embargoar er meinte for mellombelse tilgangsavgrensingar til filer og bør ikkje brukast til å utsetja publisering av datasett som høyrer til manuskript under vurdering.
     aliases:
       en:
       - embargo period

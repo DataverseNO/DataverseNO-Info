@@ -12,6 +12,7 @@ MARKER_PATTERNS = [
     re.compile(r"\[GENERATED COMPONENT\]"),
     re.compile(r"<!-- PEOPLE_(SEARCH_AND_FILTER|CARDS): "),
     re.compile(r"<!-- GLOSSARY_TERMS: "),
+    re.compile(r"\[PAGE:"),
 ]
 
 

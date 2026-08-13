@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 
 from hooks.data_store import get_data
-from hooks.reuse_resolver import page_language
+from hooks.reuse_resolver import page_language, resolve_reuse_markers
 
 _GENERATED_BLOCK = re.compile(
     r"\[GENERATED COMPONENT\]\nID: (?P<id>[\w-]+)\n(?:[^\n]*\n)*?(?=\n##|\n\[GENERATED COMPONENT\]|\Z)",
@@ -79,8 +79,8 @@ def _partner_contact_cards(lang: str) -> str:
 
 
 def _glossary_term(term_id: str, term: dict, lang: str) -> str:
-    label = term["label"][lang]
-    definition = term["definition"][lang]
+    label = resolve_reuse_markers(term["label"][lang], lang)
+    definition = resolve_reuse_markers(term["definition"][lang], lang)
     return f'<dt id="term-{term_id}">{label}</dt>\n<dd>{definition}</dd>'
 
 
