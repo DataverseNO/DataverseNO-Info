@@ -1,6 +1,6 @@
 version: 0.2
 created: '2026-07-01'
-last_updated: '2026-07-01'
+last_updated: '2026-08-13'
 source: data/sources/people.tsv
 description: Generated people data for the DataverseNO Information Website.
 generation:
@@ -26,7 +26,7 @@ people:
   - id: kristian-sandbekk-norsted
     name: Kristian Sandbekk Norsted
     institution_id: hiof
-    photo: docs/assets/images/people/kristian-sandbekk-norsted.jpg
+    photo: assets/images/people/kristian-sandbekk-norsted.jpg
     roles:
       - collection-management
       - curation
@@ -206,7 +206,7 @@ people:
   - id: mahmood-khosrowjerdi
     name: Mahmood Khosrowjerdi
     institution_id: inn
-    photo: docs/assets/images/people/mahmood-khosrowjerdi.png
+    photo: assets/images/people/mahmood-khosrowjerdi.png
     roles:
       - collection-management
       - curation
@@ -247,7 +247,7 @@ people:
   - id: inger-beate-nylund
     name: Inger Beate Nylund
     institution_id: inn
-    photo: docs/assets/images/people/inger-beate-nylund.jpg
+    photo: assets/images/people/inger-beate-nylund.jpg
     roles:
       - curation
     role_free_text:
@@ -284,7 +284,7 @@ people:
   - id: henrik-holtvedt-andersen
     name: Henrik Holtvedt Andersen
     institution_id: mf
-    photo: docs/assets/images/people/henrik-holtvedt-andersen.jpg
+    photo: assets/images/people/henrik-holtvedt-andersen.jpg
     roles:
       - collection-management
       - curation
@@ -963,7 +963,7 @@ people:
   - id: lisbeth-jahren
     name: Lisbeth Jahren
     institution_id: ntnu
-    photo: docs/assets/images/people/lisbeth-jahren.jpg
+    photo: assets/images/people/lisbeth-jahren.jpg
     roles:
       - curation
     role_free_text:
@@ -1067,7 +1067,7 @@ people:
   - id: emma-walton
     name: Emma Walton
     institution_id: ntnu
-    photo: docs/assets/images/people/emma-walton.jpg
+    photo: assets/images/people/emma-walton.jpg
     roles:
       - repository-management
       - curation
@@ -1109,7 +1109,7 @@ people:
   - id: fredrik-sahlstrom
     name: Fredrik Sahlström
     institution_id: ntnu
-    photo: docs/assets/images/people/fredrik-sahlstrom.jpg
+    photo: assets/images/people/fredrik-sahlstrom.jpg
     roles:
       - repository-management
       - curation
@@ -1263,7 +1263,7 @@ people:
   - id: camilla-thorvik
     name: Camilla Thorvik
     institution_id: oslomet
-    photo: docs/assets/images/people/camilla-thorvik.jpg
+    photo: assets/images/people/camilla-thorvik.jpg
     roles:
       - curation
     role_free_text:
@@ -2008,7 +2008,7 @@ people:
   - id: john-david-didriksen
     name: John David Didriksen
     institution_id: uis
-    photo: docs/assets/images/people/john-david-didriksen.jpg
+    photo: assets/images/people/john-david-didriksen.jpg
     roles:
       - curation
     role_free_text:
@@ -2104,7 +2104,7 @@ people:
   - id: christine-dybwad
     name: Christine Dybwad
     institution_id: uit
-    photo: docs/assets/images/people/christine-dybwad.jpg
+    photo: assets/images/people/christine-dybwad.jpg
     roles:
       - collection-management
       - curation
@@ -2191,7 +2191,7 @@ people:
   - id: anna-karpova
     name: Anna Karpova
     institution_id: uit
-    photo: docs/assets/images/people/anna-karpova.jpeg
+    photo: assets/images/people/anna-karpova.jpeg
     roles:
       - curation
     role_free_text:
@@ -2239,7 +2239,7 @@ people:
   - id: gulbrand-stalet-nilsen
     name: Gulbrand Stålet Nilsen
     institution_id: uit
-    photo: docs/assets/images/people/gulbrand-stalet-nilsen.jpeg
+    photo: assets/images/people/gulbrand-stalet-nilsen.jpeg
     roles:
       - curation
     role_free_text:
@@ -2352,7 +2352,7 @@ people:
   - id: melanie-karlsson
     name: Melanie Karlsson
     institution_id: uit
-    photo: docs/assets/images/people/melanie-karlsson.jpeg
+    photo: assets/images/people/melanie-karlsson.jpeg
     roles:
       - curation
     role_free_text:
@@ -2453,7 +2453,7 @@ people:
   - id: philipp-conzett
     name: Philipp Conzett
     institution_id: uit
-    photo: docs/assets/images/people/philipp-conzett.jpg
+    photo: assets/images/people/philipp-conzett.jpg
     roles:
       - repository-management
     role_free_text:
@@ -2502,7 +2502,7 @@ people:
   - id: rieke-lo-madsen
     name: Rieke Lo Madsen
     institution_id: uit
-    photo: docs/assets/images/people/rieke-lo-madsen.jpg
+    photo: assets/images/people/rieke-lo-madsen.jpg
     roles:
       - repository-management
     role_free_text:
@@ -2789,7 +2789,7 @@ people:
   - id: jennifer-lea-thogersen
     name: Jennifer Lea Thøgersen
     institution_id: vid
-    photo: docs/assets/images/people/jennifer-lea-thogersen.jpg
+    photo: assets/images/people/jennifer-lea-thogersen.jpg
     roles:
       - collection-management
       - curation
