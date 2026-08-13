@@ -1,0 +1,77 @@
+/**
+ * Contact page styles
+ *
+ * Card grid layout for the generated repository-management and partner
+ * institution contact cards (hooks/generated_components.py), matching the
+ * DataverseNO brand tokens defined in extra.css / dataverseno.css.
+ *
+ * Components
+ * ----------
+ * - .contact-filter        Search input wrapper (#contact-search)
+ * - .contact-cards         Grid of .contact-card elements
+ * - .contact-card          Base card style (repository-management and partner cards)
+ * - .repository-management-contact-card  Single featured card, not part of the grid
+ * - .partner-contact-card  Grid card, hidden via .contact-card--hidden when filtered out
+ */
+
+.contact-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 24rem;
+  margin: 1rem 0;
+}
+
+.contact-filter label {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.contact-filter input[type='search'] {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--dvno-grey);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.contact-filter input[type='search']:focus-visible {
+  outline: 2px solid var(--dvno-orange);
+  outline-offset: 2px;
+}
+
+.contact-card {
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 12px;
+}
+
+.contact-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.contact-card a {
+  font-size: 0.85rem;
+}
+
+.repository-management-contact-card {
+  max-width: 24rem;
+  margin: 1rem 0;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.contact-card--hidden {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}
