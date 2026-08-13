@@ -15,6 +15,9 @@ import yaml
 # second one (under the "hooks.data_store" dotted name) whose _DATA is never
 # populated. Registering this module under its dotted name up front makes
 # both import paths resolve to the same instance.
+# REQUIRES: this module must be listed first in mkdocs.yml's `hooks:` list so
+# this module-level code runs before any other hook's `from hooks.data_store`
+# import executes and creates a second, divergent module instance.
 sys.modules.setdefault("hooks.data_store", sys.modules[__name__])
 
 _DATA: dict[str, Any] = {}

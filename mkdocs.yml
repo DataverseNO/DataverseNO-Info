@@ -7,7 +7,7 @@ edit_uri: edit/main/docs/
 
 docs_dir: docs
 hooks:
-  - hooks/data_store.py
+  - hooks/data_store.py  # MUST be first — other hooks import from it and depend on its module-level init
   - hooks/reuse_resolver.py
   - hooks/generated_components.py
 
