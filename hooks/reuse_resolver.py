@@ -1,0 +1,76 @@
+"""Resolves [REUSE: links/<id>], [REUSE: values/<id>], [REUSE: terms/<id>],
+and [REUSE: partners/<path>] markers in page Markdown at build time.
+"""
+from __future__ import annotations
+
+import re
+
+from hooks.data_store import get_data
+
+_MARKER = re.compile(r"\[REUSE:\s*(?P<kind>links|values|terms|partners)/(?P<ref>[^\]]+)\]")
+
+
+def page_language(page) -> str:
+    parts = page.file.src_uri.split("/")
+    return parts[0] if parts and parts[0] in ("en", "nn") else "en"
+
+
+def _resolve_link(ref: str, lang: str) -> str:
+    entry = get_data()["links"][ref]
+    label = entry["label"][lang]
+    url = entry["url"]
+    url = url[lang] if isinstance(url, dict) else url
+    target = ' target="_blank" rel="noopener"' if entry.get("open") == "new-tab" else ""
+    return f'<a href="{url}"{target}>{label}</a>'
+
+
+def _resolve_value(ref: str, lang: str) -> str:
+    entry = get_data()["values"][ref]
+    unit = entry.get("unit", {})
+    unit_text = unit.get(lang, "") if isinstance(unit, dict) else (unit or "")
+    pattern = entry.get("render_pattern", {}).get(lang) if isinstance(entry.get("render_pattern"), dict) else None
+    if pattern:
+        return pattern.format(value=entry["value"], unit=unit_text)
+    return f'{entry["value"]} {unit_text}'.strip()
+
+
+def _resolve_term(ref: str, lang: str) -> str:
+    entry = get_data()["terms"][ref]
+    return entry["label"][lang]
+
+
+def _resolve_partner(ref: str, lang: str) -> str:
+    # ref like "repository_management/support.email" or "<partner-id>/support.url"
+    root, *path = ref.split("/")
+    data = get_data()["partners"]
+    node = data["repository_management"] if root == "repository_management" else next(
+        p for p in data["partners"] if p["id"] == root
+    )
+    for key in path:
+        # Split dot-separated paths like "support.email"
+        for subkey in key.split("."):
+            node = node[subkey]
+    if isinstance(node, dict):
+        node = node.get(lang, node)
+    return str(node)
+
+
+_RESOLVERS = {
+    "links": _resolve_link,
+    "values": _resolve_value,
+    "terms": _resolve_term,
+    "partners": _resolve_partner,
+}
+
+
+def resolve_reuse_markers(markdown: str, lang: str) -> str:
+    def _replace(match: re.Match) -> str:
+        kind, ref = match.group("kind"), match.group("ref")
+        return _RESOLVERS[kind](ref, lang)
+
+    return _MARKER.sub(_replace, markdown)
+
+
+def on_page_markdown(markdown, page, config, files, **kwargs):
+    lang = page_language(page)
+    return resolve_reuse_markers(markdown, lang)
