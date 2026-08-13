@@ -78,6 +78,19 @@ def _partner_contact_cards(lang: str) -> str:
     return f'<div class="contact-cards" id="contact-cards">\n{cards}\n</div>'
 
 
+def _glossary_term(term_id: str, term: dict, lang: str) -> str:
+    label = term["label"][lang]
+    definition = term["definition"][lang]
+    return f'<dt id="term-{term_id}">{label}</dt>\n<dd>{definition}</dd>'
+
+
+def _glossary_terms(lang: str) -> str:
+    terms = get_data()["terms"]
+    items = sorted(terms.items(), key=lambda kv: kv[1]["label"][lang].lower())
+    body = "\n".join(_glossary_term(term_id, term, lang) for term_id, term in items)
+    return f'<dl class="glossary-list">\n{body}\n</dl>'
+
+
 _COMPONENT_RENDERERS = {
     "repository-management-contact-card": _repository_management_card,
     "contact-search-input": _contact_search_input,
@@ -90,6 +103,7 @@ def on_page_markdown(markdown, page, config, files, **kwargs):
 
     markdown = markdown.replace(f"<!-- PEOPLE_SEARCH_AND_FILTER: {lang} -->", _people_search_and_filter(lang))
     markdown = markdown.replace(f"<!-- PEOPLE_CARDS: {lang} -->", _people_cards(lang))
+    markdown = markdown.replace(f"<!-- GLOSSARY_TERMS: {lang} -->", _glossary_terms(lang))
 
     def _replace_component(match: re.Match) -> str:
         component_id = match.group("id")
