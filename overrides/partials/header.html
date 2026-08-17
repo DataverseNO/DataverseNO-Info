@@ -14,7 +14,8 @@
   {% set class = class ~ " md-header--shadow" %}
 {% endif %}
 {% set is_nn = lang.t('language') == 'nn' %}
-{% set home_url = (is_nn and '/nn/' or '/en/') %}
+{# English is the default locale and is served at the site root, not /en/. #}
+{% set home_url = (is_nn and '/nn/' or '/') %}
 <header class="{{ class }}" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
     <a href="{{ home_url | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo dvno-logo" aria-label="{{ config.site_name }}" data-md-component="logo">

@@ -9,11 +9,11 @@ seo_description: Learn how to cite published datasets in DataverseNO, refer to d
 tags:
 - deposit
 - dataverseno
-- data-citation
+- citation
 - doi
 - versioning
 - research-data
-- publication
+- publishing
 keywords:
 - cite dataset
 - DataverseNO citation

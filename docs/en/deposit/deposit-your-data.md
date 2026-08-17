@@ -13,7 +13,7 @@ tags:
 - file-upload
 - curation
 - research-data
-- license
+- licensing
 keywords:
 - deposit data in DataverseNO
 - create dataset draft

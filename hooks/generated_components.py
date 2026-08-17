@@ -108,9 +108,12 @@ def _partner_card(partner: dict, lang: str) -> str:
     email = partner.get("support", {}).get("email")
     url = partner.get("support", {}).get("url")
     contact = f'<a href="mailto:{email}">{email}</a>' if email else (f'<a href="{url}">{url}</a>' if url else "")
+    name = partner["name"][lang]
+    logo = partner.get("logo", {}).get(lang)
+    img = f'<img src="/{logo}" alt="{name}" loading="lazy">' if logo else ""
     return (
         f'<article class="contact-card partner-contact-card" data-search="{aliases}">'
-        f'<h3>{partner["name"][lang]}</h3>{contact}</article>'
+        f'{img}<h3>{name}</h3>{contact}</article>'
     )
 
 
@@ -121,9 +124,9 @@ def _partner_contact_cards(lang: str) -> str:
 
 
 def _glossary_term(term_id: str, term: dict, lang: str, files, current_file) -> str:
-    label = resolve_reuse_markers(term["label"][lang], lang)
+    label = resolve_reuse_markers(term["label"][lang], lang, files=files, current_file=current_file)
     label = resolve_page_markers(label, lang, files, current_file)
-    definition = resolve_reuse_markers(term["definition"][lang], lang)
+    definition = resolve_reuse_markers(term["definition"][lang], lang, files=files, current_file=current_file)
     definition = resolve_page_markers(definition, lang, files, current_file)
     return f'<dt id="term-{term_id}">{label}</dt>\n<dd>{definition}</dd>'
 

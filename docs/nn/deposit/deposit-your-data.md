@@ -13,7 +13,7 @@ tags:
 - file-upload
 - curation
 - research-data
-- license
+- licensing
 keywords:
 - arkiver data i DataverseNO
 - deponere data i DataverseNO
@@ -62,13 +62,13 @@ Dei fleste datasett kan arkiverast gjennom nokre enkle steg:
 
 - [SECTION: beskriv-datasettet-med-metadata | Beskriv datasettet med metadata].
 
-- [SECTION: vel-gjenbruksvilkar | Vel gjenbruksvilkår].
+- [SECTION: vel-gjenbruksvilkår | Vel gjenbruksvilkår].
 
 - [SECTION: last-opp-filene-dine | Last opp filene dine].
 
 - [SECTION: embargoperiode | Spesifiser ein embargoperiode, dersom det trengst].
 
-- [SECTION: del-datasettet-for-publisering | Del datasettet før publisering, dersom det trengst].
+- [SECTION: del-datasettet-før-publisering | Del datasettet før publisering, dersom det trengst].
 
 - [SECTION: send-datasettet-til-kuratering | Send datasettet til kuratering].
 

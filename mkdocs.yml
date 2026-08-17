@@ -63,6 +63,15 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      # Default python-markdown slugify silently deletes non-ASCII
+      # characters (e.g. "før" -> "fr"), which is unpredictable for
+      # Norwegian Nynorsk content and breaks hand-written [SECTION: ...]/
+      # [PAGE: ...#anchor] references. pymdownx's slugify keeps them as-is
+      # (e.g. "før" -> "før") instead, which is stable and matches what
+      # content authors actually type.
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 plugins:
   - search:

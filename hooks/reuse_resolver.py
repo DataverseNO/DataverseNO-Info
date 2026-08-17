@@ -31,16 +31,21 @@ def page_language(page) -> str:
     return parts[0] if parts and parts[0] in ("en", "nn") else "en"
 
 
-def _resolve_link(ref: str, lang: str, alias: str | None = None) -> str:
+def _resolve_link(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     entry = get_data()["links"][ref]
     label = alias or entry["label"][lang]
     url = entry["url"]
     url = url[lang] if isinstance(url, dict) else url
+    if not url:
+        # status: pending-url (e.g. dataverseno-continuity-policy) — no
+        # approved link yet. Render as plain text rather than a dead <a
+        # href="None">, per the documented intentional exception.
+        return label
     target = ' target="_blank" rel="noopener"' if entry.get("open") == "new-tab" else ""
     return f'<a href="{url}"{target}>{label}</a>'
 
 
-def _resolve_value(ref: str, lang: str, alias: str | None = None) -> str:
+def _resolve_value(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     if alias:
         return alias
     entry = get_data()["values"][ref]
@@ -52,12 +57,20 @@ def _resolve_value(ref: str, lang: str, alias: str | None = None) -> str:
     return f'{entry["value"]} {unit_text}'.strip()
 
 
-def _resolve_term(ref: str, lang: str, alias: str | None = None) -> str:
+def _resolve_term(ref: str, lang: str, alias: str | None = None, *, files=None, current_file=None) -> str:
     entry = get_data()["terms"][ref]
-    return alias or entry["label"][lang]
+    label = alias or entry["label"][lang]
+    # files/current_file are absent when resolving text outside a page build
+    # context (there is none here); link to the generated glossary anchor
+    # (spec §6.3/§8.14: inline term references shall link to the glossary
+    # entry) whenever we can compute a real href.
+    if files is None or current_file is None:
+        return label
+    href = resolve_target_href("glossary/index", lang, files, current_file) + f"#term-{ref}"
+    return f'<a href="{href}">{label}</a>'
 
 
-def _resolve_partner(ref: str, lang: str, alias: str | None = None) -> str:
+def _resolve_partner(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     if alias:
         return alias
     # ref like "repository_management/support.email" or "<partner-id>/support.url"
@@ -87,11 +100,11 @@ _RESOLVERS = {
 }
 
 
-def resolve_reuse_markers(markdown: str, lang: str, page_path: str = None) -> str:
+def resolve_reuse_markers(markdown: str, lang: str, page_path: str = None, files=None, current_file=None) -> str:
     def _replace(match: re.Match) -> str:
         kind, ref, alias = match.group("kind"), match.group("ref"), match.group("alias")
         try:
-            return _RESOLVERS[kind](ref, lang, alias)
+            return _RESOLVERS[kind](ref, lang, alias, files=files, current_file=current_file)
         except KeyError as e:
             ctx = f"[REUSE: {kind}/{ref}] could not be resolved: {e}"
             if page_path:
@@ -148,6 +161,6 @@ def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
 
 def on_page_markdown(markdown, page, config, files, **kwargs):
     lang = page_language(page)
-    markdown = resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri)
+    markdown = resolve_reuse_markers(markdown, lang, page_path=page.file.src_uri, files=files, current_file=page.file)
     markdown = resolve_page_markers(markdown, lang, files, page.file)
     return markdown

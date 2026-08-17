@@ -80,7 +80,7 @@ Forskarar som er tilknytte ein norsk forskingsinstitusjon, kan bruka DataverseNO
 
 ### Forskarar frå partnarinstitusjonar
 
-Dersom du er tilknytt ein DataverseNO-partnarinstitusjon, er det for tida inga avgrensing på kor mykje data du kan arkivera og dela i arkivet (men sjå [PAGE: deposit/deposit-your-data#tilradingar-for-filer-og-datasett | tilrådingane våre for filer og datasett] før du arkiverer store eller komplekse datasett). Er du usikker på om institusjonen din er partnar? Dei noverande DataverseNO-partnarinstitusjonane er lista opp nedanfor:
+Dersom du er tilknytt ein DataverseNO-partnarinstitusjon, er det for tida inga avgrensing på kor mykje data du kan arkivera og dela i arkivet (men sjå [PAGE: deposit/deposit-your-data#tilrådingar-for-filer-og-datasett | tilrådingane våre for filer og datasett] før du arkiverer store eller komplekse datasett). Er du usikker på om institusjonen din er partnar? Dei noverande DataverseNO-partnarinstitusjonane er lista opp nedanfor:
 
 [GENERATED COMPONENT]
 ID: partner-institution-logo-grid
@@ -123,7 +123,7 @@ Meir informasjon om korleis du opprettar brukarkonto, finn du i [PAGE: deposit/i
 
 ## Gjenbruk av data i DataverseNO
 
-Datasett som er publiserte i DataverseNO, er gjenfinnbare i dei viktigaste oppdagingstenestene for forskingsdata (sjå [PAGE: why-use-dataverseno#kreditering-og-synlegheit]). Du kan òg [search](https://dataverse.no/dataverse/root/search) og bla gjennom alle DataverseNO-samlingane direkte i arkivet. Før du gjenbrukar data, bør du lesa dei datasettspesifikke gjenbruksvilkåra og forsikra deg om at du forstår den tilhøyrande [PAGE: deposit/deposit-your-data#vel-gjenbruksvilkar | datalisensen]. Uavhengig av lisenstype forventar både [Dataverse Community Norms](https://dataverse.org/best-practices/dataverse-community-norms) og god vitskapleg praksis at du gjev korrekt kreditering gjennom sitering. Bruk datasettreferansen som står på datasettsida. Les meir om å sitera datasett i DataverseNO i [PAGE: deposit/refer-to-your-data | arkiveringsguiden].
+Datasett som er publiserte i DataverseNO, er gjenfinnbare i dei viktigaste oppdagingstenestene for forskingsdata (sjå [PAGE: why-use-dataverseno#kreditering-og-synlegheit]). Du kan òg [search](https://dataverse.no/dataverse/root/search) og bla gjennom alle DataverseNO-samlingane direkte i arkivet. Før du gjenbrukar data, bør du lesa dei datasettspesifikke gjenbruksvilkåra og forsikra deg om at du forstår den tilhøyrande [PAGE: deposit/deposit-your-data#vel-gjenbruksvilkår | datalisensen]. Uavhengig av lisenstype forventar både [Dataverse Community Norms](https://dataverse.org/best-practices/dataverse-community-norms) og god vitskapleg praksis at du gjev korrekt kreditering gjennom sitering. Bruk datasettreferansen som står på datasettsida. Les meir om å sitera datasett i DataverseNO i [PAGE: deposit/refer-to-your-data | arkiveringsguiden].
 
 ## Bli partnarinstitusjon
 
@@ -133,7 +133,7 @@ Source data: data/partners.yml
 Expression: count(partners)
 Output: Number of current DataverseNO partner institutions
 
-Norske forskingsinstitusjonar kan bli med i DataverseNO-konsortiet for å gje forskarane sine uavgrensa tilgang til eit påliteleg dataarkiv. For å bli partnar må institusjonen forplikta seg til å følgja [REUSE: links/dataverseno-organizational-agreement] ved å signera ein partnaravtale. DataverseNO-konsortiet består for tida av [GENERATED VALUE: partner-institution-count] [SECTION: forskarar-fra-partnarinstitusjonar | partnarinstitusjonar] og er ope for nye partnarar.
+Norske forskingsinstitusjonar kan bli med i DataverseNO-konsortiet for å gje forskarane sine uavgrensa tilgang til eit påliteleg dataarkiv. For å bli partnar må institusjonen forplikta seg til å følgja [REUSE: links/dataverseno-organizational-agreement] ved å signera ein partnaravtale. DataverseNO-konsortiet består for tida av [GENERATED VALUE: partner-institution-count] [SECTION: forskarar-frå-partnarinstitusjonar | partnarinstitusjonar] og er ope for nye partnarar.
 
 Partnarinstitusjonar får tilgang til dette:
 

@@ -60,7 +60,7 @@ Dei fleste datasett kan gjerast klare ved å følgja nokre enkle steg:
 
 - [SECTION: beskriv-dataa-dine | **Beskriv dataa dine**] med ei README-fil og annan relevant dokumentasjon.
 
-- [SECTION: sjekk-fil-og-datasettstorleik | **Sjekk fil- og datasettstorleik**] før du lastar opp filene.
+- [SECTION: sjekk-fil--og-datasettstorleik | **Sjekk fil- og datasettstorleik**] før du lastar opp filene.
 
 Du treng ikkje å ha alt perfekt. Føremålet med denne guiden er å hjelpa deg å førebu data som andre kan forstå og gjenbruka. Ved behov kan støttepersonell gje meir rettleiing under [REUSE: terms/curation | kurateringsprosessen] før publisering.
 

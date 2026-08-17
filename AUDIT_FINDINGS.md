@@ -11,9 +11,15 @@ tilfeller av samme mønster.
 Status-koder: **IMPLEMENTERT** / **DELVIS** / **MANGLER** / **UTSATT (bevisst)**
 / **IKKE VERIFISERBART HER** (prosess/organisasjon, ikke kode).
 
+**Oppdatering same dag:** alle 7 kritiske funn (1-7) og alle 5 høy-prioritets
+funn (8-12) under er nå fikset og verifisert med full bygg + validering (sjå
+commits `6180d21` og påfølgande). Detaljar per punkt nedanfor. Eitt nytt,
+alvorleg funn blei oppdaga undervegs (sjå **NYTT FUNN** lengst nede) som
+framleis er ope — det treng eiga oppfølging, ikkje ein rask fiks.
+
 ---
 
-## KRITISK — bryter funksjonalitet i produksjon i dag
+## KRITISK — bryter funksjonalitet i produksjon i dag (ALLE FIKSET)
 
 1. **EOF-bug i `hooks/content_blocks.py`** (denne øktens egen kode).
    `_FIELD_LINE`-regexen krever at hvert felt slutter med `\n`. MkDocs
@@ -69,7 +75,7 @@ Status-koder: **IMPLEMENTERT** / **DELVIS** / **MANGLER** / **UTSATT (bevisst)**
 
 ---
 
-## HØY — samme mønster som utløste revisjonen: ting er "koblet til" men aldri validert
+## HØY — samme mønster som utløste revisjonen: ting er "koblet til" men aldri validert (ALLE FIKSET)
 
 8. **`data/tags.yml` er lastet inn men aldri validert.** 112 sider bruker
    `tags:` i front matter, ingen script sjekker dem mot den kontrollerte
@@ -129,6 +135,44 @@ Status-koder: **IMPLEMENTERT** / **DELVIS** / **MANGLER** / **UTSATT (bevisst)**
     løser kanonisk URL riktig uansett via en annen mekanisme) — dødt felt,
     kan forvirre redaktører.
 
+## NYTT FUNN — engelsk nyhende-arkiv bygger ikke individuelle sider (KRITISK, IKKE fikset)
+
+Oppdaget mens link-validatoren (punkt 9-10 over) ble bygget og kjørt mot
+hele nettstedet: `site/news/` inneholder kun `index.html` — **ingen av de 39
+engelske nyhendeinnleggene får en egen side**. Alle lenker fra nyhende-
+indeksen til enkeltinnlegg er brutte (`site/news/<slug>/` finnes ikke). Norsk
+nynorsk-versjonen fungerer derimot fint (`site/nn/news/posts/<slug>/`).
+
+Rotårsak funnet (via `mkdocs build -v` og sporing av `InclusionLevel`):
+`mkdocs-static-i18n` og Material-bloggmodulen er uenige om hvilket `File`-
+objekt som skal "vinne" for hver innleggs-URL. Bloggmodulen markerer riktig
+nok kildefilen som `EXCLUDED` (normal oppførsel — den genererer normalt en
+egen, `INCLUDED` fil for selve innlegget), men i18n-modulens
+fil-deduplisering velger konsekvent den ekskluderte kildefilen i stedet for
+bloggmodulens genererte side, slik at siden aldri skrives til disk.
+
+Dette er en ekte plugin-kompatibilitetsbug mellom `mkdocs-static-i18n` og
+`mkdocs-material`s blogg-modul når innlegg ligger i en språk-mappe
+(`docs_structure: folder`), ikke noe som er fiksbart med en innholds- eller
+hook-endring. Prøvde å bytte rekkefølgen på `blog`/`i18n` i `mkdocs.yml`s
+plugins-liste (vanlig løsning for lignende problem) — hjalp ikke.
+
+Dette er en alvorligere variant av det som tidligere var kjent og bevisst
+utsatt («i18n blog pagination-file warnings», ett av de 26 kjente
+`--strict`-varslene) — men den forrige ledger-notatet gjaldt kun at
+side/2-4 og årsarkiv-sidene manglet fra nav, ikke at *alle individuelle
+innlegg* er utilgjengelige.
+
+`scripts/validate_site_build.py`s nye lenkevalidering er bevisst begrenset
+til å ikke feile på nettopp dette (samme presedens som `--strict`-avviket),
+med en kommentar i koden som viser til dette avsnittet, slik at det ikke
+forsvinner stille.
+
+→ Krever egen undersøkelse: enten nedgradere/oppgradere en av
+`mkdocs-static-i18n`/`mkdocs-material`, eller restrukturere slik at
+bloggmodulen ikke ligger inni i18n-modulens språkmappe-deteksjon. Anbefaler
+å ta dette opp som eget punkt, ikke la det blokkere testversjonen for Rieke.
+
 ## Prosess/styring — ikke kode, ingen handling mulig herfra
 
 - §17.2 styringsroller (Content owners / Editors / Technical maintainers /
@@ -140,6 +184,29 @@ Status-koder: **IMPLEMENTERT** / **DELVIS** / **MANGLER** / **UTSATT (bevisst)**
   vurdert indirekte via resten av revisjonen.
 
 ---
+
+## Ekstra funn oppdaget og fikset mens link-validatoren (punkt 9-10) ble bygget
+
+Da den nye internlenke-valideringen ble kjørt mot hele det bygde nettstedet
+for første gang, dukket det opp tre reelle, tidligere ukjente bugs (utover
+de 12 opprinnelige funnene), alle fikset:
+
+- **Header-logoen på alle engelske sider lenket til `/en/`, som ikke
+  finnes** (engelsk er standardspråket og serveres fra `/`, ikke `/en/`).
+  `overrides/partials/header.html` hardkodet feil rot-URL. Fikset til `/`.
+- **`href="None"` i policy-framework-siden** — `[REUSE: links/...]`-
+  oppløsning for en lenke med bevisst `url: null` (spec sin dokumenterte
+  "ingen godkjent lenke ennå"-unntak for Continuity Policy) rendret
+  bokstavelig `<a href="None">` i stedet for ren tekst. Fikset i
+  `hooks/reuse_resolver.py`.
+- **Ukorrekt slug-generering for nynorsk overskrifter med æ/ø/å.**
+  MkDocs' standard slugifier sletter (ikke omskriver) ikke-ASCII-tegn, så
+  "Del datasettet **før** publisering" ble til anker-id-en
+  `del-datasettet-fr-publisering` (ø forsvant sporløst) i stedet for noe
+  forutsigbart. Dette brøt 6 hånd-skrevne `[SECTION:]`/`[PAGE:]`-referanser
+  på tvers av nynorsk-innholdet. Fikset ved å bytte til `pymdownx`s
+  slugifier (som beholder æøå som de er) i `mkdocs.yml`, og oppdatere de
+  6 referansene til å matche de nye, stabile anker-id-ene.
 
 ## Ting som faktisk er solid implementert (ingen handling nødvendig)
 

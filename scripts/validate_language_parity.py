@@ -54,6 +54,28 @@ def load_data_ids() -> dict[str, set[str]]:
     return ids
 
 
+FRONT_MATTER = re.compile(r"\A---\n(?P<yaml>.*?)\n---\n", re.DOTALL)
+
+
+def check_tags() -> list[str]:
+    """Front-matter `tags:` shall use stable identifiers from data/tags.yml
+    (spec §12.2/§15.3) — a typo'd or invented tag id should fail CI, not
+    build and deploy silently.
+    """
+    tags_raw = yaml.safe_load(Path("data/tags.yml").read_text(encoding="utf-8")) or {}
+    known_tags = set((tags_raw.get("tags") or {}).keys())
+    errors = []
+    for md_file in list(Path("docs/en").rglob("*.md")) + list(Path("docs/nn").rglob("*.md")):
+        match = FRONT_MATTER.match(md_file.read_text(encoding="utf-8"))
+        if not match:
+            continue
+        front_matter = yaml.safe_load(match.group("yaml")) or {}
+        for tag in front_matter.get("tags") or []:
+            if tag not in known_tags:
+                errors.append(f"{md_file}: unknown tag '{tag}' (not in data/tags.yml)")
+    return errors
+
+
 def check_reuse_references() -> list[str]:
     ids = load_data_ids()
     errors = []
@@ -70,12 +92,12 @@ def check_reuse_references() -> list[str]:
 
 
 def main() -> int:
-    errors = check_language_parity() + check_reuse_references()
+    errors = check_language_parity() + check_reuse_references() + check_tags()
     if errors:
         print("\n".join(errors), file=sys.stderr)
         print(f"\n{len(errors)} validation error(s)", file=sys.stderr)
         return 1
-    print("Language parity and [REUSE: ...] references OK.")
+    print("Language parity, [REUSE: ...] references, and tags OK.")
     return 0
 
 

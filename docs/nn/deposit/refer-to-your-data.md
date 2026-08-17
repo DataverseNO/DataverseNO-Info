@@ -9,11 +9,11 @@ seo_description: Les korleis du kan sitera publiserte datasett i DataverseNO, re
 tags:
 - deposit
 - dataverseno
-- data-citation
+- citation
 - doi
 - versioning
 - research-data
-- publication
+- publishing
 keywords:
 - sitera datasett
 - sitere datasett
@@ -55,13 +55,13 @@ Dette steget forklarar:
 
 - [SECTION: etter-publisering | Kva som skjer etter publisering].
 
-- [SECTION: kvifor-datasett-bor-siterast | Kvifor datasett bør siterast].
+- [SECTION: kvifor-datasett-bør-siterast | Kvifor datasett bør siterast].
 
 - [SECTION: korleis-sitera-eit-publisert-datasett | Korleis du siterer eit publisert datasett].
 
 - [SECTION: korleis-referera-til-datasett-i-ein-publikasjon | Korleis du refererer til datasett i ein publikasjon].
 
-- [SECTION: referera-til-eit-datasett-for-publisering | Korleis du refererer til eit datasett før publisering].
+- [SECTION: referera-til-eit-datasett-før-publisering | Korleis du refererer til eit datasett før publisering].
 
 - [SECTION: datasettreferanse-og-versjonering | Korleis versjonering påverkar datasettreferansen].
 

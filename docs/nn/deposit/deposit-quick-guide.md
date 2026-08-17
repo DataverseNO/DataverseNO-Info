@@ -104,9 +104,9 @@ Migration note: Preserve the checklist items as task-list items in Markdown. Ste
 
 - Hugs å klikka på _Save Dataset_ nedst på sida.
 
-**[ ] [PAGE: deposit-your-data#vel-gjenbruksvilkar | Stadfest eller spesifiser lisens]**
+**[ ] [PAGE: deposit-your-data#vel-gjenbruksvilkår | Stadfest eller spesifiser lisens]**
 
-- Den tilrådde standardlisensen er [PAGE: deposit-your-data#tilradd-lisens | CC0]. Dersom ingen eigna lisens er lista opp, kan du kontakta [REUSE: links/contact-page | lokal brukarstøtte].
+- Den tilrådde standardlisensen er [PAGE: deposit-your-data#tilrådd-lisens | CC0]. Dersom ingen eigna lisens er lista opp, kan du kontakta [REUSE: links/contact-page | lokal brukarstøtte].
 
 **[ ] [PAGE: deposit-your-data#last-opp-filene-dine | Last opp filene dine]**
 
@@ -118,7 +118,7 @@ Migration note: Preserve the checklist items as task-list items in Markdown. Ste
 
 - Klikk på _Save_ når du er ferdig.
 
-**[ ] [PAGE: deposit-your-data#del-datasettet-for-publisering | Del datasettet før publisering, dersom det trengst]**
+**[ ] [PAGE: deposit-your-data#del-datasettet-før-publisering | Del datasettet før publisering, dersom det trengst]**
 
 - Treng du å dela eit datasett før publisering, til dømes med samarbeidspartnarar eller fagfellar? Kontakt [REUSE: links/contact-page | lokal brukarstøtte].
 
@@ -140,7 +140,7 @@ Migration note: Preserve the checklist items as task-list items in Markdown. Ste
 
 - Når du er ferdig med endringane, klikk på _Submit for Review_ på nytt.
 
-**[ ] [PAGE: publish-your-data#fa-datasettet-publisert | Få datasettet publisert]**
+**[ ] [PAGE: publish-your-data#få-datasettet-publisert | Få datasettet publisert]**
 
 - Når kuratoren har godkjent datasettet og du har stadfesta at det er klart for publisering, publiserer kuratoren datasettet.
 

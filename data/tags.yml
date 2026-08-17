@@ -217,6 +217,118 @@ tags:
         - FAIR-prinsippene
         - FAIR-prinsipp
 
+  research-data:
+    label:
+      en: Research Data
+      nn: forskingsdata
+    category: data-deposit
+    description:
+      en: Content related to research data as a general concept, independent of a specific deposit workflow stage.
+      nn: Innhald om forskingsdata som eit generelt omgrep, uavhengig av eit bestemt steg i deponeringsprosessen.
+    aliases:
+      en:
+        - research datasets
+      nn:
+        - forskingsdatasett
+        - forskningsdata
+
+  open-data:
+    label:
+      en: Open Data
+      nn: opne data
+    category: data-deposit
+    description:
+      en: Content related to making research data openly available for reuse.
+      nn: Innhald om å gjere forskingsdata ope tilgjengeleg for attbruk.
+    aliases:
+      en:
+        - open access data
+        - open research data
+      nn:
+        - opne forskingsdata
+        - åpne data
+
+  checklist:
+    label:
+      en: Checklist
+      nn: sjekkliste
+    category: data-deposit
+    description:
+      en: Content presented as a checklist of tasks.
+      nn: Innhald presentert som ei sjekkliste over oppgåver.
+    aliases:
+      en: []
+      nn: []
+
+  data-management:
+    label:
+      en: Data Management
+      nn: datahandtering
+    category: data-deposit
+    description:
+      en: Content related to managing research data throughout the deposit workflow.
+      nn: Innhald om handtering av forskingsdata gjennom heile deponeringsprosessen.
+    aliases:
+      en:
+        - research data management
+      nn:
+        - forskingsdatahandtering
+        - databehandling
+
+  file-upload:
+    label:
+      en: File Upload
+      nn: filopplasting
+    category: data-deposit
+    description:
+      en: Content related to uploading files as part of depositing a dataset.
+      nn: Innhald om opplasting av filer som del av deponering av eit datasett.
+    aliases:
+      en: []
+      nn: []
+
+  file-formats:
+    label:
+      en: File Formats
+      nn: filformat
+    category: data-deposit
+    description:
+      en: Content related to file formats for research data.
+      nn: Innhald om filformat for forskingsdata.
+    aliases:
+      en:
+        - preferred file formats
+      nn:
+        - føretrekte filformat
+
+  versioning:
+    label:
+      en: Versioning
+      nn: versjonering
+    category: data-deposit
+    description:
+      en: Content related to dataset versions and version history.
+      nn: Innhald om datasettversjonar og versjonshistorikk.
+    aliases:
+      en:
+        - dataset versions
+      nn:
+        - datasettversjonar
+
+  publishing:
+    label:
+      en: Publishing
+      nn: publisering
+    category: data-deposit
+    description:
+      en: Content related to publishing a dataset and making it publicly available.
+      nn: Innhald om publisering av eit datasett og å gjere det offentleg tilgjengeleg.
+    aliases:
+      en:
+        - dataset publication
+      nn:
+        - publisering av datasett
+
   curation:
     label:
       en: Curation
@@ -286,6 +398,37 @@ tags:
         - kvalitetssjekk
         - validering
 
+  preservation:
+    label:
+      en: Preservation
+      nn: bevaring
+    category: administration
+    description:
+      en: Content related to the long-term preservation of research data.
+      nn: Innhald om langtidsbevaring av forskingsdata.
+    aliases:
+      en:
+        - long-term preservation
+        - digital preservation
+      nn:
+        - langtidsbevaring
+
+  deaccessioning:
+    label:
+      en: Deaccessioning
+      nn: avhending
+    category: administration
+    description:
+      en: Content related to withdrawing or removing datasets from the repository.
+      nn: Innhald om tilbaketrekking eller fjerning av datasett frå arkivet.
+    aliases:
+      en:
+        - withdrawal
+        - dataset removal
+      nn:
+        - tilbaketrekking
+        - fjerning av datasett
+
   policy:
     label:
       en: Policy
@@ -350,6 +493,37 @@ tags:
         - arkivsertifisering
         - sertifisering
         - etterleving
+
+  access:
+    label:
+      en: Access
+      nn: tilgang
+    category: governance
+    description:
+      en: Content related to access conditions and access control for research data.
+      nn: Innhald om tilgangsvilkår og tilgangsstyring for forskingsdata.
+    aliases:
+      en:
+        - data access
+        - access conditions
+      nn:
+        - datatilgang
+        - tilgangsvilkår
+
+  partners:
+    label:
+      en: Partners
+      nn: partnarar
+    category: governance
+    description:
+      en: Content related to DataverseNO partner institutions.
+      nn: Innhald om partnarinstitusjonar i DataverseNO.
+    aliases:
+      en:
+        - partner institutions
+      nn:
+        - partnarinstitusjonar
+        - partnerinstitusjoner
 
   training:
     label:
@@ -468,6 +642,18 @@ tags:
         - informasjonsnettstad
         - nettsted
         - informasjonsnettsted
+
+  service:
+    label:
+      en: Service
+      nn: teneste
+    category: service
+    description:
+      en: Content describing DataverseNO as a service and what it offers.
+      nn: Innhald som skildrar DataverseNO som ei teneste og kva ho tilbyr.
+    aliases:
+      en: []
+      nn: []
 
   news:
     label:

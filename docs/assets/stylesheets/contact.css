@@ -45,6 +45,12 @@
   border-radius: 12px;
 }
 
+.contact-card img {
+  max-height: 40px;
+  max-width: 140px;
+  margin-bottom: 0.4rem;
+}
+
 .contact-card h3 {
   margin: 0 0 0.4rem;
   font-size: 1rem;
