@@ -11,6 +11,7 @@ hooks:
   - hooks/data_store.py  # MUST be early — other hooks import from it and depend on its module-level init
   - hooks/reuse_resolver.py
   - hooks/generated_components.py
+  - hooks/content_blocks.py
   - hooks/seo_meta.py
 
 theme:

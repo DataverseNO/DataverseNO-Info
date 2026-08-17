@@ -101,6 +101,28 @@ def resolve_reuse_markers(markdown: str, lang: str, page_path: str = None) -> st
     return _MARKER.sub(_replace, markdown)
 
 
+def resolve_target_href(target: str, lang: str, files, current_file) -> str:
+    """Resolve a bare page target (e.g. "prepare-your-data", "file-formats/index",
+    or "publish-your-data#some-anchor") into a relative href, using the same
+    candidate resolution as [PAGE: ...] markers. Shared by [PAGE: ...] and by
+    the Target: field of content-component blocks ([BUTTON], [NAVIGATION CARD],
+    [RESOURCE BOX], [WORKFLOW] steps).
+    """
+    path, _, anchor = target.partition("#")
+    path, anchor = path.strip(), anchor.strip()
+    current_dir = PurePosixPath(current_file.src_uri).parent.as_posix()
+    candidates = [f"{current_dir}/{path}.md", f"{lang}/{path}.md", f"{lang}/{path}/index.md"]
+
+    target_file = next((f for f in (files.get_file_from_path(c) for c in candidates) if f), None)
+    if target_file is None:
+        raise KeyError(f"target '{target}' not found for lang '{lang}' (tried {candidates})")
+
+    href = target_file.url_relative_to(current_file)
+    if anchor:
+        href += f"#{anchor}"
+    return href
+
+
 def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
     """Resolve [PAGE: ...] markers into real <a> links using mkdocs' own
     Files collection, so hrefs match the relative-URL convention the rest of
@@ -111,23 +133,14 @@ def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
     same-directory fallback for slash-less <path> and to make the href
     relative to it).
     """
-    current_dir = PurePosixPath(current_file.src_uri).parent.as_posix()
 
     def _replace(match: re.Match) -> str:
         ref = match.group("ref").strip()
         label = (match.group("label") or ref).strip()
-        path, _, anchor = ref.partition("#")
-        path, anchor = path.strip(), anchor.strip()
-
-        candidates = [f"{current_dir}/{path}.md", f"{lang}/{path}.md", f"{lang}/{path}/index.md"]
-
-        target = next((f for f in (files.get_file_from_path(c) for c in candidates) if f), None)
-        if target is None:
-            raise KeyError(f"[PAGE: {ref}] target page not found for lang '{lang}' (tried {candidates})")
-
-        href = target.url_relative_to(current_file)
-        if anchor:
-            href += f"#{anchor}"
+        try:
+            href = resolve_target_href(ref, lang, files, current_file)
+        except KeyError as e:
+            raise KeyError(f"[PAGE: {ref}] {e}") from e
         return f'<a href="{href}">{label}</a>'
 
     return _PAGE_MARKER.sub(_replace, markdown)

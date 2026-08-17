@@ -9,14 +9,16 @@ from hooks.data_store import get_data
 from hooks.reuse_resolver import page_language, resolve_page_markers, resolve_reuse_markers
 
 _GENERATED_BLOCK = re.compile(
-    r"\[GENERATED COMPONENT\]\nID: (?P<id>[\w-]+)\n(?:[^\n]*\n)*?(?=\n##|\n\[GENERATED COMPONENT\]|\Z)",
-    re.MULTILINE,
+    # Stops at the first line that isn't "Key: value" (i.e. the block's own
+    # blank-line terminator) instead of scanning ahead to the next heading —
+    # scanning ahead swallowed unrelated prose paragraphs following the block.
+    r"\[GENERATED COMPONENT\]\nID: (?P<id>[\w-]+)\n(?:[A-Za-z][A-Za-z ]*:.*\n)*"
 )
 
 
 def _person_card(person: dict, lang: str) -> str:
     photo = person.get("photo")
-    img = f'<img src="/assets/{photo}" alt="" loading="lazy">' if photo else ""
+    img = f'<img src="/{photo}" alt="" loading="lazy">' if photo else ""
     expertise = ", ".join(person["expertise"].get(lang, []))
     roles = ", ".join(person["role_free_text"].get(lang, []))
     aliases = " ".join(person["search_aliases"])
@@ -93,10 +95,22 @@ def _glossary_terms(lang: str, files, current_file) -> str:
     return f'<dl class="glossary-list">\n{body}\n</dl>'
 
 
+def _partner_logo_grid(lang: str) -> str:
+    partners = get_data()["partners"]["partners"]
+    ordered = sorted(partners, key=lambda p: p["sort_name"][lang])
+    items = []
+    for partner in ordered:
+        logo = partner["logo"][lang]
+        name = partner["name"][lang]
+        items.append(f'<span class="partner-logo" title="{name}"><img src="/{logo}" alt="{name}" loading="lazy"></span>')
+    return f'<div class="partner-logo-grid">\n{"".join(items)}\n</div>'
+
+
 _COMPONENT_RENDERERS = {
     "repository-management-contact-card": _repository_management_card,
     "contact-search-input": _contact_search_input,
     "partner-contact-cards": _partner_contact_cards,
+    "partner-institution-logo-grid": _partner_logo_grid,
 }
 
 

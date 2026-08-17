@@ -13,6 +13,16 @@ MARKER_PATTERNS = [
     re.compile(r"<!-- PEOPLE_(SEARCH_AND_FILTER|CARDS): "),
     re.compile(r"<!-- GLOSSARY_TERMS: "),
     re.compile(r"\[PAGE:"),
+    re.compile(r"\[SECTION:"),
+    re.compile(r"\[GENERATED VALUE"),
+    re.compile(r"\[ADMONITION\]"),
+    re.compile(r"\[BUTTON\]"),
+    re.compile(r"\[NAVIGATION CARD\]"),
+    re.compile(r"\[RESOURCE BOX"),
+    re.compile(r"\[CARD GRID\]"),
+    re.compile(r"\[WORKFLOW\]"),
+    re.compile(r"\[CHECKLIST\]"),
+    re.compile(r"^\[ \] ", re.MULTILINE),
 ]
 
 

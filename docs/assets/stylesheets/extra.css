@@ -103,3 +103,128 @@ body, .md-typeset {
 .md-nav__link--active {
   color: var(--dvno-orange) !important;
 }
+
+/* ── Content components (spec §9) ────────────────────────────────────────
+ * [NAVIGATION CARD], [RESOURCE BOX], [BUTTON], [WORKFLOW], checklist items,
+ * and the generated partner logo grid, resolved at build time by
+ * hooks/content_blocks.py and hooks/generated_components.py. Cards lay out
+ * into a wrapping row via flexbox on the cards themselves — no grid
+ * container element is required in the resolved markup.
+ */
+.navigation-card,
+.resource-card {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 220px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 1rem;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: top;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.navigation-card:hover,
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(179, 71, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.navigation-card__accent {
+  font-weight: bold;
+  color: var(--dvno-orange);
+}
+
+.navigation-card__title,
+.resource-card {
+  font-weight: bold;
+}
+
+.navigation-card__description {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+.navigation-card--pending,
+.resource-card--pending {
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.dvno-button {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dvno-button--primary {
+  background: var(--dvno-orange);
+  color: #fff;
+}
+
+.dvno-button--secondary {
+  background: transparent;
+  color: var(--dvno-orange);
+  border: 2px solid var(--dvno-orange);
+}
+
+.dvno-button--pending {
+  opacity: 0.6;
+  border: 2px dashed var(--dvno-grey);
+}
+
+.workflow {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.workflow-step {
+  flex: 1 1 160px;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.workflow-step--secondary {
+  border-style: dashed;
+}
+
+.workflow-step a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.workflow-step__number {
+  font-weight: bold;
+  color: var(--dvno-orange);
+}
+
+.checklist-item {
+  margin: 0.25rem 0;
+}
+
+.partner-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.partner-logo img {
+  max-height: 48px;
+  max-width: 140px;
+}
