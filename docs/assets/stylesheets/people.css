@@ -1,120 +1,132 @@
 /**
- * People page styles (stub)
+ * People page styles
  *
- * Purpose
- * -------
- * This file documents the expected CSS structure for the DataverseNO People
- * page. It is intentionally a stub and should be finalized during the
- * AI-assisted website migration, once the generated HTML structure and visual
- * design details are known.
+ * Card grid + search/institution/role filter for the generated People page
+ * (hooks/generated_components.py, docs/assets/javascripts/people-filter.js),
+ * matching the DataverseNO brand tokens defined in extra.css / dataverseno.css.
  *
- * Expected components
- * -------------------
- * - .people-page
- * - .people-intro
- * - .people-filter
- * - .people-filter__search
- * - .people-filter__boxes
- * - .people-filter-box
- * - .people-filter-box[aria-pressed="true"]
- * - .people-institution-select
- * - .people-results-summary
- * - .people-card-grid
- * - .people-card
- * - .people-card__photo
- * - .people-card__content
- * - .people-card__name
- * - .people-card__institution
- * - .people-card__roles
- * - .people-card__expertise
- * - .people-card__profile
- * - .people-empty-state
- *
- * Design expectations
- * -------------------
- * - Use central DataverseNO design tokens where available.
- * - Keep layout responsive.
- * - Use readable spacing and card structure.
- * - Use smaller text for expertise and institutional profile links.
- * - Include visible focus states.
- * - Do not rely on colour alone for active filter states.
+ * Components
+ * ----------
+ * - .people-filter          Search + institution + role filter container
+ * - .people-filter__search  Search input wrapper (#people-search)
+ * - .people-filter__boxes   Institution select + role filter buttons
+ * - .people-filter-box      Role toggle button, [aria-pressed="true"] = active
+ * - .people-institution-select  Multi-select institution filter
+ * - .people-results-summary Live result count (aria-live="polite")
+ * - .people-card-grid       Grid of .people-card elements (#people-cards)
+ * - .people-card            Person card, hidden via the native [hidden] attribute
+ * - .people-empty-state     Shown when no cards match the current filters
  */
 
-.people-page {
-  /* Page-level wrapper. Final spacing to be defined during migration. */
-}
-
 .people-filter {
-  /* Search and filter container. */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 32rem;
+  margin: 1rem 0;
 }
 
-.people-filter__search {
-  /* Search input styling. */
+.people-filter label {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.people-filter__search input[type='search'] {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--dvno-grey);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.people-filter__search input[type='search']:focus-visible,
+.people-institution-select:focus-visible,
+.people-filter-box:focus-visible {
+  outline: 2px solid var(--dvno-orange);
+  outline-offset: 2px;
 }
 
 .people-filter__boxes {
-  /* Responsive layout for filter/information boxes. */
-}
-
-.people-filter-box {
-  /* Base style for filter boxes. */
-}
-
-.people-filter-box[aria-pressed="true"] {
-  /* Active state for toggle filters. Must not rely on colour alone. */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .people-institution-select {
-  /* Multi-select institution filter. */
+  padding: 0.4rem;
+  border: 1px solid var(--dvno-grey);
+  border-radius: 6px;
+  min-width: 12rem;
+}
+
+.people-filter-box {
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.people-filter-box[aria-pressed='true'] {
+  background: var(--dvno-orange);
+  color: #fff;
+  font-weight: bold;
 }
 
 .people-results-summary {
-  /* Result count or summary text. Consider aria-live="polite" in HTML. */
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .people-card-grid {
-  /* Responsive grid for person cards. */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .people-card {
-  /* Person card container. */
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 12px;
 }
 
 .people-card__photo {
-  /* Person photo. Ensure image dimensions are stable to avoid layout shift. */
-}
-
-.people-card__content {
-  /* Text content area within person card. */
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .people-card__name {
-  /* Full name. Should be visually prominent and bold. */
-}
-
-.people-card__institution {
-  /* Partner institution link. */
+  margin: 0 0 0.3rem;
+  font-weight: bold;
 }
 
 .people-card__roles {
-  /* Controlled DataverseNO role labels. */
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
 }
 
-.people-card__expertise {
-  /* Expertise and interest text. Should be slightly smaller than name and institution. */
-}
-
+.people-card__expertise,
 .people-card__profile {
-  /* Institutional profile link. Should be slightly smaller than name and institution. */
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.85;
 }
 
 .people-empty-state {
-  /* Message shown when no person cards match the current filters. */
+  font-style: italic;
+  opacity: 0.8;
 }
 
-/* Suggested responsive breakpoint to refine during migration. */
 @media screen and (max-width: 700px) {
   .people-card-grid {
-    /* Stack cards vertically on narrow screens. */
+    grid-template-columns: 1fr;
   }
 }

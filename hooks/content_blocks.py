@@ -47,7 +47,10 @@ def _parse_fields(fields_text: str) -> dict:
     fields = {}
     for line in fields_text.strip("\n").split("\n"):
         key, _, value = line.partition(":")
-        fields[key.strip()] = value.strip()
+        value = value.strip()
+        if value.upper() == "NONE":  # migration placeholder for "field intentionally absent"
+            value = ""
+        fields[key.strip()] = value
     return fields
 
 
@@ -154,6 +157,12 @@ _GENERATED_VALUES = {
 
 
 def resolve_content_blocks(markdown: str, lang: str, files, current_file) -> str:
+    # MkDocs strips the page source's trailing newline before this hook runs.
+    # _FIELD_LINE requires each field to end in "\n", so a block whose last
+    # field is also the file's last line would otherwise fall outside every
+    # regex match here (field silently dropped, block left half-resolved).
+    if not markdown.endswith("\n"):
+        markdown += "\n"
     markdown = _ORPHAN_ID_LIST_GRID.sub("", markdown)
     markdown = _GRID_HEADER.sub("", markdown)
     markdown = _CHECKLIST_HEADER.sub("", markdown)

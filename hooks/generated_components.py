@@ -18,32 +18,72 @@ _GENERATED_BLOCK = re.compile(
 
 def _person_card(person: dict, lang: str) -> str:
     photo = person.get("photo")
-    img = f'<img src="/{photo}" alt="" loading="lazy">' if photo else ""
+    img = f'<img class="people-card__photo" src="/{photo}" alt="" loading="lazy">' if photo else ""
     expertise = ", ".join(person["expertise"].get(lang, []))
     roles = ", ".join(person["role_free_text"].get(lang, []))
     aliases = " ".join(person["search_aliases"])
-    profile = f'<a href="{person["profile_url"]}">{person["name"]}</a>' if person.get("profile_url") else person["name"]
+    profile = (
+        f'<a class="people-card__profile" href="{person["profile_url"]}">{person["name"]}</a>'
+        if person.get("profile_url")
+        else person["name"]
+    )
     return (
-        f'<article class="person-card" data-search="{aliases.lower()}" data-institution="{person["institution_id"]}">'
-        f'{img}<h3>{profile}</h3><p class="person-roles">{roles}</p><p class="person-expertise">{expertise}</p>'
-        f'</article>'
+        f'<article class="people-card" data-person-card'
+        f' data-search="{aliases.lower()}" data-institution="{person["institution_id"]}"'
+        f' data-roles="{" ".join(person["roles"])}">'
+        f'{img}<div class="people-card__content">'
+        f'<p class="people-card__name">{profile}</p>'
+        f'<p class="people-card__roles">{roles}</p>'
+        f'<p class="people-card__expertise">{expertise}</p>'
+        f'</div></article>'
     )
 
 
 def _people_cards(lang: str) -> str:
     people = get_data()["people"]["people"]
     cards = "\n".join(_person_card(p, lang) for p in people)
-    return f'<div class="person-cards" id="person-cards">\n{cards}\n</div>'
+    empty_label = "No people match the current filters." if lang == "en" else "Ingen personar samsvarar med filtera."
+    return (
+        f'<div class="people-card-grid" id="people-cards">\n{cards}\n</div>\n'
+        f'<p class="people-empty-state" data-people-empty-state hidden>{empty_label}</p>'
+    )
 
 
 def _people_search_and_filter(lang: str) -> str:
-    placeholder = "Search by name, institution, role, or expertise" if lang == "en" else "Søk etter namn, institusjon, rolle eller ekspertise"
-    label = "Search people" if lang == "en" else "Søk i folk"
+    # ponytail: no shared [data-people-page] wrapper — PEOPLE_SEARCH_AND_FILTER
+    # and PEOPLE_CARDS resolve as two separate markers on the page, not nested
+    # inside one container, so people-filter.js scopes off [data-people-search]
+    # (this component) and #people-cards (the grid) directly instead.
+    partners = get_data()["partners"]["partners"]
+    roles = get_data()["people"]["role_vocabulary"]
+    ordered_partners = sorted(partners, key=lambda p: p["sort_name"][lang])
+
+    search_label = "Search people" if lang == "en" else "Søk i folk"
+    search_placeholder = (
+        "Search by name, institution, role, or expertise"
+        if lang == "en"
+        else "Søk etter namn, institusjon, rolle eller ekspertise"
+    )
+    institution_label = "Filter by institution" if lang == "en" else "Filtrer etter institusjon"
+    role_group_label = "Filter by role" if lang == "en" else "Filtrer etter rolle"
+
+    institution_options = "".join(f'<option value="{p["id"]}">{p["name"][lang]}</option>' for p in ordered_partners)
+    role_buttons = "".join(
+        f'<button type="button" class="people-filter-box" data-role-filter data-role="{role_id}" aria-pressed="false">{label[lang]}</button>'
+        for role_id, label in roles.items()
+    )
+
     return (
-        f'<div class="people-filter" data-lang="{lang}">'
-        f'<label for="people-search">{label}</label>'
-        f'<input type="search" id="people-search" placeholder="{placeholder}">'
-        f'</div>'
+        '<div class="people-filter">'
+        f'<div class="people-filter__search"><label for="people-search">{search_label}</label>'
+        f'<input type="search" id="people-search" data-people-search placeholder="{search_placeholder}"></div>'
+        '<div class="people-filter__boxes">'
+        f'<label for="people-institution-filter">{institution_label}</label>'
+        f'<select id="people-institution-filter" class="people-institution-select" data-institution-filter multiple size="1">{institution_options}</select>'
+        f'<span class="people-filter__roles" role="group" aria-label="{role_group_label}">{role_buttons}</span>'
+        '</div>'
+        '<p class="people-results-summary" data-people-count aria-live="polite"></p>'
+        '</div>'
     )
 
 

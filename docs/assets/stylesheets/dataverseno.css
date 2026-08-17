@@ -230,7 +230,9 @@ body, .md-typeset {
   border-top: 1px solid var(--dataverseno-neutral-secondary);
   padding: 0.8rem 1.2rem;
   font-size: 0.6rem;
-  color: var(--dataverseno-neutral-secondary);
+  /* --dataverseno-neutral-secondary (#D9D9D9) on this background is 3.9:1,
+     below the 4.5:1 AA threshold for small text — white clears it (6.9:1). */
+  color: var(--dataverseno-light-primary);
 }
 
 .dvno-footer__legal p {

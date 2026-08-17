@@ -1,90 +1,66 @@
 /**
- * People page filter script (stub)
+ * People page filter script.
  *
- * Purpose
- * -------
- * This file documents the expected JavaScript contract for the DataverseNO
- * People page. It is intentionally a stub and should be completed during the
- * AI-assisted website migration, once the final generated HTML structure is
- * available.
- *
- * Expected source data
- * --------------------
- * - data/people.yml
- * - data/partner-contacts.yml
- *
- * Expected page structure
- * -----------------------
- * The generated People page should expose the following data attributes:
- *
- * Page root:
- *   [data-people-page]
- *
- * Search input:
- *   [data-people-search]
- *
- * Institution filter:
- *   [data-institution-filter]
- *
- * Role filter buttons:
- *   [data-role-filter]
- *
- * Person cards:
- *   [data-person-card]
- *   data-institution="uit"
- *   data-roles="repository-management curation"
- *   data-search="philipp conzett uit tromsø repository management linguistics"
- *
- * Result count elements:
- *   [data-people-count]
- *   [data-institution-count]
- *   [data-role-count="curation"]
- *   [data-role-count="collection-management"]
- *   [data-role-count="repository-management"]
- *   [data-role-count="board"]
- *
- * Empty-state element:
- *   [data-people-empty-state]
- *
- * Expected behaviour
- * ------------------
- * - Initialize only on pages containing [data-people-page].
- * - Filter cards by free-text search.
- * - Filter cards by one or more selected partner institutions.
- * - Filter cards by one or more selected controlled roles.
- * - Update result counts when filters change.
- * - Show an empty-state message when no person cards match.
- * - Keep all cards visible if JavaScript is unavailable.
- *
- * Accessibility expectations
- * --------------------------
- * - Filter buttons should be real <button> elements.
- * - Toggle filter buttons should use aria-pressed="true|false".
- * - Result count updates should be announced through an aria-live="polite"
- *   region where appropriate.
- * - Filtering must remain usable by keyboard.
- * - Active state must not rely on colour alone.
- *
- * Material for MkDocs note
- * ------------------------
- * If instant loading is enabled, initialization should use Material's
- * document$ observable when available. A fallback DOMContentLoaded listener
- * should be provided for portability.
+ * Filters the person cards rendered into #people-cards (by hooks/
+ * generated_components.py) using the free-text search input, the
+ * institution <select multiple>, and the role toggle buttons rendered
+ * alongside it by the same hook. Everything stays in the DOM at all times
+ * (spec §6.2.6: "All person cards shall remain visible if JavaScript is
+ * unavailable") — this script only ever adds/removes the `hidden`
+ * attribute on top of what the build already rendered.
  */
-
 (function () {
   function initPeopleFilter() {
-    const root = document.querySelector('[data-people-page]')
-    if (!root) return
+    const search = document.querySelector('[data-people-search]')
+    const grid = document.getElementById('people-cards')
+    if (!search || !grid) return
 
-    // Stub only: implementation to be finalized during website migration.
-    // Suggested implementation outline:
-    // 1. Read [data-people-search].
-    // 2. Read [data-institution-filter] selected values.
-    // 3. Read active [data-role-filter] buttons.
-    // 4. Compare filters against [data-person-card] attributes.
-    // 5. Toggle card.hidden.
-    // 6. Update count and empty-state elements.
+    const institutionSelect = document.querySelector('[data-institution-filter]')
+    const roleButtons = Array.from(document.querySelectorAll('[data-role-filter]'))
+    const countEl = document.querySelector('[data-people-count]')
+    const emptyState = document.querySelector('[data-people-empty-state]')
+    const cards = Array.from(grid.querySelectorAll('[data-person-card]'))
+
+    function selectedInstitutions() {
+      if (!institutionSelect) return []
+      return Array.from(institutionSelect.selectedOptions).map((o) => o.value)
+    }
+
+    function activeRoles() {
+      return roleButtons.filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.role)
+    }
+
+    function apply() {
+      const query = search.value.trim().toLowerCase()
+      const institutions = selectedInstitutions()
+      const roles = activeRoles()
+      let visibleCount = 0
+
+      cards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search.includes(query)
+        const matchesInstitution = institutions.length === 0 || institutions.includes(card.dataset.institution)
+        const cardRoles = card.dataset.roles ? card.dataset.roles.split(' ') : []
+        const matchesRole = roles.length === 0 || roles.some((r) => cardRoles.includes(r))
+        const visible = matchesQuery && matchesInstitution && matchesRole
+        card.hidden = !visible
+        if (visible) visibleCount += 1
+      })
+
+      if (countEl) countEl.textContent = String(visibleCount)
+      if (emptyState) emptyState.hidden = visibleCount !== 0
+    }
+
+    search.addEventListener('input', apply)
+    if (institutionSelect) institutionSelect.addEventListener('change', apply)
+    roleButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const pressed = button.getAttribute('aria-pressed') === 'true'
+        button.setAttribute('aria-pressed', String(!pressed))
+        apply()
+      })
+    })
+
+    apply()
   }
 
   if (typeof document$ !== 'undefined' && document$.subscribe) {
