@@ -1,160 +1,656 @@
 ---
-title: Deposit your data
+title: 'Step 2: Deposit your data'
+file_path: docs/en/deposit/deposit-your-data.md
+language: en
+nav_label: Deposit your data
+description: Learn how to create a dataset draft, describe it with metadata, choose reuse terms, upload files, use embargoes, share drafts, and submit datasets for review in DataverseNO.
+seo_title: Deposit your data in DataverseNO | Metadata, files, licences, and review
+seo_description: Learn how to deposit research data in DataverseNO by creating a dataset draft, entering metadata, choosing reuse terms, uploading files, handling embargoes, sharing drafts, and submitting the dataset for review.
+tags:
+- deposit
+- dataverseno
+- metadata
+- file-upload
+- curation
+- research-data
+- licensing
+keywords:
+- deposit data in DataverseNO
+- create dataset draft
+- DataverseNO metadata
+- upload research data
+- dataset licence
+- CC0
+- embargo period
+- submit dataset for review
+- preview URL
+- double-blind peer review
+audience:
+- researchers
+- data depositors
+- research support staff
+- data curators
+primary_user_intent: User wants step-by-step guidance on how to create a dataset draft, describe the dataset, upload files, choose reuse terms, and submit the dataset for review in DataverseNO.
+parent_page: Deposit Guidelines
+status: Draft
+last_reviewed: null
+review_cycle: Annual
+related_data_sources:
+- data/links.yml
+- data/values.yml
+- data/terms.yml
+- data/partners.yml
+canonical_url: https://info.dataverse.no/en/deposit/deposit-your-data/
+social_image: null
 ---
 
-# Deposit your data
+# Step 2: Deposit your data
 
-Before archiving your data in DataverseNO, learn how to register, describe and upload your data.
+This step explains how to create a dataset in DataverseNO, describe it using metadata, upload your files, and submit the dataset for review.
 
-By using DataverseNO you confirm that you have read and agree to the DataverseNO Deposit Agreement.
+Before continuing, make sure you have completed [PAGE: prepare-your-data | Step 1: Prepare your data].
 
-## a) Create a user account
+Most datasets can be deposited in a few simple steps:
 
-### Users from Norwegian research organizations
+- [SECTION: create-a-user-account | Create a user account, if needed].
 
-If your organization provides authentication through Feide, log in with Feide. If your organization does not provide Feide authentication, log in with ORCID. For TROLLing, follow these instructions.
+- [SECTION: create-a-dataset-draft | Create a dataset draft].
 
-**Log in with Feide:** Go to DataverseNO, and click on Log In (in the upper right hand corner). To the right of Your Institution, select Feide – Norwegian educational institutions, and click on Continue. At first-time log-in, you are asked to approve Feide/Dataporten to forward user information about you. Once you have approved this request, a user account will be created for you in the DataverseNO repository. We recommend you to link your DataverseNO user account to your ORCID account. Click your user name in the top right corner, select Account Information, and click Add Authenticated ORCID and follow the instructions. Note! If your institution is not listed in the log-in menu, please ask the IT user support at your institution to activate Feide log-in for DataverseNO. After log-in, you will be granted deposit access to DataverseNO. If your organization is a DataverseNO partner institution, you will have deposit access to the institutional collection of your organization. If your organization is not partnering with DataverseNO, you will have deposit access to the top collection in DataverseNO. If you do not have deposit access to any collection, contact the DataverseNO team at support@dataverse.no.
+- [SECTION: describe-your-dataset-using-metadata | Describe your dataset using metadata].
 
-**Log in with ORCID:** Go to DataverseNO, and click on Log In (in the upper right hand corner). Under Other options, choose ORCID and click on Create or Connect your ORCID. Log in with your ORCID username and password. If you do not have a ORCID account, you can create one by clicking on Register now. Make sure you use your institutional email address, otherwise you will not be granted automatic deposit access to DataverseNO. After log-in, click your user name in the top right corner, select Account Information, and click the Send Verification Email button. You will get an email asking you to verify your email address. If you have chosen your institutional email address you will after verification be granted deposit access to DataverseNO. If your organization is a DataverseNO partner institution, you will have deposit access to the institutional collection of your organization. If your organization is not partnering with DataverseNO, you will have deposit access to the top collection in DataverseNO. If you do not have deposit access to any collection, contact the DataverseNO team at support@dataverse.no.
+- [SECTION: choose-terms-for-reuse | Choose terms for reuse].
 
-### Other users
+- [SECTION: upload-your-files | Upload your files].
 
-If you are not affiliated with a Norwegian research organization, you may choose one of the log-in options below. With the exception of TROLLing, only researchers from Norwegian research organizations and international collaborators can get deposit access to DataverseNO. For TROLLing, follow these instructions.
+- [SECTION: embargo-period | Specify an embargo period, if needed].
 
-**Log in with eduGAIN:** Go to DataverseNO, and click on Log In (in the upper right hand corner). Under Other options, choose eduGAIN and click on Log in with eduGAIN. Choose International provider (eduGAIN) and look up your country and the name of your organization and click on Continue. Log in with your institutional credentials. We recommend you to link your DataverseNO user account to your ORCID account. Click your user name in the top right corner, select Account Information, and click Add Authenticated ORCID and follow the instructions. Note! If your institution is not listed in the log-in menu, please ask the IT user support at your institution to activate eduGAIN log-in for DataverseNO. After log-in, a DataverseNO user account will be created for you, but you will not have deposit access yet. Fill in and submit this form to request deposit access. As a rule, your request will be processed within three working days. For questions, please contact the DataverseNO team at support@dataverse.no.
+- [SECTION: share-your-dataset-before-publication | Share your dataset before publication, if needed].
 
-**Log in with ORCID:** Go to DataverseNO, and click on Log In (in the upper right hand corner). Under Other options, choose ORCID and click on Create or Connect your ORCID. Log in with your ORCID username and password. If you do not have a ORCID account, you can create one by clicking on Register now. After log-in, a DataverseNO user account will be created for you, but you will not have deposit access yet. Fill in and submit this form to request deposit access. As a rule, your request will be processed within three working days. For questions, please contact the DataverseNO team at support@dataverse.no.
+- [SECTION: submit-your-dataset-for-review | Submit your dataset for review].
 
-## b) Deposit your data
+You do not need to perfect every aspect of the dataset before submission. Curators can help improve documentation, metadata, and other aspects of the dataset during the review process.
 
-### Create a dataset draft
+## Create a user account
 
-Once you have logged in to DataverseNO (see step 1), choose the collection in which you are supposed to deposit your data:
+To deposit data in DataverseNO, you need a user account.
 
-- If you are an employee, student or affiliate at one of the DataverseNO partner institutions, choose the appropriate institutional collection (e.g. the UiT collection)
-- If you are a linguist and have got access to TROLLing, choose TROLLing (https://trolling.uit.no/).
-- All other users are supposed to choose the top-level collection (DataverseNO).
+### Researchers affiliated with Norwegian research institutions
 
-Once you are in the right collection, you can create a dataset draft by clicking on the Add Data button on the right hand side, and choose New Dataset. The Add Data button is only visible if you are in the right collection.
+Researchers at Norwegian research institutions can normally sign in using:
 
-If you want to test how depositing into DataverseNO works, please use our sandbox at demo.dataverse.no.
+- Feide (recommended).
 
-### Enter metadata
+- [REUSE: terms/open-researcher-and-contributor-id | ORCID].
 
-Information about the various metadata fields can be obtained by placing the cursor on the field names (a roll-over window appears). Here is some more information about some of the fields:
+To sign in with Feide:
 
-**Title:** Enter a title for your dataset. If your dataset is used in a publication, you may enter the title of the publication and click on Add "Replication Data for" to Title. Instead of "Replication Data for: " you may use "Background Data for: ", "Supporting Data for: " or another suitable prefix.
+- Go to [REUSE: links/dataverseno-repository | the DataverseNO repository].
 
-**Author:** In the Name field, you can look up the name of an author by connecting to the Open Researcher and Contributor ID (ORCID). Enter / Start typing the name (at least three letters), and select the correct author from the results list. If the name does not appear with an associated ORCID, we recommend that you create an ORCID. If the name appears with an associated ORCID, but the name format is not correct or the way you want it to be, we recommend that you update the name on your ORCID profile. Once you have created or updated your ORCID, you can look up your name again in the Author – Name field. If you do not want to use ORCID, you can enter the name manually. You do this by entering the full name in inverted form, e.g., "Einstein, Albert", and then selecting this name as it appears at the top of the results list, just below the search field.
+- Click Login and select your institution.
 
-In the Affiliation field, you can look up the name of your institution by connecting to the Research Organization Registry (ROR). If the name of your institution does not appear with an associated ROR ID, we recommend that you ask your institution to create such an ID. If the name appears with an associated ROD ID, but the name format is not correct, we recommend that you ask your institution to update their ROR entry. Alternatively, you can enter the name manually. You do this by entering the full name, e.g. "University of Nowhere", and then selecting this name as it appears at the top of the results list, just below the search field.
+- Under Your Institution, select Feide - Norwegian educational institutions.
 
-If you have entered the author name manually, we recommend that you also enter the identifier manually. In this case, select the correct type in the Identifier Type field (e.g. ORCID), and enter the identifier in the Identifier field. For ORCID, you should enter the full URL, e.g., "https://orcid.org/0000-0001-0002-0003".
+- Click Continue and follow the login procedure.
 
-**Contact:** Enter a contact email address. Also add the name of the contact person or research group/institution.
+If your institution supports Feide login for DataverseNO, a user account will automatically be created for you the first time you sign in.
 
-**Description:** Enter information about the data to be uploaded. Avoid using certain HTML tags and other special characters (e.g. [ or ]). If you need to add paragraphs, add the HTML tags `<p>` and `</p>` around each paragraph. If relevant, enter information about the data collection/methodology here. If applicable, also enter the publication abstract. The abstract should be entered into a second description field, which can be added by clicking the plus button to the right. NB! If your article is only submitted and not accepted (yet), DO NOT mention the name of the journal it has been submitted to.
+### Researchers affiliated with institutions outside Norway
 
-**Keyword:** Information such as the subject area(s) (e.g. morphology or zoology) and the statistical method(s) may be entered into the keyword field. Each keyword needs to be entered separately. Please click the plus button to enter more keywords. Vocabulary and Vocabulary URL are not mandatory and may be left empty.
+Researchers outside Norway can normally sign in using:
 
-**Related Publication:** If the files you are depositing are the background data for a publication, you should include a reference to the publication here. In the Relation Type field, select Is Supplement To. In the Citation field, paste the complete reference to the publication, including the URL, usually at the very end. In the Identifier Type field, select the type of identifier the publication has. Often it will be DOI. In the Identifier field, paste the identifier itself, e.g. "10.123455/12345" (for DOI). In the URL field, paste the entire URL to the identifier, e.g. "https://doi.org/10.123455/12345" (for DOI). Note! If your manuscript has been submitted for review but has not yet been accepted, DO NOT list the name of the journal or publisher. Instead you may simply write "Submitted for review" or similar. Note! If the review of your manuscript is going to be double blind (both author and reviewer are anonymous), you must add a note about it in the Related Publication field. This way, the curators can assist you in anonymizing the dataset.
+- eduGAIN.
 
-**Depositor and Deposit Date:** These fields are pre-filled. Do not change them. Deposit Date refers to the date when the dataset first was uploaded to the repository.
+- [REUSE: terms/open-researcher-and-contributor-id | ORCID].
 
-### Confirm/specify data license and attribution
+To sign in with eduGAIN:
 
-In the Terms tab, you can define a license or terms of use for your dataset. In line with the national licensing recommendations, we recommend placing as few restrictions as possible on data reuse. We therefore recommend Creative Commons Zero (CC0) as the license for data reuse in DataverseNO unless you have to deal with licenses or terms of use for sources you have used that do not make it possible to choose CC0 for your derived data. CC0 allows for maximum reuse and visibility, but also means that there are no legal restrictions on the reuse of your data. However, as also stated in the Terms tab, common academic practice and basic research ethics require that use of data be credited through attribution. If the CC0 license is not suitable for your data, you can select another standard license from the drop-down menu in the License/Data Use Agreement field in the Terms tab. If none of these standard licenses are suitable for your dataset, please contact user support at your institution.
+- Go to [REUSE: links/dataverseno-repository | the DataverseNO repository].
 
-### Upload data files
+- Click Login and select your institution.
 
-Before uploading your data, we strongly advise you to store and document your data according to best practice. Please refer to the section Prepare your data in our Deposit Guide.
+- Under Other options, click eduGAIN.
 
-A single dataset must not contain more than 300 files. If you need to deposit more files, you may opt for one of these alternatives:
+- Click Log In with eduGAIN.
 
-- Pack the files into one or more (max. 300) container files.
-- Distribute your data files across multiple (sub-)datasets.
+- Click International provider (eduGAIN).
 
-Note! If your dataset contains a lot of files, it is convenient to place the ReadMe file on top of the file list. To achieve this, you can add an initial zero to the file name, e.g. "0_ReadMe.txt".
+- Follow the login procedure.
 
-For container files, please adhere to the following recommendations:
+A DataverseNO user account will automatically be created when you sign in for the first time.
 
-- Create archives (container files) only with extensions .zip or .tar (do not use .7z, tar.gz, .rar, and so on).
-- Do not use archives within your ZIP or tar files.
-- Please create your archives without any data compression (compression level "store")
-- Avoid encrypting your files with a password.
+### Sign in with ORCID
 
-DataverseNO has no upper size limit for a dataset. However, below are some advices and procedures for handling uploads of large files. The following advice, size limits and procedures apply to single files, file uploads and datasets:
+If you cannot use Feide or eduGAIN, you may be able to sign in with [REUSE: terms/open-researcher-and-contributor-id | ORCID].
 
-- The size of individual files should not exceed 100 GB. Bigger files can create problems for others when it comes to downloading and reusing data.
-- A file upload should not exceed 200 GB in total size to minimize the likelihood that errors will occur when transmitting the data.
-- If you are not able to upload your data according to the guidelines above, or if your dataset exceeds 200 GB, contact the support services of your home institution for more information about how to upload the data.
+- Go to [REUSE: links/dataverseno-repository | the DataverseNO repository].
 
-Once you are ready for uploading your files, select the Files tab and click the Upload Files button to the right.
+- Click Login and select your institution.
 
-If you only need to upload single files, click the Select Files to Add button, and choose your files from your computer or server space. You may select multiple files using Shift + arrow keys or Ctrl + mouse click. Instead of clicking the Select Files to Add button, you can drag your files into the area marked with Drag and drop files here. When you have uploaded all the files in your dataset, click on Save Dataset. A draft of your dataset will be saved.
+- Under Other options, click ORCID.
 
-If your files are organized in folders (and sub-folders) and you want to keep the folder structure in your dataset, click the Upload a Folder button. After that, click on Select a Directory. Here you select the folder which contains the folders and files you want to upload. Once you have selected the correct folder, confirm the upload by clicking on Upload. Your files will be listed, and if the list looks fine, click on Start Uploads. Note! If you upload large files, the upload may take a long time. Do not close the upload window before you get the following confirmation on green background: "Upload complete, all files in dataset. Close this window and refresh your dataset page to see the uploaded files."
+- Click Create or Connect your ORCID.
 
-Note! If you have uploaded a folder to keep your folder structure, you need to select Tree View to be able to see the folder structure: Click the Tree button to the right of Change View on top of the file overview.
+- Follow the login procedure.
 
-### Enter more metadata
+Depending on your affiliation, additional steps may be required before you receive deposit access.
 
-Once you have created a dataset draft, we recommend that enter more information about the dataset. This will increase the chance of others being able to discover your data and interpreting and reusing it correctly.
+### Need help?
 
-Select the Metadata tab and click the Add + Edit Metadata button. To the extent applicable, we recommend that you enter information in the fields below. When you are finished, click the Save Changes button at the bottom of the page.
+If you are unable to sign in, do not receive deposit access, or are unsure which login method to use, contact your [REUSE: links/contact-page | local user support].
 
-**CITATION METADATA**
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Linking your user account to ORCID
+Text: If you have logged into DataverseNO using Feide or eduGAIN, we recommend linking your DataverseNO user account to your ORCID account. Click your username in the top right corner, select Account Information, click Add Authenticated ORCID, and follow the instructions.
 
-- **Language:** Select the language you have used to describe your data. Often this will be English.
-- **Contributor:** Here you should credit those who have contributed to the dataset, including those who are not to be listed as authors. In the Type field you can choose what role they have had (e.g. Data Collector).
-- **Grant Information:** Note! Important information about possible funding. Use the full name of the funder, e.g. "The Research Council of Norway".
-- **Time Period Covered:** What time period is the data from or about?
-- **Date of Collection:** When was the data collected / generated?
-- **Data Type:** What type of data is it? Hover your mouse over the question mark to the right of the field name, and you will see some suggestions, e.g. survey data, experimental data, observation data.
-- **Related Material:** Material related to the dataset.
-- **Related Datasets:** Other data sets related to the dataset. This may be your own or others' data sets. If available, use full reference, including persistent identifier (e.g. DOI).
-- **Data Sources:** If you have not generated or collected the data yourself, enter information here about your sources. This can for example be an archive, a corpus, or a website from which you downloaded the data. Also inform about the license or Terms of Use for the used sources. The curator at your home institution can help you with this.
+## Create a dataset draft
 
-**GEOSPATIAL METADATA**
+Once you have signed in:
 
-Many datasets are related to one or more geographical locations. Entering geographical information in this section will make your dataset more discoverable in search engines that use a geographical entrance point, e.g. a map. You can specify a geographic location under Geographic Coverage, and / or enter coordinates under Geographic Bounding Box. If you specify a Geographic Bounding Box, you need to fill in all four fields. A geographical point has the same value for West Longitude and East Longitude, and the same value for North Latitude and South Latitude. A box, on the other hand, has four different values in these fields. The values must be specified as decimal degrees. For example, mainland Norway has these values: West Longitude: 4.09; East Longitude: 31.76; North Latitude: 71.38; South Latitude: 57.76. Note: Use period (".") as decimal separator, not comma. The value for West Longitude must be lower than the value for East Longitude. The value for South Latitude must be lower than the value for North Latitude.
+- Confirm that you are in the correct collection for your dataset. If not, navigate to the appropriate collection before continuing.
 
-**DOMAIN-SPECIFIC METADATA**
+- Click Add Data.
 
-In addition, we encourage you to register domain-specific metadata where applicable. Currently, there are three domain-specific metadata schemas in DataverseNO:
+- Select New Dataset.
 
-- Social Science and Humanities Metadata
-- Astronomy and Astrophysics Metadata
-- Life Sciences Metadata
-- 3D Objects Metadata
+A dataset draft will be created.
 
-### (If necessary, specify file embargo)
+If you are unsure which collection to use, contact your [REUSE: links/contact-page | local user support] before proceeding.
 
-DataverseNO is an open data repository, meaning all uploaded files must be publicly accessible. However, if properly justified, you may restrict access to files (except the README file) for up to two years using an embargo. During the embargo period, the embargoed files will not be accessible, but the dataset's metadata and README file will remain visible and accessible. Embargoes expire automatically on the specified end date, after which the files will become openly available.
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Keep in mind
+Text: You can save and continue working on a dataset draft before submitting it for review.
 
-Please note: Embargoes should not be used as a means to restrict access to a dataset associated with a publication under review. Instead, we recommend coordinating the dataset's release with the publication of the article. In such cases, all steps in the deposition and curation process need to be completed in advance, ensuring the dataset is aligned with our deposit guidelines and ready for release. If reviewers of the related publication require access to the dataset during peer review, make a note on this in the Related Publication field, so your local curation team can create a preview URL to the dataset.
+## Describe your dataset using metadata
 
-To embargo file access, follow these steps:
+### Why metadata matter
 
-1. Upload the file (see the step Upload data files above).
-2. Select the file by checking the box to the left of the file name.
-3. Click on the Edit files button above the file section to the right, and choose Embargo.
-4. Use the calendar to select the end date of the embargo. The maximum duration of the embargo is two years.
-5. Enter a short reason why the embargo is necessary.
+Metadata help others discover, understand, cite, and reuse your dataset. Good metadata improve the visibility of your data both within DataverseNO and in external discovery services.
 
-Please note that files can only be embargoed before they are published.
+You do not need to complete every possible metadata field. Focus first on providing complete and accurate information in the most important fields.
 
-An embargo is essentially a promise to open the data after a specified time point. As such, users cannot change the length of the embargo on their own after the record of the dataset is published. Please contact your local DataverseNO support to correct mistakes or end an embargo early.
+### Required metadata
 
-## c) Get your data published
+The following metadata must be provided:
 
-Your dataset is still only a draft, and you still may change or delete it. If you would like to grant someone (e.g. a collaborator or a journal editor) access to the unpublished dataset, please contact the support services of your home institution. Even if the dataset is at the draft stage, it has been given a valid DOI, which will be the same also when the dataset is finally published, but the DOI will not be activated and work until after the dataset is published. Note! If, after the curation (see below), it turns out that the dataset cannot be published in DataverseNO, the dataset will be deleted and the DOI will never be activated. It is therefore important that you do not use the dataset reference until the dataset has been curated and approved for publication in DataverseNO. More information about how to cite research data can be found in the section Refer to your data.
+- Title.
 
-Once you have entered all the necessary metadata and uploaded all the data files needed, and you are ready to get it published, click the Submit for Review button. You will receive a notification from DataverseNO that your dataset is submitted.
+- Author(s).
 
-A curator from your institutional collection will review your dataset and if necessary inform you about possible changes to be done before publication. Once the curator has approved your submission, you will be notified, and once you have given the go-ahead to the curator, the curator will publish the dataset and it will be searchable and accessible on the Internet.
+- Contact information.
 
-For questions, comments or suggestions, see our support services.
+- Description.
 
-Proceed to section 3: Refer to your data
+- Subject.
+
+- Keyword(s).
+
+- Language.
+
+- Producer.
+
+### Recommended metadata
+
+To increase discoverability and reuse, and to support proper credit, we encourage you to also provide the following metadata where relevant:
+
+- Author identifier, preferably [REUSE: terms/open-researcher-and-contributor-id | ORCID].
+
+- Related publication(s).
+
+- Contributor(s).
+
+- Funding information.
+
+- Time period covered.
+
+- Date of data collection.
+
+- Data type.
+
+- Related dataset(s).
+
+- Data sources.
+
+- Geographic information.
+
+### Domain-specific metadata
+
+Where relevant, we also recommend the use of domain-specific metadata schemas. Currently available schemas include:
+
+- Social Science and Humanities.
+
+- Astronomy and Astrophysics.
+
+- Life Sciences.
+
+- 3D Objects.
+
+### Guidance on common metadata fields
+
+#### Title
+
+The Title field is one of the most important metadata fields in the dataset. It is used in search results, citations, discovery services, and dataset landing pages.
+
+A good title should:
+
+- Clearly describe the content of the dataset.
+
+- Be understandable to researchers outside the immediate project.
+
+- Avoid unnecessary abbreviations and internal project names.
+
+- Be specific enough to distinguish the dataset from similar datasets.
+
+[ADMONITION]
+Style: secondary
+Icon: check-circle-fill
+Title: Example: Informative titles
+Text: - Bird observations from Northern Norway, 2018-2024
+- Survey data on academic publishing practices among Norwegian researchers
+
+[ADMONITION]
+Style: tertiary
+Icon: x-circle-fill
+Title: Example: Less informative titles
+Text: - Dataset 1
+- Final version
+- Project data
+
+If the dataset supports a publication, it is often useful to make this relationship visible in the title. This makes it easier for users to understand the relationship between the dataset and the publication.
+
+Common prefixes include:
+
+- Supporting Data for:
+
+- Background Data for:
+
+- Replication Data for:
+
+Examples:
+
+- Supporting Data for: Forest Fire Impacts on Global Soil Carbon Stocks.
+
+- Background Data for: Effects of Temperature on Arctic Plant Growth.
+
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Title formatting
+Text: Do not add quotation marks around the title. Quotation marks will automatically be added when DataverseNO generates dataset citations.
+
+#### Author
+
+The Author field identifies the person or persons primarily responsible for creating the dataset. Accurate author information helps ensure that dataset creators receive proper credit and that the dataset can be linked to other research outputs.
+
+Whenever possible, we recommend connecting authors to [REUSE: terms/persistent-identifier | persistent identifiers] for researchers and organizations.
+
+#### Author names
+
+When entering author names, you may either:
+
+- Look up the author via [REUSE: terms/open-researcher-and-contributor-id | ORCID] by typing the author’s name and selecting the correct match from the results list.
+
+- Enter the name manually if an ORCID record is not available.
+
+If entering names manually, use the format:
+
+- Family name, Given name.
+
+Example:
+
+- Einstein, Albert.
+
+#### Author affiliation
+
+We recommend providing the author's institutional affiliation. Whenever possible, use the affiliation lookup linked to the [REUSE: terms/research-organization-registry | ROR registry]. This helps connect the dataset to the correct institution and improves consistency across research systems.
+
+If the institution is not available through ROR, the affiliation may be entered manually.
+
+#### Author identifiers
+
+We strongly recommend connecting authors to [REUSE: terms/open-researcher-and-contributor-id | ORCID] whenever available.
+
+ORCID helps:
+
+- Distinguish authors with similar names.
+
+- Link datasets with publications and other research outputs.
+
+- Improve attribution and discoverability.
+
+If an author is entered manually, an identifier can still be added separately by filling in the fields:
+
+- Identifier Type: select identifier type, for example ORCID.
+
+- Identifier: insert the author's unique identifier, for example https://orcid.org/0000-0001-0002-0003.
+
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Multiple authors
+Text: All individuals who have made a substantial contribution to the creation of the dataset should be listed as authors. Often that will be all or most of the authors of the related publication or manuscript. Contributions from individuals who do not meet the criteria for authorship may instead be recorded in the Contributor field.
+
+#### Description
+
+Provide a clear and concise description of the dataset. This description helps potential users quickly understand what the dataset contains and whether it is relevant to their needs.
+
+To ensure consistency, we recommend aligning the Description field with the corresponding section of the ReadMe file. In many cases, a shortened version of the dataset description from the ReadMe file can be reused in the Description field.
+
+Where relevant, the Description may include:
+
+- A brief summary of the dataset.
+
+- Information about data collection or data generation.
+
+- The purpose or scope of the dataset.
+
+- Information about the relationship to publications or research projects.
+
+If the dataset is associated with a publication, you may also include the publication abstract in a separate Description field, which can be added by clicking the plus button to the right.
+
+#### Keywords
+
+Keywords help others discover your dataset through DataverseNO and external discovery services. They describe the main concepts represented in the dataset.
+
+Where possible, use terms that are already widely used within your discipline. This increases the likelihood that potential users will find your dataset through searches.
+
+Use keywords that describe:
+
+- The research topic or subject area.
+
+- Methods, techniques, or instruments.
+
+- Data types.
+
+- Study area or geographic location.
+
+- Relevant languages, species, materials, or populations.
+
+- Theoretical frameworks or disciplines.
+
+[ADMONITION]
+Style: secondary
+Icon: check-circle-fill
+Title: Example: Useful keywords
+Text: - Linguistics
+- Norwegian
+- speech perception
+- experimental data
+- climate change
+- Arctic
+- oceanography
+- temperature measurements
+
+[ADMONITION]
+Style: tertiary
+Icon: x-circle-fill
+Title: Example: Less useful keywords
+Text: - project
+- dataset
+- research
+- study
+
+Each keyword should be entered in its own keyword field. Click the plus button to enter more keywords.
+
+#### Related Publication
+
+Use the Related Publication field to link your dataset to articles, books, reports, dissertations, conference papers, or other scholarly outputs that are based on, supported by, or otherwise connected to the dataset.
+
+If the dataset is associated with a publication, we strongly recommend adding a reference to that publication.
+
+Creating explicit links between datasets and publications helps:
+
+- Increase the visibility of both the dataset and the publication.
+
+- Make it easier for others to understand the context of the dataset.
+
+- Support citation tracking and research impact assessment.
+
+- Strengthen the connection between research outputs and underlying data.
+
+For each related publication:
+
+- Select the appropriate Relation Type. If the publication is based on, supported by, or draws on the data contained in the dataset, we recommend selecting Is Supplement To as the Relation Type.
+
+- Provide the full citation.
+
+- Add a [REUSE: terms/persistent-identifier] where available, for example a [REUSE: terms/digital-object-identifier | DOI].
+
+- Provide the corresponding URL.
+
+Where available, use the publication DOI rather than a publisher-specific URL.
+
+If your dataset supports a publication, the Related Publication section may look similar to the example shown below.
+
+![Screenshot of the Related Publication metadata field in the Dataverse dataset form.](/assets/screenshots/shared/dataverse-ui/related-publication.png)
+
+_The Related Publication field is used to link the dataset to a publication that uses or describes the data._
+
+#### Manuscripts under review
+
+If a manuscript has been submitted but has not yet been accepted for publication, you may still add information about it. However, you should avoid including information that could compromise anonymity during peer review. Do not list the name of the journal or publisher. Instead, you may write “Submitted for review”, “In preparation”, or similar.
+
+[ADMONITION]
+Style: secondary
+Icon: check-circle-fill
+Title: Example: Correct manuscript reference
+Text: - Hansen, L. M., Berg, S. E., & Nilsen, T. R. (2025). Effects of seasonal variation on migratory bird behaviour in Northern Norway. **In preparation**
+
+[ADMONITION]
+Style: tertiary
+Icon: x-circle-fill
+Title: Example: Incorrect manuscript reference
+Text: - Hansen, L. M., Berg, S. E., & Nilsen, T. R. (2025). Effects of seasonal variation on migratory bird behaviour in Northern Norway. **Submitted to Journal of Arctic Ecology**
+
+#### Double-blind peer review
+
+If the related manuscript is being evaluated through double-blind peer review, indicate this in the Related Publication field or inform your curator. This allows the curation team to assist with preparing an anonymized dataset version if required and to support secure sharing with editors and reviewers.
+
+#### Multiple related publications
+
+A dataset may be related to more than one publication. Examples include:
+
+- A dataset supporting several journal articles.
+
+- A dataset linked to both a dissertation and one or more articles.
+
+- A dataset reused in subsequent publications.
+
+In such cases, add all relevant publications.
+
+### Need more metadata guidance?
+
+Detailed field-by-field instructions are available in the DataverseNO metadata guide (link coming).
+
+## Choose terms for reuse
+
+Every dataset must have a licence or terms of use that explain how others may reuse the data. The most appropriate licence depends on the nature of the data and any rights or restrictions associated with source material.
+
+### Recommended licence
+
+In most cases, DataverseNO recommends CC0 (Creative Commons Zero). This maximizes reuse and visibility while supporting open science practices.
+
+### Alternative licences
+
+If CC0 is not suitable, another standard licence may be selected:
+
+- CC BY 4.0
+
+- CC BY-SA 4.0
+
+- CC BY-NC 4.0
+
+- CC BY-ND 4.0
+
+- CC BY-NC-SA 4.0
+
+- CC BY-NC-ND 4.0
+
+- MIT
+
+- Apache-2.0
+
+If none of the available licences fit your situation, contact your [REUSE: links/contact-page | local user support].
+
+## Upload your files
+
+Once your files and documentation are ready, upload them to the dataset draft.
+
+### Uploading individual files
+
+- Open the Files tab.
+
+- Click Upload Files.
+
+- Select the files.
+
+- Save the dataset.
+
+### Uploading folders
+
+If your files are organized in folders and subfolders and you wish to preserve that structure in DataverseNO, use the Upload a Folder option.
+
+Select the folder that contains all files and subfolders you want to upload.
+
+For example, suppose your files are organized like this:
+
+```text
+[text]
+MyData
+├── 00_README.txt
+├── Measurements
+│   ├── station_01.csv
+│   └── station_02.csv
+└── Documentation
+    └── codebook.pdf
+```
+
+If you want the dataset to contain:
+
+```text
+[text]
+├── 00_README.txt
+├── Measurements
+└── Documentation
+```
+
+you must select the folder MyData during upload. The top-level folder that you select, MyData, is not itself recreated in the dataset. Only its contents are uploaded.
+
+After selecting the folder, DataverseNO will display a preview of the files that will be uploaded.
+
+Review the preview and make sure:
+
+- The expected files are present.
+
+- The folder structure appears correct.
+
+- The ReadMe file is included.
+
+When ready, click Start Uploads. Large uploads may take some time to complete. Wait until the upload process has finished and you receive confirmation that all files have been uploaded successfully.
+
+Afterward:
+
+- Close the upload window.
+
+- Refresh the dataset page if necessary.
+
+- Verify that all files appear in the dataset.
+
+To view the folder hierarchy, switch from the default file list view to Tree View.
+
+### Common problems
+
+#### The folder structure is missing
+
+Most often this happens because the wrong folder was selected. Make sure you select the parent folder that contains the files and subfolders you want to upload, not one of the subfolders themselves.
+
+#### The files do not appear immediately
+
+Large uploads can take time to process. Wait for the upload confirmation message before closing the upload window.
+
+#### The ReadMe file is difficult to find
+
+To make the ReadMe file appear near the top of the file list, we recommend giving it a name such as 00_README.txt or 00_ReadMe.txt.
+
+### File and dataset recommendations
+
+To ensure smooth upload and reuse:
+
+- An individual file should preferably not exceed [REUSE: values/file-size-limit].
+
+- A single upload should preferably not exceed [REUSE: values/upload-size-limit].
+
+- A dataset should preferably not exceed [REUSE: values/dataset-size-limit].
+
+- A dataset should preferably not contain more than [REUSE: values/file-number-limit].
+
+### Larger datasets
+
+Larger datasets can often be accommodated. If your dataset exceeds the recommendations above, contact your [REUSE: links/contact-page | local user support] before uploading.
+
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Keep in mind
+Text: If you provide both a preferred preservation format and an original working format, use identical file names except for the file extension. Example: experiment_01.csv and experiment_01.xlsx.
+
+## Embargo period
+
+DataverseNO is an open data repository, meaning all uploaded files must be publicly accessible. However, if properly justified, you may temporarily restrict access to files for up to [REUSE: values/embargo-period] using an embargo.
+
+During the embargo period:
+
+- The embargoed files will not be accessible.
+
+- The dataset metadata and ReadMe file will remain visible and accessible.
+
+Embargoes expire automatically on the specified end date, after which the files will become openly available. If you need to make changes to the expiration date, please contact [REUSE: partners/repository_management/support.email | DataverseNO repository management]. Be aware that the embargo period cannot be extended beyond [REUSE: values/embargo-period] after initial publication of the dataset.
+
+[ADMONITION]
+Style: primary
+Icon: exclamation-circle-fill
+Title: Please note
+Text: Embargoes should not be used as a means to restrict access to a dataset associated with a publication under review. Instead, we recommend coordinating the dataset release with the publication of the article. In such cases, all steps in the deposit and curation process need to be completed in advance.
+
+## Share your dataset before publication
+
+If you need to share a dataset before publication, for instance with collaborators or peer reviewers, please contact your [REUSE: links/contact-page | local user support], who will create a preview URL that you can share.
+
+If the related manuscript is being evaluated through double-blind peer review, please inform us directly or indicate it in the Related Publication metadata field.
+
+This allows the curation team to assist with preparing an anonymized dataset version if required and to support secure sharing with editors and reviewers.
+
+## Submit your dataset for review
+
+When your metadata and files are ready, click Submit for Review.
+
+Please be aware that your dataset has not yet been published. It will first need to be reviewed by a curator.
+
+Curators do not evaluate the scientific quality of the research itself. Curation is a support process intended to help prepare data for publication and reuse.
+
+A curator will contact you as soon as possible after your dataset has been submitted for review, usually within three working days.
+
+Read more about the curation and publication process in [PAGE: publish-your-data | Step 3: Publish your data].
+
+[ADMONITION]
+Style: primary
+Icon: exclamation-circle-fill
+Title: Urgent cases
+Text: If your dataset is associated with a publication deadline, grant deadline, or another time-sensitive activity, please contact your [REUSE: links/contact-page | local user support] directly. They can help assess the situation and, where possible, coordinate an expedited review process.
+
+## Need help?
+
+If you are unsure about any part of the deposit process, contact your [REUSE: links/contact-page | local user support].
+
+## Ready for the next step?
+
+When the dataset is submitted, a curator from your local institution will review it. Read more about the curation and publication process in the next step:
+
+[BUTTON]
+Style: primary
+Title: Step 3: Curation and publishing
+Icon: arrow-right-circle-fill
+Target: publish-your-data

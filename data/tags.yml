@@ -1,0 +1,726 @@
+version: 0.2
+
+# DataverseNO Information Website controlled tag vocabulary
+#
+# Purpose:
+#   Controlled vocabulary for tagging Website pages and news posts.
+#
+# Principles:
+#   - Tag identifiers are language-neutral, lowercase, hyphen-separated where required,
+#     and stable over time.
+#   - Page front matter shall use tag identifiers, not localized labels.
+#   - Labels and descriptions are localized for public display and editor guidance.
+#   - English and Norwegian Nynorsk pages shall use the same tag identifiers.
+#   - New tags should only be added after checking whether an existing tag already
+#     covers the concept.
+
+
+# Principles:
+#   - Tag identifiers are language-neutral, lowercase, hyphen-separated where required,
+#     and stable over time.
+#   - Page front matter shall use tag identifiers, not localized labels.
+#   - Tag identifiers shall be the same for English and Norwegian Nynorsk pages.
+#   - Labels and descriptions are localized for public display and editor guidance.
+#   - English labels normally use title case.
+#   - Norwegian Nynorsk labels follow ordinary sentence-style capitalization:
+#     use lower case for common nouns and adjectives, but capitalize names,
+#     acronyms, and named entities such as DataverseNO, DOI, FAIR, and UiT.
+#   - Aliases may be used to support search, spelling variants, and relevant synonyms
+#     in each language. For Norwegian Nynorsk, aliases may also include common
+#     Norwegian Bokmål equivalents to improve discoverability.
+#   - New tags should only be added after checking whether an existing tag already
+#     covers the concept.
+
+
+
+
+categories:
+  data-deposit:
+    label:
+      en: Data Deposit
+      nn: datadeponering
+    description:
+      en: Content related to depositing, describing, documenting, licensing, citing, and improving the FAIRness of research data.
+      nn: Innhald om deponering, dokumentasjon, lisensiering, sitering og FAIR-tilrettelegging av forskingsdata.
+
+  administration:
+    label:
+      en: Curation and Administration
+      nn: kuratering og administrasjon
+    description:
+      en: Content related to curation, collection management, repository management, quality assurance, and operational workflows.
+      nn: Innhald om kuratering, samlingsforvaltning, arkivforvaltning, kvalitetssikring og forvaltningsrelaterte arbeidsflytar.
+
+  governance:
+    label:
+      en: Governance and Policy
+      nn: styring og policy
+    description:
+      en: Content related to policies, agreements, governance structures, certification, and compliance.
+      nn: Innhald om policyar, avtalar, styringsstrukturar, sertifisering og etterleving av krav.
+
+  support:
+    label:
+      en: Training and Support
+      nn: opplæring og støtte
+    description:
+      en: Content related to training, practical guidance, support services, contact information, and frequently asked questions.
+      nn: Innhald om opplæring, rettleiing, støttetenester, kontaktinformasjon og ofte stilte spørsmål.
+
+  service:
+    label:
+      en: DataverseNO Service
+      nn: DataverseNO-tenesta
+    description:
+      en: General content about DataverseNO, the repository service, and the information website.
+      nn: Generelt innhald om DataverseNO, arkivtenesta og informasjonsnettstaden.
+
+  news-and-events:
+    label:
+      en: News and Events
+      nn: nyhende og arrangement
+    description:
+      en: Content related to news, events, releases, announcements, and service updates.
+      nn: Innhald om nyhende, arrangement, utgjevingar, kunngjeringar og tenesteoppdateringar.
+
+tags:
+  deposit:
+    label:
+      en: Deposit
+      nn: deponering
+    category: data-deposit
+    description:
+      en: Content related to depositing datasets in DataverseNO.
+      nn: Innhald om deponering av datasett i DataverseNO.
+    aliases:
+      en:
+        - data deposit
+        - depositing data
+        - data archiving
+        - archiving data
+      nn:
+        - datadeponering
+        - deponera data
+        - deponere data
+        - dataarkivering
+        - arkivering
+        - arkivera data
+        - arkivere data
+
+  metadata:
+    label:
+      en: Metadata
+      nn: metadata
+    category: data-deposit
+    description:
+      en: Content related to describing datasets and other research outputs.
+      nn: Innhald om beskriving av datasett og andre forskingsresultat.
+    aliases:
+      en:
+        - dataset metadata
+      nn:
+        - datasettmetadata
+
+  documentation:
+    label:
+      en: Documentation
+      nn: dokumentasjon
+    category: data-deposit
+    description:
+      en: Content related to dataset documentation and supporting materials.
+      nn: Innhald om datasettdokumentasjon og -støttemateriale.
+    aliases:
+      en:
+        - readme
+        - supporting documentation
+      nn:
+        - readme
+        - støttedokumentasjon
+
+  licensing:
+    label:
+      en: Licensing
+      nn: lisensiering
+    category: data-deposit
+    description:
+      en: Content related to licences, permissions, and data reuse conditions.
+      nn: Innhald om lisensar, løyve og vilkår for gjenbruk av data.
+    aliases:
+      en:
+        - licences
+        - licenses
+        - reuse conditions
+        - terms of use
+        - term of reuse
+      nn:
+        - lisensar
+        - lisenser
+        - vilkår for gjenbruk
+        - betingelser for gjenbruk
+        - bruksvilkår
+        - gjenbruksvilkår
+        - betingelser
+
+  citation:
+    label:
+      en: Citation
+      nn: sitering
+    category: data-deposit
+    description:
+      en: Content related to citing datasets and research outputs.
+      nn: Innhald om sitering av datasett og forskingsresultat.
+    aliases:
+      en:
+        - data citation
+        - cite data
+      nn:
+        - datasitering
+        - sitera data
+        - sitere data
+        - referera til data
+        - referere til data
+        - referering
+        - henvise til data
+        - henvisning
+
+  doi:
+    label:
+      en: DOI
+      nn: DOI
+    category: data-deposit
+    description:
+      en: Content related to Digital Object Identifiers (DOIs).
+      nn: Innhald om Digital Object Identifiers (DOI-ar).
+    aliases:
+      en:
+        - digital object identifier
+        - persistent identifier
+      nn:
+        - digital object identifier
+        - digital objektidentifikator
+        - persistent identifikator
+        - varig indentifikator
+
+  fair:
+    label:
+      en: FAIR
+      nn: FAIR
+    category: data-deposit
+    description:
+      en: Content related to the FAIR principles and FAIR-enabling practices.
+      nn: Innhald om FAIR-prinsippa og praksisar som legg til rette for FAIR data.
+    aliases:
+      en:
+        - FAIR principles
+      nn:
+        - FAIR-prinsippa
+        - FAIR-prinsippene
+        - FAIR-prinsipp
+
+  research-data:
+    label:
+      en: Research Data
+      nn: forskingsdata
+    category: data-deposit
+    description:
+      en: Content related to research data as a general concept, independent of a specific deposit workflow stage.
+      nn: Innhald om forskingsdata som eit generelt omgrep, uavhengig av eit bestemt steg i deponeringsprosessen.
+    aliases:
+      en:
+        - research datasets
+      nn:
+        - forskingsdatasett
+        - forskningsdata
+
+  open-data:
+    label:
+      en: Open Data
+      nn: opne data
+    category: data-deposit
+    description:
+      en: Content related to making research data openly available for reuse.
+      nn: Innhald om å gjere forskingsdata ope tilgjengeleg for attbruk.
+    aliases:
+      en:
+        - open access data
+        - open research data
+      nn:
+        - opne forskingsdata
+        - åpne data
+
+  checklist:
+    label:
+      en: Checklist
+      nn: sjekkliste
+    category: data-deposit
+    description:
+      en: Content presented as a checklist of tasks.
+      nn: Innhald presentert som ei sjekkliste over oppgåver.
+    aliases:
+      en: []
+      nn: []
+
+  data-management:
+    label:
+      en: Data Management
+      nn: datahandtering
+    category: data-deposit
+    description:
+      en: Content related to managing research data throughout the deposit workflow.
+      nn: Innhald om handtering av forskingsdata gjennom heile deponeringsprosessen.
+    aliases:
+      en:
+        - research data management
+      nn:
+        - forskingsdatahandtering
+        - databehandling
+
+  file-upload:
+    label:
+      en: File Upload
+      nn: filopplasting
+    category: data-deposit
+    description:
+      en: Content related to uploading files as part of depositing a dataset.
+      nn: Innhald om opplasting av filer som del av deponering av eit datasett.
+    aliases:
+      en: []
+      nn: []
+
+  file-formats:
+    label:
+      en: File Formats
+      nn: filformat
+    category: data-deposit
+    description:
+      en: Content related to file formats for research data.
+      nn: Innhald om filformat for forskingsdata.
+    aliases:
+      en:
+        - preferred file formats
+      nn:
+        - føretrekte filformat
+
+  versioning:
+    label:
+      en: Versioning
+      nn: versjonering
+    category: data-deposit
+    description:
+      en: Content related to dataset versions and version history.
+      nn: Innhald om datasettversjonar og versjonshistorikk.
+    aliases:
+      en:
+        - dataset versions
+      nn:
+        - datasettversjonar
+
+  publishing:
+    label:
+      en: Publishing
+      nn: publisering
+    category: data-deposit
+    description:
+      en: Content related to publishing a dataset and making it publicly available.
+      nn: Innhald om publisering av eit datasett og å gjere det offentleg tilgjengeleg.
+    aliases:
+      en:
+        - dataset publication
+      nn:
+        - publisering av datasett
+
+  curation:
+    label:
+      en: Curation
+      nn: kuratering
+    category: administration
+    description:
+      en: Content related to dataset review, enhancement, and publication preparation.
+      nn: Innhald om kuratering av datasett.
+    aliases:
+      en:
+        - data curation
+        - dataset curation
+      nn:
+        - datakuratering
+        - datasettkuratering
+
+  collection-management:
+    label:
+      en: Collection Management
+      nn: samlingsforvaltning
+    category: administration
+    description:
+      en: Content related to managing repository collections.
+      nn: Innhald om forvaltning av arkivsamlingar.
+    aliases:
+      en:
+        - collection manager
+        - collections
+      nn:
+        - samlingsforvalta
+        - samlingsforvalter
+        - samlingar
+        - samlinger
+
+  repository-management:
+    label:
+      en: Repository Management
+      nn: arkivforvaltning
+    category: administration
+    description:
+      en: Content related to the management of the DataverseNO repository.
+      nn: Innhald om forvaltning av DataverseNO-arkivet.
+    aliases:
+      en:
+        - repository manager
+        - repository operation
+      nn:
+        - arkivforvaltar
+        - arkivforvalter
+        - arkivdrift
+        - forvaltning
+
+  quality-assurance:
+    label:
+      en: Quality Assurance
+      nn: kvalitetssikring
+    category: administration
+    description:
+      en: Content related to quality control, validation, and review processes.
+      nn: Innhald om kvalitetskontroll, validering og vurderingsprosessar.
+    aliases:
+      en:
+        - quality control
+        - validation
+      nn:
+        - kvalitetskontroll
+        - kvalitetssjekk
+        - validering
+
+  preservation:
+    label:
+      en: Preservation
+      nn: bevaring
+    category: administration
+    description:
+      en: Content related to the long-term preservation of research data.
+      nn: Innhald om langtidsbevaring av forskingsdata.
+    aliases:
+      en:
+        - long-term preservation
+        - digital preservation
+      nn:
+        - langtidsbevaring
+
+  deaccessioning:
+    label:
+      en: Deaccessioning
+      nn: avhending
+    category: administration
+    description:
+      en: Content related to withdrawing or removing datasets from the repository.
+      nn: Innhald om tilbaketrekking eller fjerning av datasett frå arkivet.
+    aliases:
+      en:
+        - withdrawal
+        - dataset removal
+      nn:
+        - tilbaketrekking
+        - fjerning av datasett
+
+  policy:
+    label:
+      en: Policy
+      nn: policy
+    category: governance
+    description:
+      en: Content related to policies, requirements, and governing documents.
+      nn: Innhald om policyar, krav og styringsdokument.
+    aliases:
+      en:
+        - policies
+        - requirements
+      nn:
+        - policyar
+        - krav
+
+  governance:
+    label:
+      en: Governance
+      nn: styring
+    category: governance
+    description:
+      en: Content related to governance structures, responsibilities, and decision-making processes.
+      nn: Innhald om styringsstrukturar, ansvar og avgjerdsprosessar.
+    aliases:
+      en:
+        - decision-making
+        - governance structure
+      nn:
+        - styringsstruktur
+        - avgjerdsprosessar
+        - beslutningsprosesser
+
+  organizational-agreement:
+    label:
+      en: Organizational Agreement
+      nn: forvaltningsavtale
+    category: governance
+    description:
+      en: Content related to the DataverseNO Organizational Agreement.
+      nn: Innhald om DataverseNO-forvaltningsavtalen.
+    aliases:
+      en:
+        - DataverseNO Organizational Agreement
+      nn:
+        - DataverseNO-forvaltningsavtalen
+        - organisasjonsavtalen
+
+  certification:
+    label:
+      en: Certification
+      nn: sertifisering
+    category: governance
+    description:
+      en: Content related to repository certification and compliance activities.
+      nn: Innhald om arkivsertifisering og etterleving av krav.
+    aliases:
+      en:
+        - repository certification
+        - compliance
+      nn:
+        - arkivsertifisering
+        - sertifisering
+        - etterleving
+
+  access:
+    label:
+      en: Access
+      nn: tilgang
+    category: governance
+    description:
+      en: Content related to access conditions and access control for research data.
+      nn: Innhald om tilgangsvilkår og tilgangsstyring for forskingsdata.
+    aliases:
+      en:
+        - data access
+        - access conditions
+      nn:
+        - datatilgang
+        - tilgangsvilkår
+
+  partners:
+    label:
+      en: Partners
+      nn: partnarar
+    category: governance
+    description:
+      en: Content related to DataverseNO partner institutions.
+      nn: Innhald om partnarinstitusjonar i DataverseNO.
+    aliases:
+      en:
+        - partner institutions
+      nn:
+        - partnarinstitusjonar
+        - partnerinstitusjoner
+
+  training:
+    label:
+      en: Training
+      nn: opplæring
+    category: support
+    description:
+      en: Content related to training materials, courses, and learning resources.
+      nn: Innhald om opplæringsmateriell, kurs og andre læringsressursar.
+    aliases:
+      en:
+        - courses
+        - learning resources
+      nn:
+        - kurs
+        - læringsressursar
+        - læringsressurser
+
+  guidance:
+    label:
+      en: Guidance
+      nn: rettleiing
+    category: support
+    description:
+      en: Content related to practical guidance, instructions, and recommendations.
+      nn: Innhald om praktisk rettleiing, instruksjonar og tilrådingar.
+    aliases:
+      en:
+        - instructions
+        - recommendations
+      nn:
+        - instruksjonar
+        - instruksjoner
+        - veiledning
+        - tilrådingar
+        - anbefalinger
+
+  support:
+    label:
+      en: Support
+      nn: brukarstøtte
+    category: support
+    description:
+      en: Content related to support services, contact information, and user assistance.
+      nn: Innhald om støttetenester, kontaktinformasjon og brukarhjelp.
+    aliases:
+      en:
+        - help
+        - contact
+      nn:
+        - hjelp
+        - kontakt
+        - brukerstøtte
+
+  faq:
+    label:
+      en: FAQ
+      nn: ofte stilte spørsmål
+    category: support
+    description:
+      en: Content related to frequently asked questions and answers.
+      nn: Innhald om ofte stilte spørsmål og svar.
+    aliases:
+      en:
+        - frequently asked questions
+      nn:
+        - spørsmål og svar
+        - OSS
+
+  dataverseno:
+    label:
+      en: DataverseNO
+      nn: DataverseNO
+    category: service
+    description:
+      en: General content about DataverseNO.
+      nn: Generelt innhald om DataverseNO.
+    aliases:
+      en:
+        - Dataverse Norway
+        - Dataverse repository
+      nn:
+        - Dataverse Noreg
+        - Dataverse Norge
+        - DataverseNO-arkivet
+
+  repository:
+    label:
+      en: Repository
+      nn: arkiv
+    category: service
+    description:
+      en: Content related to repository functionality, services, and operation.
+      nn: Innhald om arkivforvaltning og -funksjonalitet.
+    aliases:
+      en:
+        - research data repository
+        - data repository
+      nn:
+        - forskingsdataarkiv
+        - forskningsdataarkiv
+        - dataarkiv
+
+  website:
+    label:
+      en: Website
+      nn: nettstad
+    category: service
+    description:
+      en: Content related to the DataverseNO Information Website.
+      nn: Innhald om informasjonsnettstaden for DataverseNO.
+    aliases:
+      en:
+        - information website
+      nn:
+        - informasjonsnettstad
+        - nettsted
+        - informasjonsnettsted
+
+  service:
+    label:
+      en: Service
+      nn: teneste
+    category: service
+    description:
+      en: Content describing DataverseNO as a service and what it offers.
+      nn: Innhald som skildrar DataverseNO som ei teneste og kva ho tilbyr.
+    aliases:
+      en: []
+      nn: []
+
+  news:
+    label:
+      en: News
+      nn: nyhende
+    category: news-and-events
+    description:
+      en: Content related to news, announcements, and updates.
+      nn: Innhald om nyhende, kunngjeringar og oppdateringar.
+    aliases:
+      en:
+        - updates
+      nn:
+        - oppdateringar
+        - oppdateringer
+        - nyheiter
+        - nyheter
+        - oppdateringar
+        - oppdateringer
+
+  event:
+    label:
+      en: Event
+      nn: arrangement
+    category: news-and-events
+    description:
+      en: Content related to conferences, webinars, workshops, and other events.
+      nn: Innhald om konferansar, webinar, verkstader og andre arrangement.
+    aliases:
+      en:
+        - conference
+        - webinar
+        - workshop
+      nn:
+        - konferanse
+        - webinar
+        - verkstad
+        - workshop
+        - seminar
+
+  release:
+    label:
+      en: Release
+      nn: oppgradering
+    category: news-and-events
+    description:
+      en: Content related to new releases, launches, and major updates.
+      nn: Innhald om nye utgjevingar, lanseringar og større oppdateringar.
+    aliases:
+      en:
+        - launch
+        - major update
+      nn:
+        - lansering
+        - større oppdatering
+
+  announcement:
+    label:
+      en: Announcement
+      nn: kunngjering
+    category: news-and-events
+    description:
+      en: Content related to general announcements and service communications.
+      nn: Innhald om generelle kunngjeringar og tenestemeldingar.
+    aliases:
+      en:
+        - service communication
+      nn:
+        - tenestemelding
+        - tjenestemelding

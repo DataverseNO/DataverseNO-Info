@@ -1,153 +1,310 @@
 ---
-title: Prepare your data
+title: 'Step 1: Prepare your data'
+file_path: docs/en/deposit/prepare-your-data.md
+language: en
+nav_label: Prepare your data
+description: Learn how to organize, format, document, and size-check research data before depositing a dataset in DataverseNO.
+seo_title: Prepare research data for DataverseNO | Files, formats, README, and documentation
+seo_description: Learn how to prepare research data for DataverseNO by organizing files, choosing suitable file formats, creating a README file, adding documentation, and checking file and dataset size.
+tags:
+- deposit
+- data-management
+- documentation
+- file-formats
+- curation
+- research-data
+- fair
+keywords:
+- prepare research data
+- DataverseNO README file
+- file organization
+- preferred file formats
+- research data documentation
+- dataset documentation
+- data files
+- file size recommendations
+- FAIR data
+audience:
+- researchers
+- data depositors
+- research support staff
+- data curators
+primary_user_intent: User wants to prepare a dataset for deposit in DataverseNO by organizing files, choosing suitable formats, creating documentation, and checking file and dataset size.
+parent_page: Deposit Guidelines
+status: Draft
+last_reviewed: null
+review_cycle: Annual
+related_data_sources:
+- data/links.yml
+- data/values.yml
+- data/terms.yml
+canonical_url: https://info.dataverse.no/en/deposit/prepare-your-data/
+social_image: null
 ---
 
-# Prepare your data
+# Step 1: Prepare your data
 
-Before depositing your data in DataverseNO make sure your data set complies with our guidelines below.
+Before depositing your data in DataverseNO, spend some time organizing and documenting your dataset. Doing so will make it easier for others to understand, reuse, and cite your data, and will help ensure a smooth publication process.
 
-## a) File naming and organization
+Most datasets can be prepared by following a few simple steps:
 
-Following good practice for file naming and organizing makes it much easier to find the right data file, not just for you, but also for your collaborators, and later on for other researchers who may re-use your data. Please make sure your file names comply with the following fundamental file naming recommendations:
+- [SECTION: organize-your-files | Organize your files] so that they are easy to navigate and understand.
 
-- Files must be named consistently.
-- File names must be descriptive, but short (< 25 characters).
-- Do not use spaces. Instead, use underscores (e.g. first_study), hyphens (e.g. first-study) or camel case (FirstStudy).
-- Avoid characters like \\ / ? : * " > < | : # % " { } | ^ [ ] ` ~ æÆ øØ åÅ äÄ öÖ …
-- Use the international date convention YYYY-MM-DD (e.g. 2017-10-25).
-- The name of a file in original file format must be identical with the name of the corresponding file in preferred file format (see below).
+- [SECTION: choose-suitable-file-formats | Choose suitable file formats] that support long-term access and reuse.
 
-The way your files should be organized depends on the file type and the discipline. You should follow best-practice recommendations within your field.
+- [SECTION: describe-your-data | Describe your data] using a ReadMe file and other relevant documentation.
 
-For spreadsheets, which are a common file type within many fields, you should follow these general recommendations:
+- [SECTION: check-file-and-dataset-size | Check file and dataset size] before uploading your files.
 
-- One table = one file (one spreadsheet)
-- One column = one variable
-- One row = one observation / sample
-- One cell = one value / piece of information
-- The first row is the header including variable names.
-- Variable names must not include special characters, spaces, or start with a number.
-- Use the international date convention YYYY-MM-DD (e.g. 2017-10-25).
+You do not need to get everything perfect. The purpose of these guidelines is to help you prepare data that can be understood and reused by others. If needed, support staff can provide additional guidance during the [REUSE: terms/curation | curation process] before publication.
 
-For more general recommendations and tips about best-practice organization of spreadsheets / tabular files, see the chapter Data Organisation in Spreadsheets in The Turing Way handbook to reproducible, ethical and collaborative data science.
+If you are unsure what applies to your dataset, please contact your [REUSE: links/contact-page | local user support]. We are happy to help.
 
-## b) Preferred file formats
+## Organize your files
 
-### What are preferred file formats?
+Clear file organization makes it easier for collaborators, curators, and future users to navigate your dataset.
 
-The choice of a preferred file format is crucial in order to ensure that your data will be readable also in the future. Some file formats are more likely to allow long-term readability than others are. Such formats are usually
+### Good practice for file names
 
-- non-proprietary
-- open, with documented international standards
-- using standard character encoding, preferably Unicode (e.g. UTF-8)
-- uncompressed (space permitting)
+- Use descriptive file names.
 
-The table below gives an overview of preferred vs. non-preferred file formats for a selection of document types. The list of file formats in the column "Non-preferred file formats" is non-exhaustive and includes the formats considered the ones used most commonly. If your dataset contains file formats not listed here, please contact the support services of your home institution. When uploading your data to the repository, please make sure you add your files in a preferred format. Make also sure that all of your files contain a valid file extension, e.g. .txt, .pdf. If your data cannot be stored in a preferred format, they can still be published in their original format, but in that case, DataverseNO does not commit to preserve the data in the long term. If appropriate, the file may also be archived in their original file format in addition to preferred format(s). The recommended file formats for TROLLing are also listed in the Format Recommendations of the CLARIN Standards Information System.
+- Use consistent naming conventions.
 
-| File type | Preferred file formats (examples) | Non-preferred file formats (examples) |
-|---|---|---|
-| Audio | Uncompressed and lossless Wav or AIFF (.wav/.aiff); Compressed and lossless FLAC (.flac) | Compressed and lossy Mp3 (.mp3); AAC (.m4a); Monkey's Audio (.ape); Ogg Vorbis (.ogg); Windows Media Audio (.wma) |
-| Container file | In case container files need to be archived as container files, use .zip. See more in section Upload data files. | |
-| Image | Uncompressed TIFF (.tif or .tiff); Compressed and lossless PNG (.png) | Compressed and lossy JPEG (.jpg); Scalable Vector Graphics (.svg); Adobe Photoshop (.psd); Apple Picture File (.pct); Graphics Interchange Format (.gif); Raw Image Data File (.raw); Windows Bitmap (.bmp) |
-| Slide, illustration | PDF/A (.pdf) combined with original file | PowerPoint (.pptx) |
-| Spreadsheet, tabular file | Plain text with Unicode UTF-8 character encoding, tab-separated (.tsv, .txt) or comma-/semicolon-separated (.csv) | Excel (.xlsx) |
-| Text | Plain text (.txt); Markdown (.md); If formatting needed: XML, PDF/A (.pdf) combined with original file | Word (.docx) |
-| Programming languages | MATLAB (.m, .mat); Python (.py) | |
-| Markup language | XML (.xml); HTML (.html); Related files: .css, .xslt, .js, .es | SGML (.sgml); Markdown (.md) |
-| Transcription | File format: PDF/A (.pdf) combined with original file; PDF/A (.pdf) combined with Comma/Tab Separated Values (.csv/.txt); Font: Unicode IPA (e.g. Charis SIL, Doulos SIL, Gentium Plus, Andika), ASCII SAMPA | File format: Word (.docx); Excel (.xlsx); Font: Transcription legacy fonts (SIL IPA(93)) |
-| Video | MPEG-4 (.mp4) | AVI (.avi); Flash Video (FLV); Quicktime (.mov); Windows Media Video (WMV) |
-| Array data | netCDF (.nc) | |
-| Statistical analysis | R (.R, .RData) | SPSS (.dat/.sps); STATA (.dat/.DO); SPSS Portable (.por); SPSS (.sav); STATA (.dta); SAS (.7dat, .sd2, .tpt) |
-| Qualitative data analysis | Basic data in preferred file format, e.g. PDF/A, plain text in Unicode (.txt); Analysis dump/package as REFI-QDA Project (.qdpx) | The different workspace dump formats, e.g. .nvp, .hpr |
-| Workspace dump formats for mass spectrometry | mzML (.mzML) | Agilent D (.D); Bruker BAF (.BAF); Bruker FID (.FID); Chromtech DAT (.DAT); … |
+- Keep file names reasonably short.
 
-### How to save or convert your data into a preferred file format?
+- Use the date format YYYY-MM-DD.
 
-This section contains information on the following document types: Audio, container, image, text, transcription, and video. If your data contain types not listed here, please contact the support services of your home institution.
+- Avoid spaces and special characters.
 
-**Audio:**
+[ADMONITION]
+Style: secondary
+Icon: check-circle-fill
+Title: Example: Good file names
+Text:
+- 00_README.txt
+- survey_data_2025-08.csv
+- species_observations_2024-06-27.tsv
+- interview_metadata.xlsx
 
-- **Recording:** The quality of your audio file depends on the purpose of your recording. If the recording is of such nature that acoustic details are irrelevant, the mp3 format is sufficient. Note however, that mp3 is a lossy compression format: Information in the speech signal is irreversibly discarded during recording and can therefore be considered less suited for speech analysis in the case of data reuse. Given that the mp3-format reduces the reusability of your data, we advise recording in an uncompressed format, .wav or .aiff.
-- **Conversion:** If space is an issue, you can convert the uncompressed .wav and .aiff-files after recording. We recommend a format that does not remove information, like FLAC (Free Lossless Audio Codec). Conversion to FLAC is fully reversible, i.e. the original sound file is restored when decompressed. File conversion can easily be done in free software like Audacity (http://web.audacityteam.org/) or Praat (http://www.fon.hum.uva.nl/praat/).
+[ADMONITION]
+Style: tertiary
+Icon: x-circle-fill
+Title: Example: Bad file names
+Text:
+- data 1.xlsx
+- group Ø-Å final final NEW.xlsx
+- test.docx
+- untitled.csv
 
-**Container files:**
+### Spreadsheets and tabular data
 
-For packing files into container files, please follow the recommendations below:
+For spreadsheets and tabular files, we recommend:
 
-- Use container files with extensions .zip (do not use .7z, tar.gz, .rar, and so on).
-- Use one of the following tools to pack your files into a container:
-    - 7-Zip (for Windows)
-    - Keka (for Mac)
-- Do not use compression or encryption when packing your files into containers.
+- One table per file.
 
-**Image:**
+- One row per observation.
 
-- **Compression:** Images are often compressed to reduce the amount of redundant or irrelevant data information. This does not mean that the quality of images is automatically reduced when they are compressed.
-- **Conversion:** If your images are stored in a format considered non-preferred (see the section What are preferred file formats? above), they must be converted to JPEG, PNG or TIFF. Conversion can easily be done in the software Paint (Windows), Preview (Mac) or GIMP Image Editor (Linux). There are numerous free image converters.
+- One column per variable.
 
-**Text:**
+- One value per cell.
 
-- **Plain text:** If your data is represented in plain text, requiring little or no formatting, you are recommended to create and save your data as plain text files (.txt). You may use a simple text editor, e.g. gedit, TextEdit or WordPad. If you use a more advanced text editor when structuring your data, e.g. Microsoft Word or LibreOffice Writer, you must still save it in plain text format. To do so, select "Save as file type: Plain text (.txt)" in the menu File > Save As. Also, choose Unicode UTF-8 character encoding.
-- **Formatted text:** If your data contains formatted text, e.g. including essential line breaks, tabs, figures, we recommend you to convert your data file into a PDF/A file (.pdf). The original text file as well as the PDF/A file must be uploaded. The same procedure must be carried out if you use a text editor like Microsoft Word or LibreOffice Writer when structuring your data, or a presentation editor like Microsoft PowerPoint or LibreOffice Impress.
-    - To create a PDF/A file in Microsoft Word: Mac (2011): Print > PDF > Save as Adobe PDF > Adobe PDF Settings: PDF/A-1b: 2005 (CMYK). Windows (2013): Save as Adobe PDF > File type: PDF files > Options: Create PDF/A-1a: 2005 compatible file
-    - To create a PDF/A file in LibreOffice Writer: Linux: Save as PDF > Check the PDF/A-1a box > Export.
-    - To save/convert a PDF file as a PDF/A file in Adobe Acrobat (Pro or similar): Save As Other > More Options > PDF/A.
-    - To save/convert a PDF file as a PDF/A file in PDFTRON (or similar): Go to https://www.pdftron.com/pdf-tools/pdfa-converter/, scroll down to the Drag and drop files area, choose PDF/A-1A in field 1, and upload your PDF file in field 2.
-- **Tabular text:** Tabular text data must be provided as Unicode-encoded text files (.csv/.txt). If you have stored your data in a spreadsheet software like Microsoft Excel or LibreOffice Calc, the following instructions show you how to convert it to a recommended format:
-    - Microsoft Excel (Mac, Windows): Choose File > Save as > Choose folder; In the option Save as type, choose Text (Tab delimited) (*.txt) (Note! Do not choose Unicode Text (*.txt)); In Tools, choose Web options; Choose the tab Encoding; In the field Save this document as, choose Unicode (UTF-8), and then click OK; Choose the tab Fonts; In the Character set window, choose Multilingual/Unicode/Other script, and click OK; Click Save; Confirm by clicking Yes. Note: This process has to be repeated for each sheet in the Excel workbook.
-    - LibreOffice Calc (Linux, Mac, Windows): Click File > Save As; Linux and Windows: In the data export dialogue window, select Text encoding/Character set: Unicode (UTF-8); Field delimiter: {Tabulator} (= recommended); Text delimiter: none. Mac: In the field File type, select "Text CSV (.csv)". In the data export dialogue window, select Character set: Unicode (UTF-8); Field delimiter: {Tab}; Text delimiter: " (double quotation mark).
+- Variable names without spaces or special characters.
 
-**Transcription:**
+For more detailed guidance, see chapter [Data Organisation in Spreadsheets](https://the-turing-way.netlify.app/reproducible-research/rdm/rdm-spreadsheets.html) in The Turing Way handbook to reproducible, ethical and collaborative data science.
 
-- **Font:** All transcriptions must be made using Unicode-encoded fonts, e.g. IPA Doulos SIL. For phonetic transcriptions, SAMPA (Speech Assessment Methods Phonetic Alphabet, ASCII characters) is an alternative to IPA. If the recommended font is not available for the type of transcription your dataset requires, it is imperative to include a separate ReadMe file in your dataset with instructions about how to read the transcriptions. Note that the font package itself must not be uploaded, given copyright restrictions.
-- **Conversion:** If your videos are stored in a format considered non-preferred (see the section What are preferred file formats? above), these must be converted to the MPEG-4 format. If you do not have license to any professional conversion software, we advise you to use the VLC Media Player (standard application on both Mac and Windows), or an online free image converter.
+## Choose suitable file formats
 
-**Workspace/analysis space:**
+### Why do file formats matter?
 
-- **Statistical analysis software, e.g. Matlab, R, S-Plus, SPSS:** Most softwares for statistical analysis allow you to save the basic data as (or export them to) a plain text format (.txt). In addition, you must copy the script, and save it as plain text in a text editor.
-- **Qualitative analysis software, e.g. ATLAS.ti, NVivo:** Some software packages for qualitative analysis allow you to save the basic data (or export them to) a preferred file format, e.g. PDF/A or plain text format (.txt). In addition, you can export the analysis package as a so-called REFI-QDA Project (.qdpx). In NVivo, this may be done in the following way: Click the menu tab Share, and then click Export Project. In the pop-up window, select REFI-QDA Project, and choose Location, i.e. where you want to save the file, and enter the filename.
-- **Software for mass spectrometry:** Guidelines on how to convert .mid files to .mzML can be found here. If you are unfamiliar with the command line in Windows, please contact user support at your home institution.
+Some file formats are easier to preserve and reuse than others. DataverseNO therefore recommends a number of preferred file formats for long-term access and reuse.
 
-## c) How to describe your data
+However, many datasets can still be published in their original formats. The use of a non-preferred format does not automatically prevent publication.
 
-In order for other researchers to be able to understand and reuse your data, it is essential that you describe them in a comprehensible and consistent manner before they are published. In DataverseNO, this kind of documentation must be provided in two ways, in the metadata fields, and in a separate ReadMe file which must be uploaded together with your data files:
+If your data were originally created in a non-preferred file format, we often recommend uploading both the preferred file format and the original file format. The preferred file format supports long-term preservation and reuse, while the original file format may be easier for some users to inspect or work with in the short term.
 
-### Metadata
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Keep in mind
+Text: Preferred file formats are recommendations that support long-term preservation. They are not always mandatory requirements for publication.
 
-Metadata is information about your data which makes them findable in discovery services. When creating a dataset, it is therefore important to fill in as much information as possible in the metadata schema (see the sections Enter metadata and Enter more metadata in the Deposit Guidelines.
+### Preferred file formats
 
-### ReadMe file
+Examples include:
 
-A ReadMe file is a more detailed user guide to your dataset so that other researchers are able to interpret, understand, and reuse your data, including information about how the dataset was created, how complete it is, and what kind of restrictions it has.
+| Data type | Preferred formats |
+| --- | --- |
+| Text | TXT, PDF/A |
+| Tabular data | TSV, CSV |
+| Images | TIFF, PNG, JPEG |
+| Audio | WAV, AIFF, FLAC |
+| Video | MP4 |
+| Markup | XML, HTML |
+| Statistical data | R, SPSS syntax, STATA syntax |
+| Software code | Python, MATLAB, plain-text source code |
 
-For your dataset to be curated and published in DataverseNO or TROLLing, it is mandatory to build your ReadMe file based on this general template. For dataset containing only software code or code-based data, you may use this template for software code.
+For the complete list including guidance, see the [PAGE: file-formats/index | DataverseNO file formats overview].
 
-If these templates are not appropriate for your dataset, please consult with the support services of your home institution and build your own ReadMe file. The ReadMe file must minimally contain the following:
+### Need help converting files?
 
-- Title of the dataset, DOI, contact information
-- Methods
-- Data and file overview
-- Data-specific information
-- Terms of Reuse
+Guidance on how to convert documents, spreadsheets, images, audio files, video files, and other data types into preferred file formats is available in the [PAGE: file-formats/index | DataverseNO file formats overview].
 
-The ReadMe file should be in plain text format with Unicode UTF-8 character encoding (.txt). If you need to illustrate or format your description, you may save your ReadMe file as PDF/A (see the section What are preferred file formats? for more information). We also recommend you to add "0_" in front of the ReadMe file name (e.g. "0_ReadMe.txt"), which will make the file appear on the top of the file overview.
+### Original and converted file formats
 
-Here are some sample ReadMe files: sample 1 (Social Sciences); sample 2 (Life Sciences).
+Often, data may be provided both in a preferred file format and in the original file format from which it was derived.
 
-## d) File size, number of files, and folder structure
+Example:
 
-Check out our guidelines on file size, number of files, and folder structure before uploading files to your dataset.
+```text
+[text]
+experiment_01.csv
+experiment_01.xlsx
+```
 
-## e) Acknowledgements
+In this example:
 
-Parts of the guidelines above have been adapted from several sources, including:
+- experiment_01.csv is the preferred preservation format.
 
-- Data Management General Guidance. Curation Center of the California Digital Library, University of California. https://dmptool.org/dm_guidance#types.
-- Praat beginners' manual by Sidney Wood. http://www.fon.hum.uva.nl/praat/manualsByOthers.html
-- Preparing tabular data for description and archiving. Research Data Management Group, Cornell University. http://data.research.cornell.edu/content/tabular-data.
-- Recommendations for uploading data. ETH-Bibliothek. http://www.library.ethz.ch/en/content/download/17058/442689/version/2/file/Empfehlungen_Datenupload_en.pdf
-- Sustainable Formats and Conversion Strategies at the Bentley Historical Library. Version 1.0, November 9th, 2011. http://bentley.umich.edu/dchome/resources/BHL_PreservationStrategies_v01.pdf.
+- experiment_01.xlsx is the original working format.
 
-For questions, comments or suggestions, see our support page.
+Providing both versions can help support both long-term preservation and immediate reuse.
 
-Proceed to section 2: Deposit your data
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Keep in mind
+Text: If you upload both a preferred file format and an original file format, the file names should be identical except for the file extension.
+
+## Describe your data
+
+Good documentation makes data easier to find, understand, and reuse.
+
+In DataverseNO, datasets are documented in two complementary ways:
+
+- A ReadMe file that you prepare before depositing your dataset.
+
+- Metadata that you enter when creating the dataset in DataverseNO.
+
+This section focuses on preparing a ReadMe file and other documentation before deposit. Information about metadata is provided in the second step of the deposit workflow: [PAGE: deposit-your-data | Step 2: Deposit your data].
+
+### The most important step: Create a ReadMe file
+
+A ReadMe file is a guide to your dataset. It explains what the data contain, how they were created, how the files are organized, and what someone needs to know to understand and reuse them.
+
+Providing a ReadMe file is required before a dataset can be published in DataverseNO.
+
+The ReadMe file should, at a minimum, contain:
+
+- Dataset title and contact information.
+
+- Description of methods and data collection.
+
+- Overview of files and folders.
+
+- Explanations of variables, abbreviations, codes, or terminology.
+
+- Information about terms of reuse and licensing.
+
+We recommend using one of the DataverseNO templates:
+
+[RESOURCE BOX GRID]
+[RESOURCE BOX]
+Style: primary
+Icon: file-ruled
+Title: DataverseNO README File Template - General
+URL: https://doi.org/10.5281/zenodo.7453999
+Open: new-tab
+[RESOURCE BOX]
+Style: primary
+Icon: journal-code
+Title: DataverseNO README File Template - Software Code
+URL: https://doi.org/10.5281/zenodo.7454015
+Open: new-tab
+
+Sample ReadMe files:
+
+[RESOURCE BOX GRID]
+[RESOURCE BOX]
+Style: primary
+Icon: file-ruled
+Title: Example 1 (Life Sciences)
+URL: https://doi.org/10.18710/S94YFT/J2GAMK
+Open: new-tab
+[RESOURCE BOX]
+Style: primary
+Icon: file-ruled
+Title: Example 2 (Social Sciences)
+URL: https://doi.org/10.18710/JWTJJB/O77MAT
+Open: new-tab
+
+[ADMONITION]
+Style: primary
+Icon: pencil-square
+Title: Keep in mind
+Text: A well-written ReadMe file is often the single most important factor enabling others to understand and reuse your data.
+
+### Additional documentation
+
+Depending on the nature of your dataset, it may be helpful to include additional documentation alongside the ReadMe file and refer to it in the ReadMe file where relevant.
+
+Examples include:
+
+- Data collection protocols.
+
+- Analysis scripts.
+
+- Codebooks.
+
+- Survey instruments or interview guides.
+
+- Processing workflows.
+
+- Laboratory procedures.
+
+- Documentation of rights and permissions.
+
+The more specialized your dataset is, the more important such documentation often becomes.
+
+### Why documentation matters
+
+Good documentation increases the likelihood that your data can be:
+
+- Found by other researchers.
+
+- Correctly interpreted and reused.
+
+- Reproduced and validated.
+
+- Preserved and understood in the future.
+
+Documentation therefore benefits not only future users of your data, but also your future self and your collaborators.
+
+## Check file and dataset size
+
+To ensure smooth uploading, curation, and reuse, please note the following recommendations:
+
+- Individual files should preferably not exceed [REUSE: values/file-size-limit].
+
+- A single upload should preferably not exceed [REUSE: values/upload-size-limit].
+
+- A dataset should preferably not exceed [REUSE: values/dataset-size-limit].
+
+- A dataset should preferably not contain more than [REUSE: values/file-number-limit].
+
+### Larger datasets
+
+If your files or dataset exceed these recommendations, contact your [REUSE: links/contact-page | local user support] before depositing your data. Large datasets can often be accommodated.
+
+## Need help?
+
+If you are unsure how to prepare your dataset, contact your [REUSE: links/contact-page | local user support]. We are happy to help.
+
+## Ready to continue?
+
+If your files are organized, documented, and ready to share, you are ready for the next step.
+
+[BUTTON]
+Style: primary
+Title: Step 2: Deposit your data
+Icon: arrow-right-circle-fill
+Target: deposit-your-data

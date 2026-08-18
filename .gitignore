@@ -5,3 +5,4 @@ __pycache__/
 .env
 /context
 AZURE_SETUP.md
+.superpowers/

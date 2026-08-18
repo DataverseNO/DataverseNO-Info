@@ -1,0 +1,249 @@
+version: 0.1
+
+# DataverseNO Information Website reusable links
+#
+# Purpose:
+#   Authoritative, language-aware source for reusable links used across the
+#   DataverseNO Information Website.
+#
+# Principles:
+#   - Link identifiers are language-neutral, lowercase, hyphen-separated where required,
+#     and stable over time.
+#   - URLs are maintained once in this file.
+#   - Labels and descriptions are localized for public display and editor guidance.
+#   - English and Norwegian Nynorsk pages shall reference the same link identifiers.
+#   - If a URL is not yet decided, set url: null and status: pending-url.
+#   - If a linked resource is currently available in English only, keep the English
+#     title as the label in both languages unless an approved Norwegian Nynorsk label
+#     has been established.
+#   - Page content should reference link IDs, for example:
+#       [REUSE: links/dataverseno-preservation-policy]
+
+links:
+  dataverseno-repository:
+    label:
+      en: DataverseNO repository
+      nn: DataverseNO-arkivet
+    url: https://dataverse.no
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO repository.
+      nn: Lenkje til DataverseNO-arkivet.
+
+  contact-page:
+    label:
+      en: contact page
+      nn: kontaktsida
+    url: /contact/
+    open: same-tab
+    language_availability:
+      - en
+      - nn
+    status: active
+    description:
+      en: Link to the DataverseNO contact page for local user support.
+      nn: Lenkje til kontaktsida for lokal brukarstøtte i DataverseNO.
+
+  dataverseno-organizational-agreement:
+    label:
+      en: DataverseNO Organizational Agreement
+      nn: DataverseNO-forvaltningsavtalen
+    url:
+      en: https://doi.org/10.5281/zenodo.13118440
+      nn: https://doi.org/10.5281/zenodo.10464799
+    open: new-tab
+    language_availability:
+      - en
+      - nn
+    status: active
+    description:
+      en: Link to the DataverseNO Organizational Agreement.
+      nn: Lenkje til DataverseNO-forvaltningsavtalen.
+
+  dataverseno-price-overview:
+    label:
+      en: price overview
+      nn: prisoversikt
+    url: https://doi.org/10.5281/zenodo.13356379
+    open: new-tab
+    language_availability:
+      - nn
+    status: active
+    description:
+      en: Link to the DataverseNO price overview.
+      nn: Lenkje til prisoversikta for DataverseNO.
+
+  dataverseno-policy-framework:
+    label:
+      en: DataverseNO Policy Framework
+      nn: DataverseNO Policy Framework
+    url: https://doi.org/10.5281/zenodo.21848507
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Policy Framework.
+      nn: Lenkje til DataverseNO Policy Framework.
+
+  dataverseno-access-and-use-policy:
+    label:
+      en: DataverseNO Access and Use Policy
+      nn: DataverseNO Access and Use Policy
+    url: https://doi.org/10.5281/zenodo.21848816
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Access and Use Policy.
+      nn: Lenkje til DataverseNO Access and Use Policy.
+
+  dataverseno-accession-policy:
+    label:
+      en: DataverseNO Accession Policy
+      nn: DataverseNO Accession Policy
+    url: https://doi.org/10.5281/zenodo.21849502
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Accession Policy.
+      nn: Lenkje til DataverseNO Accession Policy.
+
+  dataverseno-deposit-agreement:
+    label:
+      en: DataverseNO Deposit Agreement
+      nn: DataverseNO Deposit Agreement
+    url: https://doi.org/10.5281/zenodo.21850126
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Deposit Agreement.
+      nn: Lenkje til DataverseNO Deposit Agreement.
+
+  dataverseno-preservation-policy:
+    label:
+      en: DataverseNO Preservation Policy
+      nn: DataverseNO Preservation Policy
+    url: https://doi.org/10.5281/zenodo.21850478
+    open: new-tab
+    language_availability:
+      - en
+    status: pending-url
+    description:
+      en: Link to the DataverseNO Preservation Policy.
+      nn: Lenkje til DataverseNO Preservation Policy.
+
+  dataverseno-deaccession-procedure:
+    label:
+      en: DataverseNO Deaccession Procedure
+      nn: DataverseNO Deaccession Procedure
+    url: https://doi.org/10.5281/zenodo.21850755
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Deaccession Procedure.
+      nn: Lenkje til DataverseNO Deaccession Procedure.
+
+  dataverseno-deaccession-guidelines:
+    label:
+      en: DataverseNO Deaccession Guidelines
+      nn: DataverseNO Deaccession Guidelines
+    url: https://doi.org/10.5281/zenodo.21850853
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Deaccession Guidelines.
+      nn: Lenkje til DataverseNO Deaccession Guidelines.
+
+  dataverseno-preservation-plan:
+    label:
+      en: DataverseNO Preservation Plan
+      nn: DataverseNO Preservation Plan
+    url: https://doi.org/10.5281/zenodo.21850978
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Preservation Plan.
+      nn: Lenkje til DataverseNO Preservation Plan.
+
+  dataverseno-digital-assets-report:
+    label:
+      en: DataverseNO Digital Assets Report
+      nn: DataverseNO Digital Assets Report
+    url: https://doi.org/10.5281/zenodo.21851139
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO Digital Assets Report.
+      nn: Lenkje til DataverseNO Digital Assets Report.
+
+  dataverseno-continuity-policy:
+    label:
+      en: DataverseNO Continuity Policy
+      nn: DataverseNO Continuity Policy
+    url: null
+    open: new-tab
+    language_availability:
+      - en
+    status: pending-url
+    description:
+      en: Link to the DataverseNO Continuity Policy.
+      nn: Lenkje til DataverseNO Continuity Policy.
+    note:
+      en: null
+      nn: V1.0 er godkjend av styret, men kan ikkje publiserast før ein "business continuity plan" er på plass.
+
+  dataverseno-readme-template-general:
+    label:
+      en: DataverseNO README File Template - General
+      nn: DataverseNO-README-filmal - generisk
+    url: https://doi.org/10.5281/zenodo.7453999
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO README File Template - General.
+      nn: Lenkje til den generiske DataverseNO-README-filmalen.
+      
+  dataverseno-readme-template-software-code:
+    label:
+      en: DataverseNO README File Template - Software Code
+      nn: DataverseNO-README-filmal - programvare og kode
+    url: https://doi.org/10.5281/zenodo.7454015
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO README File Template - Software Core.
+      nn: Lenkje til DataverseNO-README-filmalen - programvare og kode.
+
+  dataverseno-readme-example-life-sciences:
+    label:
+      en: DataverseNO README File Template - Software Code
+      nn: DataverseNO-README-filmal - programvare og kode
+    url: https://doi.org/10.5281/zenodo.7454015
+    open: new-tab
+    language_availability:
+      - en
+    status: active
+    description:
+      en: Link to the DataverseNO README File Template - Software Core.
+      nn: Lenkje til DataverseNO-README-filmalen - programvare og kode.

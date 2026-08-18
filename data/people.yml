@@ -1,0 +1,2834 @@
+version: 0.2
+created: '2026-07-01'
+last_updated: '2026-08-13'
+source: data/sources/people.tsv
+description: Generated people data for the DataverseNO Information Website.
+generation:
+  script: scripts/generate_people_yml.py
+  input: data/sources/people.tsv
+  partner_source: data/partners.yml
+  note: Person records are generated from people.tsv and partners.yml. Do not edit generated person records manually unless
+    the generation workflow is updated.
+role_vocabulary:
+  board:
+    en: Board
+    nn: Styre
+  collection-management:
+    en: Collection Management
+    nn: Samlingsforvaltning
+  curation:
+    en: Curation
+    nn: Kuratering
+  repository-management:
+    en: Repository Management
+    nn: Arkivforvaltning
+people:
+  - id: kristian-sandbekk-norsted
+    name: Kristian Sandbekk Norsted
+    institution_id: hiof
+    photo: assets/images/people/kristian-sandbekk-norsted.jpg
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Anthropology
+        - Sociology
+        - Gender Studies
+        - Privacy
+        - Research Ethics
+      nn:
+        - antropologi
+        - sosiologi
+        - kjønnsstudier
+        - personvern
+        - forskningsetikk
+    profile_url: https://www.hiof.no/om/organisasjon/administrasjonen/forskningsavdelingen/biblioteket/personer/tekn-adm-ansatte/kristisn/index.html
+    search_aliases:
+      - Kristian Sandbekk Norsted
+      - Kristian
+      - Sandbekk
+      - Norsted
+      - hiof
+      - Østfold University of Applied Sciences
+      - Høgskolen i Østfold
+      - HiØ
+      - HIOF
+      - Østfold
+      - Ostfold
+      - Østfold University College
+      - Hogskolen i Ostfold
+      - Høgskulen i Østfold
+      - Høgskulen i Ostfold
+      - Høyskolen i Østfold
+      - Hoyskolen i Ostfold
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Anthropology
+      - Sociology
+      - Gender Studies
+      - Privacy
+      - Research Ethics
+      - antropologi
+      - sosiologi
+      - kjønnsstudier
+      - personvern
+      - forskningsetikk
+  - id: grete-gluppe
+    name: Grete Gluppe
+    institution_id: hiof
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Grete Gluppe
+      - Grete
+      - Gluppe
+      - hiof
+      - Østfold University of Applied Sciences
+      - Høgskolen i Østfold
+      - HiØ
+      - HIOF
+      - Østfold
+      - Ostfold
+      - Østfold University College
+      - Hogskolen i Ostfold
+      - Høgskulen i Østfold
+      - Høgskulen i Ostfold
+      - Høyskolen i Østfold
+      - Hoyskolen i Ostfold
+      - Curation
+      - Kuratering
+  - id: kent-andre-bersvendsen
+    name: Kent André Bersvendsen
+    institution_id: hiof
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kent André Bersvendsen
+      - Kent
+      - André
+      - Bersvendsen
+      - hiof
+      - Østfold University of Applied Sciences
+      - Høgskolen i Østfold
+      - HiØ
+      - HIOF
+      - Østfold
+      - Ostfold
+      - Østfold University College
+      - Hogskolen i Ostfold
+      - Høgskulen i Østfold
+      - Høgskulen i Ostfold
+      - Høyskolen i Østfold
+      - Hoyskolen i Ostfold
+      - Curation
+      - Kuratering
+  - id: sondre-strandskog-arnesen
+    name: Sondre Strandskog Arnesen
+    institution_id: hvl
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Sondre Strandskog Arnesen
+      - Sondre
+      - Strandskog
+      - Arnesen
+      - hvl
+      - Western Norway University of Applied Sciences
+      - Høgskulen på Vestlandet
+      - HVL
+      - Hogskulen pa Vestlandet
+      - Høgskolen på Vestlandet
+      - Hogskolen på Vestlandet
+      - Vestlandet
+      - Curation
+      - Kuratering
+  - id: vidar-rongved
+    name: Vidar Rongved
+    institution_id: hvl
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Vidar Rongved
+      - Vidar
+      - Rongved
+      - hvl
+      - Western Norway University of Applied Sciences
+      - Høgskulen på Vestlandet
+      - HVL
+      - Hogskulen pa Vestlandet
+      - Høgskolen på Vestlandet
+      - Hogskolen på Vestlandet
+      - Vestlandet
+      - Curation
+      - Kuratering
+  - id: mahmood-khosrowjerdi
+    name: Mahmood Khosrowjerdi
+    institution_id: inn
+    photo: assets/images/people/mahmood-khosrowjerdi.png
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+      nn:
+        - bibliotek og informasjonsvitenskap
+    profile_url: https://www.inn.no/english/find-an-employee/mahmood-khosrowjerdi.html
+    search_aliases:
+      - Mahmood Khosrowjerdi
+      - Mahmood
+      - Khosrowjerdi
+      - inn
+      - University of Inland Norway
+      - Universitetet i Innlandet
+      - INN
+      - Inland Norway University
+      - Inland Norway University of Applied Sciences
+      - Høgskolen i Innlandet
+      - Hogskolen i Innlandet
+      - Høyskolen i Innlandet
+      - Hoyskolen i Innlandet
+      - Innlandet
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - bibliotek og informasjonsvitenskap
+  - id: inger-beate-nylund
+    name: Inger Beate Nylund
+    institution_id: inn
+    photo: assets/images/people/inger-beate-nylund.jpg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+      nn:
+        - bibliotek- og informasjonsvitenskap
+    profile_url: https://www.inn.no/finn-en-ansatt/inger-nylund.html
+    search_aliases:
+      - Inger Beate Nylund
+      - Inger
+      - Beate
+      - Nylund
+      - inn
+      - University of Inland Norway
+      - Universitetet i Innlandet
+      - INN
+      - Inland Norway University
+      - Inland Norway University of Applied Sciences
+      - Høgskolen i Innlandet
+      - Hogskolen i Innlandet
+      - Høyskolen i Innlandet
+      - Hoyskolen i Innlandet
+      - Innlandet
+      - Curation
+      - Kuratering
+      - Library And Information Science
+      - bibliotek- og informasjonsvitenskap
+  - id: henrik-holtvedt-andersen
+    name: Henrik Holtvedt Andersen
+    institution_id: mf
+    photo: assets/images/people/henrik-holtvedt-andersen.jpg
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+        - Religion And Society
+      nn:
+        - bibliotek og informasjonsvitenskap
+        - religion og samfunnsvitenskap
+    profile_url: https://mf.no/ansatte/henrik-holtvedt-andersen
+    search_aliases:
+      - Henrik Holtvedt Andersen
+      - Henrik
+      - Holtvedt
+      - Andersen
+      - mf
+      - MF Norwegian School of Theology, Religion and Society
+      - MF vitenskapelig høyskole
+      - MF
+      - MF Norwegian School of Theology Religion and Society
+      - MF vitenskapelig høyskole for teologi, religion og samfunn
+      - MF vitenskapelig hoyskole for teologi, religion og samfunn
+      - MF vitenskapelig høgskole for teologi, religion og samfunn
+      - MF vitenskapelig hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskole for teologi, religion og samfunn
+      - MF vitskapleg hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskule for teologi, religion og samfunn
+      - MF vitskapleg hogskule for teologi, religion og samfunn
+      - MF vitenskapelig hoyskole
+      - MF vitenskapelig høgskole
+      - MF vitenskapelig hogskole
+      - MF vitskapleg høgskole
+      - MF vitskapleg hogskole
+      - MF vitskapleg høgskule
+      - MF vitskapleg hogskule
+      - theology
+      - teologi
+      - religion
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - Religion And Society
+      - bibliotek og informasjonsvitenskap
+      - religion og samfunnsvitenskap
+  - id: rune-keisuke-kosaka
+    name: Rune Keisuke Kosaka
+    institution_id: mf
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Rune Keisuke Kosaka
+      - Rune
+      - Keisuke
+      - Kosaka
+      - mf
+      - MF Norwegian School of Theology, Religion and Society
+      - MF vitenskapelig høyskole
+      - MF
+      - MF Norwegian School of Theology Religion and Society
+      - MF vitenskapelig høyskole for teologi, religion og samfunn
+      - MF vitenskapelig hoyskole for teologi, religion og samfunn
+      - MF vitenskapelig høgskole for teologi, religion og samfunn
+      - MF vitenskapelig hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskole for teologi, religion og samfunn
+      - MF vitskapleg hogskole for teologi, religion og samfunn
+      - MF vitskapleg høgskule for teologi, religion og samfunn
+      - MF vitskapleg hogskule for teologi, religion og samfunn
+      - MF vitenskapelig hoyskole
+      - MF vitenskapelig høgskole
+      - MF vitenskapelig hogskole
+      - MF vitskapleg høgskole
+      - MF vitskapleg hogskole
+      - MF vitskapleg høgskule
+      - MF vitskapleg hogskule
+      - theology
+      - teologi
+      - religion
+      - Curation
+      - Kuratering
+  - id: hanne-tvete
+    name: Hanne Tvete
+    institution_id: nibio
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+        - Information Systems
+        - Knowledge Management
+        - Open Research
+      nn:
+        - bibliotek- og informasjonsvitenskap
+        - informasjonssystemer
+        - kunnskapsforvaltning
+        - åpen forskning
+    profile_url: https://www.nibio.no/ansatte/hanne-tvete?locationfilter=true
+    search_aliases:
+      - Hanne Tvete
+      - Hanne
+      - Tvete
+      - nibio
+      - Norwegian Institute of Bioeconomy Research (NIBIO)
+      - Norsk institutt for bioøkonomi (NIBIO)
+      - NIBIO
+      - Norwegian Institute of Bioeconomy Research
+      - Norsk institutt for bioøkonomi
+      - Norsk institutt for biookonomi
+      - bioeconomy
+      - bioøkonomi
+      - biookonomi
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - Information Systems
+      - Knowledge Management
+      - Open Research
+      - bibliotek- og informasjonsvitenskap
+      - informasjonssystemer
+      - kunnskapsforvaltning
+      - åpen forskning
+  - id: neth-long-prum
+    name: Neth Long Prum
+    institution_id: nibio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Neth Long Prum
+      - Neth
+      - Long
+      - Prum
+      - nibio
+      - Norwegian Institute of Bioeconomy Research (NIBIO)
+      - Norsk institutt for bioøkonomi (NIBIO)
+      - NIBIO
+      - Norwegian Institute of Bioeconomy Research
+      - Norsk institutt for bioøkonomi
+      - Norsk institutt for biookonomi
+      - bioeconomy
+      - bioøkonomi
+      - biookonomi
+      - Curation
+      - Kuratering
+  - id: sara-ellen-gaup
+    name: Sara Ellen Gaup
+    institution_id: nibio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Sara Ellen Gaup
+      - Sara
+      - Ellen
+      - Gaup
+      - nibio
+      - Norwegian Institute of Bioeconomy Research (NIBIO)
+      - Norsk institutt for bioøkonomi (NIBIO)
+      - NIBIO
+      - Norwegian Institute of Bioeconomy Research
+      - Norsk institutt for bioøkonomi
+      - Norsk institutt for biookonomi
+      - bioeconomy
+      - bioøkonomi
+      - biookonomi
+      - Curation
+      - Kuratering
+  - id: tone-person
+    name: Tone Person
+    institution_id: nibio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Tone Person
+      - Tone
+      - Person
+      - nibio
+      - Norwegian Institute of Bioeconomy Research (NIBIO)
+      - Norsk institutt for bioøkonomi (NIBIO)
+      - NIBIO
+      - Norwegian Institute of Bioeconomy Research
+      - Norsk institutt for bioøkonomi
+      - Norsk institutt for biookonomi
+      - bioeconomy
+      - bioøkonomi
+      - biookonomi
+      - Curation
+      - Kuratering
+  - id: linn-benjaminsen-holvold
+    name: Linn Benjaminsen Hølvold
+    institution_id: nmbu
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Linn Benjaminsen Hølvold
+      - Linn
+      - Benjaminsen
+      - Hølvold
+      - nmbu
+      - Norwegian University of Life Sciences (NMBU)
+      - Noregs miljø- og biovitskaplege universitet (NMBU)
+      - NMBU
+      - Norwegian University of Life Sciences
+      - Noregs miljø- og biovitskaplege universitet
+      - Norges miljø- og biovitenskapelige universitet
+      - Ås
+      - As
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+  - id: svanbjorg-dora-asudottir
+    name: Svanbjörg Dora Asudottir
+    institution_id: nmbu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Svanbjörg Dora Asudottir
+      - Svanbjörg
+      - Dora
+      - Asudottir
+      - nmbu
+      - Norwegian University of Life Sciences (NMBU)
+      - Noregs miljø- og biovitskaplege universitet (NMBU)
+      - NMBU
+      - Norwegian University of Life Sciences
+      - Noregs miljø- og biovitskaplege universitet
+      - Norges miljø- og biovitenskapelige universitet
+      - Ås
+      - As
+      - Curation
+      - Kuratering
+  - id: kjetil-aune
+    name: Kjetil Aune
+    institution_id: nofima
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kjetil Aune
+      - Kjetil
+      - Aune
+      - nofima
+      - Nofima
+      - Norwegian food research institute
+      - Matforskningsinstituttet
+      - Norwegian Institute of Food, Fisheries and Aquaculture Research
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+  - id: sagnik-sengupta
+    name: Sagnik Sengupta
+    institution_id: nord
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Ecology
+        - Ecotoxicology
+        - Research Data Management
+      nn:
+        - økologi
+        - økotoksikologi
+        - forskningsdatahåntering
+        - åpen vitenskap
+    profile_url: https://www.nord.no/om/ansatte/sagnik-sengupta
+    search_aliases:
+      - Sagnik Sengupta
+      - Sagnik
+      - Sengupta
+      - nord
+      - Nord
+      - Nord University
+      - Nord universitet
+      - Bodø
+      - Bodo
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Ecology
+      - Ecotoxicology
+      - Research Data Management
+      - økologi
+      - økotoksikologi
+      - forskningsdatahåntering
+      - åpen vitenskap
+  - id: kari-haugset-alterskjar
+    name: Kari Haugset Alterskjær
+    institution_id: nord
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kari Haugset Alterskjær
+      - Kari
+      - Haugset
+      - Alterskjær
+      - nord
+      - Nord
+      - Nord University
+      - Nord universitet
+      - Bodø
+      - Bodo
+      - Curation
+      - Kuratering
+  - id: kristin-alvsvag
+    name: Kristin Alvsvåg
+    institution_id: nord
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kristin Alvsvåg
+      - Kristin
+      - Alvsvåg
+      - nord
+      - Nord
+      - Nord University
+      - Nord universitet
+      - Bodø
+      - Bodo
+      - Curation
+      - Kuratering
+  - id: sogni-gjerlow-sundbo
+    name: Søgni Gjerløw Sundbø
+    institution_id: nord
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Søgni Gjerløw Sundbø
+      - Søgni
+      - Gjerløw
+      - Sundbø
+      - nord
+      - Nord
+      - Nord University
+      - Nord universitet
+      - Bodø
+      - Bodo
+      - Curation
+      - Kuratering
+  - id: astrid-kilvik
+    name: Astrid Kilvik
+    institution_id: ntnu
+    roles:
+      - board
+    role_free_text:
+      en:
+        - Board
+      nn:
+        - Styre
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www.ntnu.no/ansatte/astrid.kilvik
+    search_aliases:
+      - Astrid Kilvik
+      - Astrid
+      - Kilvik
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Board
+      - Styre
+  - id: anders-gravbrot-finstad
+    name: Anders Gravbrøt Finstad
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Anders Gravbrøt Finstad
+      - Anders
+      - Gravbrøt
+      - Finstad
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: ane-moller-gabrielsen
+    name: Ane Møller Gabrielsen
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ane Møller Gabrielsen
+      - Ane
+      - Møller
+      - Gabrielsen
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: ellen-margrethe-samdahl-flatby
+    name: Ellen Margrethe Samdahl Flatby
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ellen Margrethe Samdahl Flatby
+      - Ellen
+      - Margrethe
+      - Samdahl
+      - Flatby
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: inga-buset-langfeldt
+    name: Inga Buset Langfeldt
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Inga Buset Langfeldt
+      - Inga
+      - Buset
+      - Langfeldt
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: ingrid-heggland
+    name: Ingrid Heggland
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ingrid Heggland
+      - Ingrid
+      - Heggland
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: johannes-foss-sigurdson
+    name: Johannes Foss Sigurdson
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Johannes Foss Sigurdson
+      - Johannes
+      - Foss
+      - Sigurdson
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: lene-elisabeth-bertheussen
+    name: Lene Elisabeth Bertheussen
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Lene Elisabeth Bertheussen
+      - Lene
+      - Elisabeth
+      - Bertheussen
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: lisbeth-jahren
+    name: Lisbeth Jahren
+    institution_id: ntnu
+    photo: assets/images/people/lisbeth-jahren.jpg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Social Sciences
+        - Library And Information Science
+        - Science And Technology Studies
+        - Social Work
+        - Health Sciences
+      nn:
+        - samfunnsvitenskap
+        - bibliotek- og informasjonsvitenskap
+        - teknologi- og vitenskapsstudier
+        - sosialt arbeid
+        - helsevitenskap
+    profile_url: https://www.ntnu.no/ansatte/lisbeth.jahren
+    search_aliases:
+      - Lisbeth Jahren
+      - Lisbeth
+      - Jahren
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+      - Social Sciences
+      - Library And Information Science
+      - Science And Technology Studies
+      - Social Work
+      - Health Sciences
+      - samfunnsvitenskap
+      - bibliotek- og informasjonsvitenskap
+      - teknologi- og vitenskapsstudier
+      - sosialt arbeid
+      - helsevitenskap
+  - id: maria-karoline-andersen
+    name: Maria Karoline Andersen
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Maria Karoline Andersen
+      - Maria
+      - Karoline
+      - Andersen
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: svein-hoier
+    name: Svein Høier
+    institution_id: ntnu
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Svein Høier
+      - Svein
+      - Høier
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Curation
+      - Kuratering
+  - id: emma-walton
+    name: Emma Walton
+    institution_id: ntnu
+    photo: assets/images/people/emma-walton.jpg
+    roles:
+      - repository-management
+      - curation
+    role_free_text:
+      en:
+        - Repository Management
+        - Curation
+      nn:
+        - Arkivforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Medicine And Health
+        - Biosciences
+      nn:
+        - medisin og helsefag
+        - biologiskefag
+    profile_url: https://www.ntnu.no/ansatte/emma.l.walton
+    search_aliases:
+      - Emma Walton
+      - Emma
+      - Walton
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Repository Management
+      - Curation
+      - Arkivforvaltning
+      - Kuratering
+      - Medicine And Health
+      - Biosciences
+      - medisin og helsefag
+      - biologiskefag
+  - id: fredrik-sahlstrom
+    name: Fredrik Sahlström
+    institution_id: ntnu
+    photo: assets/images/people/fredrik-sahlstrom.jpg
+    roles:
+      - repository-management
+      - curation
+      - collection-management
+    role_free_text:
+      en:
+        - Repository Management
+        - Curation
+        - Collection Management
+      nn:
+        - Arkivforvaltning
+        - Kuratering
+        - Samlingsforvaltning
+    expertise:
+      en:
+        - Geology
+        - Research Data Management
+        - Repository Management
+        - Open Science
+      nn:
+        - geologi
+        - forskningsdatahåndtering
+        - arkivforvaltning
+        - åpen forskning
+    profile_url: https://www.ntnu.no/ansatte/fredrik.sahlstrom
+    search_aliases:
+      - Fredrik Sahlström
+      - Fredrik
+      - Sahlström
+      - ntnu
+      - NTNU – Norwegian University of Science and Technology
+      - NTNU – Noregs teknisk-naturvitskaplege universitet
+      - NTNU
+      - Norwegian University of Science and Technology
+      - Noregs teknisk-naturvitskaplege universitet
+      - Norges teknisk-naturvitenskapelige universitet
+      - Trondheim
+      - Repository Management
+      - Curation
+      - Collection Management
+      - Arkivforvaltning
+      - Kuratering
+      - Samlingsforvaltning
+      - Geology
+      - Research Data Management
+      - Open Science
+      - geologi
+      - forskningsdatahåndtering
+      - arkivforvaltning
+      - åpen forskning
+  - id: marianne-wehus
+    name: Marianne Wehus
+    institution_id: oslomet
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Humanities
+        - Library And Information Science
+        - Soial Sciences
+      nn:
+        - humaniora
+        - bibliotekfag
+        - samfunnsvitenskap
+    profile_url: https://www.oslomet.no/om/ansatt/mawehus/
+    search_aliases:
+      - Marianne Wehus
+      - Marianne
+      - Wehus
+      - oslomet
+      - OsloMet – Oslo Metropolitan University
+      - OsloMet – storbyuniversitetet
+      - OsloMet
+      - Oslo Metropolitan University
+      - Storbyuniversitetet
+      - Oslo
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Humanities
+      - Library And Information Science
+      - Soial Sciences
+      - humaniora
+      - bibliotekfag
+      - samfunnsvitenskap
+  - id: camilla-holm-soelseth
+    name: Camilla Holm Soelseth
+    institution_id: oslomet
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Humanities
+        - Library And Information Science
+        - Digital Humanities
+        - Internet Research
+        - Infrastructure Studies
+        - Technology
+      nn:
+        - digital humaniora
+        - digital cultural heritage
+        - nettdata og internettforskning
+        - datafeminisme
+        - bibliotek- og informasjonsvitenskap
+        - forskningsdatahåndtering
+        - open science programvare
+        - infrastruktur
+    profile_url: https://www.oslomet.no/om/ansatt/camil/
+    search_aliases:
+      - Camilla Holm Soelseth
+      - Camilla
+      - Holm
+      - Soelseth
+      - oslomet
+      - OsloMet – Oslo Metropolitan University
+      - OsloMet – storbyuniversitetet
+      - OsloMet
+      - Oslo Metropolitan University
+      - Storbyuniversitetet
+      - Oslo
+      - Curation
+      - Kuratering
+      - Humanities
+      - Library And Information Science
+      - Digital Humanities
+      - Internet Research
+      - Infrastructure Studies
+      - Technology
+      - digital humaniora
+      - digital cultural heritage
+      - nettdata og internettforskning
+      - datafeminisme
+      - bibliotek- og informasjonsvitenskap
+      - forskningsdatahåndtering
+      - open science programvare
+      - infrastruktur
+  - id: camilla-thorvik
+    name: Camilla Thorvik
+    institution_id: oslomet
+    photo: assets/images/people/camilla-thorvik.jpg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www.oslomet.no/om/ansatt/camtho/
+    search_aliases:
+      - Camilla Thorvik
+      - Camilla
+      - Thorvik
+      - oslomet
+      - OsloMet – Oslo Metropolitan University
+      - OsloMet – storbyuniversitetet
+      - OsloMet
+      - Oslo Metropolitan University
+      - Storbyuniversitetet
+      - Oslo
+      - Curation
+      - Kuratering
+  - id: jesper-morch
+    name: Jesper Mørch
+    institution_id: uia
+    roles:
+      - board
+    role_free_text:
+      en:
+        - Board
+      nn:
+        - Styre
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www.uia.no/om-uia/ansatte/jespercm/
+    search_aliases:
+      - Jesper Mørch
+      - Jesper
+      - Mørch
+      - uia
+      - UiA
+      - University of Agder
+      - Universitetet i Agder
+      - Agder
+      - Board
+      - Styre
+  - id: igor-goncharenko
+    name: Igor Goncharenko
+    institution_id: uia
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Open Science
+        - Economics
+      nn:
+        - åpen forskning
+        - økonomi
+    profile_url: https://www.uia.no/om-uia/ansatte/igorg/index.html
+    search_aliases:
+      - Igor Goncharenko
+      - Igor
+      - Goncharenko
+      - uia
+      - UiA
+      - University of Agder
+      - Universitetet i Agder
+      - Agder
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Open Science
+      - Economics
+      - åpen forskning
+      - økonomi
+  - id: asmund-lagreid-steiro
+    name: Åsmund Lægreid Steiro
+    institution_id: uia
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www.uia.no/om-uia/ansatte/aasmls11/
+    search_aliases:
+      - Åsmund Lægreid Steiro
+      - Åsmund
+      - Lægreid
+      - Steiro
+      - uia
+      - UiA
+      - University of Agder
+      - Universitetet i Agder
+      - Agder
+      - Curation
+      - Kuratering
+  - id: marion-muhlburger
+    name: Marion Mühlburger
+    institution_id: uib
+    roles:
+      - board
+    role_free_text:
+      en:
+        - Board
+      nn:
+        - Styre
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www4.uib.no/finn-ansatte/marion.muhlburger
+    search_aliases:
+      - Marion Mühlburger
+      - Marion
+      - Mühlburger
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Board
+      - Styre
+  - id: daniel-henry-ovrebo
+    name: Daniel Henry Øvrebø
+    institution_id: uib
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Daniel Henry Øvrebø
+      - Daniel
+      - Henry
+      - Øvrebø
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+  - id: hege-folkestad
+    name: Hege Folkestad
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Hege Folkestad
+      - Hege
+      - Folkestad
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: ida-benedicte-juhasz
+    name: Ida Benedicte Juhasz
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ida Benedicte Juhasz
+      - Ida
+      - Benedicte
+      - Juhasz
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: ida-sofie-karlsen-sletten
+    name: Ida Sofie Karlsen Sletten
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ida Sofie Karlsen Sletten
+      - Ida
+      - Sofie
+      - Karlsen
+      - Sletten
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: ingunn-rodland
+    name: Ingunn Rødland
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ingunn Rødland
+      - Ingunn
+      - Rødland
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: irene-eikefjord
+    name: Irene Eikefjord
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Irene Eikefjord
+      - Irene
+      - Eikefjord
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: jenny-ostrop
+    name: Jenny Ostrop
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Jenny Ostrop
+      - Jenny
+      - Ostrop
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: kjersti-hasle-enerstvedt
+    name: Kjersti Hasle Enerstvedt
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kjersti Hasle Enerstvedt
+      - Kjersti
+      - Hasle
+      - Enerstvedt
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: kristin-osdal-nilsen
+    name: Kristin Osdal Nilsen
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Kristin Osdal Nilsen
+      - Kristin
+      - Osdal
+      - Nilsen
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: nivedita-gangopadhyay
+    name: Nivedita Gangopadhyay
+    institution_id: uib
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Nivedita Gangopadhyay
+      - Nivedita
+      - Gangopadhyay
+      - uib
+      - UiB
+      - University of Bergen
+      - Universitetet i Bergen
+      - Bergen
+      - Curation
+      - Kuratering
+  - id: karin-rydving
+    name: Karin Rydving
+    institution_id: uio
+    roles:
+      - board
+    role_free_text:
+      en:
+        - Board
+      nn:
+        - Styre
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/kcrydvin/
+    search_aliases:
+      - Karin Rydving
+      - Karin
+      - Rydving
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Board
+      - Styre
+  - id: elin-holmstrom-froshaug
+    name: Elin Holmstrøm Frøshaug
+    institution_id: uio
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Information Systems
+        - Open Science
+      nn:
+        - informasjonssystemer
+        - åpen forskning
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/apen/elinfr/
+    search_aliases:
+      - Elin Holmstrøm Frøshaug
+      - Elin
+      - Holmstrøm
+      - Frøshaug
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Information Systems
+      - Open Science
+      - informasjonssystemer
+      - åpen forskning
+  - id: live-handlykken-kvale
+    name: Live Håndlykken Kvale
+    institution_id: uio
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+        - Social Siences
+      nn:
+        - bibliotek og informasjonsvitenskap
+        - samfunnsvitenskap
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/apen/kvalel/index.html
+    search_aliases:
+      - Live Håndlykken Kvale
+      - Live
+      - Håndlykken
+      - Kvale
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - Social Siences
+      - bibliotek og informasjonsvitenskap
+      - samfunnsvitenskap
+  - id: anne-sabo
+    name: Anne Sæbø
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Humanities And Social Sciences
+      nn:
+        - humaniora og samfunnsvitenskap
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/ferd/ang/index.html
+    search_aliases:
+      - Anne Sæbø
+      - Anne
+      - Sæbø
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Humanities And Social Sciences
+      - humaniora og samfunnsvitenskap
+  - id: camilla-hagen-blixhavn
+    name: Camilla Hagen Blixhavn
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Camilla Hagen Blixhavn
+      - Camilla
+      - Hagen
+      - Blixhavn
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+  - id: elisa-pierfederici
+    name: Elisa Pierfederici
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Natural Sciences
+      nn:
+        - realfag
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/ferd/mariaepi/index.html
+    search_aliases:
+      - Elisa Pierfederici
+      - Elisa
+      - Pierfederici
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Natural Sciences
+      - realfag
+  - id: ivana-malovic
+    name: Ivana Malovic
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Medicine And Health Sciences
+      nn:
+        - medisin og helsefag
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/ferd/ivanamal/index.html
+    search_aliases:
+      - Ivana Malovic
+      - Ivana
+      - Malovic
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Medicine And Health Sciences
+      - medisin og helsefag
+  - id: marina-portantier
+    name: Marina Portantier
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Natural Sciences
+      nn:
+        - realfag
+    profile_url: https://www.ub.uio.no/om/ansatte/forsk/ferd/marinapo/index.html
+    search_aliases:
+      - Marina Portantier
+      - Marina
+      - Portantier
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Natural Sciences
+      - realfag
+  - id: rebecca-josefine-five-bergstrom
+    name: Rebecca Josefine Five Bergstrøm
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Law
+      nn:
+        - juridiske fag
+    profile_url: https://www.uio.no/personer/fellesadm/fadm/juridisk/rjbergst/
+    search_aliases:
+      - Rebecca Josefine Five Bergstrøm
+      - Rebecca
+      - Josefine
+      - Five
+      - Bergstrøm
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Law
+      - juridiske fag
+  - id: vibeke-stockinger-lundetra
+    name: Vibeke Stockinger Lundetræ
+    institution_id: uio
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+      nn:
+        - bibliotek og informasjonsvitenskap
+    profile_url: https://www.ub.uio.no/om/ansatte/sam/metsam/vibeksl/index.html
+    search_aliases:
+      - Vibeke Stockinger Lundetræ
+      - Vibeke
+      - Stockinger
+      - Lundetræ
+      - uio
+      - UiO
+      - University of Oslo
+      - Universitetet i Oslo
+      - Oslo
+      - Curation
+      - Kuratering
+      - Library And Information Science
+      - bibliotek og informasjonsvitenskap
+  - id: elin-stangeland
+    name: Elin Stangeland
+    institution_id: uis
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+        - Information Systems
+        - Knowledge Management
+        - Open Science
+      nn:
+        - bibliotek- og informasjonsvitenskap
+        - informasjonssystemer
+        - kunnskapsforvaltning
+        - åpen forskning
+    profile_url: https://www.uis.no/nb/profile/elin-stangeland
+    search_aliases:
+      - Elin Stangeland
+      - Elin
+      - Stangeland
+      - uis
+      - UiS
+      - University of Stavanger
+      - Universitetet i Stavanger
+      - Stavanger
+      - datahandtering
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - Information Systems
+      - Knowledge Management
+      - Open Science
+      - bibliotek- og informasjonsvitenskap
+      - informasjonssystemer
+      - kunnskapsforvaltning
+      - åpen forskning
+  - id: john-david-didriksen
+    name: John David Didriksen
+    institution_id: uis
+    photo: assets/images/people/john-david-didriksen.jpg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Reference Management
+        - Research Data Management
+        - Scientific Publishing
+      nn:
+        - referansehåndtering
+        - forskningsdatahåndtering
+        - publisering
+    profile_url: https://www.uis.no/nb/profile/john-david-didriksen
+    search_aliases:
+      - John David Didriksen
+      - John
+      - David
+      - Didriksen
+      - uis
+      - UiS
+      - University of Stavanger
+      - Universitetet i Stavanger
+      - Stavanger
+      - datahandtering
+      - Curation
+      - Kuratering
+      - Reference Management
+      - Research Data Management
+      - Scientific Publishing
+      - referansehåndtering
+      - forskningsdatahåndtering
+      - publisering
+  - id: linda-johnsen
+    name: Linda Johnsen
+    institution_id: uis
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Linda Johnsen
+      - Linda
+      - Johnsen
+      - uis
+      - UiS
+      - University of Stavanger
+      - Universitetet i Stavanger
+      - Stavanger
+      - datahandtering
+      - Curation
+      - Kuratering
+  - id: johanne-raade
+    name: Johanne Raade
+    institution_id: uit
+    roles:
+      - board
+    role_free_text:
+      en:
+        - Board
+      nn:
+        - Styre
+    expertise:
+      en: []
+      nn: []
+    profile_url: https://uit.no/ansatte/johanne.raade
+    search_aliases:
+      - Johanne Raade
+      - Johanne
+      - Raade
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Board
+      - Styre
+  - id: christine-dybwad
+    name: Christine Dybwad
+    institution_id: uit
+    photo: assets/images/people/christine-dybwad.jpg
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Rdm
+        - Biosciences
+        - Engineering
+        - Technology And Saftey
+        - Polar Research
+      nn:
+        - forskningsdatahåndtering
+        - biovitenskap
+        - ingeniørfag
+        - tekonologi og sikkerhet
+        - polarforskning
+    profile_url: https://uit.no/ansatte/christine.dybwad
+    search_aliases:
+      - Christine Dybwad
+      - Christine
+      - Dybwad
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Rdm
+      - Biosciences
+      - Engineering
+      - Technology And Saftey
+      - Polar Research
+      - forskningsdatahåndtering
+      - biovitenskap
+      - ingeniørfag
+      - tekonologi og sikkerhet
+      - polarforskning
+  - id: andreas-klein
+    name: Andreas Klein
+    institution_id: uit
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Andreas Klein
+      - Andreas
+      - Klein
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+  - id: anna-karpova
+    name: Anna Karpova
+    institution_id: uit
+    photo: assets/images/people/anna-karpova.jpeg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Economics
+        - Tourism
+        - Research Data Management
+        - Bibliometrics
+      nn:
+        - økonomi
+        - reiseliv
+        - forskningsdatahåndtering
+        - bibliometri
+    profile_url: https://uit.no/ansatte/anna.karpova
+    search_aliases:
+      - Anna Karpova
+      - Anna
+      - Karpova
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+      - Economics
+      - Tourism
+      - Research Data Management
+      - Bibliometrics
+      - økonomi
+      - reiseliv
+      - forskningsdatahåndtering
+      - bibliometri
+  - id: gulbrand-stalet-nilsen
+    name: Gulbrand Stålet Nilsen
+    institution_id: uit
+    photo: assets/images/people/gulbrand-stalet-nilsen.jpeg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Chemistry
+        - Biochemistry
+        - Mathematics
+        - Statistics
+        - Electronic Lab Notebooks (Eln)
+      nn:
+        - kjemi
+        - biokjemi
+        - farmasi
+        - matematikk og statistikk
+        - electronic lab notebooks (eln)
+    profile_url: https://uit.no/ansatte/gulbrand.s.nilsen
+    search_aliases:
+      - Gulbrand Stålet Nilsen
+      - Gulbrand
+      - Stålet
+      - Nilsen
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+      - Chemistry
+      - Biochemistry
+      - Mathematics
+      - Statistics
+      - Electronic Lab Notebooks (Eln)
+      - kjemi
+      - biokjemi
+      - farmasi
+      - matematikk og statistikk
+      - electronic lab notebooks (eln)
+  - id: huw-haugland-grange
+    name: Huw Haugland-Grange
+    institution_id: uit
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Huw Haugland-Grange
+      - Huw
+      - Haugland-Grange
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+  - id: ireen-vieweg
+    name: Ireen Vieweg
+    institution_id: uit
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Ireen Vieweg
+      - Ireen
+      - Vieweg
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+  - id: melanie-karlsson
+    name: Melanie Karlsson
+    institution_id: uit
+    photo: assets/images/people/melanie-karlsson.jpeg
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Geosciences
+        - Research Data Management
+      nn:
+        - geovitenskap
+        - forskningsdatahåndtering
+    profile_url: https://uit.no/ansatte/person?p_document_id=876111
+    search_aliases:
+      - Melanie Karlsson
+      - Melanie
+      - Karlsson
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Curation
+      - Kuratering
+      - Geosciences
+      - Research Data Management
+      - geovitenskap
+      - forskningsdatahåndtering
+  - id: karl-magnus-nilsen
+    name: Karl Magnus Nilsen
+    institution_id: uit
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Karl Magnus Nilsen
+      - Karl
+      - Magnus
+      - Nilsen
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+  - id: obiajulu-odu
+    name: Obiajulu Odu
+    institution_id: uit
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Obiajulu Odu
+      - Obiajulu
+      - Odu
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+  - id: philipp-conzett
+    name: Philipp Conzett
+    institution_id: uit
+    photo: assets/images/people/philipp-conzett.jpg
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en:
+        - Linguistics
+        - Research Data Management
+        - Repository Management
+        - Research Infrastructure
+      nn:
+        - lingvistikk
+        - språkvitskap
+        - forskingsdatahandtering
+        - arkivforvaltning
+        - forskingsinfrastruktur
+    profile_url: https://uit.no/ansatte/philipp.conzett
+    search_aliases:
+      - Philipp Conzett
+      - Philipp
+      - Conzett
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+      - Linguistics
+      - Research Data Management
+      - Research Infrastructure
+      - lingvistikk
+      - språkvitskap
+      - forskingsdatahandtering
+      - arkivforvaltning
+      - forskingsinfrastruktur
+  - id: rieke-lo-madsen
+    name: Rieke Lo Madsen
+    institution_id: uit
+    photo: assets/images/people/rieke-lo-madsen.jpg
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en:
+        - Forest Ecology
+        - Plant Biology
+      nn:
+        - skogøkologi
+        - plantebiologi
+    profile_url: https://uit.no/ansatte/rieke.l.madsen
+    search_aliases:
+      - Rieke Lo Madsen
+      - Rieke
+      - Lo
+      - Madsen
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+      - Forest Ecology
+      - Plant Biology
+      - skogøkologi
+      - plantebiologi
+  - id: rolf-andersen
+    name: Rolf Andersen
+    institution_id: uit
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Rolf Andersen
+      - Rolf
+      - Andersen
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+  - id: sebastian-tendstrand-iversen
+    name: Sebastian Tendstrand Iversen
+    institution_id: uit
+    roles:
+      - repository-management
+    role_free_text:
+      en:
+        - Repository Management
+      nn:
+        - Arkivforvaltning
+    expertise:
+      en: []
+      nn: []
+    search_aliases:
+      - Sebastian Tendstrand Iversen
+      - Sebastian
+      - Tendstrand
+      - Iversen
+      - uit
+      - UiT
+      - UiT The Arctic University of Norway
+      - UiT Noregs arktiske universitet
+      - University of Tromsø
+      - Universitetet i Tromsø
+      - The Arctic University of Norway
+      - Noregs arktiske universitet
+      - Norges arktiske universitet
+      - Tromsø
+      - Tromso
+      - Repository Management
+      - Arkivforvaltning
+  - id: tom-nilsen
+    name: Tom Nilsen
+    institution_id: usn
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Sports
+        - Nutrition And Medicine
+      nn:
+        - idrettsfag
+        - ernæring og medisin
+    profile_url: https://www.usn.no/kontakt-oss/ansatte/tom-erik-nilsen
+    search_aliases:
+      - Tom Nilsen
+      - Tom
+      - Nilsen
+      - usn
+      - USN
+      - University of South-Eastern Norway
+      - Universitetet i Søraust-Noreg
+      - Universitetet i Soraust-Noreg
+      - Universitetet i Sørøst-Norge
+      - Universitetet i Sorost-Norge
+      - South-Eastern Norway
+      - Søraust-Noreg
+      - Soraust-Noreg
+      - Sørøst-Norge
+      - Sorost-Norge
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Sports
+      - Nutrition And Medicine
+      - idrettsfag
+      - ernæring og medisin
+  - id: ahmet-dogan
+    name: Ahmet Dogan
+    institution_id: usn
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Software Development For Research Data And Archieving
+        - Integration Of Artificial Intelligence
+      nn:
+        - programvareutvikling for forskningsdata og dataarkivering
+        - integrering av kunstig intelligens
+    profile_url: https://www.usn.no/ansatte/ahmet-dogan-article239853-6688.html
+    search_aliases:
+      - Ahmet Dogan
+      - Ahmet
+      - Dogan
+      - usn
+      - USN
+      - University of South-Eastern Norway
+      - Universitetet i Søraust-Noreg
+      - Universitetet i Soraust-Noreg
+      - Universitetet i Sørøst-Norge
+      - Universitetet i Sorost-Norge
+      - South-Eastern Norway
+      - Søraust-Noreg
+      - Soraust-Noreg
+      - Sørøst-Norge
+      - Sorost-Norge
+      - Curation
+      - Kuratering
+      - Software Development For Research Data And Archieving
+      - Integration Of Artificial Intelligence
+      - programvareutvikling for forskningsdata og dataarkivering
+      - integrering av kunstig intelligens
+  - id: ali-abdurhman-kelil
+    name: Ali Abdurhman Kelil
+    institution_id: usn
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Metadata And Documentation
+        - Data Archiving And Preservation
+        - Data Sharing And Reuse
+        - Data Management Planning
+        - Data Curation
+        - Research Data Management
+      nn:
+        - metadata og dokumentasjon
+        - dataarkivering og langtidsbevaring
+        - datadeling og gjenbruk av data
+        - datahåndteringsplaner
+        - datakuratering
+        - forskningsdatahåndtering
+    profile_url: https://www.usn.no/kontakt-oss/ansatte/abdurhman-kelil-ali-1
+    search_aliases:
+      - Ali Abdurhman Kelil
+      - Ali
+      - Abdurhman
+      - Kelil
+      - usn
+      - USN
+      - University of South-Eastern Norway
+      - Universitetet i Søraust-Noreg
+      - Universitetet i Soraust-Noreg
+      - Universitetet i Sørøst-Norge
+      - Universitetet i Sorost-Norge
+      - South-Eastern Norway
+      - Søraust-Noreg
+      - Soraust-Noreg
+      - Sørøst-Norge
+      - Sorost-Norge
+      - Curation
+      - Kuratering
+      - Metadata And Documentation
+      - Data Archiving And Preservation
+      - Data Sharing And Reuse
+      - Data Management Planning
+      - Data Curation
+      - Research Data Management
+      - metadata og dokumentasjon
+      - dataarkivering og langtidsbevaring
+      - datadeling og gjenbruk av data
+      - datahåndteringsplaner
+      - datakuratering
+      - forskningsdatahåndtering
+  - id: dag-even-martinsen-torsoe
+    name: Dag-Even Martinsen Torsøe
+    institution_id: usn
+    roles:
+      - curation
+    role_free_text:
+      en:
+        - Curation
+      nn:
+        - Kuratering
+    expertise:
+      en:
+        - Research Data Management
+        - Data Archiving And Preservation Og Metadata And Documentation
+      nn:
+        - forskningsdatahåndtering
+        - dataarkivering og langtidsbevaring
+        - metadata og dokumentasjon
+    profile_url: https://www.usn.no/kontakt-oss/ansatte/dag-even-martinsen-torsoe
+    search_aliases:
+      - Dag-Even Martinsen Torsøe
+      - Dag-Even
+      - Martinsen
+      - Torsøe
+      - usn
+      - USN
+      - University of South-Eastern Norway
+      - Universitetet i Søraust-Noreg
+      - Universitetet i Soraust-Noreg
+      - Universitetet i Sørøst-Norge
+      - Universitetet i Sorost-Norge
+      - South-Eastern Norway
+      - Søraust-Noreg
+      - Soraust-Noreg
+      - Sørøst-Norge
+      - Sorost-Norge
+      - Curation
+      - Kuratering
+      - Research Data Management
+      - Data Archiving And Preservation Og Metadata And Documentation
+      - forskningsdatahåndtering
+      - dataarkivering og langtidsbevaring
+      - metadata og dokumentasjon
+  - id: jennifer-lea-thogersen
+    name: Jennifer Lea Thøgersen
+    institution_id: vid
+    photo: assets/images/people/jennifer-lea-thogersen.jpg
+    roles:
+      - collection-management
+      - curation
+    role_free_text:
+      en:
+        - Collection Management
+        - Curation
+      nn:
+        - Samlingsforvaltning
+        - Kuratering
+    expertise:
+      en:
+        - Library And Information Science
+        - Research Data Management
+      nn:
+        - bibliotek og informasjonsvitenskap
+        - forskningsdatahåndtering
+    profile_url: https://www.vid.no/ansatte/jennifer-thogersen
+    search_aliases:
+      - Jennifer Lea Thøgersen
+      - Jennifer
+      - Lea
+      - Thøgersen
+      - vid
+      - VID
+      - VID Specialized University
+      - VID vitenskapelige høgskole
+      - VID vitenskapelige hogskole
+      - VID vitenskapelige høyskole
+      - VID vitenskapelige hoyskole
+      - VID vitskaplege høgskole
+      - VID vitskaplege hogskole
+      - VID vitskaplege høgskule
+      - VID vitskaplege hogskule
+      - Collection Management
+      - Curation
+      - Samlingsforvaltning
+      - Kuratering
+      - Library And Information Science
+      - Research Data Management
+      - bibliotek og informasjonsvitenskap
+      - forskningsdatahåndtering

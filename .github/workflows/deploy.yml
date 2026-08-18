@@ -36,8 +36,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Validate language parity and REUSE references
+        run: python scripts/validate_language_parity.py
+
+      - name: Validate people data
+        run: python scripts/validate_people_yml.py
+
       - name: Build site
         run: mkdocs build
+
+      - name: Validate built site for unresolved markers
+        run: python scripts/validate_site_build.py
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
