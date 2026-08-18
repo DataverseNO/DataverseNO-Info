@@ -133,6 +133,14 @@ body, .md-typeset {
   transform: translateY(-2px);
 }
 
+/* .md-typeset a { color: var(--dvno-orange) } outranks the single-class
+ * selectors above on specificity ((0,1,1) beats (0,1,0)), so it silently
+ * overrode "color: inherit" here — these compound selectors win instead. */
+.md-typeset a.navigation-card,
+.md-typeset a.resource-card {
+  color: inherit;
+}
+
 .navigation-card__accent {
   font-weight: bold;
   color: var(--dvno-orange);
@@ -172,6 +180,18 @@ body, .md-typeset {
   background: transparent;
   color: var(--dvno-orange);
   border: 2px solid var(--dvno-orange);
+}
+
+/* Same .md-typeset a specificity problem as .navigation-card/.resource-card
+ * above — without this, --primary's white text renders orange-on-orange
+ * (invisible); --secondary happened to look right only by coincidence
+ * (its intended color already matched .md-typeset a's). */
+.md-typeset a.dvno-button--primary {
+  color: #fff;
+}
+
+.md-typeset a.dvno-button--secondary {
+  color: var(--dvno-orange);
 }
 
 .dvno-button--pending {
