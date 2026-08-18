@@ -135,7 +135,7 @@ framleis er ope — det treng eiga oppfølging, ikkje ein rask fiks.
     løser kanonisk URL riktig uansett via en annen mekanisme) — dødt felt,
     kan forvirre redaktører.
 
-## NYTT FUNN — engelsk nyhende-arkiv bygger ikke individuelle sider (KRITISK, IKKE fikset)
+## NYTT FUNN — engelsk nyhende-arkiv bygger ikke individuelle sider (KRITISK, FIKSET)
 
 Oppdaget mens link-validatoren (punkt 9-10 over) ble bygget og kjørt mot
 hele nettstedet: `site/news/` inneholder kun `index.html` — **ingen av de 39
@@ -163,15 +163,29 @@ utsatt («i18n blog pagination-file warnings», ett av de 26 kjente
 side/2-4 og årsarkiv-sidene manglet fra nav, ikke at *alle individuelle
 innlegg* er utilgjengelige.
 
-`scripts/validate_site_build.py`s nye lenkevalidering er bevisst begrenset
-til å ikke feile på nettopp dette (samme presedens som `--strict`-avviket),
-med en kommentar i koden som viser til dette avsnittet, slik at det ikke
-forsvinner stille.
+Undersøkt videre: dette er en offisielt anerkjent, "ikke løsbar" inkompatibilitet
+mellom `mkdocs-material`s bloggmodul og `mkdocs-static-i18n`
+(squidfunk/mkdocs-material#4863). Materials egen anbefaling for
+flerspråklige nettsteder er å bygge som to separate prosjekter — for stor
+omlegging til å gjøre nå. Diskutert med Rieke, som ba oss prøve alternativet
+under.
 
-→ Krever egen undersøkelse: enten nedgradere/oppgradere en av
-`mkdocs-static-i18n`/`mkdocs-material`, eller restrukturere slik at
-bloggmodulen ikke ligger inni i18n-modulens språkmappe-deteksjon. Anbefaler
-å ta dette opp som eget punkt, ikke la det blokkere testversjonen for Rieke.
+**Løsning valgt og implementert:** Fjernet `blog`-pluginen fra `mkdocs.yml`
+helt. Begge nyhende-indekssidene (`docs/{en,nn}/news/index.md`) var allerede
+hånd-skrevne, rene lenkelister (ikke avhengige av bloggmodulens
+auto-genererte indeks), så dette var en liten, trygg endring — de engelske
+innleggene bygger nå som vanlige sider, akkurat som de norske allerede
+gjorde. Alle 39 engelske innlegg fikk fungerende sider ved første forsøk,
+verifisert i bygget nettsted. Som en bonus forsvant også de 13 "unhandled
+file case"-varslene fra `mkdocs_static_i18n` for arkiv/paginering-sider —
+disse var virtuelle sider generert av bloggmodulen som forsvinner sammen med
+den. Mistet: automatisk RSS-feed, årsarkiv-sider og tag-basert filtrering i
+nyhendearkivet (ingen av delene fungerte i praksis før heller). Beholdt:
+alle innlegg lenkbare og synlige på begge språk, ingen endring i selve
+innholdet.
+
+`scripts/validate_site_build.py`s lenkevalidering trengte ikke lenger et
+unntak for `news/`-lenker etter fiksen — fjernet.
 
 ## Prosess/styring — ikke kode, ingen handling mulig herfra
 

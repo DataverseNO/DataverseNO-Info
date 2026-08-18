@@ -87,9 +87,6 @@ plugins:
         - locale: nn
           name: Norsk (Nynorsk)
           build: true
-  - blog:
-      blog_dir: en/news
-      post_url_format: "{slug}"
   - git-revision-date-localized:
       enable_creation_date: false
       type: date

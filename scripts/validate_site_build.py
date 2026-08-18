@@ -102,13 +102,6 @@ def check_internal_links(site_dir: Path) -> list[str]:
                 if fragment and fragment not in ids_by_page[target]:
                     errors.append(f"{page_url}: link '{href}' -> {target} has no element with id '{fragment}'")
             elif target not in all_paths:
-                if target.startswith("news/") and target != "news/index.html":
-                    # Known pre-existing gap (see AUDIT_FINDINGS.md): mkdocs-static-i18n
-                    # and the Material blog plugin disagree over which File wins for
-                    # each post URL, so individual English post pages never build.
-                    # Upstream plugin-compatibility issue, not fixable by a content or
-                    # hook change — tracked, not silently dropped.
-                    continue
                 errors.append(f"{page_url}: broken internal link '{href}' (resolved to '{target}')")
     return errors
 
