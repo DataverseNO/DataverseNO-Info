@@ -6,6 +6,7 @@ from __future__ import annotations
 import re
 
 from hooks.data_store import get_data
+from hooks.html_safety import escape, safe_href
 from hooks.reuse_resolver import page_language, resolve_page_markers, resolve_reuse_markers
 
 _GENERATED_BLOCK = re.compile(
@@ -18,19 +19,20 @@ _GENERATED_BLOCK = re.compile(
 
 def _person_card(person: dict, lang: str) -> str:
     photo = person.get("photo")
-    img = f'<img class="people-card__photo" src="/{photo}" alt="" loading="lazy">' if photo else ""
-    expertise = ", ".join(person["expertise"].get(lang, []))
-    roles = ", ".join(person["role_free_text"].get(lang, []))
-    aliases = " ".join(person["search_aliases"])
+    img = f'<img class="people-card__photo" src="/{escape(photo)}" alt="" loading="lazy">' if photo else ""
+    expertise = escape(", ".join(person["expertise"].get(lang, [])))
+    roles = escape(", ".join(person["role_free_text"].get(lang, [])))
+    aliases = escape(" ".join(person["search_aliases"]).lower())
+    name = escape(person["name"])
     profile = (
-        f'<a class="people-card__profile" href="{person["profile_url"]}">{person["name"]}</a>'
+        f'<a class="people-card__profile" href="{escape(safe_href(person["profile_url"]))}">{name}</a>'
         if person.get("profile_url")
-        else person["name"]
+        else name
     )
     return (
         f'<article class="people-card" data-person-card'
-        f' data-search="{aliases.lower()}" data-institution="{person["institution_id"]}"'
-        f' data-roles="{" ".join(person["roles"])}">'
+        f' data-search="{aliases}" data-institution="{escape(person["institution_id"])}"'
+        f' data-roles="{escape(" ".join(person["roles"]))}">'
         f'{img}<div class="people-card__content">'
         f'<p class="people-card__name">{profile}</p>'
         f'<p class="people-card__roles">{roles}</p>'
@@ -67,9 +69,11 @@ def _people_search_and_filter(lang: str) -> str:
     institution_label = "Filter by institution" if lang == "en" else "Filtrer etter institusjon"
     role_group_label = "Filter by role" if lang == "en" else "Filtrer etter rolle"
 
-    institution_options = "".join(f'<option value="{p["id"]}">{p["name"][lang]}</option>' for p in ordered_partners)
+    institution_options = "".join(
+        f'<option value="{escape(p["id"])}">{escape(p["name"][lang])}</option>' for p in ordered_partners
+    )
     role_buttons = "".join(
-        f'<button type="button" class="people-filter-box" data-role-filter data-role="{role_id}" aria-pressed="false">{label[lang]}</button>'
+        f'<button type="button" class="people-filter-box" data-role-filter data-role="{escape(role_id)}" aria-pressed="false">{escape(label[lang])}</button>'
         for role_id, label in roles.items()
     )
 
@@ -89,10 +93,10 @@ def _people_search_and_filter(lang: str) -> str:
 
 def _repository_management_card(lang: str) -> str:
     rm = get_data()["partners"]["repository_management"]
-    email = rm["support"]["email"]
+    email = escape(rm["support"]["email"])
     return (
         f'<div class="contact-card repository-management-contact-card" id="repository-management-contact-card">'
-        f'<h3>{rm["name"][lang]}</h3>'
+        f'<h3>{escape(rm["name"][lang])}</h3>'
         f'<a href="mailto:{email}">{email}</a>'
         f'</div>'
     )
@@ -104,13 +108,19 @@ def _contact_search_input(lang: str) -> str:
 
 
 def _partner_card(partner: dict, lang: str) -> str:
-    aliases = " ".join(partner.get("search_aliases", [])).lower()
+    aliases = escape(" ".join(partner.get("search_aliases", [])).lower())
     email = partner.get("support", {}).get("email")
     url = partner.get("support", {}).get("url")
-    contact = f'<a href="mailto:{email}">{email}</a>' if email else (f'<a href="{url}">{url}</a>' if url else "")
-    name = partner["name"][lang]
+    if email:
+        contact = f'<a href="mailto:{escape(email)}">{escape(email)}</a>'
+    elif url:
+        safe_url = escape(safe_href(url))
+        contact = f'<a href="{safe_url}">{safe_url}</a>'
+    else:
+        contact = ""
+    name = escape(partner["name"][lang])
     logo = partner.get("logo", {}).get(lang)
-    img = f'<img src="/{logo}" alt="{name}" loading="lazy">' if logo else ""
+    img = f'<img src="/{escape(logo)}" alt="{name}" loading="lazy">' if logo else ""
     return (
         f'<article class="contact-card partner-contact-card" data-search="{aliases}">'
         f'{img}<h3>{name}</h3>{contact}</article>'
@@ -124,11 +134,17 @@ def _partner_contact_cards(lang: str) -> str:
 
 
 def _glossary_term(term_id: str, term: dict, lang: str, files, current_file) -> str:
-    label = resolve_reuse_markers(term["label"][lang], lang, files=files, current_file=current_file)
+    # Escape the raw editorial prose *before* resolving [REUSE:]/[PAGE:]
+    # markers: the marker syntax itself has no HTML-special characters, so
+    # escaping first is safe, and it leaves the <a> tags those resolvers
+    # build (already escaped at their own point of generation) untouched.
+    label = escape(term["label"][lang])
+    label = resolve_reuse_markers(label, lang, files=files, current_file=current_file)
     label = resolve_page_markers(label, lang, files, current_file)
-    definition = resolve_reuse_markers(term["definition"][lang], lang, files=files, current_file=current_file)
+    definition = escape(term["definition"][lang])
+    definition = resolve_reuse_markers(definition, lang, files=files, current_file=current_file)
     definition = resolve_page_markers(definition, lang, files, current_file)
-    return f'<dt id="term-{term_id}">{label}</dt>\n<dd>{definition}</dd>'
+    return f'<dt id="term-{escape(term_id)}">{label}</dt>\n<dd>{definition}</dd>'
 
 
 def _glossary_terms(lang: str, files, current_file) -> str:
@@ -143,8 +159,8 @@ def _partner_logo_grid(lang: str) -> str:
     ordered = sorted(partners, key=lambda p: p["sort_name"][lang])
     items = []
     for partner in ordered:
-        logo = partner["logo"][lang]
-        name = partner["name"][lang]
+        logo = escape(partner["logo"][lang])
+        name = escape(partner["name"][lang])
         items.append(f'<span class="partner-logo" title="{name}"><img src="/{logo}" alt="{name}" loading="lazy"></span>')
     return f'<div class="partner-logo-grid">\n{"".join(items)}\n</div>'
 
