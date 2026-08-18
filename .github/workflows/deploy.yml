@@ -43,7 +43,10 @@ jobs:
         run: python scripts/validate_people_yml.py
 
       - name: Build site
-        run: mkdocs build
+        # `python -m mkdocs` (not the bare `mkdocs` console script) puts the
+        # repo root on sys.path, which hooks/*.py needs for `from hooks.x
+        # import y` — the bare script's sys.path[0] is its own bin/ dir.
+        run: python -m mkdocs build
 
       - name: Validate built site for unresolved markers
         run: python scripts/validate_site_build.py
