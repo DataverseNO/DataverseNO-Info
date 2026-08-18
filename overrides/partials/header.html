@@ -125,11 +125,13 @@
       </div>
     {% endif %}
   </nav>
-  {% if "navigation.tabs.sticky" in features %}
-    {% if "navigation.tabs" in features %}
-      {% include "partials/tabs.html" %}
-    {% endif %}
-  {% endif %}
+  {#- Material's own partials/tabs.html is intentionally NOT included here:
+      the dvno-primary-nav above already is the site's complete primary nav
+      (spec §8.5), so Material's native tabs row would just duplicate it —
+      confirmed as a visibly duplicated nav bar on the live site. The
+      navigation.tabs / navigation.tabs.sticky feature flags are kept in
+      mkdocs.yml purely for the header shadow/lifted CSS classes above,
+      not for this include. -#}
 </header>
 
 {#- Toggle aria-expanded on the disclosure buttons. Native <button> already gets
