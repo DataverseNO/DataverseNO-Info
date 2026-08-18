@@ -12,6 +12,7 @@ import re
 from pathlib import PurePosixPath
 
 from hooks.data_store import get_data
+from hooks.html_safety import escape, safe_href
 
 _MARKER = re.compile(
     r"\[REUSE:\s*(?P<kind>links|values|terms|partners)/(?P<ref>[^\]|]+?)\s*(?:\|\s*(?P<alias>[^\]]+?)\s*)?\]"
@@ -33,7 +34,7 @@ def page_language(page) -> str:
 
 def _resolve_link(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     entry = get_data()["links"][ref]
-    label = alias or entry["label"][lang]
+    label = escape(alias or entry["label"][lang])
     url = entry["url"]
     url = url[lang] if isinstance(url, dict) else url
     if not url:
@@ -42,24 +43,24 @@ def _resolve_link(ref: str, lang: str, alias: str | None = None, **_ignored) -> 
         # href="None">, per the documented intentional exception.
         return label
     target = ' target="_blank" rel="noopener"' if entry.get("open") == "new-tab" else ""
-    return f'<a href="{url}"{target}>{label}</a>'
+    return f'<a href="{escape(safe_href(url))}"{target}>{label}</a>'
 
 
 def _resolve_value(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     if alias:
-        return alias
+        return escape(alias)
     entry = get_data()["values"][ref]
     unit = entry.get("unit", {})
     unit_text = unit.get(lang, "") if isinstance(unit, dict) else (unit or "")
     pattern = entry.get("render", {}).get(lang) if isinstance(entry.get("render"), dict) else None
     if pattern:
-        return pattern.format(value=entry["value"], unit=unit_text)
-    return f'{entry["value"]} {unit_text}'.strip()
+        return escape(pattern.format(value=entry["value"], unit=unit_text))
+    return escape(f'{entry["value"]} {unit_text}'.strip())
 
 
 def _resolve_term(ref: str, lang: str, alias: str | None = None, *, files=None, current_file=None) -> str:
     entry = get_data()["terms"][ref]
-    label = alias or entry["label"][lang]
+    label = escape(alias or entry["label"][lang])
     # files/current_file are absent when resolving text outside a page build
     # context (there is none here); link to the generated glossary anchor
     # (spec §6.3/§8.14: inline term references shall link to the glossary
@@ -67,12 +68,12 @@ def _resolve_term(ref: str, lang: str, alias: str | None = None, *, files=None, 
     if files is None or current_file is None:
         return label
     href = resolve_target_href("glossary/index", lang, files, current_file) + f"#term-{ref}"
-    return f'<a href="{href}">{label}</a>'
+    return f'<a href="{escape(href)}">{label}</a>'
 
 
 def _resolve_partner(ref: str, lang: str, alias: str | None = None, **_ignored) -> str:
     if alias:
-        return alias
+        return escape(alias)
     # ref like "repository_management/support.email" or "<partner-id>/support.url"
     root, *path = ref.split("/")
     data = get_data()["partners"]
@@ -89,7 +90,7 @@ def _resolve_partner(ref: str, lang: str, alias: str | None = None, **_ignored) 
             node = node[subkey]
     if isinstance(node, dict):
         node = node.get(lang, node)
-    return str(node)
+    return escape(node)
 
 
 _RESOLVERS = {
@@ -149,12 +150,12 @@ def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
 
     def _replace(match: re.Match) -> str:
         ref = match.group("ref").strip()
-        label = (match.group("label") or ref).strip()
+        label = escape((match.group("label") or ref).strip())
         try:
             href = resolve_target_href(ref, lang, files, current_file)
         except KeyError as e:
             raise KeyError(f"[PAGE: {ref}] {e}") from e
-        return f'<a href="{href}">{label}</a>'
+        return f'<a href="{escape(href)}">{label}</a>'
 
     return _PAGE_MARKER.sub(_replace, markdown)
 

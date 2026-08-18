@@ -16,6 +16,7 @@ from __future__ import annotations
 import re
 
 from hooks.data_store import get_data
+from hooks.html_safety import escape, safe_href
 from hooks.reuse_resolver import page_language, resolve_target_href
 
 _FIELD_LINE = r"[A-Za-z][A-Za-z0-9 ]*:.*\n"
@@ -62,7 +63,7 @@ def _href_or_none(fields: dict, lang: str, files, current_file) -> tuple[str | N
     url = fields.get("URL")
     if url:
         extra = ' target="_blank" rel="noopener"' if fields.get("Open") == "new-tab" else ""
-        return url, extra
+        return escape(safe_href(url)), extra
     target = fields.get("Target")
     if target and target != "[pending]":
         if "/" not in target and "#" not in target:
@@ -70,24 +71,24 @@ def _href_or_none(fields: dict, lang: str, files, current_file) -> tuple[str | N
             # (e.g. "prepare-your-data"), falling back to a same-page heading
             # anchor (e.g. "sharing-data-in-dataverseno" on this very page).
             try:
-                return resolve_target_href(target, lang, files, current_file), ""
+                return escape(resolve_target_href(target, lang, files, current_file)), ""
             except KeyError:
-                return f"#{target}", ""
-        return resolve_target_href(target, lang, files, current_file), ""
+                return f"#{escape(target)}", ""
+        return escape(resolve_target_href(target, lang, files, current_file)), ""
     return None, ""
 
 
 def _render_admonition(fields, lang, files, current_file) -> str:
     style = _ADMONITION_STYLE.get(fields.get("Style"), "note")
-    title = fields.get("Title", "")
+    title = fields.get("Title", "").replace('"', "'")  # admonition title is a quoted string literal
     text = fields.get("Text", "")
     return f'!!! {style} "{title}"\n    {text}\n'
 
 
 def _render_button(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
-    style = fields.get("Style", "primary")
-    title = fields.get("Title", "")
+    style = escape(fields.get("Style", "primary"))
+    title = escape(fields.get("Title", ""))
     if href is None:
         return f'<span class="dvno-button dvno-button--{style} dvno-button--pending">{title}</span>'
     return f'<a class="dvno-button dvno-button--{style}" href="{href}"{extra}>{title}</a>'
@@ -95,9 +96,9 @@ def _render_button(fields, lang, files, current_file) -> str:
 
 def _render_navigation_card(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
-    title = fields.get("Title", "")
-    description = fields.get("Description", "")
-    accent = fields.get("Accent Text", "")
+    title = escape(fields.get("Title", ""))
+    description = escape(fields.get("Description", ""))
+    accent = escape(fields.get("Accent Text", ""))
     body = f'<span class="navigation-card__accent">{accent}</span>' if accent else ""
     body += f'<span class="navigation-card__title">{title}</span>'
     if description:
@@ -109,7 +110,7 @@ def _render_navigation_card(fields, lang, files, current_file) -> str:
 
 def _render_resource_box(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
-    title = fields.get("Title", "")
+    title = escape(fields.get("Title", ""))
     if href is None:
         return f'<span class="resource-card resource-card--pending">{title}</span>'
     return f'<a class="resource-card" href="{href}"{extra}>{title}</a>'
@@ -141,10 +142,10 @@ def _render_workflow(fields_text: str, lang, files, current_file) -> str:
     items = []
     for step in steps:
         href, extra = _href_or_none(step, lang, files, current_file)
-        style = step.get("Style", "primary")
+        style = escape(step.get("Style", "primary"))
         inner = (
-            f'<span class="workflow-step__number">{step.get("Number", "")}</span>'
-            f'<span class="workflow-step__title">{step.get("Title", "")}</span>'
+            f'<span class="workflow-step__number">{escape(step.get("Number", ""))}</span>'
+            f'<span class="workflow-step__title">{escape(step.get("Title", ""))}</span>'
         )
         content = f'<a href="{href}"{extra}>{inner}</a>' if href else f"<span>{inner}</span>"
         items.append(f'<li class="workflow-step workflow-step--{style}">{content}</li>')
@@ -168,7 +169,7 @@ def resolve_content_blocks(markdown: str, lang: str, files, current_file) -> str
     markdown = _CHECKLIST_HEADER.sub("", markdown)
     markdown = _CHECKLIST_ITEM.sub(r'<p class="checklist-item"><input type="checkbox" disabled> \1</p>', markdown)
     markdown = _SECTION_MARKER.sub(
-        lambda m: f'<a href="#{m.group("anchor").strip()}">{m.group("label").strip()}</a>', markdown
+        lambda m: f'<a href="#{escape(m.group("anchor").strip())}">{escape(m.group("label").strip())}</a>', markdown
     )
     markdown = _GENERATED_VALUE_HEADER.sub("", markdown)
     markdown = _GENERATED_VALUE_INLINE.sub(lambda m: _GENERATED_VALUES[m.group("id")](), markdown)
