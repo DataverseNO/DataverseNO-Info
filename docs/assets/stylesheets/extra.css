@@ -111,37 +111,19 @@ body, .md-typeset {
  * into a wrapping row via flexbox on the cards themselves — no grid
  * container element is required in the resolved markup.
  */
-.navigation-card {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 290px;
-  margin: 0.6rem 0.8rem 0.6rem 0;
-  padding: 1.25rem;
-  border: 2px solid var(--dvno-orange);
-  border-radius: 12px;
-  text-decoration: none;
-  color: inherit;
-  vertical-align: top;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-/* Icon sits beside the title, top-aligned with the first line — not
- * vertically centered against the full height of a wrapped multi-line
- * title, which looked like it floated in the gap between lines. */
-.navigation-card__header {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
-}
-
+/* Card width: Material's content column (excluding both sidebars) is
+ * ~589px (61rem grid minus two 12.1rem sidebars, from the compiled
+ * theme CSS) — narrow enough that 3 cards need to stay under ~180px each
+ * (plus border/margin) to fit on one row instead of wrapping to 2+1. */
+.navigation-card,
 .resource-card {
   display: inline-flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 0.7rem;
-  width: 290px;
-  margin: 0.6rem 0.8rem 0.6rem 0;
-  padding: 1.25rem;
+  gap: 0.4rem;
+  width: 172px;
+  margin: 0.5rem 0.6rem 0.5rem 0;
+  padding: 0.9rem;
   border: 2px solid var(--dvno-orange);
   border-radius: 12px;
   text-decoration: none;

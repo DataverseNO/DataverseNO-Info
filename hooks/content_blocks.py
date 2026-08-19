@@ -116,11 +116,11 @@ def _render_navigation_card(fields, lang, files, current_file) -> str:
     title = escape(fields.get("Title", ""))
     description = escape(fields.get("Description", ""))
     accent = escape(fields.get("Accent Text", ""))
-    # Icon sits beside the title (one row), not stacked above it; Accent
-    # Text is a smaller sub-label below the title, not an equal-weight
-    # headline above it — matches the design mockup, inverted from an
-    # earlier version of this renderer.
-    body = f'<span class="navigation-card__header">{icon}<span class="navigation-card__title">{title}</span></span>'
+    # Icon stacks above the title (its own row), not beside it — per design
+    # feedback. Accent Text is a smaller sub-label below the title, not an
+    # equal-weight headline above it.
+    body = icon
+    body += f'<span class="navigation-card__title">{title}</span>'
     if accent:
         body += f'<span class="navigation-card__accent">{accent}</span>'
     if description:
