@@ -114,10 +114,10 @@ body, .md-typeset {
 .navigation-card {
   display: inline-flex;
   flex-direction: column;
-  gap: 0.3rem;
-  width: 250px;
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  padding: 1rem;
+  gap: 0.5rem;
+  width: 290px;
+  margin: 0.6rem 0.8rem 0.6rem 0;
+  padding: 1.25rem;
   border: 2px solid var(--dvno-orange);
   border-radius: 12px;
   text-decoration: none;
@@ -130,16 +130,16 @@ body, .md-typeset {
 .navigation-card__header {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
 }
 
 .resource-card {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  width: 250px;
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  padding: 1rem;
+  gap: 0.7rem;
+  width: 290px;
+  margin: 0.6rem 0.8rem 0.6rem 0;
+  padding: 1.25rem;
   border: 2px solid var(--dvno-orange);
   border-radius: 12px;
   text-decoration: none;
