@@ -162,6 +162,30 @@ body, .md-typeset {
   opacity: 0.7;
 }
 
+/* Icon: fields (hooks/content_blocks.py's _render_icon) — Bootstrap Icons
+ * font glyphs (.bi) inherit colour via currentColor automatically; the one
+ * <img>-based icon (.dvno-icon, an actual SVG asset) is sized to match. */
+.navigation-card .bi,
+.resource-card .bi,
+.workflow-step .bi,
+.navigation-card .dvno-icon,
+.resource-card .dvno-icon,
+.workflow-step .dvno-icon {
+  font-size: 1.6rem;
+  color: var(--dvno-orange);
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.dvno-button .bi,
+.dvno-button .dvno-icon {
+  font-size: 1rem;
+  vertical-align: -0.125em;
+  margin-right: 0.4rem;
+  height: 1rem;
+  width: 1rem;
+}
+
 .dvno-button {
   display: inline-block;
   margin: 0.25rem 0.5rem 0.25rem 0;

@@ -104,8 +104,14 @@
 }
 
 .people-card__name {
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.2rem;
   font-weight: bold;
+}
+
+.people-card__institution {
+  margin: 0 0 0.3rem;
+  font-size: 0.8rem;
+  color: var(--dvno-orange);
 }
 
 .people-card__roles {

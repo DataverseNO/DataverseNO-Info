@@ -93,7 +93,7 @@ Target: people
 
 [BUTTON]
 Style: primary
-Icon: assets/icons/dataverse-icon.svg
+Icon: assets/icons/dataverseno-icon.svg
 Title: Go to DataverseNO
 URL: https://dataverse.no
 Open: new-tab

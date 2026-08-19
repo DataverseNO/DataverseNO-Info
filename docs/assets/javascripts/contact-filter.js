@@ -39,11 +39,18 @@
     applyFilter()
   }
 
-  if (typeof document$ !== 'undefined' && document$.subscribe) {
-    document$.subscribe(initContactFilter)
-  } else if (document.readyState === 'loading') {
+  // document$ only replays for Material's "instant navigation" feature,
+  // which this site doesn't enable — subscribing to it alone silently never
+  // fires on an ordinary full page load. Always initialize on normal
+  // DOM-ready too; document$ stays as a harmless extra hook in case instant
+  // navigation is enabled later. (Same fix as people-filter.js, which this
+  // was copied from.)
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initContactFilter)
   } else {
     initContactFilter()
+  }
+  if (typeof document$ !== 'undefined' && document$.subscribe) {
+    document$.subscribe(initContactFilter)
   }
 })()

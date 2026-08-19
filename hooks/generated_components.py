@@ -7,7 +7,7 @@ import re
 
 from hooks.data_store import get_data
 from hooks.html_safety import escape, safe_href
-from hooks.reuse_resolver import page_language, resolve_page_markers, resolve_reuse_markers
+from hooks.reuse_resolver import page_language, resolve_asset_href, resolve_page_markers, resolve_reuse_markers
 
 _GENERATED_BLOCK = re.compile(
     # Stops at the first line that isn't "Key: value" (i.e. the block's own
@@ -17,9 +17,11 @@ _GENERATED_BLOCK = re.compile(
 )
 
 
-def _person_card(person: dict, lang: str) -> str:
+def _person_card(person: dict, lang: str, institution_names: dict, files, current_file) -> str:
     photo = person.get("photo")
-    img = f'<img class="people-card__photo" src="/{escape(photo)}" alt="" loading="lazy">' if photo else ""
+    photo_href = escape(resolve_asset_href(photo, files, current_file)) if photo else ""
+    img = f'<img class="people-card__photo" src="{photo_href}" alt="" loading="lazy">' if photo else ""
+    institution = escape(institution_names.get(person["institution_id"], person["institution_id"]))
     expertise = escape(", ".join(person["expertise"].get(lang, [])))
     roles = escape(", ".join(person["role_free_text"].get(lang, [])))
     aliases = escape(" ".join(person["search_aliases"]).lower())
@@ -35,15 +37,21 @@ def _person_card(person: dict, lang: str) -> str:
         f' data-roles="{escape(" ".join(person["roles"]))}">'
         f'{img}<div class="people-card__content">'
         f'<p class="people-card__name">{profile}</p>'
+        f'<p class="people-card__institution">{institution}</p>'
         f'<p class="people-card__roles">{roles}</p>'
         f'<p class="people-card__expertise">{expertise}</p>'
         f'</div></article>'
     )
 
 
-def _people_cards(lang: str) -> str:
+def _people_cards(lang: str, files, current_file) -> str:
     people = get_data()["people"]["people"]
-    cards = "\n".join(_person_card(p, lang) for p in people)
+    partners_data = get_data()["partners"]
+    institution_names = {p["id"]: p["name"][lang] for p in partners_data["partners"]}
+    institution_names[partners_data["repository_management"]["id"]] = partners_data["repository_management"]["name"][
+        lang
+    ]
+    cards = "\n".join(_person_card(p, lang, institution_names, files, current_file) for p in people)
     empty_label = "No people match the current filters." if lang == "en" else "Ingen personar samsvarar med filtera."
     return (
         f'<div class="people-card-grid" id="people-cards">\n{cards}\n</div>\n'
@@ -107,7 +115,7 @@ def _contact_search_input(lang: str) -> str:
     return f'<div class="contact-filter"><label for="contact-search">{label}</label><input type="search" id="contact-search"></div>'
 
 
-def _partner_card(partner: dict, lang: str) -> str:
+def _partner_card(partner: dict, lang: str, files, current_file) -> str:
     aliases = escape(" ".join(partner.get("search_aliases", [])).lower())
     email = partner.get("support", {}).get("email")
     url = partner.get("support", {}).get("url")
@@ -120,16 +128,19 @@ def _partner_card(partner: dict, lang: str) -> str:
         contact = ""
     name = escape(partner["name"][lang])
     logo = partner.get("logo", {}).get(lang)
-    img = f'<img src="/{escape(logo)}" alt="{name}" loading="lazy">' if logo else ""
+    img = ""
+    if logo:
+        logo_href = escape(resolve_asset_href(logo, files, current_file))
+        img = f'<img src="{logo_href}" alt="{name}" loading="lazy">'
     return (
         f'<article class="contact-card partner-contact-card" data-search="{aliases}">'
         f'{img}<h3>{name}</h3>{contact}</article>'
     )
 
 
-def _partner_contact_cards(lang: str) -> str:
+def _partner_contact_cards(lang: str, files, current_file) -> str:
     partners = get_data()["partners"]["partners"]
-    cards = "\n".join(_partner_card(p, lang) for p in partners)
+    cards = "\n".join(_partner_card(p, lang, files, current_file) for p in partners)
     return f'<div class="contact-cards" id="contact-cards">\n{cards}\n</div>'
 
 
@@ -154,20 +165,20 @@ def _glossary_terms(lang: str, files, current_file) -> str:
     return f'<dl class="glossary-list">\n{body}\n</dl>'
 
 
-def _partner_logo_grid(lang: str) -> str:
+def _partner_logo_grid(lang: str, files, current_file) -> str:
     partners = get_data()["partners"]["partners"]
     ordered = sorted(partners, key=lambda p: p["sort_name"][lang])
     items = []
     for partner in ordered:
-        logo = escape(partner["logo"][lang])
+        logo_href = escape(resolve_asset_href(partner["logo"][lang], files, current_file))
         name = escape(partner["name"][lang])
-        items.append(f'<span class="partner-logo" title="{name}"><img src="/{logo}" alt="{name}" loading="lazy"></span>')
+        items.append(f'<span class="partner-logo" title="{name}"><img src="{logo_href}" alt="{name}" loading="lazy"></span>')
     return f'<div class="partner-logo-grid">\n{"".join(items)}\n</div>'
 
 
 _COMPONENT_RENDERERS = {
-    "repository-management-contact-card": _repository_management_card,
-    "contact-search-input": _contact_search_input,
+    "repository-management-contact-card": lambda lang, files, current_file: _repository_management_card(lang),
+    "contact-search-input": lambda lang, files, current_file: _contact_search_input(lang),
     "partner-contact-cards": _partner_contact_cards,
     "partner-institution-logo-grid": _partner_logo_grid,
 }
@@ -175,15 +186,23 @@ _COMPONENT_RENDERERS = {
 
 def on_page_markdown(markdown, page, config, files, **kwargs):
     lang = page_language(page)
+    current_file = page.file
 
     markdown = markdown.replace(f"<!-- PEOPLE_SEARCH_AND_FILTER: {lang} -->", _people_search_and_filter(lang))
-    markdown = markdown.replace(f"<!-- PEOPLE_CARDS: {lang} -->", _people_cards(lang))
-    markdown = markdown.replace(f"<!-- GLOSSARY_TERMS: {lang} -->", _glossary_terms(lang, files, page.file))
+    markdown = markdown.replace(f"<!-- PEOPLE_CARDS: {lang} -->", _people_cards(lang, files, current_file))
+    markdown = markdown.replace(f"<!-- GLOSSARY_TERMS: {lang} -->", _glossary_terms(lang, files, current_file))
 
     def _replace_component(match: re.Match) -> str:
         component_id = match.group("id")
         renderer = _COMPONENT_RENDERERS.get(component_id)
-        return renderer(lang) if renderer else match.group(0)
+        if renderer is None:
+            return match.group(0)
+        # _GENERATED_BLOCK's match ends right after the block's last
+        # "Key: value\n" line, consuming only one of the two newlines that
+        # made up the blank line separating it from whatever follows —
+        # restore it, or the component merges into the next paragraph's <p>
+        # (same class of bug as content_blocks.py's leaf blocks).
+        return renderer(lang, files, current_file) + "\n"
 
     markdown = _GENERATED_BLOCK.sub(_replace_component, markdown)
     return markdown

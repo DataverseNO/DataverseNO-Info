@@ -429,7 +429,7 @@ Der det finst, bør du bruka DOI-en til publikasjonen i staden for ein forlagssp
 
 Dersom datasettet stør opp om ein publikasjon, kan _Related Publication_-delen sjå ut som i dømet nedanfor.
 
-![Skjermbilete av metadatafeltet Related Publication i Dataverse-skjemaet for datasett.](/assets/screenshots/shared/dataverse-ui/related-publication.png)
+![Skjermbilete av metadatafeltet Related Publication i Dataverse-skjemaet for datasett.](../../../assets/screenshots/shared/dataverse-ui/related-publication.png)
 
 _Feltet Related Publication blir brukt til å knyta datasettet til ein publikasjon som brukar eller beskriv dataa._
 

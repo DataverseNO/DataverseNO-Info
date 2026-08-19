@@ -425,7 +425,7 @@ Where available, use the publication DOI rather than a publisher-specific URL.
 
 If your dataset supports a publication, the Related Publication section may look similar to the example shown below.
 
-![Screenshot of the Related Publication metadata field in the Dataverse dataset form.](/assets/screenshots/shared/dataverse-ui/related-publication.png)
+![Screenshot of the Related Publication metadata field in the Dataverse dataset form.](../../assets/screenshots/shared/dataverse-ui/related-publication.png)
 
 _The Related Publication field is used to link the dataset to a publication that uses or describes the data._
 

@@ -137,6 +137,22 @@ def resolve_target_href(target: str, lang: str, files, current_file) -> str:
     return href
 
 
+def resolve_asset_href(asset_path: str, files, current_file) -> str:
+    """Resolve a docs-relative asset path (e.g. "assets/images/people/x.jpg")
+    into a relative href/src, the same way resolve_target_href does for
+    pages. A hardcoded "/assets/..." absolute path only works when the site
+    is deployed at a domain root — this site is currently served from a
+    GitHub Pages project subpath (/DataverseNO-Info/), so every generated
+    <img src>/<a href> to a static asset must go through this instead
+    (confirmed live: partner logos and person photos 404'd under the
+    subpath before this existed).
+    """
+    asset_file = files.get_file_from_path(asset_path)
+    if asset_file is None:
+        raise KeyError(f"asset '{asset_path}' not found in files collection")
+    return asset_file.url_relative_to(current_file)
+
+
 def resolve_page_markers(markdown: str, lang: str, files, current_file) -> str:
     """Resolve [PAGE: ...] markers into real <a> links using mkdocs' own
     Files collection, so hrefs match the relative-URL convention the rest of
