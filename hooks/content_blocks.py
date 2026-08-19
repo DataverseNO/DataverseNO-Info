@@ -116,9 +116,13 @@ def _render_navigation_card(fields, lang, files, current_file) -> str:
     title = escape(fields.get("Title", ""))
     description = escape(fields.get("Description", ""))
     accent = escape(fields.get("Accent Text", ""))
-    body = icon
-    body += f'<span class="navigation-card__accent">{accent}</span>' if accent else ""
-    body += f'<span class="navigation-card__title">{title}</span>'
+    # Icon sits beside the title (one row), not stacked above it; Accent
+    # Text is a smaller sub-label below the title, not an equal-weight
+    # headline above it — matches the design mockup, inverted from an
+    # earlier version of this renderer.
+    body = f'<span class="navigation-card__header">{icon}<span class="navigation-card__title">{title}</span></span>'
+    if accent:
+        body += f'<span class="navigation-card__accent">{accent}</span>'
     if description:
         body += f'<span class="navigation-card__description">{description}</span>'
     if href is None:
@@ -130,9 +134,10 @@ def _render_resource_box(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
     icon = _render_icon(fields.get("Icon", ""), files, current_file)
     title = escape(fields.get("Title", ""))
+    body = f'{icon}<span class="resource-card__title">{title}</span>'
     if href is None:
-        return f'<span class="resource-card resource-card--pending">{icon}{title}</span>'
-    return f'<a class="resource-card" href="{href}"{extra}>{icon}{title}</a>'
+        return f'<span class="resource-card resource-card--pending">{body}</span>'
+    return f'<a class="resource-card" href="{href}"{extra}>{body}</a>'
 
 
 _LEAF_RENDERERS = {
