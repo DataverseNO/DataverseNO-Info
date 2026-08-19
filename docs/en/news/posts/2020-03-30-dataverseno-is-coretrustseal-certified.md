@@ -12,7 +12,7 @@ source_url: https://site.uit.no/dataverseno/2020/03/30/dataverseno-is-coretrusts
 
 On March 26, DataverseNO was informed that the Board of CoreTrustSeal had approved our application for CoreTrustSeal certification. The [CoreTrustSeal](https://www.coretrustseal.org/) is a quality seal of approval for sustainable and trustworthy research data repositories.
 
-DataverseNO ( [https://dataverse.no/](https://dataverse.no/) and [https://info.dataverse.no/](https://info.dataverse.no/) ) is a national, generic repository for open research data that is currently used by 9 universities and university colleges in Norway, and the certification covers all institutional collections in the repository.
+[DataverseNO](https://dataverse.no/) (with information available at [info.dataverse.no](https://info.dataverse.no/)) is a national, generic repository for open research data that is currently used by 9 universities and university colleges in Norway, and the certification covers all institutional collections in the repository.
 
 — *This is a milestone for DataverseNO, and we are very pleased to be able to offer a certified repository to our partner institutions, says Johanne Raade, library director at UiT The Arctic University of Norway, and chair of DataverseNO board.*
 
