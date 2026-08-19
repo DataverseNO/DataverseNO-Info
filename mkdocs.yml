@@ -1,5 +1,10 @@
 site_name: DataverseNO
-site_url: https://info.dataverse.no
+# TODO: switch back to https://info.dataverse.no once a CNAME + DNS record
+# point there (see AUDIT_FINDINGS.md #13/PENDING_ITEMS.md). Until then this
+# MUST match the actual deployed URL: mkdocs-static-i18n derives the
+# language-switch links' base path from urlsplit(site_url).path, so a
+# mismatch here silently 404s the language switch (confirmed live).
+site_url: https://dataverseno.github.io/DataverseNO-Info/
 site_description: Documentation and information about the DataverseNO research data repository
 repo_url: https://github.com/DataverseNO/DataverseNO-Info
 repo_name: DataverseNO/DataverseNO-Info

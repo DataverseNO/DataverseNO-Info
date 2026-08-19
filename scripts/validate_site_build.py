@@ -10,6 +10,7 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 
 MARKER_PATTERNS = [
     re.compile(r"\[REUSE:"),
@@ -58,12 +59,29 @@ class _LinkCollector(HTMLParser):
             self.hrefs.append(attrs["href"])
 
 
-def _resolve_target_path(href: str, page_url: str) -> str:
+def _site_url_base_path() -> str:
+    """The path component of mkdocs.yml's site_url (e.g. "/DataverseNO-Info"
+    when deployed as a GitHub Pages project site, "" for a domain root).
+    mkdocs-static-i18n's language-switch links (and other absolute-path
+    output) are built with exactly this prefix, so absolute hrefs in the
+    built site carry it too — strip it back off before resolving against
+    site/'s own on-disk paths, which never include it themselves.
+    Regex, not yaml.safe_load: mkdocs.yml uses `!!python/...` tags that
+    aren't safe-loadable, and a single top-level scalar isn't worth a
+    hand-rolled tag constructor.
+    """
+    match = re.search(r"^site_url:\s*(\S+)", Path("mkdocs.yml").read_text(encoding="utf-8"), re.MULTILINE)
+    return urlsplit(match.group(1)).path.rstrip("/") if match else ""
+
+
+def _resolve_target_path(href: str, page_url: str, base_path: str = "") -> str:
     """Resolve an href (relative or site-root-absolute) against the URL of
     the page it appears on, into a site-relative file path — matching how
     MkDocs' "pretty" directory URLs actually lay out files on disk (a link
     to "foo/" or "foo" means the file foo/index.html).
     """
+    if base_path and href.startswith(base_path + "/"):
+        href = href[len(base_path):]
     path = href if href.startswith("/") else posixpath.join(posixpath.dirname(page_url), href)
     path = posixpath.normpath(path).strip("/")
     if not path or path == ".":
@@ -74,6 +92,7 @@ def _resolve_target_path(href: str, page_url: str) -> str:
 
 
 def check_internal_links(site_dir: Path) -> list[str]:
+    base_path = _site_url_base_path()
     html_files = sorted(site_dir.rglob("*.html"))
     all_paths = {p.relative_to(site_dir).as_posix() for p in site_dir.rglob("*") if p.is_file()}
 
@@ -97,7 +116,7 @@ def check_internal_links(site_dir: Path) -> list[str]:
                 if fragment and fragment not in ids_by_page[page_url]:
                     errors.append(f"{page_url}: broken same-page anchor '#{fragment}' in link '{href}'")
                 continue
-            target = _resolve_target_path(path, page_url)
+            target = _resolve_target_path(path, page_url, base_path)
             if target in ids_by_page:
                 if fragment and fragment not in ids_by_page[target]:
                     errors.append(f"{page_url}: link '{href}' -> {target} has no element with id '{fragment}'")
