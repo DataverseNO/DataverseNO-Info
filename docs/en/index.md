@@ -45,7 +45,7 @@ social_image: null
 
 # DataverseNO
 
-Looking for a trusted repository for your research data? DataverseNO (https://dataverse.no/) lets researchers affiliated with Norwegian research institutions archive, publish, preserve, and share research data openly, free of charge.
+Looking for a trusted repository for your research data? [REUSE: links/dataverseno-repository | DataverseNO] lets researchers affiliated with Norwegian research institutions archive, publish, preserve, and share research data openly, free of charge.
 
 [CARD GRID]
 [NAVIGATION CARD]

@@ -45,7 +45,7 @@ social_image: null
 
 # What is DataverseNO?
 
-DataverseNO (https://dataverse.no/) is a national repository for open research data. It enables researchers to archive, publish, preserve, and share datasets for free and in a way that makes them easier to find, access, understand, and reuse.
+[REUSE: links/dataverseno-repository | DataverseNO] is a national repository for open research data. It enables researchers to archive, publish, preserve, and share datasets for free and in a way that makes them easier to find, access, understand, and reuse.
 
 DataverseNO hosts research data from all disciplines, but currently only accepts datasets that can be shared openly. This means that [REUSE: terms/data-requiring-protection] must be appropriately managed before it can be deposited. If you are unsure whether your data can be shared through DataverseNO, please contact your [REUSE: links/contact-page | local user support].
 

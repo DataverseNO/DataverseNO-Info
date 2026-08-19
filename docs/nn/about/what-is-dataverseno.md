@@ -50,7 +50,7 @@ social_image: null
 
 # Kva er DataverseNO?
 
-DataverseNO (https://dataverse.no/) er eit nasjonalt arkiv for opne forskingsdata. Arkivet gjer det mogleg for forskarar å arkivera, publisera, bevara og dela datasett gratis og på ein måte som gjer dei lettare å oppdaga, få tilgang til, forstå og gjenbruka.
+[REUSE: links/dataverseno-repository | DataverseNO] er eit nasjonalt arkiv for opne forskingsdata. Arkivet gjer det mogleg for forskarar å arkivera, publisera, bevara og dela datasett gratis og på ein måte som gjer dei lettare å oppdaga, få tilgang til, forstå og gjenbruka.
 
 DataverseNO tek imot forskingsdata frå alle fagområde, men tek for tida berre imot datasett som kan delast ope. Det betyr at [REUSE: terms/data-requiring-protection] må handterast på rett måte før dei kan arkiverast. Dersom du er usikker på om dataa dine kan delast gjennom DataverseNO, kan du kontakta [REUSE: links/contact-page | lokal brukarstøtte].
 

@@ -51,7 +51,7 @@ social_image: null
 
 # DataverseNO
 
-Treng du eit trygt arkiv for forskingsdataa dine? DataverseNO (https://dataverse.no/) lèt forskarar tilknytte norske forskingsinstitusjonar arkivera, publisera, bevara og dela forskingsdata ope og gratis.
+Treng du eit trygt arkiv for forskingsdataa dine? [REUSE: links/dataverseno-repository | DataverseNO] lèt forskarar tilknytte norske forskingsinstitusjonar arkivera, publisera, bevara og dela forskingsdata ope og gratis.
 
 [CARD GRID]
 [NAVIGATION CARD]

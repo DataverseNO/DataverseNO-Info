@@ -12,7 +12,7 @@ source_url: https://site.uit.no/dataverseno/nn/2020/03/30/dataverseno-er-coretru
 
 DataverseNO fekk 26. mars melding om at CoreTrustSeal-styret hadde godkjent søknaden vår om CoreTrustSeal-sertifisering. [CoreTrustSeal](https://www.coretrustseal.org/) er eit kvalitetsstempel på berekraftige og pålitelege forskingsdataarkiv.
 
-DataverseNO ( [https://dataverse.no](https://dataverse.no/) ) er eit nasjonalt, generisk arkiv for opne forskingsdata som per i dag er teke i bruk av 9 universitet og høgskular, og sertifiseringa gjeld for alle institusjonssamlingane i arkivet.
+[DataverseNO](https://dataverse.no/) er eit nasjonalt, generisk arkiv for opne forskingsdata som per i dag er teke i bruk av 9 universitet og høgskular, og sertifiseringa gjeld for alle institusjonssamlingane i arkivet.
 
 — *Dette er ein milepæl for DataverseNO, og vi er veldig glade for å kunna tilby eit sertifisert arkiv til våre partnarinstitusjonar, seier Johanne Raade, bibliotekdirektør på UiT Noregs arktiske universitet og styreleiar for DataverseNO.*
 
