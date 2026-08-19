@@ -111,12 +111,33 @@ body, .md-typeset {
  * into a wrapping row via flexbox on the cards themselves — no grid
  * container element is required in the resolved markup.
  */
-.navigation-card,
-.resource-card {
+.navigation-card {
   display: inline-flex;
   flex-direction: column;
-  gap: 0.25rem;
-  width: 220px;
+  gap: 0.3rem;
+  width: 250px;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 1rem;
+  border: 2px solid var(--dvno-orange);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: top;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Icon sits beside the title on one row (not stacked above it). */
+.navigation-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.resource-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 250px;
   margin: 0.5rem 0.5rem 0.5rem 0;
   padding: 1rem;
   border: 2px solid var(--dvno-orange);
@@ -141,13 +162,15 @@ body, .md-typeset {
   color: inherit;
 }
 
+/* Smaller sub-label below the title, not an equal-weight headline. */
 .navigation-card__accent {
-  font-weight: bold;
+  font-size: 0.85em;
   color: var(--dvno-orange);
+  text-decoration: underline;
 }
 
 .navigation-card__title,
-.resource-card {
+.resource-card__title {
   font-weight: bold;
 }
 
@@ -167,9 +190,16 @@ body, .md-typeset {
  * <img>-based icon (.dvno-icon, an actual SVG asset) is sized to match. */
 .navigation-card .bi,
 .resource-card .bi,
-.workflow-step .bi,
 .navigation-card .dvno-icon,
-.resource-card .dvno-icon,
+.resource-card .dvno-icon {
+  font-size: 1.3rem;
+  color: var(--dvno-orange);
+  height: 1.3rem;
+  width: 1.3rem;
+  flex-shrink: 0;
+}
+
+.workflow-step .bi,
 .workflow-step .dvno-icon {
   font-size: 1.6rem;
   color: var(--dvno-orange);
