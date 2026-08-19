@@ -168,7 +168,10 @@ body, .md-typeset {
 }
 
 .dvno-lang-switch__flag {
-  font-size: 1rem;
+  width: 1.2rem;
+  height: 0.6rem;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 /* Visible focus outlines for keyboard users across the custom header controls */
