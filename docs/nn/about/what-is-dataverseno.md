@@ -58,7 +58,7 @@ Eit særtrekk ved DataverseNO er at alle datasett blir [PAGE: why-use-dataversen
 
 DataverseNO blir forvalta av UiT Noregs arktiske universitet på vegner av eit nasjonalt konsortium av [PAGE: who-can-use-dataverseno#forskarar-frå-partnarinstitusjonar | partnarinstitusjonar]. Arkivet er organisert i institusjonssamlingar. Det gjer det mogleg for partnarinstitusjonane å forvalta og synleggjera eigne forskingsdata, samstundes som dei følgjer felles policyar og standardar for arkivet. Institusjonssamlingane kan òg innehalda delsamlingar for forskingssenter, prosjekt eller andre organisatoriske einingar (figur 1).
 
-![Diagram som viser strukturen i DataverseNO-arkivet, der datasett som regel blir publiserte i institusjonssamlingar.](/assets/images/about/nn/arkivstruktur.png)
+![Diagram som viser strukturen i DataverseNO-arkivet, der datasett som regel blir publiserte i institusjonssamlingar.](../../../assets/images/about/nn/arkivstruktur.png)
 
 _Figur 1. DataverseNO-arkivstruktur. Datasett blir som regel publiserte i institusjonssamlingar._
 

@@ -63,11 +63,17 @@
     apply()
   }
 
-  if (typeof document$ !== 'undefined' && document$.subscribe) {
-    document$.subscribe(initPeopleFilter)
-  } else if (document.readyState === 'loading') {
+  // document$ only replays for Material's "instant navigation" feature,
+  // which this site doesn't enable — subscribing to it alone silently never
+  // fires on an ordinary full page load (confirmed live: the filter did
+  // nothing). Always initialize on normal DOM-ready too; document$ stays as
+  // a harmless extra hook in case instant navigation is enabled later.
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPeopleFilter)
   } else {
     initPeopleFilter()
+  }
+  if (typeof document$ !== 'undefined' && document$.subscribe) {
+    document$.subscribe(initPeopleFilter)
   }
 })()

@@ -281,12 +281,6 @@ body, .md-typeset {
   background: var(--dataverseno-dark-secondary);
 }
 
-[data-md-color-scheme="slate"] .dvno-footer {
-  background: var(--dataverseno-dark-primary);
-  color: var(--dataverseno-light-primary);
-  border-top: 1px solid var(--dataverseno-neutral-secondary);
-}
-
-[data-md-color-scheme="slate"] .dvno-footer__legal {
-  color: var(--dataverseno-neutral-secondary);
-}
+/* Footer intentionally has no dark-mode override — per design feedback it
+ * should stay the same orange as light mode, not switch to black. The base
+ * .dvno-footer / .dvno-footer__legal rules already apply in both schemes. */

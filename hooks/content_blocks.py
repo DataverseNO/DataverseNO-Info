@@ -7,9 +7,12 @@ build time: [ADMONITION], [BUTTON], [NAVIGATION CARD], [RESOURCE BOX],
 wrapping element — .navigation-card/.resource-card lay out into a row-
 wrapping grid via CSS on the cards themselves, so no container is needed.
 
-ponytail: Icon: fields are dropped, not rendered as graphics — no icon
-library is wired up yet (spec only requires the CSS class per component,
-not a specific icon set). Add icon rendering here if a set gets chosen.
+Icon: fields render as Bootstrap Icons (bootstrap-icons.min.css loaded via
+CDN in mkdocs.yml's extra_css — the icon names in content already match
+Bootstrap Icons' naming, e.g. "question-circle"). A value that looks like
+an asset path instead (contains "/" or ends in .svg) renders as an <img>
+via resolve_asset_href, for the one case that isn't a bootstrap-icons name
+("assets/icons/dataverseno-icon.svg" on the homepage's DataverseNO button).
 """
 from __future__ import annotations
 
@@ -17,7 +20,7 @@ import re
 
 from hooks.data_store import get_data
 from hooks.html_safety import escape, safe_href
-from hooks.reuse_resolver import page_language, resolve_target_href
+from hooks.reuse_resolver import page_language, resolve_asset_href, resolve_target_href
 
 _FIELD_LINE = r"[A-Za-z][A-Za-z0-9 ]*:.*\n"
 
@@ -78,6 +81,18 @@ def _href_or_none(fields: dict, lang: str, files, current_file) -> tuple[str | N
     return None, ""
 
 
+def _render_icon(icon: str, files, current_file) -> str:
+    if not icon:
+        return ""
+    if "/" in icon or icon.endswith(".svg"):
+        try:
+            href = escape(resolve_asset_href(icon, files, current_file))
+        except KeyError:
+            return ""
+        return f'<img class="dvno-icon" src="{href}" alt="" aria-hidden="true">'
+    return f'<i class="bi bi-{escape(icon)}" aria-hidden="true"></i>'
+
+
 def _render_admonition(fields, lang, files, current_file) -> str:
     style = _ADMONITION_STYLE.get(fields.get("Style"), "note")
     title = fields.get("Title", "").replace('"', "'")  # admonition title is a quoted string literal
@@ -88,18 +103,21 @@ def _render_admonition(fields, lang, files, current_file) -> str:
 def _render_button(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
     style = escape(fields.get("Style", "primary"))
+    icon = _render_icon(fields.get("Icon", ""), files, current_file)
     title = escape(fields.get("Title", ""))
     if href is None:
-        return f'<span class="dvno-button dvno-button--{style} dvno-button--pending">{title}</span>'
-    return f'<a class="dvno-button dvno-button--{style}" href="{href}"{extra}>{title}</a>'
+        return f'<span class="dvno-button dvno-button--{style} dvno-button--pending">{icon}{title}</span>'
+    return f'<a class="dvno-button dvno-button--{style}" href="{href}"{extra}>{icon}{title}</a>'
 
 
 def _render_navigation_card(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
+    icon = _render_icon(fields.get("Icon", ""), files, current_file)
     title = escape(fields.get("Title", ""))
     description = escape(fields.get("Description", ""))
     accent = escape(fields.get("Accent Text", ""))
-    body = f'<span class="navigation-card__accent">{accent}</span>' if accent else ""
+    body = icon
+    body += f'<span class="navigation-card__accent">{accent}</span>' if accent else ""
     body += f'<span class="navigation-card__title">{title}</span>'
     if description:
         body += f'<span class="navigation-card__description">{description}</span>'
@@ -110,10 +128,11 @@ def _render_navigation_card(fields, lang, files, current_file) -> str:
 
 def _render_resource_box(fields, lang, files, current_file) -> str:
     href, extra = _href_or_none(fields, lang, files, current_file)
+    icon = _render_icon(fields.get("Icon", ""), files, current_file)
     title = escape(fields.get("Title", ""))
     if href is None:
-        return f'<span class="resource-card resource-card--pending">{title}</span>'
-    return f'<a class="resource-card" href="{href}"{extra}>{title}</a>'
+        return f'<span class="resource-card resource-card--pending">{icon}{title}</span>'
+    return f'<a class="resource-card" href="{href}"{extra}>{icon}{title}</a>'
 
 
 _LEAF_RENDERERS = {
@@ -143,8 +162,10 @@ def _render_workflow(fields_text: str, lang, files, current_file) -> str:
     for step in steps:
         href, extra = _href_or_none(step, lang, files, current_file)
         style = escape(step.get("Style", "primary"))
+        icon = _render_icon(step.get("Icon", ""), files, current_file)
         inner = (
-            f'<span class="workflow-step__number">{escape(step.get("Number", ""))}</span>'
+            icon
+            + f'<span class="workflow-step__number">{escape(step.get("Number", ""))}</span>'
             f'<span class="workflow-step__title">{escape(step.get("Title", ""))}</span>'
         )
         content = f'<a href="{href}"{extra}>{inner}</a>' if href else f"<span>{inner}</span>"
@@ -176,10 +197,18 @@ def resolve_content_blocks(markdown: str, lang: str, files, current_file) -> str
 
     def _replace_leaf(match: re.Match) -> str:
         fields = _parse_fields(match.group("fields"))
-        return _LEAF_RENDERERS[match.group("type")](fields, lang, files, current_file)
+        # _LEAF_BLOCK's match ends right after the block's last "Key: value\n"
+        # line, consuming only one of the two newlines that made up the
+        # blank line separating it from whatever follows. Without restoring
+        # it here, a block immediately followed by prose loses its paragraph
+        # break and gets merged into the same <p> as that prose (confirmed
+        # live: a [BUTTON] swallowed the paragraph after it).
+        return _LEAF_RENDERERS[match.group("type")](fields, lang, files, current_file) + "\n"
 
     markdown = _LEAF_BLOCK.sub(_replace_leaf, markdown)
-    markdown = _WORKFLOW_BLOCK.sub(lambda m: _render_workflow(m.group("fields"), lang, files, current_file), markdown)
+    markdown = _WORKFLOW_BLOCK.sub(
+        lambda m: _render_workflow(m.group("fields"), lang, files, current_file) + "\n", markdown
+    )
     return markdown
 
 

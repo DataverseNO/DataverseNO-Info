@@ -81,7 +81,7 @@ Target: about/who-can-use-dataverseno#bli-partnarinstitusjon
 
 [BUTTON]
 Style: primary
-Icon: assets/icons/dataverse-icon.svg
+Icon: assets/icons/dataverseno-icon.svg
 Title: Gå til DataverseNO
 URL: https://dataverse.no
 Open: new-tab

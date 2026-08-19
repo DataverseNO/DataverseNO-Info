@@ -53,7 +53,7 @@ A distinctive feature of DataverseNO is that all datasets are [PAGE: why-use-dat
 
 DataverseNO is operated by UiT The Arctic University of Norway on behalf of a national consortium of [PAGE: who-can-use-dataverseno#researchers-from-partner-institutions | partner institutions]. The repository is organised into institutional collections, allowing participating institutions to manage and showcase their research outputs while following common repository policies and standards. Institutional collections may also contain sub-collections for research centres, projects, or other organisational units (Figure 1).
 
-![Diagram showing the DataverseNO repository structure, with datasets generally published in institutional collections.](/assets/images/about/en/repository-structure.png)
+![Diagram showing the DataverseNO repository structure, with datasets generally published in institutional collections.](../../assets/images/about/en/repository-structure.png)
 
 _Figure 1. DataverseNO repository structure. Datasets are generally published in institutional collections._
 
