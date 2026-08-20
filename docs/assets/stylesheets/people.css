@@ -82,11 +82,15 @@
 
 .people-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  /* Grid rows default to align-items: stretch, which forces every card in a
-     row to match the tallest one — cards with little content (e.g. no
-     expertise or profile link) ended up mostly dead white space. */
-  align-items: start;
+  /* Single column, not a multi-column auto-fill grid: a ~250-300px column
+     forced most of a card's text (institution, roles, expertise) to wrap
+     across many lines, producing a text block far taller than the fixed
+     photo size next to it — repeatedly "fixed" by resizing the photo
+     instead, which never actually matched because the real mismatch was
+     the text column being too narrow. Full content width lets most lines
+     fit without wrapping, which is what keeps the photo and text
+     proportionate in the design mockup. */
+  grid-template-columns: 1fr;
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -158,10 +162,4 @@
 .people-empty-state {
   font-style: italic;
   opacity: 0.8;
-}
-
-@media screen and (max-width: 700px) {
-  .people-card-grid {
-    grid-template-columns: 1fr;
-  }
 }
