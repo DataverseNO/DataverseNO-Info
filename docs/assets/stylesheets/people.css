@@ -199,14 +199,18 @@
 
 .people-card__roles {
   margin: 0 0 0.2rem;
-  font-size: 0.8125rem;
+  /* Clearly smaller than .people-card__name (0.875rem): at 0.8125rem the
+     two were close enough in size (and name's only other distinguishing
+     trait was bold) that the name didn't read as the visual anchor of the
+     card. */
+  font-size: 0.7rem;
   opacity: 0.85;
 }
 
 .people-card__expertise,
 .people-card__profile-link {
   margin: 0 0 0.2rem;
-  font-size: 0.8125rem;
+  font-size: 0.7rem;
   opacity: 0.85;
 }
 
