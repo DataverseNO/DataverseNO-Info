@@ -83,6 +83,10 @@
 .people-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  /* Grid rows default to align-items: stretch, which forces every card in a
+     row to match the tallest one — cards with little content (e.g. no
+     expertise or profile link) ended up mostly dead white space. */
+  align-items: start;
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -90,9 +94,8 @@
 .people-card {
   display: flex;
   gap: 0.8rem;
-  padding: 1rem 1.2rem;
-  border: 2px solid var(--dvno-orange);
-  border-radius: 12px;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid var(--dvno-grey);
 }
 
 /* `.people-card__photo` alone loses the specificity tie against Material's
@@ -119,19 +122,24 @@
 .people-card__institution {
   margin: 0 0 0.3rem;
   font-size: 0.8rem;
-  color: var(--dvno-orange);
+  opacity: 0.85;
 }
 
 .people-card__roles {
   margin: 0 0 0.3rem;
   font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 .people-card__expertise,
-.people-card__profile {
-  margin: 0;
+.people-card__profile-link {
+  margin: 0 0 0.3rem;
   font-size: 0.8rem;
   opacity: 0.85;
+}
+
+.people-card__profile-link:last-child {
+  margin-bottom: 0;
 }
 
 .people-empty-state {

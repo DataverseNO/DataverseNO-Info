@@ -17,29 +17,40 @@ _GENERATED_BLOCK = re.compile(
 )
 
 
+_EXPERTISE_LABEL = {"en": "Subject expertise: ", "nn": "Fagfelt: "}
+_PROFILE_LINK_LABEL = {"en": "Institutional profile page", "nn": "Institusjonell profilside"}
+
+
 def _person_card(person: dict, lang: str, institution_names: dict, files, current_file) -> str:
     photo = person.get("photo")
     photo_href = escape(resolve_asset_href(photo, files, current_file)) if photo else ""
     img = f'<img class="people-card__photo" src="{photo_href}" alt="" loading="lazy">' if photo else ""
     institution = escape(institution_names.get(person["institution_id"], person["institution_id"]))
-    expertise = escape(", ".join(person["expertise"].get(lang, [])))
+    expertise_terms = person["expertise"].get(lang, [])
+    expertise = (
+        f'<p class="people-card__expertise">{escape(_EXPERTISE_LABEL[lang])}{escape(", ".join(expertise_terms))}</p>'
+        if expertise_terms
+        else ""
+    )
     roles = escape(", ".join(person["role_free_text"].get(lang, [])))
     aliases = escape(" ".join(person["search_aliases"]).lower())
     name = escape(person["name"])
-    profile = (
-        f'<a class="people-card__profile" href="{escape(safe_href(person["profile_url"]))}">{name}</a>'
+    profile_link = (
+        f'<p class="people-card__profile-link">'
+        f'<a href="{escape(safe_href(person["profile_url"]))}">{escape(_PROFILE_LINK_LABEL[lang])}</a></p>'
         if person.get("profile_url")
-        else name
+        else ""
     )
     return (
         f'<article class="people-card" data-person-card'
         f' data-search="{aliases}" data-institution="{escape(person["institution_id"])}"'
         f' data-roles="{escape(" ".join(person["roles"]))}">'
         f'{img}<div class="people-card__content">'
-        f'<p class="people-card__name">{profile}</p>'
+        f'<p class="people-card__name">{name}</p>'
         f'<p class="people-card__institution">{institution}</p>'
         f'<p class="people-card__roles">{roles}</p>'
-        f'<p class="people-card__expertise">{expertise}</p>'
+        f'{expertise}'
+        f'{profile_link}'
         f'</div></article>'
     )
 
