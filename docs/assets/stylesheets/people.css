@@ -93,13 +93,11 @@
 
 .people-card {
   display: flex;
-  /* Default (stretch): the photo has no explicit height (see
-     .people-card__photo below), so flex stretches it to exactly match
-     .people-card__content's height — top of photo flush with the name,
-     bottom flush with the last line, matching the design mockup. Cards
-     vary a lot in how much text they carry (institution/expertise/
-     profile-link are all conditional), so the photo's size follows suit
-     instead of being pinned to a fixed px value. */
+  /* Centered, not the flex default (stretch -> sits at top): cards vary a
+     lot in how much text they carry (institution/expertise/profile-link
+     are all conditional), so a top-pinned photo looks disconnected from
+     the block once a card runs to several lines. */
+  align-items: center;
   gap: 0.8rem;
   padding: 0 0 1rem;
   border-bottom: 1px solid var(--dvno-grey);
@@ -112,21 +110,21 @@
    height:auto let the photo keep its source aspect ratio while width
    collapsed toward a fixed px value, and border-radius:50% turned that
    mismatched box into a stretched oval instead of a circle. Scoping under
-   `.people-card` raises this to two classes so it wins outright. Height is
-   intentionally left unset (not auto/100%) so flex's default stretch sizes
-   it to the row; aspect-ratio then derives width from that stretched
-   height so it stays square regardless of the resulting size.
+   `.people-card` raises this to two classes so it wins outright.
 
-   min-width: 0 overrides the flex item default of min-width: auto, which
-   resolves to the image's intrinsic (near-native-resolution) width for a
-   replaced element — without it, the photo can't shrink below that huge
-   floor and renders far larger than the text column, confirmed live. */
+   Fixed size, not a dynamic stretch-to-match-text-height (tried and
+   reverted): deriving width from a stretched height via aspect-ratio
+   creates a circular main-axis/cross-axis dependency that different
+   browsers resolve differently once a card's text runs long or the
+   viewport narrows — confirmed live as both a reverted-looking oval on one
+   card and an overflowing, clipped circle on another, from the same CSS.
+   A fixed size has no such failure mode. */
 .people-card .people-card__photo {
-  aspect-ratio: 1 / 1;
-  width: auto;
-  min-width: 0;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .people-card__name {
