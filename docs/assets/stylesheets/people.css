@@ -113,7 +113,7 @@
      text within a 2nd column. min-width: 0 on .people-card (below)
      removes that floor so the explicit 2 columns can actually be used. */
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 1.5rem;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 700px) {
@@ -151,17 +151,13 @@
    viewport narrows — confirmed live as both a reverted-looking oval on one
    card and an overflowing, clipped circle on another, from the same CSS.
 
-   104px is sized against the *median* card (data/people.yml: 56% of the 82
-   people have exactly 1 role and 0 expertise terms — a short 2-3 line text
-   block now that institution moved to a per-group heading, see
-   .people-group__heading, and isn't repeated on every card), not the rare
-   8-9 line outliers — those are now bounded by capping displayed
-   expertise terms server-side (generated_components.py) instead of
-   chasing an exact size match in CSS. */
+   128px: repeatedly reported as still too small at 80/96/112/104px even
+   after other proportion fixes (grouping, capping expertise) landed —
+   sized generously rather than against a calculated "ideal" this time. */
 .people-card .people-card__photo,
 .people-card .people-card__photo--initials {
-  width: 104px;
-  height: 104px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -192,7 +188,12 @@
 
 .people-card__name {
   margin: 0 0 0.2rem;
-  font-size: 1rem;
+  /* A 128px photo (see .people-card__photo) leaves only ~195px for text in
+     a 2-column layout — at 1rem this wrapped even 2-word names ("Rune
+     Keisuke Kosaka") that read on one line in the design mockup. 0.875rem
+     fits most real names (data/people.yml) on one line without needing to
+     shrink the photo back down. */
+  font-size: 0.875rem;
   font-weight: bold;
 }
 
