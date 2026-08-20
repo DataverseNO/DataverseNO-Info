@@ -95,7 +95,15 @@
   border-radius: 12px;
 }
 
-.people-card__photo {
+/* `.people-card__photo` alone loses the specificity tie against Material's
+   own `.md-typeset img, .md-typeset svg, .md-typeset video { height: auto;
+   max-width: 100% }` base rule (one class vs. one class + one element,
+   Material wins regardless of stylesheet load order) — confirmed live:
+   height:auto let the photo keep its source aspect ratio while width
+   collapsed toward 64px, and border-radius:50% turned that mismatched box
+   into a stretched oval instead of a circle. Scoping under `.people-card`
+   raises this to two classes so it wins outright. */
+.people-card .people-card__photo {
   width: 64px;
   height: 64px;
   border-radius: 50%;
