@@ -20,6 +20,7 @@
     const countEl = document.querySelector('[data-people-count]')
     const emptyState = document.querySelector('[data-people-empty-state]')
     const cards = Array.from(grid.querySelectorAll('[data-person-card]'))
+    const groups = Array.from(grid.querySelectorAll('[data-people-group]'))
 
     function selectedInstitutions() {
       if (!institutionSelect) return []
@@ -44,6 +45,14 @@
         const visible = matchesQuery && matchesInstitution && matchesRole
         card.hidden = !visible
         if (visible) visibleCount += 1
+      })
+
+      // Institution groups carry their own heading (the institution name)
+      // outside any individual card, so an emptied-out group would
+      // otherwise leave a heading with nothing visible under it.
+      groups.forEach((group) => {
+        const hasVisibleCard = group.querySelector('[data-person-card]:not([hidden])')
+        group.hidden = !hasVisibleCard
       })
 
       if (countEl) countEl.textContent = String(visibleCount)

@@ -13,7 +13,12 @@
  * - .people-filter-box      Role toggle button, [aria-pressed="true"] = active
  * - .people-institution-select  Multi-select institution filter
  * - .people-results-summary Live result count (aria-live="polite")
- * - .people-card-grid       Grid of .people-card elements (#people-cards)
+ * - .people-group           One institution's heading + card grid; hidden via
+ *                            [hidden] by people-filter.js when it has no
+ *                            visible cards left
+ * - .people-group__heading  Institution name, shown once per group instead
+ *                            of repeated on every card
+ * - .people-card-grid       Grid of .people-card elements, one per .people-group
  * - .people-card            Person card, hidden via the native [hidden] attribute
  * - .people-empty-state     Shown when no cards match the current filters
  */
@@ -80,27 +85,50 @@
   opacity: 0.85;
 }
 
+.people-group {
+  margin: 0 0 1.5rem;
+}
+
+.people-group__heading {
+  margin: 0 0 0.8rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--dvno-orange);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
 .people-card-grid {
   display: grid;
-  /* Single column, not a multi-column auto-fill grid: a ~250-300px column
-     forced most of a card's text (institution, roles, expertise) to wrap
-     across many lines, producing a text block far taller than the fixed
-     photo size next to it — repeatedly "fixed" by resizing the photo
-     instead, which never actually matched because the real mismatch was
-     the text column being too narrow. Full content width lets most lines
-     fit without wrapping, which is what keeps the photo and text
-     proportionate in the design mockup. */
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
+  /* Two columns per institution group, per the design mockup — grouping by
+     institution (see .people-group above) already keeps each grid's cards
+     to a handful, so a narrower column doesn't force the same heavy
+     wrapping that a flat, ungrouped multi-column grid of all 82 people
+     did. Explicit repeat(2, ...), not auto-fit/minmax: auto-fit's track
+     count depends on how many tracks of at least the minmax floor *fit*,
+     but grid items default to min-width:auto (their content's min-content
+     size) same as flex items do — a card with a long unwrapped role/
+     expertise line forced its track wider than the floor, so auto-fit
+     kept computing "only 1 column fits" instead of actually wrapping that
+     text within a 2nd column. min-width: 0 on .people-card (below)
+     removes that floor so the explicit 2 columns can actually be used. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+  .people-card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .people-card {
   display: flex;
+  min-width: 0;
   /* Centered, not the flex default (stretch -> sits at top): cards vary a
-     lot in how much text they carry (institution/expertise/profile-link
-     are all conditional), so a top-pinned photo looks disconnected from
-     the block once a card runs to several lines. */
+     lot in how much text they carry (expertise/profile-link are both
+     conditional), so a top-pinned photo looks disconnected from the block
+     once a card runs to several lines. */
   align-items: center;
   gap: 0.8rem;
   padding: 0 0 1rem;
@@ -123,15 +151,17 @@
    viewport narrows — confirmed live as both a reverted-looking oval on one
    card and an overflowing, clipped circle on another, from the same CSS.
 
-   88px is sized against the *median* card (data/people.yml: 56% of the 82
-   people have exactly 1 role and 0 expertise terms, so a short 2-3 line
-   text block), not the rare 8-9 line outliers — those are now bounded by
-   capping displayed expertise terms server-side (generated_components.py)
-   instead of chasing an exact size match in CSS. */
+   104px is sized against the *median* card (data/people.yml: 56% of the 82
+   people have exactly 1 role and 0 expertise terms — a short 2-3 line text
+   block now that institution moved to a per-group heading, see
+   .people-group__heading, and isn't repeated on every card), not the rare
+   8-9 line outliers — those are now bounded by capping displayed
+   expertise terms server-side (generated_components.py) instead of
+   chasing an exact size match in CSS. */
 .people-card .people-card__photo,
 .people-card .people-card__photo--initials {
-  width: 88px;
-  height: 88px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -164,12 +194,6 @@
   margin: 0 0 0.2rem;
   font-size: 1rem;
   font-weight: bold;
-}
-
-.people-card__institution {
-  margin: 0 0 0.2rem;
-  font-size: 0.8125rem;
-  opacity: 0.85;
 }
 
 .people-card__roles {

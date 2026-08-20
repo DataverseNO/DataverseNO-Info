@@ -35,7 +35,7 @@ def _initials(name: str) -> str:
     return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper()
 
 
-def _person_card(person: dict, lang: str, institution_names: dict, files, current_file) -> str:
+def _person_card(person: dict, lang: str, files, current_file) -> str:
     photo = person.get("photo")
     # 66 of 82 people (80%) have no photo — those rows previously rendered
     # with no circle at all, breaking the list's visual rhythm. An
@@ -49,7 +49,6 @@ def _person_card(person: dict, lang: str, institution_names: dict, files, curren
             f'<span class="people-card__photo people-card__photo--initials" aria-hidden="true">'
             f'{escape(_initials(person["name"]))}</span>'
         )
-    institution = escape(institution_names.get(person["institution_id"], person["institution_id"]))
     expertise_terms = person["expertise"].get(lang, [])
     if expertise_terms:
         shown = expertise_terms[:_EXPERTISE_SHOWN_MAX]
@@ -75,7 +74,6 @@ def _person_card(person: dict, lang: str, institution_names: dict, files, curren
         f' data-roles="{escape(" ".join(person["roles"]))}">'
         f'{img}<div class="people-card__content">'
         f'<p class="people-card__name">{name}</p>'
-        f'<p class="people-card__institution">{institution}</p>'
         f'<p class="people-card__roles">{roles}</p>'
         f'{expertise}'
         f'{profile_link}'
@@ -86,14 +84,36 @@ def _person_card(person: dict, lang: str, institution_names: dict, files, curren
 def _people_cards(lang: str, files, current_file) -> str:
     people = get_data()["people"]["people"]
     partners_data = get_data()["partners"]
-    institution_names = {p["id"]: p["name"][lang] for p in partners_data["partners"]}
-    institution_names[partners_data["repository_management"]["id"]] = partners_data["repository_management"]["name"][
-        lang
-    ]
-    cards = "\n".join(_person_card(p, lang, institution_names, files, current_file) for p in people)
+    # Institution as a per-group heading (design mockup, and Rieke's original
+    # request in issue #73: institution "as a heading above the photos"),
+    # not a repeated line on every card. sort_name/lang matches the
+    # Norwegian-aware ordering already used for the institution filter
+    # dropdown in _people_search_and_filter, for a consistent institution
+    # order between the two.
+    institutions = list(partners_data["partners"]) + [partners_data["repository_management"]]
+    institutions.sort(key=lambda p: p["sort_name"][lang])
+
+    people_by_institution: dict[str, list[dict]] = {}
+    for person in people:
+        people_by_institution.setdefault(person["institution_id"], []).append(person)
+
+    groups = []
+    for institution in institutions:
+        institution_id = institution["id"]
+        members = people_by_institution.get(institution_id)
+        if not members:
+            continue
+        cards = "\n".join(_person_card(p, lang, files, current_file) for p in members)
+        groups.append(
+            f'<div class="people-group" data-people-group data-institution="{escape(institution_id)}">\n'
+            f'<p class="people-group__heading">{escape(institution["name"][lang])}</p>\n'
+            f'<div class="people-card-grid">\n{cards}\n</div>\n'
+            f'</div>'
+        )
+
     empty_label = "No people match the current filters." if lang == "en" else "Ingen personar samsvarar med filtera."
     return (
-        f'<div class="people-card-grid" id="people-cards">\n{cards}\n</div>\n'
+        f'<div id="people-cards">\n{"".join(groups)}\n</div>\n'
         f'<p class="people-empty-state" data-people-empty-state hidden>{empty_label}</p>'
     )
 
