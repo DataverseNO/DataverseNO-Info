@@ -124,34 +124,35 @@
    card and an overflowing, clipped circle on another, from the same CSS.
    A fixed size has no such failure mode. */
 .people-card .people-card__photo {
-  width: 112px;
-  height: 112px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .people-card__name {
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.15rem;
+  font-size: 0.85rem;
   font-weight: bold;
 }
 
 .people-card__institution {
-  margin: 0 0 0.3rem;
-  font-size: 0.75rem;
+  margin: 0 0 0.15rem;
+  font-size: 0.7rem;
   opacity: 0.85;
 }
 
 .people-card__roles {
-  margin: 0 0 0.3rem;
-  font-size: 0.75rem;
+  margin: 0 0 0.15rem;
+  font-size: 0.7rem;
   opacity: 0.85;
 }
 
 .people-card__expertise,
 .people-card__profile-link {
-  margin: 0 0 0.3rem;
-  font-size: 0.75rem;
+  margin: 0 0 0.15rem;
+  font-size: 0.7rem;
   opacity: 0.85;
 }
 
