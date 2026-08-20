@@ -1,5 +1,6 @@
 ---
 title: Ordliste
+nav_label: Ordliste
 description: Denne sida gjev forklaringar på sentrale omgrep som blir brukte på nettstaden til DataverseNO.
 ---
 
