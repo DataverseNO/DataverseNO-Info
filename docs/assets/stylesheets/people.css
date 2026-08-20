@@ -113,8 +113,8 @@
    into a stretched oval instead of a circle. Scoping under `.people-card`
    raises this to two classes so it wins outright. */
 .people-card .people-card__photo {
-  width: 96px;
-  height: 96px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -127,20 +127,20 @@
 
 .people-card__institution {
   margin: 0 0 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.85;
 }
 
 .people-card__roles {
   margin: 0 0 0.3rem;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   opacity: 0.85;
 }
 
 .people-card__expertise,
 .people-card__profile-link {
   margin: 0 0 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.85;
 }
 
