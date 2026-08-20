@@ -1,5 +1,6 @@
 ---
 title: Glossary
+nav_label: Glossary
 description: This page provides explanations of key terms used on the DataverseNO Information Website.
 ---
 

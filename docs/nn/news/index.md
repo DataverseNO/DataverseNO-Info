@@ -1,5 +1,6 @@
 ---
 title: Nytt
+nav_label: Nytt
 description: Nyhende og oppdateringar frå DataverseNO.
 tags:
 - news

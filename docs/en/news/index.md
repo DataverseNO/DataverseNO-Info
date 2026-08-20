@@ -1,5 +1,6 @@
 ---
 title: News
+nav_label: News
 description: News and updates from DataverseNO.
 tags:
 - news

@@ -17,6 +17,7 @@ hooks:
   - hooks/reuse_resolver.py
   - hooks/generated_components.py
   - hooks/content_blocks.py
+  - hooks/nav_localization.py
   - hooks/seo_meta.py
 
 theme:
