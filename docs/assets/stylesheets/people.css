@@ -93,6 +93,12 @@
 
 .people-card {
   display: flex;
+  /* Center, not the flex default (stretch -> sits at top): cards vary a lot
+     in how much text they carry (institution/expertise/profile-link are all
+     conditional), so a top-pinned photo looks disconnected from the block
+     once a card runs to 4+ lines. Centering keeps the photo visually
+     anchored to its text regardless of how many lines that text takes. */
+  align-items: center;
   gap: 0.8rem;
   padding: 0 0 1rem;
   border-bottom: 1px solid var(--dvno-grey);
