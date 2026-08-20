@@ -122,37 +122,66 @@
    browsers resolve differently once a card's text runs long or the
    viewport narrows — confirmed live as both a reverted-looking oval on one
    card and an overflowing, clipped circle on another, from the same CSS.
-   A fixed size has no such failure mode. */
-.people-card .people-card__photo {
-  width: 80px;
-  height: 80px;
+
+   88px is sized against the *median* card (data/people.yml: 56% of the 82
+   people have exactly 1 role and 0 expertise terms, so a short 2-3 line
+   text block), not the rare 8-9 line outliers — those are now bounded by
+   capping displayed expertise terms server-side (generated_components.py)
+   instead of chasing an exact size match in CSS. */
+.people-card .people-card__photo,
+.people-card .people-card__photo--initials {
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  object-fit: cover;
   flex-shrink: 0;
 }
 
+.people-card .people-card__photo {
+  object-fit: cover;
+}
+
+/* 66 of 82 people (80%) have no photo at all — those rows rendered as bare
+   text with no circle, breaking the list's visual rhythm down the page.
+   Same-size initials badge keeps every row consistent. */
+.people-card .people-card__photo--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dvno-grey);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--dvno-orange);
+}
+
+.people-card__content {
+  /* Caps how wide the text column gets on a short (1-2 line) card — the
+     majority case — so it doesn't stretch to the full content width just
+     because the grid item next to it does. */
+  max-width: 30rem;
+}
+
 .people-card__name {
-  margin: 0 0 0.15rem;
-  font-size: 0.85rem;
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .people-card__institution {
-  margin: 0 0 0.15rem;
-  font-size: 0.7rem;
+  margin: 0 0 0.2rem;
+  font-size: 0.8125rem;
   opacity: 0.85;
 }
 
 .people-card__roles {
-  margin: 0 0 0.15rem;
-  font-size: 0.7rem;
+  margin: 0 0 0.2rem;
+  font-size: 0.8125rem;
   opacity: 0.85;
 }
 
 .people-card__expertise,
 .people-card__profile-link {
-  margin: 0 0 0.15rem;
-  font-size: 0.7rem;
+  margin: 0 0 0.2rem;
+  font-size: 0.8125rem;
   opacity: 0.85;
 }
 

@@ -19,19 +19,47 @@ _GENERATED_BLOCK = re.compile(
 
 _EXPERTISE_LABEL = {"en": "Subject expertise: ", "nn": "Fagfelt: "}
 _PROFILE_LINK_LABEL = {"en": "Institutional profile page", "nn": "Institusjonell profilside"}
+_MORE_LABEL = {"en": "+{n} more", "nn": "+{n} til"}
+# 4-5 expertise terms was pushing rare, content-heavy cards (Fredrik
+# Sahlström et al.) to 8-9 lines against a photo sized for the median card
+# (1 role, 0 expertise terms — 56% of data/people.yml). Capping the
+# *content*, not just styling, keeps every card's height in a similar range
+# regardless of how much expertise data a person happens to have.
+_EXPERTISE_SHOWN_MAX = 3
+
+
+def _initials(name: str) -> str:
+    parts = [p for p in name.split() if p]
+    if not parts:
+        return ""
+    return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper()
 
 
 def _person_card(person: dict, lang: str, institution_names: dict, files, current_file) -> str:
     photo = person.get("photo")
-    photo_href = escape(resolve_asset_href(photo, files, current_file)) if photo else ""
-    img = f'<img class="people-card__photo" src="{photo_href}" alt="" loading="lazy">' if photo else ""
+    # 66 of 82 people (80%) have no photo — those rows previously rendered
+    # with no circle at all, breaking the list's visual rhythm. An
+    # initials badge, sized identically to a real photo, keeps every row
+    # consistent.
+    if photo:
+        photo_href = escape(resolve_asset_href(photo, files, current_file))
+        img = f'<img class="people-card__photo" src="{photo_href}" alt="" loading="lazy">'
+    else:
+        img = (
+            f'<span class="people-card__photo people-card__photo--initials" aria-hidden="true">'
+            f'{escape(_initials(person["name"]))}</span>'
+        )
     institution = escape(institution_names.get(person["institution_id"], person["institution_id"]))
     expertise_terms = person["expertise"].get(lang, [])
-    expertise = (
-        f'<p class="people-card__expertise">{escape(_EXPERTISE_LABEL[lang])}{escape(", ".join(expertise_terms))}</p>'
-        if expertise_terms
-        else ""
-    )
+    if expertise_terms:
+        shown = expertise_terms[:_EXPERTISE_SHOWN_MAX]
+        remainder = len(expertise_terms) - len(shown)
+        text = ", ".join(shown)
+        if remainder:
+            text = f"{text} {_MORE_LABEL[lang].format(n=remainder)}"
+        expertise = f'<p class="people-card__expertise">{escape(_EXPERTISE_LABEL[lang])}{escape(text)}</p>'
+    else:
+        expertise = ""
     roles = escape(", ".join(person["role_free_text"].get(lang, [])))
     aliases = escape(" ".join(person["search_aliases"]).lower())
     name = escape(person["name"])
